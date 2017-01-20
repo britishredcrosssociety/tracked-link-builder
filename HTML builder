@@ -47,6 +47,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
 		$(".auto").hide() && 
@@ -57,6 +58,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").show() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
 		$(".auto").hide() &&
@@ -67,6 +69,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").show() &&
 		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
 		$(".auto").hide() &&
@@ -77,6 +80,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
 		$("#mediumReferral").show() &&
 		$("#mediumInternal").hide() &&
 		$(".auto").show() &&
@@ -87,6 +91,18 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumSocialPost").show() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$(".auto").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Share")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").show() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
 		$(".auto").show() &&
@@ -97,6 +113,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").show() &&
 		$(".auto").show() &&
@@ -107,6 +124,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
 		$(".auto").show() &&
@@ -141,7 +159,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Banner">Banner</option>
 		<option value="Social Ad">Social ad by BRC</option>
 		<option value="Social Post">Social post by BRC</option>
-		<option value="Social Share">Social share on BRC site</option>
+		<option value="Social Share">Social share button on BRC site</option>
         <option value="Social Button">Social button</option>
         <option value="Earned Social">Social post from someone other than BRC</option>
 		<option value="Email">Email</option>
@@ -265,6 +283,53 @@ which of your promotions are generating the most traffic/conversions. This tool 
         </p>
 	</div>
     
+    <div id="mediumSocialShare">
+        <p>
+        <label for="source">What social network is the share button for?
+        <select name="source" id="socialsharesource">
+		<option value="Facebook">Facebook</option>
+		<option value="Twitter">Twitter</option>
+		</select>
+        </label>
+        </p>
+        <p>
+		<input name="sourcecode" id="socialsharesourcecode" value="154750" type="hidden">
+        <label for="audience">Where is the social share button on our site?
+        <select name="audience" id="socialshareaudience">
+		<option value="Donate Landing">Donate - Landing</option>
+		<option value="Donate Thank You">Donate - Thank You</option>
+		<option value="Donate Other">Donate - Other</option>
+		<option value="What We Do">What We Do</option>
+		<option value="Where We Work">Where We Work</option>
+		<option value="About Us">About Us</option>
+		<option value="Get Involved">Get Involved</option>
+		<option value="Shop">Shop</option>
+		<option value="Blog">Blog</option>
+		</select>
+        </label>
+        </p>
+        <p>
+        <label for="linkcategory">What link from our site is being shared?
+        <select name="linkcategory" id="socialsharelinkcategory">
+		<option value="Donate Landing">Donate - Landing</option>
+		<option value="Donate Other">Donate - Other</option>
+		<option value="What We Do">What We Do</option>
+		<option value="Where We Work">Where We Work</option>
+		<option value="About Us">About Us</option>
+		<option value="Get Involved">Get Involved</option>
+		<option value="Shop">Shop</option>
+		<option value="Blog">Blog</option>
+		</select>
+        </label>
+        </p>
+
+        <p>
+        <label for="linkdetails">What's the call to action of the link about?
+        <input placeholder="e.g. Aleppo attack" name="linkdetails" id="socialsharelinkdetails" type="text">
+        </label>
+        </p>
+	</div>
+    
     <div id="mediumInternal">
     	<p class="alert">Your link won't include any UTM tracking, because it breaks up the session in Google Analytics &ndash; so only continue if you want donation tracking appended.</p>
         <p>
@@ -339,6 +404,14 @@ which of your promotions are generating the most traffic/conversions. This tool 
 				sourceCode = $('#socialpostsourcecode').val();
 				audience = $('#socialpostaudience').val();
 				break;
+			case "Social Share":
+				source = $('#socialsharesource').val();
+				adCreative = $('#socialsharelinkcategory').val();
+				if ($('#socialsharelinkdetails').val()) {
+					adCreative = adCreative + '_' + $('#socialsharelinkdetails').val();}
+				sourceCode = $('#socialsharesourcecode').val();
+				audience = $('#socialshareaudience').val();
+				break;
 			case "Internal":
 				source = $('#internalsource').val();
 				adCreative = $('#internallinkcategory').val();
@@ -360,7 +433,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		if (medium !== "Referral" && medium !== "Internal") {
        	var html = html+'utm_campaign='+encodeURIComponent(campaign)+'&utm_source='+encodeURIComponent(source)+'&utm_medium='+encodeURIComponent(medium)+ '&utm_content='+encodeURIComponent(adCreative)+'&utm_term='+sourceCode;
 			}
-       	if (audience) {
+       	if (audience && medium !== "Referral" && medium !== "Internal") {
        		var html = html + '_'+encodeURIComponent(audience);
        		}
 		if (medium !== "Referral" && medium !== "Internal" && isDonate === "Yes") {
