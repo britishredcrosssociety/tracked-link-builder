@@ -48,6 +48,7 @@ function toggleFields() {
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
 		$(".auto").hide() && 
 		$("#urlHidden").show();
 
@@ -57,6 +58,7 @@ function toggleFields() {
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
 		$(".auto").hide() &&
 		$("#urlHidden").show();
 		
@@ -66,6 +68,7 @@ function toggleFields() {
 		$("#mediumEarnedSocial").show() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
 		$(".auto").hide() &&
 		$("#urlHidden").show();
 		
@@ -75,6 +78,7 @@ function toggleFields() {
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumReferral").show() &&
+		$("#mediumInternal").hide() &&
 		$(".auto").show() &&
 		$("#urlHidden").hide();
 
@@ -84,6 +88,17 @@ function toggleFields() {
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumSocialPost").show() &&
 		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$(".auto").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Internal")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").show() &&
 		$(".auto").show() &&
 		$("#urlHidden").hide();
 
@@ -93,6 +108,7 @@ function toggleFields() {
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
 		$(".auto").show() &&
 		$("#urlHidden").hide();
 }
@@ -131,7 +147,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Email">Email</option>
         <option value="Paid Search">Paid search</option>
         <option value="Organic Search">Organic search</option>
-        <option value="BRC Microsite">BRC microsite to the main site</option>
+        <option value="Internal">From a BRC microsite to the main site (e.g. from the blog, from a Shorthand app)</option>
         <option value="Referral">Referral from a news site etc.</option>
         </select>
         </label></p>
@@ -243,11 +259,47 @@ which of your promotions are generating the most traffic/conversions. This tool 
         </p>
 
         <p>
-        <label for="linkdetails">What link from our site is being shared?
+        <label for="linkdetails">What's the call to action of the link about?
         <input placeholder="e.g. Aleppo attack" name="linkdetails" id="socialpostlinkdetails" type="text">
         </label>
         </p>
 	</div>
+    
+    <div id="mediumInternal">
+    	<p class="alert">Your link won't include any UTM tracking, because it breaks up the session in Google Analytics &ndash; so only continue if you want donation tracking appended.</p>
+        <p>
+        <label for="source">Which of BRC's microsites will this link go onto?
+        <select name="source" id="internalsource">
+		<option value="BRC Blog">Blog</option>
+		<option value="Shorthand">Shorthand</option>
+		</select>
+        </label>
+        </p>
+        <p>
+		<input name="sourcecode" id="internalsourcecode" value="154742" type="hidden">
+		<input name="audience" id="internalaudience" value="BRC Site" type="hidden">
+        </p>
+        <p>
+        <label for="linkcategory">What link from our site is being shared?
+        <select name="linkcategory" id="internallinkcategory">
+		<option value="Donate Landing">Donate - Landing</option>
+		<option value="Donate Other">Donate - Other</option>
+		<option value="What We Do">What We Do</option>
+		<option value="Where We Work">Where We Work</option>
+		<option value="About Us">About Us</option>
+		<option value="Get Involved">Get Involved</option>
+		<option value="Shop">Shop</option>
+		<option value="Blog">Blog</option>
+		</select>
+        </label>
+        </p>
+
+        <p>
+        <label for="linkdetails">What's the call to action of the link about?
+        <input placeholder="e.g. Aleppo attack" name="linkdetails" id="internallinkdetails" type="text">
+        </label>
+        </p>   
+    </div>
                 	</fieldset>
                 </form>
                 <h2>2) Copy and Paste</h2>
@@ -281,9 +333,19 @@ which of your promotions are generating the most traffic/conversions. This tool 
 				break;
 			case "Social Post":
 				source = $('#socialpostsource').val();
-				adCreative = $('#socialpostlinkcategory').val() + '_' + $('#socialpostlinkdetails').val();
+				adCreative = $('#socialpostlinkcategory').val();
+				if ($('#socialpostlinkdetails').val()) {
+					adCreative = adCreative + '_' + $('#socialpostlinkdetails').val();}
 				sourceCode = $('#socialpostsourcecode').val();
 				audience = $('#socialpostaudience').val();
+				break;
+			case "Internal":
+				source = $('#internalsource').val();
+				adCreative = $('#internallinkcategory').val();
+				if ($('#internallinkdetails').val()) {
+					adCreative = adCreative + '_' + $('#internallinkdetails').val();}
+				sourceCode = $('#internalsourcecode').val();
+				audience = $('#internalaudience').val();
 				break;
 			default:
 				source = $('#source').val();
@@ -295,18 +357,18 @@ which of your promotions are generating the most traffic/conversions. This tool 
        	var isDonate = $('#isDonate').val();
 			
 		var html = domain+'?';
-		if (medium !== "Referral" && medium !== "BRC Microsite") {
+		if (medium !== "Referral" && medium !== "Internal") {
        	var html = html+'utm_campaign='+encodeURIComponent(campaign)+'&utm_source='+encodeURIComponent(source)+'&utm_medium='+encodeURIComponent(medium)+ '&utm_content='+encodeURIComponent(adCreative)+'&utm_term='+sourceCode;
 			}
        	if (audience) {
        		var html = html + '_'+encodeURIComponent(audience);
        		}
-		if (medium !== "Referral" && medium !== "BRC Microsite" && isDonate === "Yes") {
+		if (medium !== "Referral" && medium !== "Internal" && isDonate === "Yes") {
 			var html = html + '&'
 			}
 		if (isDonate === "Yes") {
 			var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative)+'&c_code='+sourceCode;
-			if (audience) {
+			if (audience && isDonate === "Yes") {
 				var html = html + '&adg=' + encodeURIComponent(audience);
 				}
 			}
