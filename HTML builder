@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <script type="text/javascript" src="jquery-1.8.3.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="Tracked%20link%20builder_files/stylesheet.css">
+
+  <style type="text/css">
+    .alert {
+		color: red;
+	}
+  </style>
+
+<title>Google Analytics URL Builder</title>
+<meta property="og:title" content="Google Analytics URL Builder">
+
+<script type='text/javascript'>
+$(window).load(function(){
+/**
+ * From http://jsfiddle.net/5SArB/3138/
+ * File: js/showhide.js
+ * Author: design1online.com, LLC
+ * Purpose: toggle the visibility of fields depending on the value of another field
+ **/
+$(document).ready(function () {
+	//call toggleFields first so we start out with the correct visibility depending on the selected form values
+    toggleFields();
+	
+	//the following calls the toggleFields function every time the given fields are used
+    $("#medium").change(function () {
+        toggleFields();
+    }); 
+    $("#sourceSocialAd").change(function () {
+        toggleFields();
+    }); 
+    $("#sourceSocialButton").change(function () {
+        toggleFields();
+    }); 
+}); //this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
+function toggleFields() {
+
+    if ($("#medium").val() === "Paid Search")
+        $("#mediumPPCSearch").show() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumReferral").hide() &&
+		$(".auto").hide() && 
+		$("#urlHidden").show();
+
+	else if ($("#medium").val() === "Organic Search")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").show() &&
+		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumReferral").hide() &&
+		$(".auto").hide() &&
+		$("#urlHidden").show();
+		
+	else if ($("#medium").val() === "Earned Social")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumEarnedSocial").show() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumReferral").hide() &&
+		$(".auto").hide() &&
+		$("#urlHidden").show();
+		
+	else if ($("#medium").val() === "Referral")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumReferral").show() &&
+		$(".auto").show() &&
+		$("#urlHidden").hide();
+
+	else if ($("#medium").val() === "Social Post")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialPost").show() &&
+		$("#mediumReferral").hide() &&
+		$(".auto").show() &&
+		$("#urlHidden").hide();
+
+    else
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumReferral").hide() &&
+		$(".auto").show() &&
+		$("#urlHidden").hide();
+}
+});
+</script>
+  
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="large-12 columns">
+            <article>
+                <h1><abbr title="Uniform Resource Locator">URL</abbr> Builder for <abbr title="Google Analytics">GA</abbr></h1>
+                <p>With the Google Analytics <abbr title="Uniform Resource Locator">URL</abbr> Builder, you can easily tag <abbr title="Uniform Resource Locators">URLs</abbr>
+ with custom campaign variables. Campaign variables allow you to track 
+which of your promotions are generating the most traffic/conversions. This tool is only for links going to a BRC site page.</p>
+                <hr>
+                <h2>1) Create <abbr title="Uniform Resource Locator">URL</abbr></h2>
+                <p>Fill in the form to create your custom <abbr title="Uniform Resource Locator">URL</abbr>.</p>
+
+<!-- Form field start -->
+
+<form action="">
+	<fieldset>
+    
+		<p>
+		<label for="medium">What are you making a tracked link for?
+        <select name="medium" id="medium">
+		<option value="Banner">Banner</option>
+		<option value="Social Ad">Social ad by BRC</option>
+		<option value="Social Post">Social post by BRC</option>
+		<option value="Social Share">Social share on BRC site</option>
+        <option value="Social Button">Social button</option>
+        <option value="Earned Social">Social post from someone other than BRC</option>
+		<option value="Email">Email</option>
+        <option value="Paid Search">Paid search</option>
+        <option value="Organic Search">Organic search</option>
+        <option value="BRC Microsite">BRC microsite to the main site</option>
+        <option value="Referral">Referral from a news site etc.</option>
+        </select>
+        </label></p>
+        
+	<p id="mediumPPCSearch" class="alert">This tool isn't for paid search &ndash; we auto-tag campaigns in Google and Bing, so this tool isn't needed.</p>
+        
+	<p id="mediumOrganicSearch" class="alert">We don't have control over tracking of organic search, so you don't need this tool. Give us a shout if you have any questions.</p>
+        
+	<p id="mediumEarnedSocial" class="alert">We don't have control over tracking of the links other people use on social media, unless it's from e.g. a share button - so you don't need this tool. Give us a shout if you have any questions.</p>
+
+        <p>
+        <label for="campaign">What area of BRC work does the link relate to?
+        <select name="campaign" id="campaign">
+		<option value="Disaster Fund">Donate - Disaster Fund</option>
+		<option value="General Fund Appeal">Donate - General Fund</option>
+		<option value="Europe Refugee Crisis Appeal">Donate - Europe Refugee Crisis</option>
+		<option value="Hurricane Matthew Appeal">Donate - Hurricane Matthew</option>
+        <option value="Iraq Crisis Appeal">Donate - Iraq Crisis</option>
+		<option value="Lake Chad Crisis Appeal">Donate - Lake Chad Crisis</option>
+		<option value="South Sudan Crisis Appeal">Donate - South Sudan Crisis</option>
+		<option value="Syria Crisis Appeal">Donate - Syria Crisis</option>
+		<option value="Yemen Crisis Appeal">Donate - Yemen Crisis</option>
+		<option value="London Marathon">Events - London Marathon</option>
+		<option value="Aid Conflict">Aid Conflict</option>
+		<option value="Aid Disease">Aid Disease</option>
+		<option value="Aid Earthquake">Aid Earthquake</option>
+		<option value="Aid Hurricane">Aid Hurricane</option>
+		<option value="Aid Flooding">Aid Flooding</option>
+		<option value="Aid Food Crisis">Aid Food Crisis</option>
+		<option value="First Aid">First Aid</option>
+		<option value="Fundraising">Fundraising</option>
+		<option value="Health">Health</option>
+		<option value="Refugee">Refugee</option>
+		<option value="Resilience">Resilience</option>
+		<option value="Volunteering">Volunteering</option>
+		<option value="Other">Other</option>
+        </select>
+        </label>
+        </p>
+
+        <p>
+        <label for="domain">What BRC site page are you linking to?
+        <input placeholder="Enter the link for the website" name="domain" id="domain" type="url" value="https://">
+        </label>
+        </p>
+        
+        <p>
+        <label for="isDonate">Is this tracked link for a donate ask?
+        <select name="isDonate" id="isDonate">
+		<option value="Yes">Yes</option>
+		<option value="No">No</option>
+        </select>
+        </label>
+        </p>
+        
+	<div id="mediumReferral">
+        <p class="alert">Your link won't include any UTM tracking, because Google Analytics covers this stuff well by default &ndash; so only continue if you want donation tracking appended.</p>
+        <p>
+        <label for="source">Campaign Source
+        <input placeholder="e.g. Amazon, Facebook, BBC, Guardian" name="source" id="referralsource" type="text">
+        </label>
+        </p>
+        <p>
+        <label for="sourcecode">What type of website is it?
+        <select name="sourcecode" id="referralsourcecode">
+		<option value="154746">News or magazine site</option>
+		<option value="154747">Other</option>
+		</select>
+        </label>
+        </p>
+        <p>
+        <label for="adcreative">What is referring back to our website?
+        <select name="adcreative" id="referraladcreative">
+		<option value="Article">Article about us or our work</option>
+		<option value="Text">Text link in an unrelated area</option>
+		</select>
+        </label>
+        </p>
+	</div>
+    
+	<div id="mediumSocialPost">
+        <p>
+        <label for="source">What social network is the post on?
+        <select name="source" id="socialpostsource">
+		<option value="Facebook">Facebook</option>
+		<option value="Twitter">Twitter</option>
+		<option value="Instagram">Instagram</option>
+		<option value="Youtube">Youtube</option>
+		</select>
+        </label>
+        </p>
+        <p>
+		<input name="sourcecode" id="socialpostsourcecode" value="154750" type="hidden">
+		<input name="audience" id="socialpostaudience" value="BRC Followers" type="hidden">
+        </p>
+        <p>
+        <label for="linkcategory">What link from our site is being shared?
+        <select name="linkcategory" id="socialpostlinkcategory">
+		<option value="Donate Landing">Donate - Landing</option>
+		<option value="Donate Other">Donate - Other</option>
+		<option value="What We Do">What We Do</option>
+		<option value="Where We Work">Where We Work</option>
+		<option value="About Us">About Us</option>
+		<option value="Get Involved">Get Involved</option>
+		<option value="Shop">Shop</option>
+		<option value="Blog">Blog</option>
+		</select>
+        </label>
+        </p>
+
+        <p>
+        <label for="linkdetails">What link from our site is being shared?
+        <input placeholder="e.g. Aleppo attack" name="linkdetails" id="socialpostlinkdetails" type="text">
+        </label>
+        </p>
+	</div>
+                	</fieldset>
+                </form>
+                <h2>2) Copy and Paste</h2>
+                <p>Click on <abbr title="Uniform Resource Locator">URL</abbr> to select and then copy it.</p>
+            	<div class="output" id="html">
+            		<p class="auto"><label for="url">Code to use <textarea style="background: rgb(241, 241, 241) none repeat scroll 0% 0%; height: 128px;" placeholder="Code will appear here after filling out the above form" id="url" readonly></textarea></label></p>
+                <p id="urlHidden" class="alert">Due to your selections above, there is no tracked link to copy.</p>
+            	</div>
+            <br><br><br><br>
+            
+            </article>
+        </div>
+    </div>
+</div>
+<script>
+	function updateOutput()
+        {
+        	
+		var domain = $('#domain').val();
+        var medium = $('#medium').val();
+		var source;
+		var adCreative;
+		var sourceCode;
+		var audience;
+		switch (medium) {
+			case "Referral":
+				source = $('#referralsource').val();
+				adCreative = $('#referraladcreative').val();
+				sourceCode = $('#referralsourcecode').val();
+				audience = $('#referralaudience').val();
+				break;
+			case "Social Post":
+				source = $('#socialpostsource').val();
+				adCreative = $('#socialpostlinkcategory').val() + '_' + $('#socialpostlinkdetails').val();
+				sourceCode = $('#socialpostsourcecode').val();
+				audience = $('#socialpostaudience').val();
+				break;
+			default:
+				source = $('#source').val();
+				adCreative = $('#adcreative').val();
+				sourceCode = $('#sourcecode').val();
+				audience = $('#audience').val();
+		}
+       	var campaign = $('#campaign').val();
+       	var isDonate = $('#isDonate').val();
+			
+		var html = domain+'?';
+		if (medium !== "Referral" && medium !== "BRC Microsite") {
+       	var html = html+'utm_campaign='+encodeURIComponent(campaign)+'&utm_source='+encodeURIComponent(source)+'&utm_medium='+encodeURIComponent(medium)+ '&utm_content='+encodeURIComponent(adCreative)+'&utm_term='+sourceCode;
+			}
+       	if (audience) {
+       		var html = html + '_'+encodeURIComponent(audience);
+       		}
+		if (medium !== "Referral" && medium !== "BRC Microsite" && isDonate === "Yes") {
+			var html = html + '&'
+			}
+		if (isDonate === "Yes") {
+			var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative)+'&c_code='+sourceCode;
+			if (audience) {
+				var html = html + '&adg=' + encodeURIComponent(audience);
+				}
+			}
+
+        if (domain && source && medium && campaign) {
+        	$('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
+        	$('#url').change();
+        	} else {
+        	$('#url').html('');
+       		$('#url').change();
+       	}
+	}
+
+	function initpage() {
+     //     $('.auto').autogrow(); // fit the URL field to the size of the URL - for some reason, this clashes with the URL generation
+     //   	$('.auto').click(function() {
+     //   		$(this).select();
+     //   	}); // if you click into the URL field, then select its contents - for some reason, this clashes with the URL generation
+        	$('input').keyup(window.updateOutput);
+        	$('input').click(window.updateOutput);
+        	$('select').change(window.updateOutput);
+
+			updateOutput();
+	}
+
+	$(window.initpage);
+
+</script>
+
+</body>
+
+</html>
