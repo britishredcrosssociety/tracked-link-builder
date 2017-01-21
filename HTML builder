@@ -39,6 +39,9 @@ $(document).ready(function () {
     $("#sourceSocialButton").change(function () {
         toggleFields();
     }); 
+    $("#socialadownsourcecode").change(function () {
+        toggleFields();
+    }); 
 }); //this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
 function toggleFields() {
 
@@ -46,6 +49,7 @@ function toggleFields() {
         $("#mediumPPCSearch").show() &&
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumReferral").hide() &&
@@ -57,6 +61,7 @@ function toggleFields() {
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").show() &&
 		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumReferral").hide() &&
@@ -68,6 +73,7 @@ function toggleFields() {
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").show() &&
+		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumReferral").hide() &&
@@ -79,6 +85,7 @@ function toggleFields() {
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumReferral").show() &&
@@ -86,10 +93,37 @@ function toggleFields() {
 		$(".auto").show() &&
 		$("#urlHidden").hide();
 
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").show() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$(".auto").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$(".auto").show() &&
+		$("#urlHidden").hide();
+		
 	else if ($("#medium").val() === "Social Post")
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").show() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumReferral").hide() &&
@@ -101,6 +135,7 @@ function toggleFields() {
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").show() &&
 		$("#mediumReferral").hide() &&
@@ -112,6 +147,7 @@ function toggleFields() {
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumReferral").hide() &&
@@ -123,6 +159,7 @@ function toggleFields() {
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumReferral").hide() &&
@@ -131,6 +168,7 @@ function toggleFields() {
 		$("#urlHidden").hide();
 }
 });
+var ownsourcecode;
 </script>
   
 </head>
@@ -246,6 +284,79 @@ which of your promotions are generating the most traffic/conversions. This tool 
         </p>
 	</div>
     
+    <div id="mediumSocialAd">
+        <p>
+        <label for="source">What social network is the ad on?
+        <select name="source" id="socialadsource">
+		<option value="Facebook">Facebook</option>
+		</select>
+        </label>
+        </p>
+        <p>
+        <label for="linkcategory">What link from our site is being advertised?
+        <select name="linkcategory" id="socialadlinkcategory">
+		<option value="Donate Landing">Donate - Landing</option>
+		<option value="Donate Other">Donate - Other</option>
+		<option value="What We Do">What We Do</option>
+		<option value="Where We Work">Where We Work</option>
+		<option value="About Us">About Us</option>
+		<option value="Get Involved">Get Involved</option>
+		<option value="Shop">Shop</option>
+		<option value="Blog">Blog</option>
+		</select>
+        </label>
+        </p>
+        <p>
+        <label for="adtype">What type of ad is it?
+        <select name="adtype" id="socialadadtype">
+		<option value="Link">Link</option>
+		<option value="Video">Video</option>
+		<option value="Carousel">Carousel</option>
+		<option value="Event Response">Event Response</option>
+		<option value="Boosted Photo">Boosted Photo</option>
+		<option value="Boosted Video">Boosted Video</option>
+		<option value="Boosted Text">Boosted Text</option>
+		</select>
+        </label>
+        </p>
+        <p>
+        <label for="adcreative">What's the call to action of the link about?
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="socialadadcreative" type="text">
+        </label>
+        </p>
+        <p>
+        <label for="ownsourcecode">Does this ad push have its own source codes?
+        <select name="ownsourcecode" id="socialadownsourcecode">
+		<option value="No">No</option>
+		<option value="Yes">Yes</option>
+		</select>
+        </label>
+        </p>
+        <p>
+        <label for="audience">Who are we targeting with these ads?
+        <select name="audience" id="socialadaudience1">
+		<option value=""></option>
+		<option value="Women 40 Plus">Women 40+</option>
+		<option value="Men 40 Plus">Men 40+</option>
+		</select>
+        </label>
+        <select name="audience" id="socialadaudience2">
+		<option value=""></option>
+		<option value="Women 40 Plus">Women 40+</option>
+		<option value="Men 40 Plus">Men 40+</option>
+		</select>
+        </p>
+        <p id="mediumSocialAdOwnSourceCodes">
+        <label for="sourcecode">What are the different source codes for these ads?
+        <input placeholder="e.g. 123456" name="sourcecode" id="socialadsourcecode1" type="text">
+        </label>
+        <input placeholder="e.g. 123457" name="sourcecode" id="socialadsourcecode2" type="text">
+        </p>
+        <p>
+		<input name="sourcecode" id="socialadsourcecode" value="154750" type="hidden">
+        </p>
+	</div>
+    
 	<div id="mediumSocialPost">
         <p>
         <label for="source">What social network is the post on?
@@ -278,7 +389,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 
         <p>
         <label for="linkdetails">What's the call to action of the link about?
-        <input placeholder="e.g. Aleppo attack" name="linkdetails" id="socialpostlinkdetails" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="socialpostlinkdetails" type="text">
         </label>
         </p>
 	</div>
@@ -325,7 +436,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 
         <p>
         <label for="linkdetails">What's the call to action of the link about?
-        <input placeholder="e.g. Aleppo attack" name="linkdetails" id="socialsharelinkdetails" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="socialsharelinkdetails" type="text">
         </label>
         </p>
 	</div>
@@ -361,7 +472,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 
         <p>
         <label for="linkdetails">What's the call to action of the link about?
-        <input placeholder="e.g. Aleppo attack" name="linkdetails" id="internallinkdetails" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="internallinkdetails" type="text">
         </label>
         </p>   
     </div>
@@ -370,7 +481,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
                 <h2>2) Copy and Paste</h2>
                 <p>Click on <abbr title="Uniform Resource Locator">URL</abbr> to select and then copy it.</p>
             	<div class="output" id="html">
-            		<p class="auto"><label for="url">Code to use <textarea style="background: rgb(241, 241, 241) none repeat scroll 0% 0%; height: 128px;" placeholder="Code will appear here after filling out the above form" id="url" readonly></textarea></label></p>
+            		<p class="auto"><label for="url">Code to use <textarea style="background: rgb(241, 241, 241) none repeat scroll 0% 0%; height: 256px;" placeholder="Code will appear here after filling out the above form" id="url" readonly></textarea></label></p>
                 <p id="urlHidden" class="alert">Due to your selections above, there is no tracked link to copy.</p>
             	</div>
             <br><br><br><br>
@@ -388,13 +499,33 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		var source;
 		var adCreative;
 		var sourceCode;
+		var sourceCode1 = 0;
+		var sourceCode2 = 0;
+		var ownSourceCode;
+		/* var sourceCodeList = [sourceCode1,sourceCode2];
+		var sourceCodeCount = 0; */
 		var audience;
+		var audience1;
+		var audience2;
 		switch (medium) {
 			case "Referral":
 				source = $('#referralsource').val();
 				adCreative = $('#referraladcreative').val();
 				sourceCode = $('#referralsourcecode').val();
 				audience = $('#referralaudience').val();
+				break;
+			case "Social Ad":
+				source = $('#socialadsource').val();
+				adCreative = $('#socialadlinkcategory').val() + '_' + $('#socialadadtype').val();
+				if ($('#socialadadcreative').val()) {
+					adCreative = adCreative + '_' + $('#socialadadcreative').val();}
+				sourceCode = $('#socialadsourcecode').val();
+				sourceCode1 = $('#socialadsourcecode1').val();
+				sourceCode2 = $('#socialadsourcecode2').val();
+				audience = "audience"
+				audience1 = $('#socialadaudience1').val();
+				audience2 = $('#socialadaudience2').val();
+				ownSourceCode = $('#socialadownsourcecode').val();
 				break;
 			case "Social Post":
 				source = $('#socialpostsource').val();
@@ -426,6 +557,11 @@ which of your promotions are generating the most traffic/conversions. This tool 
 				sourceCode = $('#sourcecode').val();
 				audience = $('#audience').val();
 		}
+
+		/* for( var i = 0; i < sourceCodeList.length; i++) {
+		    if(sourceCodeList[i] > 0)
+        		sourceCodeCount++;
+			}*/  // count how many source codes are bigger than zero
        	var campaign = $('#campaign').val();
        	var isDonate = $('#isDonate').val();
 			
@@ -445,7 +581,29 @@ which of your promotions are generating the most traffic/conversions. This tool 
 				var html = html + '&adg=' + encodeURIComponent(audience);
 				}
 			}
-
+			
+			
+		if (audience1 && !audience2) {
+			var html = html.replace(/audience/g,encodeURIComponent(audience1));
+			if (ownSourceCode === "Yes") {
+				var html = html.replace(/154750/g,encodeURIComponent(sourceCode1));
+			}
+		} else if (audience1 && audience2) {
+			var html1 = html.replace(/audience/g,encodeURIComponent(audience1));
+			var html2 = html.replace(/audience/g,encodeURIComponent(audience2));
+			if (ownSourceCode === "Yes") {
+				var html1 = html1.replace(/154750/g,encodeURIComponent(sourceCode1));
+				var html2 = html2.replace(/154750/g,encodeURIComponent(sourceCode2));
+			}
+			var html = html1 + "\n\n" + html2;
+		} else {
+			var html = html;
+		}
+			/* var html = html.replace(sourceCode,sourceCodeList[0]);
+				for(var i = 1;i<sourceCodeCount;++i) {
+					var html = html + html.replace(sourceCode,sourceCodeList[i]) + '<br>' ;
+					} */
+		
         if (domain && source && medium && campaign) {
         	$('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
         	$('#url').change();
