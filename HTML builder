@@ -168,7 +168,6 @@ function toggleFields() {
 		$("#urlHidden").hide();
 }
 });
-var ownsourcecode;
 </script>
   
 </head>
