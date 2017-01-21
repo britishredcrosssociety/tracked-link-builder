@@ -332,7 +332,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		</select>
         </label>
         </p>
-        <p>
+        <div style="width:50%; float:left;">
         <label for="audience">Who are we targeting with these ads?
         <select name="audience" id="socialadaudience1">
 		<option value=""></option>
@@ -345,8 +345,8 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Women 40 Plus">Women 40+</option>
 		<option value="Men 40 Plus">Men 40+</option>
 		</select>
-        </p>
-        <p id="mediumSocialAdOwnSourceCodes">
+        </div>
+        <div id="mediumSocialAdOwnSourceCodes" style="float:right;width:50%;">
         <label for="sourcecode">What are the different source codes for these ads?
         <input placeholder="e.g. 123456" name="sourcecode" id="socialadsourcecode1" type="text">
         </label>
