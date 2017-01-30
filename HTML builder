@@ -52,6 +52,7 @@ function toggleFields() {
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
 		$(".auto").hide() && 
@@ -64,6 +65,7 @@ function toggleFields() {
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
 		$(".auto").hide() &&
@@ -76,6 +78,7 @@ function toggleFields() {
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
 		$(".auto").hide() &&
@@ -88,6 +91,7 @@ function toggleFields() {
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").show() &&
 		$("#mediumInternal").hide() &&
 		$(".auto").show() &&
@@ -101,6 +105,7 @@ function toggleFields() {
 		$("#mediumSocialAdOwnSourceCodes").show() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
 		$(".auto").show() &&
@@ -114,6 +119,7 @@ function toggleFields() {
 		$("#mediumSocialAdOwnSourceCodes").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
 		$(".auto").show() &&
@@ -126,6 +132,7 @@ function toggleFields() {
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").show() &&
 		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
 		$(".auto").show() &&
@@ -138,6 +145,20 @@ function toggleFields() {
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").show() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$(".auto").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Button")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").show() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
 		$(".auto").show() &&
@@ -150,6 +171,7 @@ function toggleFields() {
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").show() &&
 		$(".auto").show() &&
@@ -162,6 +184,7 @@ function toggleFields() {
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
 		$(".auto").show() &&
@@ -195,9 +218,9 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <select name="medium" id="medium">
 		<option value="Banner">Banner</option>
 		<option value="Social Ad">HALF DONE - Social ad by BRC</option>
-		<option value="Social Post">Social post by BRC</option>
-		<option value="Social Share">Social share button on BRC site</option>
-        <option value="Social Button">Social button</option>
+		<option value="Social Post">COMPLETED - Social post by BRC</option>
+		<option value="Social Share">COMPLETED - Social share button on BRC site</option>
+        <option value="Social Button">COMPLETED - Social button</option>
         <option value="Earned Social">COMPLETED - Social post from someone other than BRC</option>
 		<option value="Email">Email</option>
         <option value="Paid Search">COMPLETED - Paid search</option>
@@ -441,6 +464,48 @@ which of your promotions are generating the most traffic/conversions. This tool 
         </p>
 	</div>
     
+<div id="mediumSocialButton">
+        <p>
+        <label for="source">What social network is the share button for?
+        <select name="source" id="socialbuttonsource">
+		<option value="Facebook">Facebook</option>
+		</select>
+        </label>
+        </p>
+        <p>
+		<input name="sourcecode" id="socialbuttonsourcecode" value="154750" type="hidden">
+        </p>
+        <p>
+        <label for="audience">Where is this social button going?
+        <select name="audience" id="socialbuttonaudience">
+        <option value="BRC Page">BRC Page</option>
+        </select>
+        </label>
+        </p>
+        <p>
+        <label for="linkcategory">What link from our site is being shared?
+        <select name="linkcategory" id="socialbuttonlinkcategory">
+		<option value="Donate Landing">Donate - Landing</option>
+		<option value="Donate Other">Donate - Other</option>
+		<option value="What We Do">What We Do</option>
+		<option value="Where We Work">Where We Work</option>
+		<option value="About Us">About Us</option>
+		<option value="Get Involved">Get Involved</option>
+		<option value="Shop">Shop</option>
+		<option value="Blog">Blog</option>
+		</select>
+        </label>
+        </p>
+
+        <p>
+        <label for="linkdetails">What's the call to action of the link about?
+        <select name="linkdetails" id="socialbuttonlinkdetails">
+        <option value="Donate">Donate</option>
+        </select>
+        </label>
+        </p>
+	</div>
+    
     <div id="mediumInternal">
     	<p class="alert">Your link won't include any UTM tracking, because it breaks up the session in Google Analytics &ndash; so only continue if you want donation tracking appended.</p>
         <p>
@@ -542,6 +607,14 @@ which of your promotions are generating the most traffic/conversions. This tool 
 					adCreative = adCreative + '_' + $('#socialsharelinkdetails').val();}
 				sourceCode = $('#socialsharesourcecode').val();
 				audience = $('#socialshareaudience').val();
+				break;
+			case "Social Button":
+				source = $('#socialbuttonsource').val();
+				adCreative = $('#socialbuttonlinkcategory').val();
+				if ($('#socialbuttonlinkdetails').val()) {
+					adCreative = adCreative + '_' + $('#socialbuttonlinkdetails').val();}
+				sourceCode = $('#socialbuttonsourcecode').val();
+				audience = $('#socialbuttonaudience').val();
 				break;
 			case "Internal":
 				source = $('#internalsource').val();
