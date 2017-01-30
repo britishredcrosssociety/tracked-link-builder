@@ -217,7 +217,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<label for="medium">What are you making a tracked link for?
         <select name="medium" id="medium">
 		<option value="Banner">Banner</option>
-		<option value="Social Ad">HALF DONE - Social ad by BRC</option>
+		<option value="Social Ad">COMPLETED - Social ad by BRC</option>
 		<option value="Social Post">COMPLETED - Social post by BRC</option>
 		<option value="Social Share">COMPLETED - Social share button on BRC site</option>
         <option value="Social Button">COMPLETED - Social button</option>
@@ -358,21 +358,89 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <label for="audience">Who are we targeting with these ads?
         <select name="audience" id="socialadaudience1">
 		<option value=""></option>
-		<option value="Women 40 Plus">Women 40+</option>
-		<option value="Men 40 Plus">Men 40+</option>
+		<option value="Women 25-34">Women 25-34</option>
+		<option value="Women 35-44">Women 35-44</option>
+        <option value="Women 45-54">Women 45-54</option>
+        <option value="Women 55-64">Women 55-64</option>
+        <option value="Women 55 Plus">Women 55+</option>
+        <option value="Women 65 Plus">Women 65+</option>
+		<option value="Men 25-34">Men 25-34</option>
+		<option value="Men 35-44">Men 35-44</option>
+        <option value="Men 45-54">Men 45-54</option>
+        <option value="Men 55-64">Men 55-64</option>
+        <option value="Men 55 Plus">Men 55+</option>
+        <option value="Men 65 Plus">Men 65+</option>
 		</select>
         </label>
         <select name="audience" id="socialadaudience2">
 		<option value=""></option>
-		<option value="Women 40 Plus">Women 40+</option>
-		<option value="Men 40 Plus">Men 40+</option>
+		<option value="Women 25-34">Women 25-34</option>
+		<option value="Women 35-44">Women 35-44</option>
+        <option value="Women 45-54">Women 45-54</option>
+        <option value="Women 55-64">Women 55-64</option>
+        <option value="Women 55 Plus">Women 55+</option>
+        <option value="Women 65 Plus">Women 65+</option>
+		<option value="Men 25-34">Men 25-34</option>
+		<option value="Men 35-44">Men 35-44</option>
+        <option value="Men 45-54">Men 45-54</option>
+        <option value="Men 55-64">Men 55-64</option>
+        <option value="Men 55 Plus">Men 55+</option>
+        <option value="Men 65 Plus">Men 65+</option>
+		</select>
+        <select name="audience" id="socialadaudience3">
+		<option value=""></option>
+		<option value="Women 25-34">Women 25-34</option>
+		<option value="Women 35-44">Women 35-44</option>
+        <option value="Women 45-54">Women 45-54</option>
+        <option value="Women 55-64">Women 55-64</option>
+        <option value="Women 55 Plus">Women 55+</option>
+        <option value="Women 65 Plus">Women 65+</option>
+		<option value="Men 25-34">Men 25-34</option>
+		<option value="Men 35-44">Men 35-44</option>
+        <option value="Men 45-54">Men 45-54</option>
+        <option value="Men 55-64">Men 55-64</option>
+        <option value="Men 55 Plus">Men 55+</option>
+        <option value="Men 65 Plus">Men 65+</option>
+		</select>
+        <select name="audience" id="socialadaudience4">
+		<option value=""></option>
+		<option value="Women 25-34">Women 25-34</option>
+		<option value="Women 35-44">Women 35-44</option>
+        <option value="Women 45-54">Women 45-54</option>
+        <option value="Women 55-64">Women 55-64</option>
+        <option value="Women 55 Plus">Women 55+</option>
+        <option value="Women 65 Plus">Women 65+</option>
+		<option value="Men 25-34">Men 25-34</option>
+		<option value="Men 35-44">Men 35-44</option>
+        <option value="Men 45-54">Men 45-54</option>
+        <option value="Men 55-64">Men 55-64</option>
+        <option value="Men 55 Plus">Men 55+</option>
+        <option value="Men 65 Plus">Men 65+</option>
+		</select>
+        <select name="audience" id="socialadaudience5">
+		<option value=""></option>
+		<option value="Women 25-34">Women 25-34</option>
+		<option value="Women 35-44">Women 35-44</option>
+        <option value="Women 45-54">Women 45-54</option>
+        <option value="Women 55-64">Women 55-64</option>
+        <option value="Women 55 Plus">Women 55+</option>
+        <option value="Women 65 Plus">Women 65+</option>
+		<option value="Men 25-34">Men 25-34</option>
+		<option value="Men 35-44">Men 35-44</option>
+        <option value="Men 45-54">Men 45-54</option>
+        <option value="Men 55-64">Men 55-64</option>
+        <option value="Men 55 Plus">Men 55+</option>
+        <option value="Men 65 Plus">Men 65+</option>
 		</select>
         </div>
         <div id="mediumSocialAdOwnSourceCodes" style="float:right;width:50%;">
         <label for="sourcecode">What are the different source codes for these ads?
         <input placeholder="e.g. 123456" name="sourcecode" id="socialadsourcecode1" type="text">
-        </label>
         <input placeholder="e.g. 123457" name="sourcecode" id="socialadsourcecode2" type="text">
+        <input placeholder="e.g. 123458" name="sourcecode" id="socialadsourcecode3" type="text">
+        <input placeholder="e.g. 123459" name="sourcecode" id="socialadsourcecode4" type="text">
+        <input placeholder="e.g. 123450" name="sourcecode" id="socialadsourcecode5" type="text">
+        </label>
         </p>
         <p>
 		<input name="sourcecode" id="socialadsourcecode" value="154750" type="hidden">
@@ -587,9 +655,15 @@ which of your promotions are generating the most traffic/conversions. This tool 
 				sourceCode = $('#socialadsourcecode').val();
 				sourceCode1 = $('#socialadsourcecode1').val();
 				sourceCode2 = $('#socialadsourcecode2').val();
+				sourceCode3 = $('#socialadsourcecode3').val();
+				sourceCode4 = $('#socialadsourcecode4').val();
+				sourceCode5 = $('#socialadsourcecode5').val();
 				audience = "audience"
 				audience1 = $('#socialadaudience1').val();
 				audience2 = $('#socialadaudience2').val();
+				audience3 = $('#socialadaudience3').val();
+				audience4 = $('#socialadaudience4').val();
+				audience5 = $('#socialadaudience5').val();
 				ownSourceCode = $('#socialadownsourcecode').val();
 				break;
 			case "Social Post":
@@ -656,12 +730,12 @@ which of your promotions are generating the most traffic/conversions. This tool 
 			}
 			
 			
-		if (audience1 && !audience2) {
+		if (audience1 && !audience2 && !audience3 && !audience4 && !audience5 ) {
 			var html = html.replace(/audience/g,encodeURIComponent(audience1));
 			if (ownSourceCode === "Yes") {
 				var html = html.replace(/154750/g,encodeURIComponent(sourceCode1));
 			}
-		} else if (audience1 && audience2) {
+		} else if (audience1 && audience2 && !audience3 && !audience4 && !audience5 ) {
 			var html1 = html.replace(/audience/g,encodeURIComponent(audience1));
 			var html2 = html.replace(/audience/g,encodeURIComponent(audience2));
 			if (ownSourceCode === "Yes") {
@@ -669,6 +743,42 @@ which of your promotions are generating the most traffic/conversions. This tool 
 				var html2 = html2.replace(/154750/g,encodeURIComponent(sourceCode2));
 			}
 			var html = html1 + "\n\n" + html2;
+		} else if (audience1 && audience2 && audience3 && !audience4 && !audience5 ) {
+			var html1 = html.replace(/audience/g,encodeURIComponent(audience1));
+			var html2 = html.replace(/audience/g,encodeURIComponent(audience2));
+			var html3 = html.replace(/audience/g,encodeURIComponent(audience3));
+			if (ownSourceCode === "Yes") {
+				var html1 = html1.replace(/154750/g,encodeURIComponent(sourceCode1));
+				var html2 = html2.replace(/154750/g,encodeURIComponent(sourceCode2));
+				var html3 = html3.replace(/154750/g,encodeURIComponent(sourceCode3));
+			}
+			var html = html1 + "\n\n" + html2 + "\n\n" + html3;
+		} else if (audience1 && audience2 && audience3 && audience4 && !audience5 ) {
+			var html1 = html.replace(/audience/g,encodeURIComponent(audience1));
+			var html2 = html.replace(/audience/g,encodeURIComponent(audience2));
+			var html3 = html.replace(/audience/g,encodeURIComponent(audience3));
+			var html4 = html.replace(/audience/g,encodeURIComponent(audience4));
+			if (ownSourceCode === "Yes") {
+				var html1 = html1.replace(/154750/g,encodeURIComponent(sourceCode1));
+				var html2 = html2.replace(/154750/g,encodeURIComponent(sourceCode2));
+				var html3 = html3.replace(/154750/g,encodeURIComponent(sourceCode3));
+				var html4 = html4.replace(/154750/g,encodeURIComponent(sourceCode4));
+			}
+			var html = html1 + "\n\n" + html2 + "\n\n" + html3 + "\n\n" + html4;
+		} else if (audience1 && audience2 && audience3 && audience4 && audience5 ) {
+			var html1 = html.replace(/audience/g,encodeURIComponent(audience1));
+			var html2 = html.replace(/audience/g,encodeURIComponent(audience2));
+			var html3 = html.replace(/audience/g,encodeURIComponent(audience3));
+			var html4 = html.replace(/audience/g,encodeURIComponent(audience4));
+			var html5 = html.replace(/audience/g,encodeURIComponent(audience5));
+			if (ownSourceCode === "Yes") {
+				var html1 = html1.replace(/154750/g,encodeURIComponent(sourceCode1));
+				var html2 = html2.replace(/154750/g,encodeURIComponent(sourceCode2));
+				var html3 = html3.replace(/154750/g,encodeURIComponent(sourceCode3));
+				var html4 = html4.replace(/154750/g,encodeURIComponent(sourceCode4));
+				var html5 = html5.replace(/154750/g,encodeURIComponent(sourceCode5));
+			}
+			var html = html1 + "\n\n" + html2 + "\n\n" + html3 + "\n\n" + html4 + "\n\n" + html5;
 		} else {
 			var html = html;
 		}
