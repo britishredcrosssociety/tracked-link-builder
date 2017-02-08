@@ -870,14 +870,14 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		if (audience1 && !audience2 && !audience3 && !audience4 && !audience5 ) {
 			var html = html.replace(/audience/g,encodeURIComponent(audience1));
 			if (ownSourceCode === "Yes") {
-				var html = html.replace(/154741/g,encodeURIComponent(sourceCode1));
+				var html = html.replace(/154741|154750/g,encodeURIComponent(sourceCode1));
 			}
 		} else if (audience1 && audience2 && !audience3 && !audience4 && !audience5 ) {
 			var html1 = html.replace(/audience/g,encodeURIComponent(audience1));
 			var html2 = html.replace(/audience/g,encodeURIComponent(audience2));
 			if (ownSourceCode === "Yes") {
-				var html1 = html1.replace(/154741/g,encodeURIComponent(sourceCode1));
-				var html2 = html2.replace(/154741/g,encodeURIComponent(sourceCode2));
+				var html1 = html1.replace(/154741|154750/g,encodeURIComponent(sourceCode1));
+				var html2 = html2.replace(/154741|154750/g,encodeURIComponent(sourceCode2));
 			}
 			var html = html1 + "\n\n" + html2;
 		} else if (audience1 && audience2 && audience3 && !audience4 && !audience5 ) {
@@ -885,9 +885,9 @@ which of your promotions are generating the most traffic/conversions. This tool 
 			var html2 = html.replace(/audience/g,encodeURIComponent(audience2));
 			var html3 = html.replace(/audience/g,encodeURIComponent(audience3));
 			if (ownSourceCode === "Yes") {
-				var html1 = html1.replace(/154741/g,encodeURIComponent(sourceCode1));
-				var html2 = html2.replace(/154741/g,encodeURIComponent(sourceCode2));
-				var html3 = html3.replace(/154741/g,encodeURIComponent(sourceCode3));
+				var html1 = html1.replace(/154741|154750/g,encodeURIComponent(sourceCode1));
+				var html2 = html2.replace(/154741|154750/g,encodeURIComponent(sourceCode2));
+				var html3 = html3.replace(/154741|154750/g,encodeURIComponent(sourceCode3));
 			}
 			var html = html1 + "\n\n" + html2 + "\n\n" + html3;
 		} else if (audience1 && audience2 && audience3 && audience4 && !audience5 ) {
@@ -896,10 +896,10 @@ which of your promotions are generating the most traffic/conversions. This tool 
 			var html3 = html.replace(/audience/g,encodeURIComponent(audience3));
 			var html4 = html.replace(/audience/g,encodeURIComponent(audience4));
 			if (ownSourceCode === "Yes") {
-				var html1 = html1.replace(/154741/g,encodeURIComponent(sourceCode1));
-				var html2 = html2.replace(/154741/g,encodeURIComponent(sourceCode2));
-				var html3 = html3.replace(/154741/g,encodeURIComponent(sourceCode3));
-				var html4 = html4.replace(/154741/g,encodeURIComponent(sourceCode4));
+				var html1 = html1.replace(/154741|154750/g,encodeURIComponent(sourceCode1));
+				var html2 = html2.replace(/154741|154750/g,encodeURIComponent(sourceCode2));
+				var html3 = html3.replace(/154741|154750/g,encodeURIComponent(sourceCode3));
+				var html4 = html4.replace(/154741|154750/g,encodeURIComponent(sourceCode4));
 			}
 			var html = html1 + "\n\n" + html2 + "\n\n" + html3 + "\n\n" + html4;
 		} else if (audience1 && audience2 && audience3 && audience4 && audience5 ) {
@@ -909,11 +909,11 @@ which of your promotions are generating the most traffic/conversions. This tool 
 			var html4 = html.replace(/audience/g,encodeURIComponent(audience4));
 			var html5 = html.replace(/audience/g,encodeURIComponent(audience5));
 			if (ownSourceCode === "Yes") {
-				var html1 = html1.replace(/154741/g,encodeURIComponent(sourceCode1));
-				var html2 = html2.replace(/154741/g,encodeURIComponent(sourceCode2));
-				var html3 = html3.replace(/154741/g,encodeURIComponent(sourceCode3));
-				var html4 = html4.replace(/154741/g,encodeURIComponent(sourceCode4));
-				var html5 = html5.replace(/154741/g,encodeURIComponent(sourceCode5));
+				var html1 = html1.replace(/154741|154750/g,encodeURIComponent(sourceCode1));
+				var html2 = html2.replace(/154741|154750/g,encodeURIComponent(sourceCode2));
+				var html3 = html3.replace(/154741|154750/g,encodeURIComponent(sourceCode3));
+				var html4 = html4.replace(/154741|154750/g,encodeURIComponent(sourceCode4));
+				var html5 = html5.replace(/154741|154750/g,encodeURIComponent(sourceCode5));
 			}
 			var html = html1 + "\n\n" + html2 + "\n\n" + html3 + "\n\n" + html4 + "\n\n" + html5;
 		} else {
