@@ -55,6 +55,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
@@ -69,6 +70,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").show() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
@@ -83,6 +85,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").show() &&
 		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
@@ -97,6 +100,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
@@ -111,6 +115,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").show() &&
 		$("#mediumSocialAdOwnSourceCodes").show() &&
 		$("#mediumSocialPost").hide() &&
@@ -126,6 +131,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").show() &&
 		$("#mediumSocialAdOwnSourceCodes").hide() &&
 		$("#mediumSocialPost").hide() &&
@@ -144,6 +150,7 @@ function toggleFields() {
 		$("#mediumSocialAdOwnSourceCodes").hide() &&
 		$("#mediumBanner").show() &&
 		$("#mediumBannerOwnSourceCodes").show() &&
+		$("#mediumEmail").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -160,6 +167,22 @@ function toggleFields() {
 		$("#mediumSocialAdOwnSourceCodes").hide() &&
 		$("#mediumBanner").show() &&
 		$("#mediumBannerOwnSourceCodes").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$(".auto").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Email")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumEarnedSocial").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").show() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -173,6 +196,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").show() &&
 		$("#mediumSocialShare").hide() &&
@@ -187,6 +211,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").show() &&
@@ -201,6 +226,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
@@ -215,6 +241,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
@@ -229,6 +256,7 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
@@ -270,7 +298,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Social Share">COMPLETED - Social share button on BRC site</option>
         <option value="Social Button">COMPLETED - Social button</option>
         <option value="Earned Social">COMPLETED - Social post from someone other than BRC</option>
-		<option value="Email">Email</option>
+		<option value="Email">WORKING ON - Email</option>
         <option value="Paid Search">COMPLETED - Paid search</option>
         <option value="Organic Search">COMPLETED - Organic search</option>
         <option value="Internal">COMPLETED - From a BRC microsite to the main site (e.g. from the blog, from a Shorthand app)</option>
@@ -419,6 +447,151 @@ which of your promotions are generating the most traffic/conversions. This tool 
         </p>
         <p>
 		<input name="sourcecode" id="bannersourcecode" value="154741" type="hidden">
+        </p>
+	</div>
+    </div>
+    
+    <div id="mediumEmail">
+        <p>
+        <label for="source">Which email system are we using for this send?
+        <select name="source" id="emailsource">
+		<option value="Lyris">Lyris</option>
+    	<option value="Mailchimp">Mailchimp</option>
+		</select>
+        </label>
+        </p>
+        <p>
+        <label for="emailsendname">What type of email is being sent?
+        <select name="sendname" id="emailsendname">
+		<option value="Donate">Donate</option>
+		<option value="Event">Event</option>
+		<option value="Stewardship">Stewardship</option>
+		</select>
+        </label>
+        </p>
+        <p>
+        <label for="emailsendnumber">If there have been multiple emails for this campaign, what number email is this? Just leave this blank if it's not relevant.
+        <input placeholder="2" name="sendnumber" id="emailsendnumber" type="number" min="1" max="30">
+        </label>
+        </p>
+        <p>
+        <label for="adcreative">What is the topic of this email?
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="emailadcreative" type="text">
+        </label>
+        </p>
+        <p>
+        <label for="emailsendtemplate">What type of email is being sent?
+        <select name="sendtemplate" id="emailsendtemplate">
+		<option value="SimpleStewardship">Simple Stewardship</option>
+		<option value="Other">WHAT OTHER TEMPLATES DO WE USE??</option>
+		</select>
+        </label>
+        </p>
+        <div id="mediumEmailTemplateSimpleStewardship">
+      		<div style="width:50%; float:left;">
+      			<label for="linklocation1">What are each of the links pointing to?
+            	<input type="text" name="linklocation1" value="Preheader" id="emaillinklocation1" readonly>
+      			</label>
+            	<input type="text" name="linklocation2" value="Donate button" id="emaillinklocation2" readonly>
+      		</div>
+      		<div style="float:right;width:50%;">
+            	<label>&nbsp;
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent1" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
+                </label>
+       			</p>
+			</div>
+        </div>
+        <div style="width:50%; float:left;">
+        <label for="audience">Who are we sending this email to, and what are the source codes?
+        <select name="audience" id="emailaudience1">
+		<option value="Donors">Donors</option>
+		<option value="Websubscribers">Websubscribers</option>
+		<option value="Engagement">Engagement</option>
+		<option value="NonDonors">Non-Donors</option>
+		<option value="AppealDonors">Appeal donors</option>
+		<option value="NonAppealDonors">Non-appeal donors</option>
+		<option value="ActiveCashDonors">Active cash donors</option>
+		<option value="LapsedCashDonors">Lapsed cash donors</option>
+		<option value="ActiveRGs">Active RGs</option>
+		<option value="LapsedRGs">Lapsed RGs</option>
+		<option value="Legacy pledgers and intenders">Legacy pledgers and intenders</option>
+		<option value="PastEventParticipants">Past event participants</option>
+		<option value="CommunityContacts">Community Fundraising contacts</option>
+		</select>
+        </label>
+        <select name="audience" id="emailaudience2">
+		<option value="Donors">Donors</option>
+		<option value="Websubscribers">Websubscribers</option>
+		<option value="Engagement">Engagement</option>
+		<option value="NonDonors">Non-Donors</option>
+		<option value="AppealDonors">Appeal donors</option>
+		<option value="NonAppealDonors">Non-appeal donors</option>
+		<option value="ActiveCashDonors">Active cash donors</option>
+		<option value="LapsedCashDonors">Lapsed cash donors</option>
+		<option value="ActiveRGs">Active RGs</option>
+		<option value="LapsedRGs">Lapsed RGs</option>
+		<option value="Legacy pledgers and intenders">Legacy pledgers and intenders</option>
+		<option value="PastEventParticipants">Past event participants</option>
+		<option value="CommunityContacts">Community Fundraising contacts</option>
+		</select>
+        <select name="audience" id="emailaudience3">
+		<option value="Donors">Donors</option>
+		<option value="Websubscribers">Websubscribers</option>
+		<option value="Engagement">Engagement</option>
+		<option value="NonDonors">Non-Donors</option>
+		<option value="AppealDonors">Appeal donors</option>
+		<option value="NonAppealDonors">Non-appeal donors</option>
+		<option value="ActiveCashDonors">Active cash donors</option>
+		<option value="LapsedCashDonors">Lapsed cash donors</option>
+		<option value="ActiveRGs">Active RGs</option>
+		<option value="LapsedRGs">Lapsed RGs</option>
+		<option value="Legacy pledgers and intenders">Legacy pledgers and intenders</option>
+		<option value="PastEventParticipants">Past event participants</option>
+		<option value="CommunityContacts">Community Fundraising contacts</option>
+		</select>
+        <select name="audience" id="emailaudience4">
+		<option value="Donors">Donors</option>
+		<option value="Websubscribers">Websubscribers</option>
+		<option value="Engagement">Engagement</option>
+		<option value="NonDonors">Non-Donors</option>
+		<option value="AppealDonors">Appeal donors</option>
+		<option value="NonAppealDonors">Non-appeal donors</option>
+		<option value="ActiveCashDonors">Active cash donors</option>
+		<option value="LapsedCashDonors">Lapsed cash donors</option>
+		<option value="ActiveRGs">Active RGs</option>
+		<option value="LapsedRGs">Lapsed RGs</option>
+		<option value="Legacy pledgers and intenders">Legacy pledgers and intenders</option>
+		<option value="PastEventParticipants">Past event participants</option>
+		<option value="CommunityContacts">Community Fundraising contacts</option>
+		</select>
+        <select name="audience" id="emailaudience5">
+		<option value="Donors">Donors</option>
+		<option value="Websubscribers">Websubscribers</option>
+		<option value="Engagement">Engagement</option>
+		<option value="NonDonors">Non-Donors</option>
+		<option value="AppealDonors">Appeal donors</option>
+		<option value="NonAppealDonors">Non-appeal donors</option>
+		<option value="ActiveCashDonors">Active cash donors</option>
+		<option value="LapsedCashDonors">Lapsed cash donors</option>
+		<option value="ActiveRGs">Active RGs</option>
+		<option value="LapsedRGs">Lapsed RGs</option>
+		<option value="Legacy pledgers and intenders">Legacy pledgers and intenders</option>
+		<option value="PastEventParticipants">Past event participants</option>
+		<option value="CommunityContacts">Community Fundraising contacts</option>
+		</select>
+        </div>
+        <div style="float:right;width:50%;">
+        <label for="sourcecode">What are the different source codes for these segments?
+        <input placeholder="e.g. 123456" name="sourcecode" id="emailsourcecode1" type="text">
+        <input placeholder="e.g. 123457" name="sourcecode" id="emailsourcecode2" type="text">
+        <input placeholder="e.g. 123458" name="sourcecode" id="emailsourcecode3" type="text">
+        <input placeholder="e.g. 123459" name="sourcecode" id="emailsourcecode4" type="text">
+        <input placeholder="e.g. 123450" name="sourcecode" id="emailsourcecode5" type="text">
+        </label>
+        </p>
+        <p>
+		<input name="sourcecode" id="emailsourcecode" value="sourcecodedefault" type="hidden">
         </p>
 	</div>
     </div>
