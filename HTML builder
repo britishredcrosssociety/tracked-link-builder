@@ -1064,6 +1064,11 @@ which of your promotions are generating the most traffic/conversions. This tool 
 			if (audience && isDonate === "Yes") {
 				var html = html + '&adg=' + encodeURIComponent(audience);
 				}
+			var approachCodeTracking = encodeURIComponent(sourceCode+'_'+campaign+source+medium+'_'+adCreative);
+			if (audience && isDonate === "Yes") {
+				var approachCodeTracking = approachCodeTracking + encodeURIComponent(audience);
+				}
+			var html = html + '&approachcode='+ approachCodeTracking.replace(/%20/g, "");
 			}
 			
 			
