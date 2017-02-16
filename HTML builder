@@ -492,18 +492,47 @@ which of your promotions are generating the most traffic/conversions. This tool 
       			<label for="linklocation1">What are each of the links pointing to?
             	<input type="text" name="linklocation1" value="Preheader" id="emaillinklocation1" readonly>
       			</label>
-            	<input type="text" name="linklocation2" value="Donate button" id="emaillinklocation2" readonly>
+                <input type="text" name="linklocation1" value="Header" id="emaillinklocation1" readonly>
+                <input type="text" name="linklocation1" value="Mini Donate" id="emaillinklocation1" readonly>
+                <input type="text" name="linklocation2" value="Button" id="emaillinklocation2" readonly>
+                <input type="text" name="linklocation1" value="Button 2" id="emaillinklocation1" readonly>
+                <input type="text" name="linklocation1" value="PS" id="emaillinklocation1" readonly>
+                <input type="text" name="linklocation1" value="Copy 1" id="emaillinklocation1" readonly>
+                <input type="text" name="linklocation1" value="Copy 2" id="emaillinklocation1" readonly>
+                <input type="text" name="linklocation1" value="Copy 3" id="emaillinklocation1" readonly>
+                <input type="text" name="linklocation1" value="Main Image" id="emaillinklocation1" readonly>
+                <input type="text" name="linklocation1" value="Box 1" id="emaillinklocation1" readonly>
+                <input type="text" name="linklocation1" value="Footer" id="emaillinklocation1" readonly>
       		</div>
       		<div style="float:right;width:50%;">
             	<label>&nbsp;
       			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent1" type="text">
       			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
                 </label>
        			</p>
 			</div>
         </div>
+        <p>
+        <label for="sourcecodeshardcoded">Do you want to hard-code the source codes into the HTML, or do you want them to be dynamically inserted?
+        <select name="sourcecodeshardcoded" id="emailsourcecodeshardcoded">
+		<option value="Yes">They are hard-coded</option>
+		<option value="No">They are dynamically inserted</option>
+		</select>
+        </label>
+        </p>
+        <p><label for="audience">Who are we sending this email to, and what are the source codes associated with those segments?</label>
+        </p>
         <div style="width:50%; float:left;">
-        <label for="audience">Who are we sending this email to, and what are the source codes?
         <select name="audience" id="emailaudience1">
 		<option value="Donors">Donors</option>
 		<option value="Websubscribers">Websubscribers</option>
@@ -519,7 +548,6 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="PastEventParticipants">Past event participants</option>
 		<option value="CommunityContacts">Community Fundraising contacts</option>
 		</select>
-        </label>
         <select name="audience" id="emailaudience2">
 		<option value="Donors">Donors</option>
 		<option value="Websubscribers">Websubscribers</option>
@@ -582,13 +610,11 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		</select>
         </div>
         <div style="float:right;width:50%;">
-        <label for="sourcecode">What are the different source codes for these segments?
         <input placeholder="e.g. 123456" name="sourcecode" id="emailsourcecode1" type="text">
         <input placeholder="e.g. 123457" name="sourcecode" id="emailsourcecode2" type="text">
         <input placeholder="e.g. 123458" name="sourcecode" id="emailsourcecode3" type="text">
         <input placeholder="e.g. 123459" name="sourcecode" id="emailsourcecode4" type="text">
         <input placeholder="e.g. 123450" name="sourcecode" id="emailsourcecode5" type="text">
-        </label>
         </p>
         <p>
 		<input name="sourcecode" id="emailsourcecode" value="sourcecodedefault" type="hidden">
@@ -624,6 +650,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Link">Link</option>
 		<option value="Video">Video</option>
 		<option value="Carousel">Carousel</option>
+		<option value="Canvas">Canvas</option>
 		<option value="Event Response">Event Response</option>
 		<option value="Boosted Photo">Boosted Photo</option>
 		<option value="Boosted Video">Boosted Video</option>
