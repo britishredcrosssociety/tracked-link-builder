@@ -489,35 +489,35 @@ which of your promotions are generating the most traffic/conversions. This tool 
         </p>
         <div id="mediumEmailTemplateSimpleStewardship">
       		<div style="width:50%; float:left;">
-      			<label for="linklocation1">What are each of the links pointing to?
-            	<input type="text" name="linklocation1" value="Preheader" id="emaillinklocation1" readonly>
+      			<label>What are each of the links pointing to?
+            	<input type="text" name="linklocation" value="Preheader" id="emaillinklocation1" readonly>
       			</label>
-                <input type="text" name="linklocation1" value="Header" id="emaillinklocation1" readonly>
-                <input type="text" name="linklocation1" value="Mini Donate" id="emaillinklocation1" readonly>
-                <input type="text" name="linklocation2" value="Button" id="emaillinklocation2" readonly>
-                <input type="text" name="linklocation1" value="Button 2" id="emaillinklocation1" readonly>
-                <input type="text" name="linklocation1" value="PS" id="emaillinklocation1" readonly>
-                <input type="text" name="linklocation1" value="Copy 1" id="emaillinklocation1" readonly>
-                <input type="text" name="linklocation1" value="Copy 2" id="emaillinklocation1" readonly>
-                <input type="text" name="linklocation1" value="Copy 3" id="emaillinklocation1" readonly>
-                <input type="text" name="linklocation1" value="Main Image" id="emaillinklocation1" readonly>
-                <input type="text" name="linklocation1" value="Box 1" id="emaillinklocation1" readonly>
-                <input type="text" name="linklocation1" value="Footer" id="emaillinklocation1" readonly>
+                <input type="text" name="linklocation" value="Header" id="emaillinklocation2" readonly>
+                <input type="text" name="linklocation" value="Mini Donate" id="emaillinklocation3" readonly>
+                <input type="text" name="linklocation" value="Button" id="emaillinklocation4" readonly>
+                <input type="text" name="linklocation" value="Button 2" id="emaillinklocation5" readonly>
+                <input type="text" name="linklocation" value="PS" id="emaillinklocation6" readonly>
+                <input type="text" name="linklocation" value="Copy 1" id="emaillinklocation7" readonly>
+                <input type="text" name="linklocation" value="Copy 2" id="emaillinklocation8" readonly>
+                <input type="text" name="linklocation" value="Copy 3" id="emaillinklocation9" readonly>
+                <input type="text" name="linklocation" value="Main Image" id="emaillinklocation10" readonly>
+                <input type="text" name="linklocation" value="Box 1" id="emaillinklocation11" readonly>
+                <input type="text" name="linklocation" value="Footer" id="emaillinklocation12" readonly>
       		</div>
       		<div style="float:right;width:50%;">
             	<label>&nbsp;
       			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent1" type="text">
       			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent3" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent4" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent5" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent6" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent7" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent8" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent9" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent10" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent11" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent12" type="text">
                 </label>
        			</p>
 			</div>
@@ -618,6 +618,8 @@ which of your promotions are generating the most traffic/conversions. This tool 
         </p>
         <p>
 		<input name="sourcecode" id="emailsourcecode" value="sourcecodedefault" type="hidden">
+        <input name="linklocation" id="emaillinklocation" value="linklocationdefault" type="hidden">
+        <input name="linkcontent" id="emaillinkcontent" value="linkcontentdefault" type="hidden">
         </p>
 	</div>
     </div>
@@ -982,6 +984,31 @@ which of your promotions are generating the most traffic/conversions. This tool 
 				audience3 = $('#banneraudience3').val();
 				audience4 = $('#banneraudience4').val();
 				audience5 = $('#banneraudience5').val();
+				ownSourceCode = $('#bannerownsourcecode').val();
+				break;
+			case "Email":
+				source = $('#emailsource').val();
+				adCreative = $('#emailsendname').val()
+				if ($('#emailsendnumber').val()) {
+					adCreative = adCreative + '_SendNumber' + $('#emailsendnumber').val()
+					}
+				if ($('#emailadcreative').val()) {
+					adCreative = adCreative + '_' + $('#emailadcreative').val()
+					}
+				linkLocation = $('#emaillinklocation').val();
+				linkContent = $('#emaillinkcontent').val();
+				sourceCode = $('#emailsourcecode').val();
+				sourceCode1 = $('#emailsourcecode1').val();
+				sourceCode2 = $('#emailsourcecode2').val();
+				sourceCode3 = $('#emailsourcecode3').val();
+				sourceCode4 = $('#emailsourcecode4').val();
+				sourceCode5 = $('#emailsourcecode5').val();
+				audience = "audience"
+				audience1 = $('#emailaudience1').val();
+				audience2 = $('#emailaudience2').val();
+				audience3 = $('#emailaudience3').val();
+				audience4 = $('#emailaudience4').val();
+				audience5 = $('#emailaudience5').val();
 				ownSourceCode = $('#bannerownsourcecode').val();
 				break;
 			case "Social Ad":
