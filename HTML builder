@@ -523,105 +523,8 @@ which of your promotions are generating the most traffic/conversions. This tool 
 			</div>
         </div>
         <p>
-        <label for="sourcecodeshardcoded">Do you want to hard-code the source codes into the HTML, or do you want them to be dynamically inserted?
-        <select name="sourcecodeshardcoded" id="emailsourcecodeshardcoded">
-		<option value="Yes">They are hard-coded</option>
-		<option value="No">They are dynamically inserted</option>
-		</select>
-        </label>
+        The source code and audience is set to pull through dynamically into the links.
         </p>
-        <p><label for="audience">Who are we sending this email to, and what are the source codes associated with those segments?</label>
-        </p>
-        <div style="width:50%; float:left;">
-        <select name="audience" id="emailaudience1">
-		<option value="Donors">Donors</option>
-		<option value="Websubscribers">Websubscribers</option>
-		<option value="Engagement">Engagement</option>
-		<option value="NonDonors">Non-Donors</option>
-		<option value="AppealDonors">Appeal donors</option>
-		<option value="NonAppealDonors">Non-appeal donors</option>
-		<option value="ActiveCashDonors">Active cash donors</option>
-		<option value="LapsedCashDonors">Lapsed cash donors</option>
-		<option value="ActiveRGs">Active RGs</option>
-		<option value="LapsedRGs">Lapsed RGs</option>
-		<option value="Legacy pledgers and intenders">Legacy pledgers and intenders</option>
-		<option value="PastEventParticipants">Past event participants</option>
-		<option value="CommunityContacts">Community Fundraising contacts</option>
-		</select>
-        <select name="audience" id="emailaudience2">
-		<option value="Donors">Donors</option>
-		<option value="Websubscribers">Websubscribers</option>
-		<option value="Engagement">Engagement</option>
-		<option value="NonDonors">Non-Donors</option>
-		<option value="AppealDonors">Appeal donors</option>
-		<option value="NonAppealDonors">Non-appeal donors</option>
-		<option value="ActiveCashDonors">Active cash donors</option>
-		<option value="LapsedCashDonors">Lapsed cash donors</option>
-		<option value="ActiveRGs">Active RGs</option>
-		<option value="LapsedRGs">Lapsed RGs</option>
-		<option value="Legacy pledgers and intenders">Legacy pledgers and intenders</option>
-		<option value="PastEventParticipants">Past event participants</option>
-		<option value="CommunityContacts">Community Fundraising contacts</option>
-		</select>
-        <select name="audience" id="emailaudience3">
-		<option value="Donors">Donors</option>
-		<option value="Websubscribers">Websubscribers</option>
-		<option value="Engagement">Engagement</option>
-		<option value="NonDonors">Non-Donors</option>
-		<option value="AppealDonors">Appeal donors</option>
-		<option value="NonAppealDonors">Non-appeal donors</option>
-		<option value="ActiveCashDonors">Active cash donors</option>
-		<option value="LapsedCashDonors">Lapsed cash donors</option>
-		<option value="ActiveRGs">Active RGs</option>
-		<option value="LapsedRGs">Lapsed RGs</option>
-		<option value="Legacy pledgers and intenders">Legacy pledgers and intenders</option>
-		<option value="PastEventParticipants">Past event participants</option>
-		<option value="CommunityContacts">Community Fundraising contacts</option>
-		</select>
-        <select name="audience" id="emailaudience4">
-		<option value="Donors">Donors</option>
-		<option value="Websubscribers">Websubscribers</option>
-		<option value="Engagement">Engagement</option>
-		<option value="NonDonors">Non-Donors</option>
-		<option value="AppealDonors">Appeal donors</option>
-		<option value="NonAppealDonors">Non-appeal donors</option>
-		<option value="ActiveCashDonors">Active cash donors</option>
-		<option value="LapsedCashDonors">Lapsed cash donors</option>
-		<option value="ActiveRGs">Active RGs</option>
-		<option value="LapsedRGs">Lapsed RGs</option>
-		<option value="Legacy pledgers and intenders">Legacy pledgers and intenders</option>
-		<option value="PastEventParticipants">Past event participants</option>
-		<option value="CommunityContacts">Community Fundraising contacts</option>
-		</select>
-        <select name="audience" id="emailaudience5">
-		<option value="Donors">Donors</option>
-		<option value="Websubscribers">Websubscribers</option>
-		<option value="Engagement">Engagement</option>
-		<option value="NonDonors">Non-Donors</option>
-		<option value="AppealDonors">Appeal donors</option>
-		<option value="NonAppealDonors">Non-appeal donors</option>
-		<option value="ActiveCashDonors">Active cash donors</option>
-		<option value="LapsedCashDonors">Lapsed cash donors</option>
-		<option value="ActiveRGs">Active RGs</option>
-		<option value="LapsedRGs">Lapsed RGs</option>
-		<option value="Legacy pledgers and intenders">Legacy pledgers and intenders</option>
-		<option value="PastEventParticipants">Past event participants</option>
-		<option value="CommunityContacts">Community Fundraising contacts</option>
-		</select>
-        </div>
-        <div style="float:right;width:50%;">
-        <input placeholder="e.g. 123456" name="sourcecode" id="emailsourcecode1" type="text">
-        <input placeholder="e.g. 123457" name="sourcecode" id="emailsourcecode2" type="text">
-        <input placeholder="e.g. 123458" name="sourcecode" id="emailsourcecode3" type="text">
-        <input placeholder="e.g. 123459" name="sourcecode" id="emailsourcecode4" type="text">
-        <input placeholder="e.g. 123450" name="sourcecode" id="emailsourcecode5" type="text">
-        </p>
-        <p>
-		<input name="sourcecode" id="emailsourcecode" value="sourcecodedefault" type="hidden">
-        <input name="linklocation" id="emaillinklocation" value="linklocationdefault" type="hidden">
-        <input name="linkcontent" id="emaillinkcontent" value="linkcontentdefault" type="hidden">
-        </p>
-	</div>
     </div>
     
     <div id="mediumSocialAd">
@@ -995,21 +898,35 @@ which of your promotions are generating the most traffic/conversions. This tool 
 				if ($('#emailadcreative').val()) {
 					adCreative = adCreative + '_' + $('#emailadcreative').val()
 					}
-				linkLocation = $('#emaillinklocation').val();
-				linkContent = $('#emaillinkcontent').val();
-				sourceCode = $('#emailsourcecode').val();
-				sourceCode1 = $('#emailsourcecode1').val();
-				sourceCode2 = $('#emailsourcecode2').val();
-				sourceCode3 = $('#emailsourcecode3').val();
-				sourceCode4 = $('#emailsourcecode4').val();
-				sourceCode5 = $('#emailsourcecode5').val();
-				audience = "audience"
-				audience1 = $('#emailaudience1').val();
-				audience2 = $('#emailaudience2').val();
-				audience3 = $('#emailaudience3').val();
-				audience4 = $('#emailaudience4').val();
-				audience5 = $('#emailaudience5').val();
-				ownSourceCode = $('#bannerownsourcecode').val();
+				linkLocation = "linklocation";
+				linkContent = "linkcontent";
+				adCreative = adCreative + '_' + linkLocation + '_' + linkContent;
+				linkLocation1 = $('#emaillinklocation1').val();
+				linkLocation2 = $('#emaillinklocation2').val();
+				linkLocation3 = $('#emaillinklocation3').val();
+				linkLocation4 = $('#emaillinklocation4').val();
+				linkLocation5 = $('#emaillinklocation5').val();
+				linkLocation6 = $('#emaillinklocation6').val();
+				linkLocation7 = $('#emaillinklocation7').val();
+				linkLocation8 = $('#emaillinklocation8').val();
+				linkLocation9 = $('#emaillinklocation9').val();
+				linkLocation10 = $('#emaillinklocation10').val();
+				linkLocation11 = $('#emaillinklocation11').val();
+				linkLocation12 = $('#emaillinklocation12').val();
+				linkContent1 = $('#emaillinkcontent1').val();
+				linkContent2 = $('#emaillinkcontent2').val();
+				linkContent3 = $('#emaillinkcontent3').val();
+				linkContent4 = $('#emaillinkcontent4').val();
+				linkContent5 = $('#emaillinkcontent5').val();
+				linkContent6 = $('#emaillinkcontent6').val();
+				linkContent7 = $('#emaillinkcontent7').val();
+				linkContent8 = $('#emaillinkcontent8').val();
+				linkContent9 = $('#emaillinkcontent9').val();
+				linkContent10 = $('#emaillinkcontent10').val();
+				linkContent11 = $('#emaillinkcontent11').val();
+				linkContent12 = $('#emaillinkcontent12').val();
+				sourceCode = "%%APPROACH_CODE%%";
+				audience = "%%AUDIENCE%%";
 				break;
 			case "Social Ad":
 				source = $('#socialadsource').val();
@@ -1079,9 +996,15 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		var html = domain+'?';
 		if (medium !== "Referral" && medium !== "Internal") {
        	var html = html+'utm_campaign='+encodeURIComponent(campaign)+'&utm_source='+encodeURIComponent(source)+'&utm_medium='+encodeURIComponent(medium)+ '&utm_content='+encodeURIComponent(adCreative)+'&utm_term='+sourceCode;
-			}
+			};
+		if (audience !== "%%AUDIENCE%%") {
+			audience = encodeURIComponent(audience);
+		};
+		if (sourceCode !== "%%APPROACH_CODE%%") {
+			sourceCode = encodeURIComponent(sourceCode);
+		};
        	if (audience && medium !== "Referral" && medium !== "Internal") {
-       		var html = html + '_'+encodeURIComponent(audience);
+       		var html = html + '_'+ audience;
        		}
 		if (medium !== "Referral" && medium !== "Internal" && isDonate === "Yes") {
 			var html = html + '&'
@@ -1089,15 +1012,17 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		if (isDonate === "Yes") {
 			var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative)+'&c_code='+sourceCode;
 			if (audience && isDonate === "Yes") {
-				var html = html + '&adg=' + encodeURIComponent(audience);
+				var html = html + '&adg=' + audience;
 				}
-			var approachCodeTracking = encodeURIComponent(sourceCode+'_'+campaign+source+medium+'_'+adCreative);
-			if (audience && isDonate === "Yes") {
-				var approachCodeTracking = approachCodeTracking + encodeURIComponent(audience);
-				}
-			var html = html + '&approachcode='+ approachCodeTracking.replace(/%20/g, "");
+			if (isDonate === "Yes") {
+				var approachCodeTracking = sourceCode + encodeURIComponent('_'+campaign+source+medium);
+				if (audience) {
+					var approachCodeTracking = approachCodeTracking + audience;
+				var approachCodeTracking = approachCodeTracking + '_' + adCreative;
+				};
+				var html = html + '&approachcode='+ approachCodeTracking.replace(/%20/g, "").replace(/ /g, "");
 			}
-			
+			}
 			
 		if (audience1 && !audience2 && !audience3 && !audience4 && !audience5 ) {
 			var html = html.replace(/audience/g,encodeURIComponent(audience1));
