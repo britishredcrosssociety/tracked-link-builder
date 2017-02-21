@@ -863,6 +863,31 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		var audience;
 		var audience1;
 		var audience2;
+		var linkContent1;
+		var linkContent2;
+		var linkContent3;
+		var linkContent4;
+		var linkContent5;
+		var linkContent6;
+		var linkContent7;
+		var linkContent8;
+		var linkContent9;
+		var linkContent10;
+		var linkContent11;
+		var linkContent12;
+		var linkLocation1 = "hold";
+		var linkLocation2 = "hold";
+		var linkLocation3 = "hold";
+		var linkLocation4 = "hold";
+		var linkLocation5 = "hold";
+		var linkLocation6 = "hold";
+		var linkLocation7 = "hold";
+		var linkLocation8 = "hold";
+		var linkLocation9 = "hold";
+		var linkLocation10 = "hold";
+		var linkLocation11 = "hold";
+		var linkLocation12 = "hold";
+		var linkLocations = [linkLocation1, linkLocation2, linkLocation3, linkLocation4, linkLocation5, linkLocation6, linkLocation7, linkLocation8, linkLocation9, linkLocation10, linkLocation11, linkLocation12];
 		switch (medium) {
 			case "Referral":
 				source = $('#referralsource').val();
@@ -1024,6 +1049,9 @@ which of your promotions are generating the most traffic/conversions. This tool 
 			}
 			}
 			
+// For banner and social ads - To repeat the link for each audience filled in, replacing the audience for each one.
+// NOTE: If variables used here are not defined on page load (i.e. literally on load, or with the default medium selection) then it will mess things up.
+
 		if (audience1 && !audience2 && !audience3 && !audience4 && !audience5 ) {
 			var html = html.replace(/audience/g,encodeURIComponent(audience1));
 			if (ownSourceCode === "Yes") {
@@ -1076,6 +1104,31 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		} else {
 			var html = html;
 		}
+
+// For email - to replace the link for each link content filled in, with the link location and link content replaced each time.
+// NOTE: If variables used here are not defined on page load (i.e. literally on load, or with the default medium selection) then it will mess things up.
+		
+		if (linkContent1 && !linkContent2) {
+			var html = html.replace(/linkcontent/g,encodeURIComponent(linkContent1)).replace(/linklocation/g,encodeURIComponent(linkLocation1));
+		} else if (linkContent2 && !linkContent3) {
+			var html1 = html.replace(/linkcontent/g,encodeURIComponent(linkContent1)).replace(/linklocation/g,encodeURIComponent(linkLocation1));
+			var html2 = html.replace(/linkcontent/g,encodeURIComponent(linkContent2)).replace(/linklocation/g,encodeURIComponent(linkLocation2));
+			var html = html1 + "\n\n" + html2;
+		} else if (linkContent3 && !linkContent4) {
+			var html1 = html.replace(/linkcontent/g,encodeURIComponent(linkContent1)).replace(/linklocation/g,encodeURIComponent(linkLocation1));
+			var html2 = html.replace(/linkcontent/g,encodeURIComponent(linkContent2)).replace(/linklocation/g,encodeURIComponent(linkLocation2));
+			var html3 = html.replace(/linkcontent/g,encodeURIComponent(linkContent3)).replace(/linklocation/g,encodeURIComponent(linkLocation3));
+			var html = html1 + "\n\n" + html2 + "\n\n" + html3;
+		} else if (linkContent4 && !linkContent5) {
+			var html1 = html.replace(/linkcontent/g,encodeURIComponent(linkContent1)).replace(/linklocation/g,encodeURIComponent(linkLocation1));
+			var html2 = html.replace(/linkcontent/g,encodeURIComponent(linkContent2)).replace(/linklocation/g,encodeURIComponent(linkLocation2));
+			var html3 = html.replace(/linkcontent/g,encodeURIComponent(linkContent3)).replace(/linklocation/g,encodeURIComponent(linkLocation3));
+			var html4 = html.replace(/linkcontent/g,encodeURIComponent(linkContent4)).replace(/linklocation/g,encodeURIComponent(linkLocation4));
+			var html = html1 + "\n\n" + html2 + "\n\n" + html3 + "\n\n" + html4;
+		} else {
+			var html = html;
+		}
+
 			/* var html = html.replace(sourceCode,sourceCodeList[0]);
 				for(var i = 1;i<sourceCodeCount;++i) {
 					var html = html + html.replace(sourceCode,sourceCodeList[i]) + '<br>' ;
