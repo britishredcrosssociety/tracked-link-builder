@@ -301,7 +301,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Email">WORKING ON - Email</option>
         <option value="Paid Search">COMPLETED - Paid search</option>
         <option value="Organic Search">COMPLETED - Organic search</option>
-        <option value="Internal">COMPLETED - From a BRC microsite to the main site (e.g. from the blog, from a Shorthand app)</option>
+        <option value="Internal">COMPLETED - From a BRC microsite to the main site (e.g. from the blog, from a Webapps page)</option>
         <option value="Referral">COMPLETED - Referral from a news site etc.</option>
         </select>
         </label></p>
@@ -317,6 +317,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <select name="campaign" id="campaign">
 		<option value="Disaster Fund">Donate - Disaster Fund</option>
 		<option value="General Fund Appeal">Donate - General Fund</option>
+		<option value="East Africa Crisis Appeal">Donate - East Africa Crisis</option>
 		<option value="Europe Refugee Crisis Appeal">Donate - Europe Refugee Crisis</option>
 		<option value="Hurricane Matthew Appeal">Donate - Hurricane Matthew</option>
         <option value="Iraq Crisis Appeal">Donate - Iraq Crisis</option>
@@ -324,7 +325,9 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="South Sudan Crisis Appeal">Donate - South Sudan Crisis</option>
 		<option value="Syria Crisis Appeal">Donate - Syria Crisis</option>
 		<option value="Yemen Crisis Appeal">Donate - Yemen Crisis</option>
+		<option value="Complex Emergencies Appeal">Donate - Complex Emergencies</option>
 		<option value="London Marathon">Events - London Marathon</option>
+		<option value="Co-op Partnership">Partnership - Co-op</option>
 		<option value="Aid Conflict">Aid Conflict</option>
 		<option value="Aid Disease">Aid Disease</option>
 		<option value="Aid Earthquake">Aid Earthquake</option>
@@ -457,6 +460,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <select name="source" id="emailsource">
 		<option value="Lyris">Lyris</option>
     	<option value="Mailchimp">Mailchimp</option>
+    	<option value="Salesforce">Salesforce</option>
 		</select>
         </label>
         </p>
@@ -592,6 +596,9 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="Men 55-64">Men 55-64</option>
         <option value="Men 55 Plus">Men 55+</option>
         <option value="Men 65 Plus">Men 65+</option>
+		<option value="BRC Page Likers">BRC Page Likers</option>
+        <option value="Humanitarians">Humanitarians</option>
+        <option value="Progressive Professionals">Progressive Professionals</option>
 		</select>
         </label>
         <select name="audience" id="socialadaudience2">
@@ -608,6 +615,9 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="Men 55-64">Men 55-64</option>
         <option value="Men 55 Plus">Men 55+</option>
         <option value="Men 65 Plus">Men 65+</option>
+		<option value="BRC Page Likers">BRC Page Likers</option>
+        <option value="Humanitarians">Humanitarians</option>
+        <option value="Progressive Professionals">Progressive Professionals</option>
 		</select>
         <select name="audience" id="socialadaudience3">
 		<option value=""></option>
@@ -622,8 +632,10 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="Men 45-54">Men 45-54</option>
         <option value="Men 55-64">Men 55-64</option>
         <option value="Men 55 Plus">Men 55+</option>
-
         <option value="Men 65 Plus">Men 65+</option>
+		<option value="BRC Page Likers">BRC Page Likers</option>
+        <option value="Humanitarians">Humanitarians</option>
+        <option value="Progressive Professionals">Progressive Professionals</option>
 		</select>
         <select name="audience" id="socialadaudience4">
 		<option value=""></option>
@@ -639,6 +651,9 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="Men 55-64">Men 55-64</option>
         <option value="Men 55 Plus">Men 55+</option>
         <option value="Men 65 Plus">Men 65+</option>
+		<option value="BRC Page Likers">BRC Page Likers</option>
+        <option value="Humanitarians">Humanitarians</option>
+        <option value="Progressive Professionals">Progressive Professionals</option>
 		</select>
         <select name="audience" id="socialadaudience5">
 		<option value=""></option>
@@ -654,6 +669,9 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="Men 55-64">Men 55-64</option>
         <option value="Men 55 Plus">Men 55+</option>
         <option value="Men 65 Plus">Men 65+</option>
+		<option value="BRC Page Likers">BRC Page Likers</option>
+        <option value="Humanitarians">Humanitarians</option>
+        <option value="Progressive Professionals">Progressive Professionals</option>
 		</select>
         </div>
         <div id="mediumSocialAdOwnSourceCodes" style="float:right;width:50%;">
@@ -697,6 +715,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Get Involved">Get Involved</option>
 		<option value="Shop">Shop</option>
 		<option value="Blog">Blog</option>
+		<option value="Webapps">Webapps</option>
 		</select>
         </label>
         </p>
@@ -730,6 +749,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Get Involved">Get Involved</option>
 		<option value="Shop">Shop</option>
 		<option value="Blog">Blog</option>
+        <option value="Webapps">Webapps</option>
 		</select>
         </label>
         </p>
@@ -744,6 +764,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Get Involved">Get Involved</option>
 		<option value="Shop">Shop</option>
 		<option value="Blog">Blog</option>
+		<option value="Webapps">Webapps</option>
 		</select>
         </label>
         </p>
@@ -784,6 +805,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Get Involved">Get Involved</option>
 		<option value="Shop">Shop</option>
 		<option value="Blog">Blog</option>
+		<option value="Webapps">Webapps</option>
 		</select>
         </label>
         </p>
@@ -803,7 +825,8 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <label for="source">Which of BRC's microsites will this link go onto?
         <select name="source" id="internalsource">
 		<option value="BRC Blog">Blog</option>
-		<option value="Shorthand">Shorthand</option>
+		<option value="Herobox">Herobox</option>
+		<option value="Webapps">Webapps</option>
 		</select>
         </label>
         </p>
@@ -822,6 +845,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Get Involved">Get Involved</option>
 		<option value="Shop">Shop</option>
 		<option value="Blog">Blog</option>
+		<option value="Webapps">Webapps</option>
 		</select>
         </label>
         </p>
@@ -837,6 +861,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
                 <h2>2) Copy and Paste</h2>
                 <p>Click on <abbr title="Uniform Resource Locator">URL</abbr> to select and then copy it.</p>
             	<div class="output" id="html">
+                	<p>Note: do not change the URL from below. Even "small" changes may break our ability to report, and may even mean that the donation may not appear in our reports at all.</p>
             		<p class="auto"><label for="url">Code to use <textarea style="background: rgb(241, 241, 241) none repeat scroll 0% 0%; height: 256px;" placeholder="Code will appear here after filling out the above form" id="url" readonly></textarea></label></p>
                 <p id="urlHidden" class="alert">Due to your selections above, there is no tracked link to copy.</p>
             	</div>
@@ -1017,8 +1042,8 @@ which of your promotions are generating the most traffic/conversions. This tool 
 			}*/  // count how many source codes are bigger than zero
        	var campaign = $('#campaign').val();
        	var isDonate = $('#isDonate').val();
-			
-		var html = domain+'?';
+		var domain = domain.replace(/https?/g, "").replace(":", "").replace("//", "");
+		var html = "https://" + domain + '?';
 		if (medium !== "Referral" && medium !== "Internal") {
        	var html = html+'utm_campaign='+encodeURIComponent(campaign)+'&utm_source='+encodeURIComponent(source)+'&utm_medium='+encodeURIComponent(medium)+ '&utm_content='+encodeURIComponent(adCreative)+'&utm_term='+sourceCode;
 			};
@@ -1045,7 +1070,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 					var approachCodeTracking = approachCodeTracking + audience;
 				var approachCodeTracking = approachCodeTracking + '_' + adCreative;
 				};
-				var html = html + '&approachcode='+ approachCodeTracking.replace(/%20/g, "").replace(/ /g, "");
+				var html = html + '&approachcode='+ approachCodeTracking.replace(/(\s|%20)/g, "").replace(/[^0-9a-zA-Z_]/g, ""); //  Remove everything that's not a number, letter or underscore, as special characters e.g. dashes break the old tracking.
 			}
 			}
 			
@@ -1135,7 +1160,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 					} */
 		
         if (domain && source && medium && campaign) {
-        	$('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
+        	$('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[!\*'\(\);@\$,\|#\^\[\]~\{\}]/g, "")); // Can't remove ?,=,&,_ for tracking reasons, or .,:,/,% for URL reasons
         	$('#url').change();
         	} else {
         	$('#url').html('');
