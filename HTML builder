@@ -1040,7 +1040,14 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		    if(sourceCodeList[i] > 0)
         		sourceCodeCount++;
 			}*/  // count how many source codes are bigger than zero
-       	var campaign = $('#campaign').val();
+		// as Audience is dynamically replaced for multi-link paths, and is used both in approachcode and utm and c tracking, it's not simple to keep the %20 in the UTM but remove it in the approachcode => just replace with underscores for both	
+		var audience = audience.replace(/(\s|%20)/g, "_");
+		var audience1 = audience1.replace(/(\s|%20)/g, "_");
+		var audience2 = audience2.replace(/(\s|%20)/g, "_");
+		var audience3 = audience3.replace(/(\s|%20)/g, "_");
+		var audience4 = audience4.replace(/(\s|%20)/g, "_");
+		var audience5 = audience5.replace(/(\s|%20)/g, "_");
+		var campaign = $('#campaign').val();
        	var isDonate = $('#isDonate').val();
 		var domain = domain.replace(/https?/g, "").replace(":", "").replace("//", "");
 		var html = "https://" + domain + '?';
