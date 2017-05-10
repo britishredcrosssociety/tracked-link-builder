@@ -1171,7 +1171,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		// Code to remove %20 from all approachcode trackings. Example taken from https://www.bennadel.com/blog/1742-using-regular-expressions-in-javascript-a-general-overview.htm
 		var html = html.replace(/(approachcode=)([\w&\?=\.:\/%-\+]*)(\s|\n|$)/gi,
 	function($0,$1,$2,$3){
-		return( $1 + $2.replace(/(%20|\s)/g, "").replace(/[&\?=\.:\/\+-]/g, "") + $3 ); // % not removed as otherwise it screws with the 'remove encoded chars' task later
+		return( $1 + $2.replace(/(%20|\s)/g, "").replace(/[&\?=\.:\/\+-]/g, "").replace(/(%26|%3F|%3D|%3A|%2F|%25|%2B)/g, "") + $3 ); // % not removed as otherwise it screws with the 'remove encoded chars' task later
 	}
 );
 			/* var html = html.replace(sourceCode,sourceCodeList[0]);
