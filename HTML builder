@@ -62,7 +62,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
-		$(".auto").hide() && 
+		$(".showUrlBox").hide() && 
 		$("#urlHidden").show();
 
 	else if ($("#medium").val() === "Organic Search")
@@ -77,7 +77,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
-		$(".auto").hide() &&
+		$(".showUrlBox").hide() &&
 		$("#urlHidden").show();
 		
 	else if ($("#medium").val() === "Earned Social")
@@ -92,7 +92,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
-		$(".auto").hide() &&
+		$(".showUrlBox").hide() &&
 		$("#urlHidden").show();
 		
 	else if ($("#medium").val() === "Referral")
@@ -107,7 +107,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").show() &&
 		$("#mediumInternal").hide() &&
-		$(".auto").show() &&
+		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
 
 	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" )
@@ -123,7 +123,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
-		$(".auto").show() &&
+		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
 		
 	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" )
@@ -139,7 +139,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
-		$(".auto").show() &&
+		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
 		
 	else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "Yes" )
@@ -156,7 +156,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
-		$(".auto").show() &&
+		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
 		
 	else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "No" )
@@ -173,7 +173,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
-		$(".auto").show() &&
+		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
 		
 	else if ($("#medium").val() === "Email")
@@ -188,7 +188,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
-		$(".auto").show() &&
+		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
 		
 	else if ($("#medium").val() === "Social Post")
@@ -203,7 +203,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
-		$(".auto").show() &&
+		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
 		
 	else if ($("#medium").val() === "Social Share")
@@ -218,7 +218,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
-		$(".auto").show() &&
+		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
 		
 	else if ($("#medium").val() === "Social Button")
@@ -233,7 +233,7 @@ function toggleFields() {
 		$("#mediumSocialButton").show() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
-		$(".auto").show() &&
+		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
 		
 	else if ($("#medium").val() === "Internal")
@@ -248,7 +248,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").show() &&
-		$(".auto").show() &&
+		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
 
     else
@@ -263,7 +263,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
-		$(".auto").show() &&
+		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
 }
 });
@@ -863,7 +863,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
                 <p>Click on <abbr title="Uniform Resource Locator">URL</abbr> to select and then copy it.</p>
 				<p>Note: do not change the URL from below. Even "small" changes may break our ability to report, and may even mean that the donation may not appear in our reports at all.</p>
             	<div class="output" id="html">
-            		<p class="auto"><label for="url">Code to use <textarea style="background: rgb(241, 241, 241) none repeat scroll 0% 0%; height: 256px;" placeholder="Code will appear here after filling out the above form" id="url" readonly></textarea></label></p>
+            		<p class="showUrlBox"><label for="url">Code to use <textarea style="background: rgb(241, 241, 241) none repeat scroll 0% 0%; height: 256px;" placeholder="Code will appear here after filling out the above form" id="url" readonly></textarea></label></p>
                 <p id="urlHidden" class="alert">Due to your selections above, there is no tracked link to copy.</p>
             	</div>
             <br><br><br><br>
@@ -886,9 +886,12 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		var ownSourceCode;
 		/* var sourceCodeList = [sourceCode1,sourceCode2];
 		var sourceCodeCount = 0; */
-		var audience;
-		var audience1;
-		var audience2;
+		var audience/* = "audience"*/;
+		var audience1/* = "audience1"*/;
+		var audience2/* = "audience2"*/;
+		/*var audience3 = "audience3";
+		var audience4 = "audience4";
+		var audience5 = "audience5";*/
 		var linkContent1;
 		var linkContent2;
 		var linkContent3;
@@ -1041,10 +1044,20 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		    if(sourceCodeList[i] > 0)
         		sourceCodeCount++;
 			}*/  // count how many source codes are bigger than zero
+        // as Audience is dynamically replaced for multi-link paths, and is used both in approachcode and utm and c tracking, it's not simple to keep the %20 in the UTM but remove it in the approachcode => just replace with underscores for both 
+        /*var audience = audience.replace(/(\s|%20)/g, "_");
+        var audience1 = audience1.replace(/(\s|%20)/g, "_");
+        var audience2 = audience2.replace(/(\s|%20)/g, "_");
+        var audience3 = audience3.replace(/(\s|%20)/g, "_");
+        var audience4 = audience4.replace(/(\s|%20)/g, "_");
+        var audience5 = audience5.replace(/(\s|%20)/g, "_");*/
        	var campaign = $('#campaign').val();
        	var isDonate = $('#isDonate').val();
-			
-		var html = domain+'?';
+		
+		// Set so that the URL has to start https://
+        var domain = domain.replace(/https?/g, "").replace(":", "").replace("//", "");
+        var html = "https://" + domain + '?';
+		
 		if (medium !== "Referral" && medium !== "Internal") {
        	var html = html+'utm_campaign='+encodeURIComponent(campaign)+'&utm_source='+encodeURIComponent(source)+'&utm_medium='+encodeURIComponent(medium)+ '&utm_content='+encodeURIComponent(adCreative)+'&utm_term='+sourceCode;
 			};
@@ -1071,7 +1084,8 @@ which of your promotions are generating the most traffic/conversions. This tool 
 					var approachCodeTracking = approachCodeTracking + audience;
 				var approachCodeTracking = approachCodeTracking + '_' + adCreative;
 				};
-				var html = html + '&approachcode='+ approachCodeTracking.replace(/%20/g, "").replace(/ /g, "");
+				// var html = html + '&approachcode='+ approachCodeTracking.replace(/%20/g, "").replace(/ /g, "");
+                var html = html + '&approachcode='+ approachCodeTracking.replace(/(\s|%20)/g, "").replace(/[^0-9a-zA-Z_]/g, ""); // Remove everything that's not a number, letter or underscore, as special characters e.g. dashes break the old tracking.
 			}
 			}
 			
@@ -1161,7 +1175,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 					} */
 		
         if (domain && source && medium && campaign) {
-        	$('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
+            $('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[!\*'\(\);@\$,\|#\^\[\]~\{\}]/g, "")); // Can't remove ?,=,&,_ for tracking reasons, or .,:,/,% for URL reasons
         	$('#url').change();
         	} else {
         	$('#url').html('');
@@ -1170,8 +1184,8 @@ which of your promotions are generating the most traffic/conversions. This tool 
 	}
 
 	function initpage() {
-     //     $('.auto').autogrow(); // fit the URL field to the size of the URL - for some reason, this clashes with the URL generation
-     //   	$('.auto').click(function() {
+     //     $('.showUrlBox').autogrow(); // fit the URL field to the size of the URL - for some reason, this clashes with the URL generation
+     //   	$('.showUrlBox').click(function() {
      //   		$(this).select();
      //   	}); // if you click into the URL field, then select its contents - for some reason, this clashes with the URL generation
         	$('input').keyup(window.updateOutput);
