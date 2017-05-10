@@ -1168,14 +1168,19 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		} else {
 			var html = html;
 		}
-
+		// Code to remove %20 from all approachcode trackings. Example taken from https://www.bennadel.com/blog/1742-using-regular-expressions-in-javascript-a-general-overview.htm
+		var html = html.replace(/(approachcode=)([\w&\?=\.:\/%-\+]*)(\s|\n|$)/gi,
+	function($0,$1,$2,$3){
+		return( $1 + $2.replace(/(%20|\s)/g, "").replace(/[&\?=\.:\/\+-]/g, "") + $3 ); // % not removed as otherwise it screws with the 'remove encoded chars' task later
+	}
+);
 			/* var html = html.replace(sourceCode,sourceCodeList[0]);
 				for(var i = 1;i<sourceCodeCount;++i) {
 					var html = html + html.replace(sourceCode,sourceCodeList[i]) + '<br>' ;
 					} */
 		
         if (domain && source && medium && campaign) {
-            $('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[!\*'\(\);@\$,\|#\^\[\]~\{\}]/g, "")); // Can't remove ?,=,&,_ for tracking reasons, or .,:,/,% for URL reasons
+            $('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[!\*'\(\);@\$,\|#\^\[\]~\{\}"£`¬¦\\|]/g, "").replace(/(%21|%22|%C2|%A3|%24|%5E|%28|%29|%5B|%5D|%3B|%27|%23|%2C|%7B|%7D|%40|%7E|%3C|%3E|%60|%C2|%AC|%C2|%A6|%5C|%7C)/g, "")); // Can't remove ?,=,&,_ for tracking reasons, or .,:,/,% for URL reasons
         	$('#url').change();
         	} else {
         	$('#url').html('');
