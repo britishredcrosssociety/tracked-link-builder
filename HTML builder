@@ -292,17 +292,17 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<p>
 		<label for="medium">What are you making a tracked link for?
         <select name="medium" id="medium">
-		<option value="Banner">COMPLETED - Banner</option>
-		<option value="Social Ad">COMPLETED - Social ad by BRC</option>
-		<option value="Social Post">COMPLETED - Social post by BRC</option>
-		<option value="Social Share">COMPLETED - Social share button on BRC site</option>
-        <option value="Social Button">COMPLETED - Social button</option>
-        <option value="Earned Social">COMPLETED - Social post from someone other than BRC</option>
-		<option value="Email">WORKING ON - Email</option>
-        <option value="Paid Search">COMPLETED - Paid search</option>
-        <option value="Organic Search">COMPLETED - Organic search</option>
-        <option value="Internal">COMPLETED - From a BRC microsite to the main site (e.g. from the blog, from a Shorthand app)</option>
-        <option value="Referral">COMPLETED - Referral from a news site etc.</option>
+		<option value="Banner">Banner</option>
+		<option value="Social Ad">Social ad by BRC</option>
+		<option value="Social Post">Social post by BRC</option>
+		<option value="Social Share">Social share button on BRC site</option>
+        <option value="Social Button">Social button (e.g. Facebook)</option>
+        <option value="Earned Social">Social post from someone other than BRC</option>
+		<option value="Email">Email</option>
+        <option value="Paid Search">Paid search</option>
+        <option value="Organic Search">Organic search</option>
+        <option value="Internal">From a BRC microsite to the main site (e.g. from the blog, from a Shorthand app)</option>
+        <option value="Referral">Referral from a news site etc.</option>
         </select>
         </label></p>
         
