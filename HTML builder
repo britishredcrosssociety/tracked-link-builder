@@ -962,26 +962,12 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		var linkContent3;
 		var linkContent4;
 		var linkContent5;
-		var linkContent6;
-		var linkContent7;
-		var linkContent8;
-		var linkContent9;
-		var linkContent10;
-		var linkContent11;
-		var linkContent12;
 		var linkLocation1 = "hold";
 		var linkLocation2 = "hold";
 		var linkLocation3 = "hold";
 		var linkLocation4 = "hold";
 		var linkLocation5 = "hold";
-		var linkLocation6 = "hold";
-		var linkLocation7 = "hold";
-		var linkLocation8 = "hold";
-		var linkLocation9 = "hold";
-		var linkLocation10 = "hold";
-		var linkLocation11 = "hold";
-		var linkLocation12 = "hold";
-		var linkLocations = [linkLocation1, linkLocation2, linkLocation3, linkLocation4, linkLocation5, linkLocation6, linkLocation7, linkLocation8, linkLocation9, linkLocation10, linkLocation11, linkLocation12];
+		var linkLocations = [linkLocation1, linkLocation2, linkLocation3, linkLocation4, linkLocation5];
 		switch (medium) {
 			case "Referral":
 				source = $('#referralsource').val();
@@ -1216,6 +1202,13 @@ which of your promotions are generating the most traffic/conversions. This tool 
 			var html3 = html.replace(/linkcontent/g,encodeURIComponent(linkContent3)).replace(/linklocation/g,encodeURIComponent(linkLocation3));
 			var html4 = html.replace(/linkcontent/g,encodeURIComponent(linkContent4)).replace(/linklocation/g,encodeURIComponent(linkLocation4));
 			var html = html1 + "\n\n" + html2 + "\n\n" + html3 + "\n\n" + html4;
+		} else if (linkContent5) {
+			var html1 = html.replace(/linkcontent/g,encodeURIComponent(linkContent1)).replace(/linklocation/g,encodeURIComponent(linkLocation1));
+			var html2 = html.replace(/linkcontent/g,encodeURIComponent(linkContent2)).replace(/linklocation/g,encodeURIComponent(linkLocation2));
+			var html3 = html.replace(/linkcontent/g,encodeURIComponent(linkContent3)).replace(/linklocation/g,encodeURIComponent(linkLocation3));
+			var html4 = html.replace(/linkcontent/g,encodeURIComponent(linkContent4)).replace(/linklocation/g,encodeURIComponent(linkLocation4));
+			var html5 = html.replace(/linkcontent/g,encodeURIComponent(linkContent5)).replace(/linklocation/g,encodeURIComponent(linkLocation5));
+			var html = html1 + "\n\n" + html2 + "\n\n" + html3 + "\n\n" + html4 + "\n\n" + html5;
 		} else {
 			var html = html;
 		}
@@ -1223,8 +1216,21 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		var html = html.replace(/(approachcode=)([\w&\?=\.:\/%\+-]*)(\s|\n|$)/gi,
 	function($0,$1,$2,$3){
 		return( $1 + $2.replace(/(%20|\s)/g, "").replace(/[&\?=\.:\/\+-]/g, "").replace(/(%26|%3F|%3D|%3A|%2F|%25|%2B)/g, "") + $3 ); // % not removed as otherwise it screws with the 'remove encoded chars' task later
-	}
-);
+						}
+					);
+		var html = html.replace(/(\s|\n|^)([\w\?\.:\/\+-]*)\?([\w\?\.\+%=&!\*'\(\);@\$,\|#\^\[\]~\{\}"£`¬¦\\|-]*)(\s|\n|$)/gi,
+	function($0,$1,$2,$3,$4){
+		return( $1 + $2 + "?" + $3.replace(/\./g, "") + $4 );
+							}
+					); // remove the . from the query string but not from the actual URL
+		if (medium == "Email") {
+			var html = html.replace(/(\s|\n|^)(https:\/\/[^\s\n^]*)(\s|\n|$)/gi,
+	function($0,$1,$2,$3){
+		return( $1 + $2 + "&wu=true" + $3);
+							}
+					);
+		};// add wu=true for email people
+		
 			/* var html = html.replace(sourceCode,sourceCodeList[0]);
 				for(var i = 1;i<sourceCodeCount;++i) {
 					var html = html + html.replace(sourceCode,sourceCodeList[i]) + '<br>' ;
