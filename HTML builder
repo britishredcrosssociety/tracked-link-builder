@@ -483,31 +483,75 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="emailadcreative" type="text">
         </label>
         </p>
-        <p>
-        <label for="emailsendtemplate">What type of email is being sent?
-        <select name="sendtemplate" id="emailsendtemplate">
-		<option value="SimpleStewardship">Simple Stewardship</option>
-		<option value="Other">WHAT OTHER TEMPLATES DO WE USE??</option>
-		</select>
-        </label>
-        </p>
-        <div id="mediumEmailTemplateSimpleStewardship">
-      		<div style="width:50%; float:left;">
-      			<label>What are each of the links pointing to?
-            	<input type="text" name="linklocation" value="Preheader" id="emaillinklocation1" readonly>
-      			</label>
-                <input type="text" name="linklocation" value="Header" id="emaillinklocation2" readonly>
-                <input type="text" name="linklocation" value="Mini Donate" id="emaillinklocation3" readonly>
-                <input type="text" name="linklocation" value="Button" id="emaillinklocation4" readonly>
-                <input type="text" name="linklocation" value="Button 2" id="emaillinklocation5" readonly>
-                <input type="text" name="linklocation" value="PS" id="emaillinklocation6" readonly>
-                <input type="text" name="linklocation" value="Copy 1" id="emaillinklocation7" readonly>
-                <input type="text" name="linklocation" value="Copy 2" id="emaillinklocation8" readonly>
-                <input type="text" name="linklocation" value="Copy 3" id="emaillinklocation9" readonly>
-                <input type="text" name="linklocation" value="Main Image" id="emaillinklocation10" readonly>
-                <input type="text" name="linklocation" value="Box 1" id="emaillinklocation11" readonly>
-                <input type="text" name="linklocation" value="Footer" id="emaillinklocation12" readonly>
-      		</div>
+        <div style="width:50%; float:left;">
+        	<label for="linklocation">What are each of the links pointing to?
+			<select name="linklocation" id="emaillinklocation1">
+            <option value=""></option>
+            <option value="Header Button">Header Button</option>
+            <option value="Copy Button">Copy Button</option>
+            <option value="Mega Button">Mega Button</option>
+            <option value="Copy 1">Copy 1</option>
+            <option value="Copy 2">Copy 2</option>
+            <option value="Copy 3">Copy 3</option>
+            <option value="Shopping List 1">Shopping List 1</option>
+            <option value="Shopping List 2">Shopping List 2</option>
+            <option value="Shopping List 3">Shopping List 3</option>
+            <option name="Footer" value="Footer">Footer</option>
+            </select>
+            </label>
+            <select name="linklocation" id="emaillinklocation2">
+            <option value=""></option>
+            <option value="Header Button">Header Button</option>
+            <option value="Copy Button">Copy Button</option>
+            <option value="Mega Button">Mega Button</option>
+            <option value="Copy 1">Copy 1</option>
+            <option value="Copy 2">Copy 2</option>
+            <option value="Copy 3">Copy 3</option>
+            <option value="Shopping List 1">Shopping List 1</option>
+            <option value="Shopping List 2">Shopping List 2</option>
+            <option value="Shopping List 3">Shopping List 3</option>
+            <option name="Footer" value="Footer">Footer</option>
+            </select>
+            <select name="linklocation" id="emaillinklocation3">
+            <option value=""></option>
+            <option value="Header Button">Header Button</option>
+            <option value="Copy Button">Copy Button</option>
+            <option value="Mega Button">Mega Button</option>
+            <option value="Copy 1">Copy 1</option>
+            <option value="Copy 2">Copy 2</option>
+            <option value="Copy 3">Copy 3</option>
+            <option value="Shopping List 1">Shopping List 1</option>
+            <option value="Shopping List 2">Shopping List 2</option>
+            <option value="Shopping List 3">Shopping List 3</option>
+            <option name="Footer" value="Footer">Footer</option>
+            </select>
+            <select name="linklocation" id="emaillinklocation4">
+            <option value=""></option>
+            <option value="Header Button">Header Button</option>
+            <option value="Copy Button">Copy Button</option>
+            <option value="Mega Button">Mega Button</option>
+            <option value="Copy 1">Copy 1</option>
+            <option value="Copy 2">Copy 2</option>
+            <option value="Copy 3">Copy 3</option>
+            <option value="Shopping List 1">Shopping List 1</option>
+            <option value="Shopping List 2">Shopping List 2</option>
+            <option value="Shopping List 3">Shopping List 3</option>
+            <option name="Footer" value="Footer">Footer</option>
+            </select>
+            <select name="linklocation" id="emaillinklocation5">
+            <option value=""></option>
+            <option value="Header Button">Header Button</option>
+            <option value="Copy Button">Copy Button</option>
+            <option value="Mega Button">Mega Button</option>
+            <option value="Copy 1">Copy 1</option>
+            <option value="Copy 2">Copy 2</option>
+            <option value="Copy 3">Copy 3</option>
+            <option value="Shopping List 1">Shopping List 1</option>
+            <option value="Shopping List 2">Shopping List 2</option>
+            <option value="Shopping List 3">Shopping List 3</option>
+            <option name="Footer" value="Footer">Footer</option>
+            </select>
+        </div>
       		<div style="float:right;width:50%;">
             	<label>&nbsp;
       			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent1" type="text">
@@ -515,17 +559,9 @@ which of your promotions are generating the most traffic/conversions. This tool 
       			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent3" type="text">
       			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent4" type="text">
       			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent5" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent6" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent7" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent8" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent9" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent10" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent11" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent12" type="text">
                 </label>
        			</p>
 			</div>
-        </div>
         <p>
         The source code and audience is set to pull through dynamically into the links.
         </p>
@@ -583,7 +619,6 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <div style="width:50%; float:left;">
         <label for="audience">Who are we targeting with these ads?
         <select name="audience" id="socialadaudience1">
-
 		<option value=""></option>
 		<option value="Women 25-34">Women 25-34</option>
 		<option value="Women 35-44">Women 35-44</option>
@@ -600,6 +635,12 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="BRC Page Likers">BRC Page Likers</option>
         <option value="Humanitarians">Humanitarians</option>
         <option value="Progressive Professionals">Progressive Professionals</option>
+        <option value="Running">Running</option>
+        <option value="Cycling">Cycling</option>
+        <option value="Fitness">Fitness</option>
+        <option value="Baking">Baking</option>
+        <option value="Trekking">Trekking</option>
+        <option value="Gambling">Gambling</option>
 		</select>
         </label>
         <select name="audience" id="socialadaudience2">
@@ -619,6 +660,12 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="BRC Page Likers">BRC Page Likers</option>
         <option value="Humanitarians">Humanitarians</option>
         <option value="Progressive Professionals">Progressive Professionals</option>
+        <option value="Running">Running</option>
+        <option value="Cycling">Cycling</option>
+        <option value="Fitness">Fitness</option>
+        <option value="Baking">Baking</option>
+        <option value="Trekking">Trekking</option>
+        <option value="Gambling">Gambling</option>
 		</select>
         <select name="audience" id="socialadaudience3">
 		<option value=""></option>
@@ -637,6 +684,12 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="BRC Page Likers">BRC Page Likers</option>
         <option value="Humanitarians">Humanitarians</option>
         <option value="Progressive Professionals">Progressive Professionals</option>
+        <option value="Running">Running</option>
+        <option value="Cycling">Cycling</option>
+        <option value="Fitness">Fitness</option>
+        <option value="Baking">Baking</option>
+        <option value="Trekking">Trekking</option>
+        <option value="Gambling">Gambling</option>
 		</select>
         <select name="audience" id="socialadaudience4">
 		<option value=""></option>
@@ -655,6 +708,12 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="BRC Page Likers">BRC Page Likers</option>
         <option value="Humanitarians">Humanitarians</option>
         <option value="Progressive Professionals">Progressive Professionals</option>
+        <option value="Running">Running</option>
+        <option value="Cycling">Cycling</option>
+        <option value="Fitness">Fitness</option>
+        <option value="Baking">Baking</option>
+        <option value="Trekking">Trekking</option>
+        <option value="Gambling">Gambling</option>
 		</select>
         <select name="audience" id="socialadaudience5">
 		<option value=""></option>
@@ -673,6 +732,12 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="BRC Page Likers">BRC Page Likers</option>
         <option value="Humanitarians">Humanitarians</option>
         <option value="Progressive Professionals">Progressive Professionals</option>
+        <option value="Running">Running</option>
+        <option value="Cycling">Cycling</option>
+        <option value="Fitness">Fitness</option>
+        <option value="Baking">Baking</option>
+        <option value="Trekking">Trekking</option>
+        <option value="Gambling">Gambling</option>
 		</select>
         </div>
         <div id="mediumSocialAdOwnSourceCodes" style="float:right;width:50%;">
@@ -960,25 +1025,11 @@ which of your promotions are generating the most traffic/conversions. This tool 
 				linkLocation3 = $('#emaillinklocation3').val();
 				linkLocation4 = $('#emaillinklocation4').val();
 				linkLocation5 = $('#emaillinklocation5').val();
-				linkLocation6 = $('#emaillinklocation6').val();
-				linkLocation7 = $('#emaillinklocation7').val();
-				linkLocation8 = $('#emaillinklocation8').val();
-				linkLocation9 = $('#emaillinklocation9').val();
-				linkLocation10 = $('#emaillinklocation10').val();
-				linkLocation11 = $('#emaillinklocation11').val();
-				linkLocation12 = $('#emaillinklocation12').val();
 				linkContent1 = $('#emaillinkcontent1').val();
 				linkContent2 = $('#emaillinkcontent2').val();
 				linkContent3 = $('#emaillinkcontent3').val();
 				linkContent4 = $('#emaillinkcontent4').val();
 				linkContent5 = $('#emaillinkcontent5').val();
-				linkContent6 = $('#emaillinkcontent6').val();
-				linkContent7 = $('#emaillinkcontent7').val();
-				linkContent8 = $('#emaillinkcontent8').val();
-				linkContent9 = $('#emaillinkcontent9').val();
-				linkContent10 = $('#emaillinkcontent10').val();
-				linkContent11 = $('#emaillinkcontent11').val();
-				linkContent12 = $('#emaillinkcontent12').val();
 				sourceCode = "%%APPROACH_CODE%%";
 				audience = "%%AUDIENCE%%";
 				break;
@@ -1085,7 +1136,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 				var approachCodeTracking = approachCodeTracking + '_' + adCreative;
 				};
 				// var html = html + '&approachcode='+ approachCodeTracking.replace(/%20/g, "").replace(/ /g, "");
-                var html = html + '&approachcode='+ approachCodeTracking.replace(/(\s|%20)/g, "").replace(/[^0-9a-zA-Z_]/g, ""); // Remove everything that's not a number, letter or underscore, as special characters e.g. dashes break the old tracking.
+                var html = html + '&approachcode='+ approachCodeTracking.replace(/(\s|%20)/g, "").replace(/[^0-9a-zA-Z_%]/g, "").replace(/([^%])%([^%])/g, "$1" + "$2");; // Remove everything that's not a number, letter or underscore or %, as special characters e.g. dashes break the old tracking. THEN remove any individual %s, but keep any duplicates e.g. for %%variables%%.
 			}
 			}
 			
