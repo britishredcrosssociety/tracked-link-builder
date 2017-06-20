@@ -315,6 +315,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <p>
         <label for="campaign">What area of BRC work does the link relate to?
         <select name="campaign" id="campaign">
+        <option value="Complex Emergencies Appeal">Donate - Complex Emergencies</option>
 		<option value="Disaster Fund">Donate - Disaster Fund</option>
 		<option value="General Fund Appeal">Donate - General Fund</option>
         <option value="East Africa Crisis Appeal">Donate - East Africa Crisis</option>
@@ -322,10 +323,12 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Hurricane Matthew Appeal">Donate - Hurricane Matthew</option>
         <option value="Iraq Crisis Appeal">Donate - Iraq Crisis</option>
 		<option value="Lake Chad Crisis Appeal">Donate - Lake Chad Crisis</option>
+		<option value="London Fire Relief Fund">Donate - London Fire Relief</option>
+        <option value="Manchester Emergency Fund">Donate - Manchester Emergency</option>
 		<option value="South Sudan Crisis Appeal">Donate - South Sudan Crisis</option>
 		<option value="Syria Crisis Appeal">Donate - Syria Crisis</option>
 		<option value="Yemen Crisis Appeal">Donate - Yemen Crisis</option>
-        <option value="Complex Emergencies Appeal">Donate - Complex Emergencies</option>
+        <option value="UK Solidarity Fund">Donate - UK Solidarity Fund</option>
 		<option value="London Marathon">Events - London Marathon</option>
         <option value="Co-op Partnership">Partnership - Co-op</option>
 		<option value="Aid Conflict">Aid Conflict</option>
