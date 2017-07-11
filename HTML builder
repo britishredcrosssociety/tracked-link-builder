@@ -766,6 +766,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Twitter">Twitter</option>
 		<option value="Instagram">Instagram</option>
 		<option value="Youtube">Youtube</option>
+		<option value="LinkedIn">LinkedIn</option>
 		</select>
         </label>
         </p>
