@@ -351,11 +351,12 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="General Fund Appeal">Donate - General Fund</option>
         <option value="East Africa Crisis Appeal">Donate - East Africa Crisis</option>
 		<option value="Europe Refugee Crisis Appeal">Donate - Europe Refugee Crisis</option>
-		<option value="Hurricane Matthew Appeal">Donate - Hurricane Matthew</option>
+        <option value="Hurricane Irma Appeal">Donate - Hurricane Irma</option>
         <option value="Iraq Crisis Appeal">Donate - Iraq Crisis</option>
 		<option value="Lake Chad Crisis Appeal">Donate - Lake Chad Crisis</option>
 		<option value="London Fire Relief Fund">Donate - London Fire Relief</option>
         <option value="Manchester Emergency Fund">Donate - Manchester Emergency</option>
+		<option value="South Asia Floods Appeal">Donate - South Asia Floods</option>
 		<option value="South Sudan Crisis Appeal">Donate - South Sudan Crisis</option>
 		<option value="Syria Crisis Appeal">Donate - Syria Crisis</option>
 		<option value="Yemen Crisis Appeal">Donate - Yemen Crisis</option>
@@ -960,7 +961,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 	<div id="mediumRocketseed">
         <p>
         <label for="source">What platform is being used to show the banners?
-        <input id="rocketseedsource" type="text" name="source" value="Rocketseed" readonly="readonly">
+        <input id="rocketseedsource" type="text" name="source" value="Rocketseed" readonly>
         </label>
         </p>
         <p>
