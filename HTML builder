@@ -62,6 +62,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").hide() && 
 		$("#urlHidden").show();
@@ -78,6 +79,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").hide() &&
 		$("#urlHidden").show();
@@ -94,6 +96,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").hide() &&
 		$("#urlHidden").show();
@@ -110,6 +113,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").show() &&
 		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
@@ -127,6 +131,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
@@ -144,6 +149,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
@@ -162,6 +168,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
@@ -180,6 +187,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
@@ -196,6 +204,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
@@ -212,6 +221,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
@@ -228,6 +238,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
@@ -244,6 +255,7 @@ function toggleFields() {
 		$("#mediumSocialButton").show() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
@@ -260,6 +272,24 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").show() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Offline")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumEarnedSocial").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").show() &&
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
@@ -276,6 +306,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
 		$("#mediumRocketseed").show() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
@@ -292,6 +323,7 @@ function toggleFields() {
 		$("#mediumSocialButton").hide() &&
 		$("#mediumReferral").hide() &&
 		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
@@ -332,6 +364,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="Paid Search">Paid search</option>
         <option value="Organic Search">Organic search</option>
         <option value="Internal">From a BRC microsite to the main site (e.g. from the blog, the herobox, from a Shorthand app)</option>
+        <option value="Offline">From an offline source (e.g. a press ad) to a short URL</option>
         <option value="Rocketseed">Rocketseed banners</option>
         <option value="Referral">Referral from a news site etc.</option>
         </select>
@@ -959,6 +992,50 @@ which of your promotions are generating the most traffic/conversions. This tool 
         </label>
         </p>   
     </div>
+<div id="mediumOffline">
+        <p>
+        <label for="source">What offline advertising is driving this traffic?
+        <select name="source" id="offlinesource">
+		<option value="Door Drop">Door drop</option>
+        <option value="DRTV">DRTV</option>
+        <option value="Press">Press</option>
+        <option value="Inserts">Inserts</option>
+		</select>
+        </label>
+        </p>
+        <p>
+		<input name="sourcecode" id="offlinesourcecode" value="154748" type="hidden">
+        </p>
+        <p>
+        <label for="audience">Who is seeing the offline advertising
+        <select name="audience" id="offlineaudience">
+		<option value="Warm Supporters">Warm Supporters</option>
+        <option value="Cold Supporters">Cold Supporters</option>
+		</select>
+        </label>
+        </p>
+        <p>
+        <label for="linkcategory">What link from our site is being shared?
+        <select name="linkcategory" id="offlinelinkcategory">
+		<option value="Donate Landing">Donate - Landing</option>
+		<option value="Donate Other">Donate - Other</option>
+		<option value="What We Do">What We Do</option>
+		<option value="Where We Work">Where We Work</option>
+		<option value="About Us">About Us</option>
+		<option value="Get Involved">Get Involved</option>
+		<option value="Shop">Shop</option>
+		<option value="Blog">Blog</option>
+        <option value="Webapps">Webapps</option>
+		</select>
+        </label>
+        </p>
+
+        <p>
+        <label for="linkdetails">What's the call to action of the link about?
+        <input placeholder="Short and sweet e.g. Aleppo attack, Appeal launch, Donate" name="linkdetails" id="offlinelinkdetails" type="text">
+        </label>
+        </p>   
+    </div>
 	<div id="mediumRocketseed">
         <p>
         <label for="source">What platform is being used to show the banners?
@@ -1139,6 +1216,14 @@ which of your promotions are generating the most traffic/conversions. This tool 
 					adCreative = adCreative + '_' + $('#internallinkdetails').val();}
 				sourceCode = $('#internalsourcecode').val();
 				audience = $('#internalaudience').val();
+				break;
+			case "Offline":
+				source = $('#offlinesource').val();
+				adCreative = $('#offlinelinkcategory').val();
+				if ($('#offlinelinkdetails').val()) {
+					adCreative = adCreative + '_' + $('#offlinelinkdetails').val();}
+				sourceCode = $('#offlinesourcecode').val();
+				audience = $('#offlineaudience').val();
 				break;
 			case "Rocketseed":
 				source = $('#rocketseedsource').val();
