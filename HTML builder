@@ -1257,6 +1257,8 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		
 		// Set so that the URL has to start https://
         var domain = domain.replace(/https?/g, "").replace(":", "").replace("//", "");
+		// Remove any tracking from the URL
+        var domain = domain.split("?")[0];
         var html = "https://" + domain + '?';
 		
 		if (medium !== "Referral" && medium !== "Internal") {
