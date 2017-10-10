@@ -397,6 +397,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="UK Solidarity Fund">Donate - UK Solidarity Fund</option>
 		<option value="London Marathon">Events - London Marathon</option>
         <option value="Co-op Partnership">Partnership - Co-op</option>
+        <option value="Little Heroes">Little Heroes</option>
 		<option value="Aid Conflict">Aid Conflict</option>
 		<option value="Aid Disease">Aid Disease</option>
 		<option value="Aid Earthquake">Aid Earthquake</option>
@@ -710,6 +711,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="Baking">Baking</option>
         <option value="Trekking">Trekking</option>
         <option value="Gambling">Gambling</option>
+        <option value="Parents">Parents</option>
 		</select>
         </label>
         <select name="audience" id="socialadaudience2">
@@ -735,6 +737,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="Baking">Baking</option>
         <option value="Trekking">Trekking</option>
         <option value="Gambling">Gambling</option>
+        <option value="Parents">Parents</option>
 		</select>
         <select name="audience" id="socialadaudience3">
 		<option value=""></option>
@@ -759,6 +762,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="Baking">Baking</option>
         <option value="Trekking">Trekking</option>
         <option value="Gambling">Gambling</option>
+        <option value="Parents">Parents</option>
 		</select>
         <select name="audience" id="socialadaudience4">
 		<option value=""></option>
@@ -783,6 +787,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="Baking">Baking</option>
         <option value="Trekking">Trekking</option>
         <option value="Gambling">Gambling</option>
+        <option value="Parents">Parents</option>
 		</select>
         <select name="audience" id="socialadaudience5">
 		<option value=""></option>
@@ -807,6 +812,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="Baking">Baking</option>
         <option value="Trekking">Trekking</option>
         <option value="Gambling">Gambling</option>
+        <option value="Parents">Parents</option>
 		</select>
         </div>
         <div id="mediumSocialAdOwnSourceCodes" style="float:right;width:50%;">
