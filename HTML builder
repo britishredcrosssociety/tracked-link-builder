@@ -397,6 +397,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <option value="UK Solidarity Fund">Donate - UK Solidarity Fund</option>
 		<option value="London Marathon">Events - London Marathon</option>
         <option value="Co-op Partnership">Partnership - Co-op</option>
+        <option value="Community Reserve Volunteers">Volunteering - Community Reserve</option>
         <option value="Little Heroes">Little Heroes</option>
 		<option value="Aid Conflict">Aid Conflict</option>
 		<option value="Aid Disease">Aid Disease</option>
@@ -528,7 +529,6 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <p>
         <label for="source">Which email system are we using for this send?
         <select name="source" id="emailsource">
-		<option value="Lyris">Lyris</option>
     	<option value="Mailchimp">Mailchimp</option>
     	<option value="Salesforce">Salesforce</option>
 		</select>
@@ -662,11 +662,14 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <p>
         <label for="adtype">What type of ad is it?
         <select name="adtype" id="socialadadtype">
-		<option value="Link">Link</option>
-		<option value="Video">Video</option>
-		<option value="Carousel">Carousel</option>
 		<option value="Canvas">Canvas</option>
+		<option value="Carousel">Carousel</option>
+		<option value="Collection">Collection</option>
 		<option value="Event Response">Event Response</option>
+		<option value="Image">Image</option>
+		<option value="Link">Link</option>
+		<option value="Slideshow">Slideshow</option>
+		<option value="Video">Video</option>
 		<option value="Boosted Photo">Boosted Photo</option>
 		<option value="Boosted Video">Boosted Video</option>
 		<option value="Boosted Text">Boosted Text</option>
@@ -674,7 +677,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         </label>
         </p>
         <p>
-        <label for="adcreative">What's the call to action of the link about?
+        <label for="adcreative">What's the creative about? What's the call to action of the ad?
         <input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="socialadadcreative" type="text">
         </label>
         </p>
@@ -1002,6 +1005,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <p>
         <label for="source">What offline advertising is driving this traffic?
         <select name="source" id="offlinesource">
+		<option value="Direct Mail">Direct mail</option>
 		<option value="Door Drop">Door drop</option>
         <option value="DRTV">DRTV</option>
         <option value="Press">Press</option>
