@@ -395,6 +395,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Syria Crisis Appeal">Donate - Syria Crisis</option>
 		<option value="Yemen Crisis Appeal">Donate - Yemen Crisis</option>
         <option value="UK Solidarity Fund">Donate - UK Solidarity Fund</option>
+		<option value="Guildhall Christmas Market">Events - Guildhall Christmas Market</option>
 		<option value="London Marathon">Events - London Marathon</option>
         <option value="Co-op Partnership">Partnership - Co-op</option>
         <option value="Community Reserve Volunteers">Volunteering - Community Reserve</option>
@@ -529,8 +530,8 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <p>
         <label for="source">Which email system are we using for this send?
         <select name="source" id="emailsource">
-    	<option value="Mailchimp">Mailchimp</option>
     	<option value="Salesforce">Salesforce</option>
+    	<option value="Mailchimp">Mailchimp</option>
 		</select>
         </label>
         </p>
@@ -566,6 +567,13 @@ which of your promotions are generating the most traffic/conversions. This tool 
             <option value="Shopping List 1">Shopping List 1</option>
             <option value="Shopping List 2">Shopping List 2</option>
             <option value="Shopping List 3">Shopping List 3</option>
+            <option value="Box 1">Box 1</option>
+            <option value="Box 2">Box 2</option>
+            <option value="Box 3">Box 3</option>
+            <option value="Box 4">Box 4</option>
+            <option value="Carousel 1">Carousel 1</option>
+            <option value="Carousel 2">Carousel 2</option>
+            <option value="Carousel 3">Carousel 3</option>
             <option name="Footer" value="Footer">Footer</option>
             </select>
             </label>
@@ -580,6 +588,13 @@ which of your promotions are generating the most traffic/conversions. This tool 
             <option value="Shopping List 1">Shopping List 1</option>
             <option value="Shopping List 2">Shopping List 2</option>
             <option value="Shopping List 3">Shopping List 3</option>
+            <option value="Box 1">Box 1</option>
+            <option value="Box 2">Box 2</option>
+            <option value="Box 3">Box 3</option>
+            <option value="Box 4">Box 4</option>
+            <option value="Carousel 1">Carousel 1</option>
+            <option value="Carousel 2">Carousel 2</option>
+            <option value="Carousel 3">Carousel 3</option>
             <option name="Footer" value="Footer">Footer</option>
             </select>
             <select name="linklocation" id="emaillinklocation3">
@@ -593,6 +608,13 @@ which of your promotions are generating the most traffic/conversions. This tool 
             <option value="Shopping List 1">Shopping List 1</option>
             <option value="Shopping List 2">Shopping List 2</option>
             <option value="Shopping List 3">Shopping List 3</option>
+            <option value="Box 1">Box 1</option>
+            <option value="Box 2">Box 2</option>
+            <option value="Box 3">Box 3</option>
+            <option value="Box 4">Box 4</option>
+            <option value="Carousel 1">Carousel 1</option>
+            <option value="Carousel 2">Carousel 2</option>
+            <option value="Carousel 3">Carousel 3</option>
             <option name="Footer" value="Footer">Footer</option>
             </select>
             <select name="linklocation" id="emaillinklocation4">
@@ -606,6 +628,13 @@ which of your promotions are generating the most traffic/conversions. This tool 
             <option value="Shopping List 1">Shopping List 1</option>
             <option value="Shopping List 2">Shopping List 2</option>
             <option value="Shopping List 3">Shopping List 3</option>
+            <option value="Box 1">Box 1</option>
+            <option value="Box 2">Box 2</option>
+            <option value="Box 3">Box 3</option>
+            <option value="Box 4">Box 4</option>
+            <option value="Carousel 1">Carousel 1</option>
+            <option value="Carousel 2">Carousel 2</option>
+            <option value="Carousel 3">Carousel 3</option>
             <option name="Footer" value="Footer">Footer</option>
             </select>
             <select name="linklocation" id="emaillinklocation5">
@@ -619,6 +648,13 @@ which of your promotions are generating the most traffic/conversions. This tool 
             <option value="Shopping List 1">Shopping List 1</option>
             <option value="Shopping List 2">Shopping List 2</option>
             <option value="Shopping List 3">Shopping List 3</option>
+            <option value="Box 1">Box 1</option>
+            <option value="Box 2">Box 2</option>
+            <option value="Box 3">Box 3</option>
+            <option value="Box 4">Box 4</option>
+            <option value="Carousel 1">Carousel 1</option>
+            <option value="Carousel 2">Carousel 2</option>
+            <option value="Carousel 3">Carousel 3</option>
             <option name="Footer" value="Footer">Footer</option>
             </select>
         </div>
