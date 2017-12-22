@@ -47,13 +47,15 @@ $(document).ready(function () {
     $("#bannerownsourcecode").change(function () {
         toggleFields();
     }); 
+    $("#socialpostbrc").change(function () {
+        toggleFields();
+    }); 
 }); //this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
 function toggleFields() {
 
     if ($("#medium").val() === "Paid Search")
         $("#mediumPPCSearch").show() &&
 		$("#mediumOrganicSearch").hide() &&
-		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
@@ -70,7 +72,6 @@ function toggleFields() {
 	else if ($("#medium").val() === "Organic Search")
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").show() &&
-		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
@@ -83,28 +84,10 @@ function toggleFields() {
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").hide() &&
 		$("#urlHidden").show();
-		
-	else if ($("#medium").val() === "Earned Social")
-        $("#mediumPPCSearch").hide() &&
-		$("#mediumOrganicSearch").hide() &&
-		$("#mediumEarnedSocial").show() &&
-		$("#mediumBanner").hide() &&
-		$("#mediumEmail").hide() &&
-		$("#mediumSocialAd").hide() &&
-		$("#mediumSocialPost").hide() &&
-		$("#mediumSocialShare").hide() &&
-		$("#mediumSocialButton").hide() &&
-		$("#mediumReferral").hide() &&
-		$("#mediumInternal").hide() &&
-		$("#mediumOffline").hide() &&
-		$("#mediumRocketseed").hide() &&
-		$(".showUrlBox").hide() &&
-		$("#urlHidden").show();
-		
+				
 	else if ($("#medium").val() === "Referral")
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
-		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
@@ -121,7 +104,6 @@ function toggleFields() {
 	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" )
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
-		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").show() &&
@@ -139,7 +121,6 @@ function toggleFields() {
 	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" )
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
-		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").show() &&
@@ -157,7 +138,6 @@ function toggleFields() {
 	else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "Yes" )
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
-		$("#mediumEarnedSocial").hide() &&
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialAdOwnSourceCodes").hide() &&
 		$("#mediumBanner").show() &&
@@ -176,7 +156,6 @@ function toggleFields() {
 	else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "No" )
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
-		$("#mediumEarnedSocial").hide() &&
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialAdOwnSourceCodes").hide() &&
 		$("#mediumBanner").show() &&
@@ -195,7 +174,6 @@ function toggleFields() {
 	else if ($("#medium").val() === "Email")
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
-		$("#mediumEarnedSocial").hide() &&
 		$("#mediumSocialAd").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").show() &&
@@ -209,10 +187,9 @@ function toggleFields() {
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
 		
-	else if ($("#medium").val() === "Social Post")
+	else if ($("#medium").val() === "Social Post" && $("#socialpostbrc").val() === "BRC Followers" )
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
-		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
@@ -223,13 +200,30 @@ function toggleFields() {
 		$("#mediumInternal").hide() &&
 		$("#mediumOffline").hide() &&
 		$("#mediumRocketseed").hide() &&
+		$("#audienceSocialPost").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Post" && $("#socialpostbrc").val() === "Not BRC" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialPost").show() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$("#audienceSocialPost").show() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
 		
 	else if ($("#medium").val() === "Social Share")
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
-		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
@@ -246,7 +240,6 @@ function toggleFields() {
 	else if ($("#medium").val() === "Social Button")
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
-		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
@@ -263,7 +256,6 @@ function toggleFields() {
 	else if ($("#medium").val() === "Internal")
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
-		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
@@ -280,7 +272,6 @@ function toggleFields() {
 	else if ($("#medium").val() === "Offline")
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
-		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
@@ -297,7 +288,6 @@ function toggleFields() {
 	else if ($("#medium").val() === "Rocketseed")
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
-		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
@@ -314,7 +304,6 @@ function toggleFields() {
     else
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
-		$("#mediumEarnedSocial").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
@@ -356,10 +345,9 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <select name="medium" id="medium">
 		<option value="Banner">Banner</option>
 		<option value="Social Ad">Social ad by BRC</option>
-		<option value="Social Post">Social post by BRC</option>
+		<option value="Social Post">Social post</option>
 		<option value="Social Share">Social share button on BRC site</option>
         <option value="Social Button">Social button (e.g. Facebook)</option>
-        <option value="Earned Social">Social post from someone other than BRC</option>
 		<option value="Email">Email</option>
         <option value="Paid Search">Paid search</option>
         <option value="Organic Search">Organic search</option>
@@ -373,8 +361,6 @@ which of your promotions are generating the most traffic/conversions. This tool 
 	<p id="mediumPPCSearch" class="alert">This tool isn't for paid search &ndash; we auto-tag campaigns in Google and Bing, so this tool isn't needed.</p>
         
 	<p id="mediumOrganicSearch" class="alert">We don't have control over tracking of organic search, so you don't need this tool. Give us a shout if you have any questions.</p>
-        
-	<p id="mediumEarnedSocial" class="alert">We don't have control over tracking of the links other people use on social media, unless it's from e.g. a share button - so you don't need this tool. Give us a shout if you have any questions.</p>
 
         <p>
         <label for="campaign">What area of BRC work does the link relate to?
@@ -890,9 +876,20 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		</select>
         </label>
         </p>
+        <p><label for="brc">Whose social media account is this post on?
+        <select name="brc" id="socialpostbrc">
+		<option value="BRC Followers">BRC</option>
+		<option value="Not BRC">Not BRC</option>
+		</select>
+        </label>
+        </p>        
+        <p id="audienceSocialPost">
+        <label for="audience">Whose social media account is the post appearing on?
+        <input placeholder="e.g. BBC, Land Rover" name="audience" id="socialpostaudience" type="text">
+        </label>
+        </p>
         <p>
 		<input name="sourcecode" id="socialpostsourcecode" value="162204" type="hidden">
-		<input name="audience" id="socialpostaudience" value="BRC Followers" type="hidden">
         </p>
         <p>
         <label for="linkcategory">What link from our site is being shared?
@@ -1010,7 +1007,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 	</div>
     
     <div id="mediumInternal">
-    	<p class="alert">Your link won't include any UTM tracking, because it breaks up the session in Google Analytics &ndash; so only continue if you want donation tracking appended.</p>
+    	<p class="alert">Your link won't include any UTM tracking, because it breaks up the session in Google Analytics &ndash; so only continue if you want donation tracking appended.<br />N.B. if you just want to track what pages people look at and in which order, then you can do that in Google Analytics without adding any extra tracking.</p>
         <p>
         <label for="source">Which of BRC's microsites will this link go onto?
         <select name="source" id="internalsource">
@@ -1247,6 +1244,9 @@ which of your promotions are generating the most traffic/conversions. This tool 
 					adCreative = adCreative + '_' + $('#socialpostlinkdetails').val();}
 				sourceCode = $('#socialpostsourcecode').val();
 				audience = $('#socialpostaudience').val();
+				if ($('#socialpostaudience').val()) {
+					audience = $('#socialpostaudience').val() + ' Followers';} else {
+					audience = $('#socialpostbrc').val();}
 				break;
 			case "Social Share":
 				source = $('#socialsharesource').val();
