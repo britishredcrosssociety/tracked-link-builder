@@ -347,7 +347,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Social Ad">Social ad by BRC</option>
 		<option value="Social Post">Social post</option>
 		<option value="Social Share">Social share button on BRC site</option>
-        <option value="Social Button">Social button (e.g. Facebook)</option>
+        <option value="Social Button">Social button (e.g. Youtube annotations, Facebook)</option>
 		<option value="Email">Email</option>
         <option value="Paid Search">Paid search</option>
         <option value="Organic Search">Organic search</option>
@@ -467,12 +467,14 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <select name="linkcategory" id="bannerlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
-		<option value="What We Do">What We Do</option>
-		<option value="Where We Work">Where We Work</option>
+		<option value="Get Help">Get help</option>
+		<option value="Get Involved">Get involved</option>
+		<option value="First Aid">First aid</option>
 		<option value="About Us">About Us</option>
-		<option value="Get Involved">Get Involved</option>
 		<option value="Shop">Shop</option>
+		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
+		<option value="Webapps">Webapps</option>
 		</select>
         </label>
         </p>
@@ -682,12 +684,14 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <select name="linkcategory" id="socialadlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
-		<option value="What We Do">What We Do</option>
-		<option value="Where We Work">Where We Work</option>
+		<option value="Get Help">Get help</option>
+		<option value="Get Involved">Get involved</option>
+		<option value="First Aid">First aid</option>
 		<option value="About Us">About Us</option>
-		<option value="Get Involved">Get Involved</option>
 		<option value="Shop">Shop</option>
+		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
+		<option value="Webapps">Webapps</option>
 		</select>
         </label>
         </p>
@@ -907,13 +911,14 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <select name="linkcategory" id="socialpostlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
-		<option value="What We Do">What We Do</option>
-		<option value="Where We Work">Where We Work</option>
+		<option value="Get Help">Get help</option>
+		<option value="Get Involved">Get involved</option>
+		<option value="First Aid">First aid</option>
 		<option value="About Us">About Us</option>
-		<option value="Get Involved">Get Involved</option>
 		<option value="Shop">Shop</option>
+		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
-        <option value="Webapps">Webapps</option>
+		<option value="Webapps">Webapps</option>
 		</select>
         </label>
         </p>
@@ -941,13 +946,14 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Thank You">Donate - Thank You</option>
 		<option value="Donate Other">Donate - Other</option>
-		<option value="What We Do">What We Do</option>
-		<option value="Where We Work">Where We Work</option>
+		<option value="Get Help">Get help</option>
+		<option value="Get Involved">Get involved</option>
+		<option value="First Aid">First aid</option>
 		<option value="About Us">About Us</option>
-		<option value="Get Involved">Get Involved</option>
 		<option value="Shop">Shop</option>
+		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
-        <option value="Webapps">Webapps</option>
+		<option value="Webapps">Webapps</option>
 		</select>
         </label>
         </p>
@@ -956,13 +962,14 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <select name="linkcategory" id="socialsharelinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
-		<option value="What We Do">What We Do</option>
-		<option value="Where We Work">Where We Work</option>
+		<option value="Get Help">Get help</option>
+		<option value="Get Involved">Get involved</option>
+		<option value="First Aid">First aid</option>
 		<option value="About Us">About Us</option>
-		<option value="Get Involved">Get Involved</option>
 		<option value="Shop">Shop</option>
+		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
-        <option value="Webapps">Webapps</option>
+		<option value="Webapps">Webapps</option>
 		</select>
         </label>
         </p>
@@ -979,6 +986,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <label for="source">What social network is the share button for?
         <select name="source" id="socialbuttonsource">
 		<option value="Facebook">Facebook</option>
+		<option value="Youtube">Youtube</option>
 		</select>
         </label>
         </p>
@@ -997,13 +1005,14 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <select name="linkcategory" id="socialbuttonlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
-		<option value="What We Do">What We Do</option>
-		<option value="Where We Work">Where We Work</option>
+		<option value="Get Help">Get help</option>
+		<option value="Get Involved">Get involved</option>
+		<option value="First Aid">First aid</option>
 		<option value="About Us">About Us</option>
-		<option value="Get Involved">Get Involved</option>
 		<option value="Shop">Shop</option>
+		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
-        <option value="Webapps">Webapps</option>
+		<option value="Webapps">Webapps</option>
 		</select>
         </label>
         </p>
@@ -1023,7 +1032,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <label for="source">Which of BRC's microsites will this link go onto?
         <select name="source" id="internalsource">
 		<option value="BRC Blog">Blog</option>
-        <option value="Herobox">Herobox</option>
+        <option value="Homepage Promo">Homepage promo</option>
         <option value="Webapps">Webapps</option>
 		</select>
         </label>
@@ -1037,13 +1046,14 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <select name="linkcategory" id="internallinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
-		<option value="What We Do">What We Do</option>
-		<option value="Where We Work">Where We Work</option>
+		<option value="Get Help">Get help</option>
+		<option value="Get Involved">Get involved</option>
+		<option value="First Aid">First aid</option>
 		<option value="About Us">About Us</option>
-		<option value="Get Involved">Get Involved</option>
 		<option value="Shop">Shop</option>
+		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
-        <option value="Webapps">Webapps</option>
+		<option value="Webapps">Webapps</option>
 		</select>
         </label>
         </p>
@@ -1082,13 +1092,14 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <select name="linkcategory" id="offlinelinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
-		<option value="What We Do">What We Do</option>
-		<option value="Where We Work">Where We Work</option>
+		<option value="Get Help">Get help</option>
+		<option value="Get Involved">Get involved</option>
+		<option value="First Aid">First aid</option>
 		<option value="About Us">About Us</option>
-		<option value="Get Involved">Get Involved</option>
 		<option value="Shop">Shop</option>
+		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
-        <option value="Webapps">Webapps</option>
+		<option value="Webapps">Webapps</option>
 		</select>
         </label>
         </p>
@@ -1115,13 +1126,14 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <select name="linkcategory" id="rocketseedlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
-		<option value="What We Do">What We Do</option>
-		<option value="Where We Work">Where We Work</option>
+		<option value="Get Help">Get help</option>
+		<option value="Get Involved">Get involved</option>
+		<option value="First Aid">First aid</option>
 		<option value="About Us">About Us</option>
-		<option value="Get Involved">Get Involved</option>
 		<option value="Shop">Shop</option>
+		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
-        <option value="Webapps">Webapps</option>
+		<option value="Webapps">Webapps</option>
 		</select>
         </label>
         </p>
