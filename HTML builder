@@ -388,7 +388,10 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		<option value="London Marathon">Events - London Marathon</option>
 		<option value="Miles for Refugees">Events - Miles for Refugees</option>
 		<option value="Open Challenge">Events - Open Challenge</option>
+		<option value="Open Gardens">Events - Open Gardens</option>
 		<option value="Orbit Abseil">Events - Orbit Abseil</option>
+		<option value="Red Cross Tea Party">Events - Red Cross Tea Party</option>
+		<option value="Red Cross Week">Events - Red Cross Week</option>
 		<option value="RideLondon">Events - RideLondon</option>
 		<option value="Royal Parks Half Marathon">Events - Royal Parks Half Marathon</option>
 		<option value="Snowdon Trek">Events - Snowdon Trek</option>
@@ -676,6 +679,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <label for="source">What social network is the ad on?
         <select name="source" id="socialadsource">
 		<option value="Facebook">Facebook</option>
+		<option value="Instagram">Instagram</option>
 		</select>
         </label>
         </p>
