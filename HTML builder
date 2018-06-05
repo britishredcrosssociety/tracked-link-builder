@@ -41,6 +41,9 @@ $(document).ready(function () {
     $("#socialadownsourcecode").change(function () {
         toggleFields();
     }); 
+    $("#socialadsource").change(function () {
+        toggleFields();
+    });
     $("#sourceBanner").change(function () {
         toggleFields();
     }); 
@@ -59,6 +62,9 @@ function toggleFields() {
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -75,6 +81,9 @@ function toggleFields() {
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -91,6 +100,9 @@ function toggleFields() {
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -101,13 +113,15 @@ function toggleFields() {
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
 
-	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" )
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && ($("#socialadsource").val() === "Facebook" || $("#socialadsource").val() === "Instagram") )
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").show() &&
 		$("#mediumSocialAdOwnSourceCodes").show() &&
+		$("#mediumSocialAdFacebookAdType").show() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -118,13 +132,53 @@ function toggleFields() {
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
 		
-	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" )
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && ($("#socialadsource").val() === "Facebook" || $("#socialadsource").val() === "Instagram") )
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").show() &&
 		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").show() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Twitter" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").show() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").show() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "Twitter" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").show() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -140,6 +194,8 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumBanner").show() &&
 		$("#mediumBannerOwnSourceCodes").show() &&
 		$("#mediumEmail").hide() &&
@@ -158,6 +214,8 @@ function toggleFields() {
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumSocialAd").hide() &&
 		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumBanner").show() &&
 		$("#mediumBannerOwnSourceCodes").hide() &&
 		$("#mediumEmail").hide() &&
@@ -175,6 +233,9 @@ function toggleFields() {
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
 		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").show() &&
 		$("#mediumSocialPost").hide() &&
@@ -193,6 +254,9 @@ function toggleFields() {
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialPost").show() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -210,6 +274,9 @@ function toggleFields() {
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialPost").show() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -227,6 +294,9 @@ function toggleFields() {
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").show() &&
 		$("#mediumSocialButton").hide() &&
@@ -243,6 +313,9 @@ function toggleFields() {
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").show() &&
@@ -259,6 +332,9 @@ function toggleFields() {
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -275,6 +351,9 @@ function toggleFields() {
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -291,6 +370,9 @@ function toggleFields() {
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -307,6 +389,9 @@ function toggleFields() {
 		$("#mediumBanner").hide() &&
 		$("#mediumEmail").hide() &&
 		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -328,9 +413,7 @@ function toggleFields() {
         <div class="large-12 columns">
             <article>
                 <h1><abbr title="Uniform Resource Locator">URL</abbr> Builder for <abbr title="Google Analytics">GA</abbr></h1>
-                <p>With the Google Analytics <abbr title="Uniform Resource Locator">URL</abbr> Builder, you can easily tag <abbr title="Uniform Resource Locators">URLs</abbr>
- with custom campaign variables. Campaign variables allow you to track 
-which of your promotions are generating the most traffic/conversions. This tool is only for links going to a BRC site page.</p>
+                <p>With the Google Analytics <abbr title="Uniform Resource Locator">URL</abbr> Builder, you can easily tag <abbr title="Uniform Resource Locators">URLs</abbr> with custom campaign variables. Campaign variables allow you to track which of your promotions are generating the most traffic/conversions. This tool is only for links going to a BRC site page.</p>
                 <hr>
                 <h2>1) Create <abbr title="Uniform Resource Locator">URL</abbr></h2>
                 <p>Fill in the form to create your custom <abbr title="Uniform Resource Locator">URL</abbr>.</p>
@@ -681,6 +764,7 @@ which of your promotions are generating the most traffic/conversions. This tool 
         <select name="source" id="socialadsource">
 		<option value="Facebook">Facebook</option>
 		<option value="Instagram">Instagram</option>
+		<option value="Twitter">Twitter</option>
 		</select>
         </label>
         </p>
@@ -700,9 +784,13 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		</select>
         </label>
         </p>
+        
+        
+        <!-- social media ad type switcher -->
+        <div id="mediumSocialAdFacebookAdType">
         <p>
         <label for="adtype">What type of ad is it?
-        <select name="adtype" id="socialadadtype">
+        <select name="adtype" id="socialadadtype_facebook">
 		<option value="Canvas">Canvas</option>
 		<option value="Carousel">Carousel</option>
 		<option value="Collection">Collection</option>
@@ -717,6 +805,18 @@ which of your promotions are generating the most traffic/conversions. This tool 
 		</select>
         </label>
         </p>
+	</div>
+<div id="mediumSocialAdTwitterAdType">
+        <p>
+        <label for="adtype">What type of ad is it?
+        <select name="adtype" id="socialadadtype_twitter">
+		<option value="Promoted Tweet">Promoted Tweet</option>
+		</select>
+        </label>
+        </p>
+	</div>
+    <!-- end social media ad type switcher -->
+
         <p>
         <label for="adcreative">What's the creative about? What's the call to action of the ad?
         <input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="socialadadcreative" type="text">
@@ -1248,7 +1348,13 @@ which of your promotions are generating the most traffic/conversions. This tool 
 				break;
 			case "Social Ad":
 				source = $('#socialadsource').val();
-				adCreative = $('#socialadlinkcategory').val() + '_' + $('#socialadadtype').val();
+				adCreative = $('#socialadlinkcategory').val();
+				if (source == "Facebook" || source == "Instagram") {
+					adCreative = adCreative + '_' + $('#socialadadtype_facebook').val()
+					}
+				if (source == "Twitter") {
+					adCreative = adCreative + '_' + $('#socialadadtype_twitter').val();
+					}
 				if ($('#socialadadcreative').val()) {
 					adCreative = adCreative + '_' + $('#socialadadcreative').val();}
 				sourceCode = $('#socialadsourcecode').val();
