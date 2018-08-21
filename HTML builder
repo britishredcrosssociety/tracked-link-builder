@@ -7,6 +7,11 @@
   <script type="text/javascript" src="jquery-1.8.3.js"></script>
 <link rel="stylesheet" type="text/css" media="screen" href="stylesheet.css">
 
+<!-- next three are for the searchable dropdown -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css" href="./jquery.dropdown.min.css">
+<script src="./jquery.dropdown.js"></script>
+
   <style type="text/css">
     .alert {
 		color: red;
@@ -114,6 +119,7 @@ function toggleFields() {
 		$("#mediumSocialAdFacebookAdType").show() &&
 		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -134,6 +140,7 @@ function toggleFields() {
 		$("#mediumSocialAdFacebookAdType").show() &&
 		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -154,6 +161,7 @@ function toggleFields() {
 		$("#mediumSocialAdFacebookAdType").hide() &&
 		$("#mediumSocialAdTwitterAdType").show() &&
 		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -174,6 +182,7 @@ function toggleFields() {
 		$("#mediumSocialAdFacebookAdType").hide() &&
 		$("#mediumSocialAdTwitterAdType").show() &&
 		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -194,6 +203,7 @@ function toggleFields() {
 		$("#mediumSocialAdFacebookAdType").hide() &&
 		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialAdLinkedinAdType").show() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -214,6 +224,49 @@ function toggleFields() {
 		$("#mediumSocialAdFacebookAdType").hide() &&
 		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialAdLinkedinAdType").show() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Youtube" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").show() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
+		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").show() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "Youtube" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
+		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").show() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -436,7 +489,7 @@ function toggleFields() {
 		<option value="Email">Email</option>
         <option value="Paid Search">Paid search</option>
         <option value="Organic Search">Organic search</option>
-        <option value="Internal">From a BRC microsite to the main site (e.g. from the blog, the herobox, from a Shorthand app)</option>
+        <option value="Internal">From a BRC website to another BRC website (e.g. from the blog to the main website, from the homepage herobox to the donate platform)</option>
         <option value="Offline">From an offline source (e.g. a press ad) to a short URL</option>
         <option value="Rocketseed">Rocketseed banners</option>
         <option value="Referral">Referral from a news site etc.</option>
@@ -768,6 +821,7 @@ function toggleFields() {
 		<option value="Instagram">Instagram</option>
 		<option value="LinkedIn">LinkedIn</option>
 		<option value="Twitter">Twitter</option>
+		<option value="Youtube">Youtube</option>
 		</select>
         </label>
         </p>
@@ -831,6 +885,21 @@ function toggleFields() {
         </label>
         </p>
 	</div>
+<div id="mediumSocialAdYoutubeAdType">
+        <p>
+        <label for="adtype">What Youtube ad format is it?
+        <select name="adtype" id="socialadadtype_youtube">
+		<option value="Bumper">Bumper ads (non-skippable, only six seconds)</option>
+		<option value="Skippable In-stream">Skippable In-stream ads (skippable, pre/mid/post video roll)</option>
+		<option value="Non-skippable In-stream">Non-skippable In-stream ads (non-skippable, pre/mid video roll)</option>
+		<option value="Video Discovery">Video Discovery ads (on search results and watch pages)</option>
+		<option value="Display">Display ads (banners on watch pages)</option>
+		<option value="Overlay">In-video overlay ads</option>
+		<option value="Masthead">Mastheads (hero area on Youtube homepage)</option>
+		</select>
+        </label>
+        </p>
+	</div>
     <!-- end social media ad type switcher -->
 
         <p>
@@ -847,158 +916,33 @@ function toggleFields() {
         </label>
         </p>
         <div style="width:50%; float:left;">
+        <div id="socialadaudiencecontainer1" class="dropdown-multiple-label">
         <label for="audience">Who are we targeting with these ads?
-        <select name="audience" id="socialadaudience1">
+        <select style="display:none;" name="audience" id="socialadaudience1" multiple>
 		<option value=""></option>
-		<option value="All 25-44">All 25-44</option>
-		<option value="All 45 Plus">All 45+</option>
-		<option value="Women 25-34">Women 25-34</option>
-		<option value="Women 35-44">Women 35-44</option>
-        <option value="Women 45-54">Women 45-54</option>
-        <option value="Women 55-64">Women 55-64</option>
-        <option value="Women 55 Plus">Women 55+</option>
-        <option value="Women 65 Plus">Women 65+</option>
-		<option value="Men 25-34">Men 25-34</option>
-		<option value="Men 35-44">Men 35-44</option>
-        <option value="Men 45-54">Men 45-54</option>
-        <option value="Men 55-64">Men 55-64</option>
-        <option value="Men 55 Plus">Men 55+</option>
-        <option value="Men 65 Plus">Men 65+</option>
-        <option value="BRC Page Likers">BRC Page Likers</option>
-        <option value="Humanitarians">Humanitarians</option>
-        <option value="Progressive Professionals">Progressive Professionals</option>
-        <option value="Refugee Interest">Refugee Interest</option>
-        <option value="Running">Running</option>
-        <option value="Cycling">Cycling</option>
-        <option value="Fitness">Fitness</option>
-        <option value="Swimming">Swimming</option>
-        <option value="Walking and Hiking">Walking and Hiking</option>
-        <option value="Baking">Baking</option>
-        <option value="Trekking">Trekking</option>
-        <option value="Gambling">Gambling</option>
-        <option value="Parents">Parents</option>
 		</select>
         </label>
-        <select name="audience" id="socialadaudience2">
+        </div>
+        <div id="socialadaudiencecontainer2" class="dropdown-multiple-label">
+        <select style="display:none;" name="audience" id="socialadaudience2" multiple>
 		<option value=""></option>
-		<option value="All 25-44">All 25-44</option>
-		<option value="All 45 Plus">All 45+</option>
-		<option value="Women 25-34">Women 25-34</option>
-		<option value="Women 35-44">Women 35-44</option>
-        <option value="Women 45-54">Women 45-54</option>
-        <option value="Women 55-64">Women 55-64</option>
-        <option value="Women 55 Plus">Women 55+</option>
-        <option value="Women 65 Plus">Women 65+</option>
-		<option value="Men 25-34">Men 25-34</option>
-		<option value="Men 35-44">Men 35-44</option>
-        <option value="Men 45-54">Men 45-54</option>
-        <option value="Men 55-64">Men 55-64</option>
-        <option value="Men 55 Plus">Men 55+</option>
-        <option value="Men 65 Plus">Men 65+</option>
-        <option value="BRC Page Likers">BRC Page Likers</option>
-        <option value="Humanitarians">Humanitarians</option>
-        <option value="Progressive Professionals">Progressive Professionals</option>
-        <option value="Refugee Interest">Refugee Interest</option>
-        <option value="Running">Running</option>
-        <option value="Cycling">Cycling</option>
-        <option value="Fitness">Fitness</option>
-        <option value="Swimming">Swimming</option>
-        <option value="Walking and Hiking">Walking and Hiking</option>
-        <option value="Baking">Baking</option>
-        <option value="Trekking">Trekking</option>
-        <option value="Gambling">Gambling</option>
-        <option value="Parents">Parents</option>
 		</select>
-        <select name="audience" id="socialadaudience3">
+        </div>
+        <div id="socialadaudiencecontainer3" class="dropdown-multiple-label">
+        <select style="display:none;" name="audience" id="socialadaudience3" multiple>
 		<option value=""></option>
-		<option value="All 25-44">All 25-44</option>
-		<option value="All 45 Plus">All 45+</option>
-		<option value="Women 25-34">Women 25-34</option>
-		<option value="Women 35-44">Women 35-44</option>
-        <option value="Women 45-54">Women 45-54</option>
-        <option value="Women 55-64">Women 55-64</option>
-        <option value="Women 55 Plus">Women 55+</option>
-        <option value="Women 65 Plus">Women 65+</option>
-		<option value="Men 25-34">Men 25-34</option>
-		<option value="Men 35-44">Men 35-44</option>
-        <option value="Men 45-54">Men 45-54</option>
-        <option value="Men 55-64">Men 55-64</option>
-        <option value="Men 55 Plus">Men 55+</option>
-        <option value="Men 65 Plus">Men 65+</option>
-        <option value="BRC Page Likers">BRC Page Likers</option>
-        <option value="Humanitarians">Humanitarians</option>
-        <option value="Progressive Professionals">Progressive Professionals</option>
-        <option value="Refugee Interest">Refugee Interest</option>
-        <option value="Running">Running</option>
-        <option value="Cycling">Cycling</option>
-        <option value="Fitness">Fitness</option>
-        <option value="Swimming">Swimming</option>
-        <option value="Walking and Hiking">Walking and Hiking</option>
-        <option value="Baking">Baking</option>
-        <option value="Trekking">Trekking</option>
-        <option value="Gambling">Gambling</option>
-        <option value="Parents">Parents</option>
 		</select>
-        <select name="audience" id="socialadaudience4">
+        </div>
+        <div id="socialadaudiencecontainer4" class="dropdown-multiple-label">
+        <select style="display:none;" name="audience" id="socialadaudience4" multiple>
 		<option value=""></option>
-		<option value="All 25-44">All 25-44</option>
-		<option value="All 45 Plus">All 45+</option>
-		<option value="Women 25-34">Women 25-34</option>
-		<option value="Women 35-44">Women 35-44</option>
-        <option value="Women 45-54">Women 45-54</option>
-        <option value="Women 55-64">Women 55-64</option>
-        <option value="Women 55 Plus">Women 55+</option>
-        <option value="Women 65 Plus">Women 65+</option>
-		<option value="Men 25-34">Men 25-34</option>
-		<option value="Men 35-44">Men 35-44</option>
-        <option value="Men 45-54">Men 45-54</option>
-        <option value="Men 55-64">Men 55-64</option>
-        <option value="Men 55 Plus">Men 55+</option>
-        <option value="Men 65 Plus">Men 65+</option>
-        <option value="BRC Page Likers">BRC Page Likers</option>
-        <option value="Humanitarians">Humanitarians</option>
-        <option value="Progressive Professionals">Progressive Professionals</option>
-        <option value="Refugee Interest">Refugee Interest</option>
-        <option value="Running">Running</option>
-        <option value="Cycling">Cycling</option>
-        <option value="Fitness">Fitness</option>
-        <option value="Swimming">Swimming</option>
-        <option value="Walking and Hiking">Walking and Hiking</option>
-        <option value="Baking">Baking</option>
-        <option value="Trekking">Trekking</option>
-        <option value="Gambling">Gambling</option>
-        <option value="Parents">Parents</option>
 		</select>
-        <select name="audience" id="socialadaudience5">
+        </div>
+        <div id="socialadaudiencecontainer5" class="dropdown-multiple-label">
+        <select style="display:none;" name="audience" id="socialadaudience5" multiple>
 		<option value=""></option>
-		<option value="All 25-44">All 25-44</option>
-		<option value="All 45 Plus">All 45+</option>
-		<option value="Women 25-34">Women 25-34</option>
-		<option value="Women 35-44">Women 35-44</option>
-        <option value="Women 45-54">Women 45-54</option>
-        <option value="Women 55-64">Women 55-64</option>
-        <option value="Women 55 Plus">Women 55+</option>
-        <option value="Women 65 Plus">Women 65+</option>
-		<option value="Men 25-34">Men 25-34</option>
-		<option value="Men 35-44">Men 35-44</option>
-        <option value="Men 45-54">Men 45-54</option>
-        <option value="Men 55-64">Men 55-64</option>
-        <option value="Men 55 Plus">Men 55+</option>
-        <option value="Men 65 Plus">Men 65+</option>
-        <option value="BRC Page Likers">BRC Page Likers</option>
-        <option value="Humanitarians">Humanitarians</option>
-        <option value="Progressive Professionals">Progressive Professionals</option>
-        <option value="Refugee Interest">Refugee Interest</option>
-        <option value="Running">Running</option>
-        <option value="Cycling">Cycling</option>
-        <option value="Fitness">Fitness</option>
-        <option value="Swimming">Swimming</option>
-        <option value="Walking and Hiking">Walking and Hiking</option>
-        <option value="Baking">Baking</option>
-        <option value="Trekking">Trekking</option>
-        <option value="Gambling">Gambling</option>
-        <option value="Parents">Parents</option>
 		</select>
+        </div>
         </div>
         <div id="mediumSocialAdOwnSourceCodes" style="float:right;width:50%;">
         <label for="sourcecode">What are the different source codes for these ads?
@@ -1165,10 +1109,11 @@ function toggleFields() {
     <div id="mediumInternal">
     	<p class="alert">Your link won't include any UTM tracking, because it breaks up the session in Google Analytics &ndash; so only continue if you want individual-level tracking appended.<br />N.B. if you just want to track what pages people look at and in which order, then you can do that in Google Analytics without adding any extra tracking.</p>
         <p>
-        <label for="source">Which of BRC's microsites will this link go onto?
+        <label for="source">Which of BRC's sites will this link go onto?
         <select name="source" id="internalsource">
 		<option value="BRC Blog">Blog</option>
-        <option value="Homepage Promo">Homepage promo</option>
+        <option value="Homepage Herobox">Homepage herobox</option>
+        <option value="Homepage Promo Box">Homepage promo box (under herobox)</option>
         <option value="Webapps">Webapps</option>
 		</select>
         </label>
@@ -1389,6 +1334,9 @@ function toggleFields() {
 				if (source == "LinkedIn") {
 					adCreative = adCreative + '_' + $('#socialadadtype_linkedin').val();
 					}
+				if (source == "Youtube") {
+					adCreative = adCreative + '_' + $('#socialadadtype_youtube').val();
+					}
 				if ($('#socialadadcreative').val()) {
 					adCreative = adCreative + '_' + $('#socialadadcreative').val();}
 				sourceCode = $('#socialadsourcecode').val();
@@ -1397,12 +1345,20 @@ function toggleFields() {
 				sourceCode3 = $('#socialadsourcecode3').val();
 				sourceCode4 = $('#socialadsourcecode4').val();
 				sourceCode5 = $('#socialadsourcecode5').val();
-				audience = "audience"
-				audience1 = $('#socialadaudience1').val();
-				audience2 = $('#socialadaudience2').val();
-				audience3 = $('#socialadaudience3').val();
-				audience4 = $('#socialadaudience4').val();
-				audience5 = $('#socialadaudience5').val();
+				audience = "audience";
+				var audience1;
+				var audience2;
+				var audience3;
+				var audience4;
+				var audience5;
+				var audiencestring = [];
+				for (i=1; i <= 5; i++) {
+					if (Array.isArray($('#socialadaudience' + i).val())) {
+						var foo = $('#socialadaudience' + i).val().toString().replace(/,/g, "_");
+						audiencestring.push(foo);
+						};
+				};
+				var [audience1, audience2, audience3, audience4, audience5] = audiencestring; // to define each audience var, and concatenate the different search results with _s
 				ownSourceCode = $('#socialadownsourcecode').val();
 				break;
 			case "Social Post":
@@ -1644,11 +1600,77 @@ function toggleFields() {
         	$('input').keyup(window.updateOutput);
         	$('input').click(window.updateOutput);
         	$('select').change(window.updateOutput);
-
+        	$('.dropdown-multiple-label,.dropdown-selected,.dropdown-option,.dropdown-search,.dropdown-display,.dropdown-display-label').click(window.updateOutput);
+        	$('.output').mousedown(window.updateOutput);
 			updateOutput();
 	}
 
 	$(window.initpage);
+	
+	// trial searchable dropdown code
+	
+	var targetingoptions = [
+			{"name":"","id":""},
+			{"name":"Gender = Men","id":"Men"},
+			{"name":"Gender = Women","id":"Women"},
+			{"name":"Age = 18-24","id":"18-24"},
+			{"name":"Age = 25-34","id":"25-34"},
+			{"name":"Age = 35-44","id":"35-44"},
+			{"name":"Age = 45-54","id":"45-54"},
+			{"name":"Age = 55-64","id":"55-64"},
+			{"name":"Age = 55+","id":"55 Plus"},
+			{"name":"Age = 65+","id":"65 Plus"},
+			{"name":"Interests = Humanitarians","id":"Humanitarians"},
+			{"name":"Interests = Progressive Professionals","id":"Progressive Professionals"},
+			{"name":"Interests = Refugee Interest","id":"Refugee Interest"},
+			{"name":"Interests = Running","id":"Running"},
+			{"name":"Interests = Cycling","id":"Cycling"},
+			{"name":"Interests = Fitness","id":"Fitness"},
+			{"name":"Interests = Swimming","id":"Swimming"},
+			{"name":"Interests = Walking and Hiking","id":"Walking and Hiking"},
+			{"name":"Interests = Baking","id":"Baking"},
+			{"name":"Interests = Trekking","id":"Trekking"},
+			{"name":"Interests = Gambling","id":"Gambling"},
+			{"name":"BRC Page Likers","id":"BRC Page Likers"},
+			{"name":"Parents","id":"Parents"},
+			];
+  	$('#socialadaudiencecontainer1').dropdown({
+		multipleMode: 'label',
+		limitCount: 4,
+		input: '<input type="text" maxLength="20" placeholder="Search">',
+		data: targetingoptions,
+		searchable: true,
+	});
+  	$('#socialadaudiencecontainer2').dropdown({
+		multipleMode: 'label',
+		limitCount: 4,
+		input: '<input type="text" maxLength="20" placeholder="Search">',
+		data: targetingoptions,
+		searchable: true,
+	});
+  	$('#socialadaudiencecontainer3').dropdown({
+		multipleMode: 'label',
+		limitCount: 4,
+		input: '<input type="text" maxLength="20" placeholder="Search">',
+		data: targetingoptions,
+		searchable: true,
+	});
+  	$('#socialadaudiencecontainer4').dropdown({
+		multipleMode: 'label',
+		limitCount: 4,
+		input: '<input type="text" maxLength="20" placeholder="Search">',
+		data: targetingoptions,
+		searchable: true,
+	});
+  	$('#socialadaudiencecontainer5').dropdown({
+		multipleMode: 'label',
+		limitCount: 4,
+		input: '<input type="text" maxLength="20" placeholder="Search">',
+		data: targetingoptions,
+		searchable: true,
+	});
+	
+	// end trial searchable dropdown code
 
 </script>
 
