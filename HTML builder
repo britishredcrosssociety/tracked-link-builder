@@ -518,6 +518,7 @@ function toggleFields() {
 		<option value="Syria Crisis Appeal">Donate - Syria Crisis</option>
 		<option value="Yemen Crisis Appeal">Donate - Yemen Crisis</option>
         <option value="UK Solidarity Fund">Donate - UK Solidarity Fund</option>
+		<option value="Brighton Abseil">Events - Brighton Abseil</option>
 		<option value="Dance: Make Your Move">Events - Dance: Make Your Move</option>
 		<option value="Great Manchester Run">Events - Great Manchester Run</option>
 		<option value="Great North Run">Events - Great North Run</option>
