@@ -508,9 +508,10 @@ function toggleFields() {
 		<option value="General Fund Appeal">Donate - General Fund</option>
         <option value="East Africa Crisis Appeal">Donate - East Africa Crisis</option>
 		<option value="Europe Refugee Crisis Appeal">Donate - Europe Refugee Crisis</option>
+		<option value="Indonesia Earthquake and Tsunami Appeal">Donate - Indonesia Earthquake and Tsunami</option>
         <option value="Iraq Crisis Appeal">Donate - Iraq Crisis</option>
 		<option value="Lake Chad Crisis Appeal">Donate - Lake Chad Crisis</option>
-		<option value="London Fire Relief Fund">Donate - London Fire Relief</option>
+		<!-- <option value="London Fire Relief Fund">Donate - London Fire Relief</option> -->
         <option value="Manchester Emergency Fund">Donate - Manchester Emergency</option>
         <option value="Myanmar Appeal">Donate - Myanmar</option>
 		<!-- <option value="South Asia Floods Appeal">Donate - South Asia Floods</option> -->
