@@ -1638,7 +1638,12 @@ function toggleFields() {
 			{"name":"Interests = Trekking","id":"Trekking"},
 			{"name":"Interests = Gambling","id":"Gambling"},
 			{"name":"BRC Page Likers","id":"BRC Page Likers"},
+			{"name":"City Prosperity_London","id":"City Prosperity_London"},
+			{"name":"City Prosperity_North","id":"City Prosperity_North"},
+			{"name":"City Prosperity_Southwest","id":"City Prosperity_Southwest"},
+			{"name":"Domestic Success","id":"Domestic Success"},
 			{"name":"Parents","id":"Parents"},
+			{"name":"Prestige Positions","id":"Prestige Positions"},
 			];
   	$('#socialadaudiencecontainer1').dropdown({
 		multipleMode: 'label',
