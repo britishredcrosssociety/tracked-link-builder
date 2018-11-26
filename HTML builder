@@ -500,66 +500,13 @@ function toggleFields() {
         
 	<p id="mediumOrganicSearch" class="alert">We don't have control over tracking of organic search, so you don't need this tool. Give us a shout if you have any questions.</p>
 
-        <p>
-        <label for="campaign">What area of BRC work does the link relate to?
-        <select name="campaign" id="campaign">
-        <!-- <option value="Complex Emergencies Appeal">Donate - Complex Emergencies</option> -->
-		<option value="Disaster Fund">Donate - Disaster Fund</option>
-		<option value="General Fund Appeal">Donate - General Fund</option>
-        <option value="East Africa Crisis Appeal">Donate - East Africa Crisis</option>
-		<option value="Europe Refugee Crisis Appeal">Donate - Europe Refugee Crisis</option>
-		<option value="Indonesia Earthquake and Tsunami Appeal">Donate - Indonesia Earthquake and Tsunami</option>
-        <option value="Iraq Crisis Appeal">Donate - Iraq Crisis</option>
-		<option value="Lake Chad Crisis Appeal">Donate - Lake Chad Crisis</option>
-		<!-- <option value="London Fire Relief Fund">Donate - London Fire Relief</option> -->
-        <option value="Manchester Emergency Fund">Donate - Manchester Emergency</option>
-        <option value="Myanmar Appeal">Donate - Myanmar</option>
-		<!-- <option value="South Asia Floods Appeal">Donate - South Asia Floods</option> -->
-		<option value="South Sudan Crisis Appeal">Donate - South Sudan Crisis</option>
-		<option value="Syria Crisis Appeal">Donate - Syria Crisis</option>
-		<option value="Yemen Crisis Appeal">Donate - Yemen Crisis</option>
-        <option value="UK Solidarity Fund">Donate - UK Solidarity Fund</option>
-		<option value="Bedfordshire Christmas Market">Events - Bedfordshire Christmas Market</option>
-		<option value="Brighton Abseil">Events - Brighton Abseil</option>
-		<option value="Call My Bluff">Events - Call My Bluff</option>
-		<option value="Dance: Make Your Move">Events - Dance: Make Your Move</option>
-		<option value="Giggle Aid Manchester">Events - Giggle Aid Manchester</option>
-		<option value="Giggle Aid Sheffield">Events - Giggle Aid Sheffield</option>
-		<option value="Great Manchester Run">Events - Great Manchester Run</option>
-		<option value="Great North Run">Events - Great North Run</option>
-		<option value="Guildhall Christmas Market">Events - Guildhall Christmas Market</option>
-		<option value="Hadrians’ Wall">Events - Hadrians’ Wall</option>
-		<option value="London Marathon">Events - London Marathon</option>
-		<option value="Miles for Refugees">Events - Miles for Refugees</option>
-		<option value="Open Challenge">Events - Open Challenge</option>
-		<option value="Open Gardens">Events - Open Gardens</option>
-		<option value="Orbit Abseil">Events - Orbit Abseil</option>
-		<option value="Red Cross Tea Party">Events - Red Cross Tea Party</option>
-		<option value="Red Cross Week">Events - Red Cross Week</option>
-		<option value="RideLondon">Events - RideLondon</option>
-		<option value="Royal Parks Half Marathon">Events - Royal Parks Half Marathon</option>
-		<option value="Snowdon Trek">Events - Snowdon Trek</option>
-		<option value="Yorkshire 3 Peaks">Events - Yorkshire 3 Peaks</option>
-        <option value="Power Of Kindness">Brand - Power Of Kindness</option>
-        <option value="Co-op Partnership">Partnership - Co-op</option>
-        <option value="Community Reserve Volunteers">Volunteering - Community Reserve</option>
-        <option value="Little Heroes">Little Heroes</option>
-		<option value="Aid Conflict">Aid Conflict</option>
-		<option value="Aid Disease">Aid Disease</option>
-		<option value="Aid Earthquake">Aid Earthquake</option>
-		<option value="Aid Hurricane">Aid Hurricane</option>
-		<option value="Aid Flooding">Aid Flooding</option>
-		<option value="Aid Food Crisis">Aid Food Crisis</option>
-		<option value="First Aid">First Aid</option>
-		<option value="Fundraising">Fundraising</option>
-		<option value="Health">Health</option>
-		<option value="Refugee">Refugee</option>
-		<option value="Resilience">Resilience</option>
-		<option value="Volunteering">Volunteering</option>
-		<option value="Other">Other</option>
-        </select>
+    <p id="campaignselect" class="dropdown-single">
+	<label for="campaign">What area of BRC work does the link relate to?
+	<select style="display:none;" name="campaign" id="campaign">
+		<option value=""></option>
+		</select>
         </label>
-        </p>
+    </p>
 
         <p>
         <label for="domain">What BRC site page are you linking to?
@@ -927,6 +874,7 @@ function toggleFields() {
         <select style="display:none;" name="audience" id="socialadaudience1" multiple>
 		<option value=""></option>
 		</select>
+
         </label>
         </div>
         <div id="socialadaudiencecontainer2" class="dropdown-multiple-label">
@@ -1613,7 +1561,7 @@ function toggleFields() {
 
 	$(window.initpage);
 	
-	// trial searchable dropdown code
+	// searchable dropdown code, based on https://janking.github.io/dropdown/
 	
 	var targetingoptions = [
 			{"name":"","id":""},
@@ -1645,6 +1593,75 @@ function toggleFields() {
 			{"name":"Parents","id":"Parents"},
 			{"name":"Prestige Positions","id":"Prestige Positions"},
 			];
+
+		var campaignoptions = [
+		{"name":"","id":""},
+		{"name":"Donate - Complex Emergencies","id":"Complex Emergencies Appeal"},
+		{"name":"Donate - Disaster Fund","id":"Disaster Fund"},
+		{"name":"Donate - General Fund","id":"General Fund Appeal"},
+		{"name":"Donate - East Africa Crisis","id":"East Africa Crisis Appeal"},
+		{"name":"Donate - Europe Refugee Crisis","id":"Europe Refugee Crisis Appeal"},
+		{"name":"Donate - Indonesia Earthquake and Tsunami","id":"Indonesia Earthquake and Tsunami Appeal"},
+		{"name":"Donate - Iraq Crisis","id":"Iraq Crisis Appeal"},
+		{"name":"Donate - Lake Chad Crisis","id":"Lake Chad Crisis Appeal"},
+		{"name":"Donate - London Fire Relief","id":"London Fire Relief Fund"},
+		{"name":"Donate - Manchester Emergency","id":"Manchester Emergency Fund"},
+		{"name":"Donate - Myanmar","id":"Myanmar Appeal"},
+		{"name":"Donate - South Asia Floods","id":"South Asia Floods Appeal"},
+		{"name":"Donate - South Sudan Crisis","id":"South Sudan Crisis Appeal"},
+		{"name":"Donate - Syria Crisis","id":"Syria Crisis Appeal"},
+		{"name":"Donate - Yemen Crisis","id":"Yemen Crisis Appeal"},
+		{"name":"Donate - UK Fund Appeal","id":"UK Fund Appeal"},
+		{"name":"Donate - UK Solidarity Fund","id":"UK Solidarity Fund"},
+		{"name":"Events - Bedfordshire Christmas Market","id":"Bedfordshire Christmas Market"},
+		{"name":"Events - Brighton Abseil","id":"Brighton Abseil"},
+		{"name":"Events - Call My Bluff","id":"Call My Bluff"},
+		{"name":"Events - Dance: Make Your Move","id":"Dance: Make Your Move"},
+		{"name":"Events - Giggle Aid Manchester","id":"Giggle Aid Manchester"},
+		{"name":"Events - Giggle Aid Sheffield","id":"Giggle Aid Sheffield"},
+		{"name":"Events - Great Manchester Run","id":"Great Manchester Run"},
+		{"name":"Events - Great North Run","id":"Great North Run"},
+		{"name":"Events - Guildhall Christmas Market","id":"Guildhall Christmas Market"},
+		{"name":"Events - Hadrians' Wall","id":"Hadrians' Wall"},
+		{"name":"Events - London Marathon","id":"London Marathon"},
+		{"name":"Events - Miles for Refugees","id":"Miles for Refugees"},
+		{"name":"Events - Open Challenge","id":"Open Challenge"},
+		{"name":"Events - Open Gardens","id":"Open Gardens"},
+		{"name":"Events - Orbit Abseil","id":"Orbit Abseil"},
+		{"name":"Events - Red Cross Tea Party","id":"Red Cross Tea Party"},
+		{"name":"Events - Red Cross Week","id":"Red Cross Week"},
+		{"name":"Events - RideLondon","id":"RideLondon"},
+		{"name":"Events - Royal Parks Half Marathon","id":"Royal Parks Half Marathon"},
+		{"name":"Events - Snowdon Trek","id":"Snowdon Trek"},
+		{"name":"Events - Yorkshire 3 Peaks","id":"Yorkshire 3 Peaks"},
+		{"name":"Campaign - Connected Communities","id":"Connected Communities"},
+		{"name":"Campaign - Open/Medialab (OML) acquisition","id":"OML"},
+		{"name":"Campaign - Power Of Kindness","id":"Power Of Kindness"},
+		{"name":"Partnership - Co-op","id":"Co-op Partnership"},
+		{"name":"Volunteering - Community Reserve","id":"Community Reserve Volunteers"},
+		{"name":"Little Heroes","id":"Little Heroes"},
+		{"name":"Aid Conflict","id":"Aid Conflict"},
+		{"name":"Aid Disease","id":"Aid Disease"},
+		{"name":"Aid Earthquake","id":"Aid Earthquake"},
+		{"name":"Aid Hurricane","id":"Aid Hurricane"},
+		{"name":"Aid Flooding","id":"Aid Flooding"},
+		{"name":"Aid Food Crisis","id":"Aid Food Crisis"},
+		{"name":"First Aid","id":"First Aid"},
+		{"name":"Fundraising","id":"Fundraising"},
+		{"name":"Health","id":"Health"},
+		{"name":"Refugee","id":"Refugee"},
+		{"name":"Resilience","id":"Resilience"},
+		{"name":"Volunteering","id":"Volunteering"},
+		{"name":"Other","id":"Other"}
+	];
+	
+	$('#campaignselect').dropdown({
+      readOnly: true,
+      input: '<input type="text" maxLength="20" placeholder="Search">',
+      data: campaignoptions,
+      searchable: true,
+    });
+	
   	$('#socialadaudiencecontainer1').dropdown({
 		multipleMode: 'label',
 		limitCount: 4,
