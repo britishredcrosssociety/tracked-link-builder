@@ -533,8 +533,8 @@ function toggleFields() {
         <p>
         <label for="sourcecode">What type of website is it?
         <select name="sourcecode" id="referralsourcecode">
-		<option value="162201">News or magazine site</option>
-		<option value="162202">Other</option>
+		<option value="166704">News or magazine site</option>
+		<option value="166705">Other</option>
 		</select>
         </label>
         </p>
@@ -614,7 +614,7 @@ function toggleFields() {
         </label>
         </p>
         <p>
-		<input name="sourcecode" id="bannersourcecode" value="162197" type="hidden">
+		<input name="sourcecode" id="bannersourcecode" value="166700" type="hidden">
         </p>
 	</div>
     </div>
@@ -908,7 +908,7 @@ function toggleFields() {
         </label>
         </p>
         <p>
-		<input name="sourcecode" id="socialadsourcecode" value="162204" type="hidden">
+		<input name="sourcecode" id="socialadsourcecode" value="166707" type="hidden">
         </p>
 	</div>
     </div>
@@ -938,7 +938,7 @@ function toggleFields() {
         </label>
         </p>
         <p>
-		<input name="sourcecode" id="socialpostsourcecode" value="162204" type="hidden">
+		<input name="sourcecode" id="socialpostsourcecode" value="166707" type="hidden">
         </p>
         <p>
         <label for="linkcategory">What link from our site is being shared?
@@ -974,7 +974,7 @@ function toggleFields() {
         </label>
         </p>
         <p>
-		<input name="sourcecode" id="socialsharesourcecode" value="162204" type="hidden">
+		<input name="sourcecode" id="socialsharesourcecode" value="166707" type="hidden">
         <label for="audience">Where is the social share button on our site?
         <select name="audience" id="socialshareaudience">
 		<option value="Donate Landing">Donate - Landing</option>
@@ -1025,7 +1025,7 @@ function toggleFields() {
         </label>
         </p>
         <p>
-		<input name="sourcecode" id="socialbuttonsourcecode" value="162204" type="hidden">
+		<input name="sourcecode" id="socialbuttonsourcecode" value="166707" type="hidden">
         </p>
         <p>
         <label for="audience">Where is this social button going?
@@ -1074,7 +1074,7 @@ function toggleFields() {
         </label>
         </p>
         <p>
-		<input name="sourcecode" id="internalsourcecode" value="162198" type="hidden">
+		<input name="sourcecode" id="internalsourcecode" value="166701" type="hidden">
 		<input name="audience" id="internalaudience" value="BRC Site" type="hidden">
         </p>
         <p>
@@ -1113,7 +1113,7 @@ function toggleFields() {
         </label>
         </p>
         <p>
-		<input name="sourcecode" id="offlinesourcecode" value="162203" type="hidden">
+		<input name="sourcecode" id="offlinesourcecode" value="166706" type="hidden">
         </p>
         <p>
         <label for="audience">Who is seeing the offline advertising
@@ -1153,7 +1153,7 @@ function toggleFields() {
         </label>
         </p>
         <p>
-		<input name="sourcecode" id="rocketseedsourcecode" value="162203" type="hidden">
+		<input name="sourcecode" id="rocketseedsourcecode" value="166706" type="hidden">
 		<input name="audience" id="rocketseedaudience" value="Emailed by BRC" type="hidden">
 		<input name="medium" id="rocketseedmedium" value="Banner" type="hidden">
         </p>
@@ -1434,14 +1434,14 @@ function toggleFields() {
 		if (audience1 && !audience2 && !audience3 && !audience4 && !audience5 ) {
 			var html = html.replace(/audience/g,encodeURIComponent(audience1));
 			if (ownSourceCode === "Yes") {
-				var html = html.replace(/162197|162204/g,encodeURIComponent(sourceCode1));
+				var html = html.replace(/166700|166707/g,encodeURIComponent(sourceCode1));
 			}
 		} else if (audience1 && audience2 && !audience3 && !audience4 && !audience5 ) {
 			var html1 = html.replace(/audience/g,encodeURIComponent(audience1));
 			var html2 = html.replace(/audience/g,encodeURIComponent(audience2));
 			if (ownSourceCode === "Yes") {
-				var html1 = html1.replace(/162197|162204/g,encodeURIComponent(sourceCode1));
-				var html2 = html2.replace(/162197|162204/g,encodeURIComponent(sourceCode2));
+				var html1 = html1.replace(/166700|166707/g,encodeURIComponent(sourceCode1));
+				var html2 = html2.replace(/166700|166707/g,encodeURIComponent(sourceCode2));
 			}
 			var html = html1 + "\n\n" + html2;
 		} else if (audience1 && audience2 && audience3 && !audience4 && !audience5 ) {
@@ -1449,9 +1449,9 @@ function toggleFields() {
 			var html2 = html.replace(/audience/g,encodeURIComponent(audience2));
 			var html3 = html.replace(/audience/g,encodeURIComponent(audience3));
 			if (ownSourceCode === "Yes") {
-				var html1 = html1.replace(/162197|162204/g,encodeURIComponent(sourceCode1));
-				var html2 = html2.replace(/162197|162204/g,encodeURIComponent(sourceCode2));
-				var html3 = html3.replace(/162197|162204/g,encodeURIComponent(sourceCode3));
+				var html1 = html1.replace(/166700|166707/g,encodeURIComponent(sourceCode1));
+				var html2 = html2.replace(/166700|166707/g,encodeURIComponent(sourceCode2));
+				var html3 = html3.replace(/166700|166707/g,encodeURIComponent(sourceCode3));
 			}
 			var html = html1 + "\n\n" + html2 + "\n\n" + html3;
 		} else if (audience1 && audience2 && audience3 && audience4 && !audience5 ) {
@@ -1460,10 +1460,10 @@ function toggleFields() {
 			var html3 = html.replace(/audience/g,encodeURIComponent(audience3));
 			var html4 = html.replace(/audience/g,encodeURIComponent(audience4));
 			if (ownSourceCode === "Yes") {
-				var html1 = html1.replace(/162197|162204/g,encodeURIComponent(sourceCode1));
-				var html2 = html2.replace(/162197|162204/g,encodeURIComponent(sourceCode2));
-				var html3 = html3.replace(/162197|162204/g,encodeURIComponent(sourceCode3));
-				var html4 = html4.replace(/162197|162204/g,encodeURIComponent(sourceCode4));
+				var html1 = html1.replace(/166700|166707/g,encodeURIComponent(sourceCode1));
+				var html2 = html2.replace(/166700|166707/g,encodeURIComponent(sourceCode2));
+				var html3 = html3.replace(/166700|166707/g,encodeURIComponent(sourceCode3));
+				var html4 = html4.replace(/166700|166707/g,encodeURIComponent(sourceCode4));
 			}
 			var html = html1 + "\n\n" + html2 + "\n\n" + html3 + "\n\n" + html4;
 		} else if (audience1 && audience2 && audience3 && audience4 && audience5 ) {
@@ -1473,11 +1473,11 @@ function toggleFields() {
 			var html4 = html.replace(/audience/g,encodeURIComponent(audience4));
 			var html5 = html.replace(/audience/g,encodeURIComponent(audience5));
 			if (ownSourceCode === "Yes") {
-				var html1 = html1.replace(/162197|162204/g,encodeURIComponent(sourceCode1));
-				var html2 = html2.replace(/162197|162204/g,encodeURIComponent(sourceCode2));
-				var html3 = html3.replace(/162197|162204/g,encodeURIComponent(sourceCode3));
-				var html4 = html4.replace(/162197|162204/g,encodeURIComponent(sourceCode4));
-				var html5 = html5.replace(/162197|162204/g,encodeURIComponent(sourceCode5));
+				var html1 = html1.replace(/166700|166707/g,encodeURIComponent(sourceCode1));
+				var html2 = html2.replace(/166700|166707/g,encodeURIComponent(sourceCode2));
+				var html3 = html3.replace(/166700|166707/g,encodeURIComponent(sourceCode3));
+				var html4 = html4.replace(/166700|166707/g,encodeURIComponent(sourceCode4));
+				var html5 = html5.replace(/166700|166707/g,encodeURIComponent(sourceCode5));
 			}
 			var html = html1 + "\n\n" + html2 + "\n\n" + html3 + "\n\n" + html4 + "\n\n" + html5;
 		} else {
@@ -1601,20 +1601,15 @@ function toggleFields() {
 		{"name":"Donate - Complex Emergencies","id":"Complex Emergencies Appeal"},
 		{"name":"Donate - Disaster Fund","id":"Disaster Fund"},
 		{"name":"Donate - General Fund","id":"General Fund Appeal"},
-		{"name":"Donate - East Africa Crisis","id":"East Africa Crisis Appeal"},
-		{"name":"Donate - Europe Refugee Crisis","id":"Europe Refugee Crisis Appeal"},
 		{"name":"Donate - Indonesia Earthquake and Tsunami","id":"Indonesia Earthquake and Tsunami Appeal"},
 		{"name":"Donate - Iraq Crisis","id":"Iraq Crisis Appeal"},
 		{"name":"Donate - Lake Chad Crisis","id":"Lake Chad Crisis Appeal"},
-		{"name":"Donate - London Fire Relief","id":"London Fire Relief Fund"},
-		{"name":"Donate - Manchester Emergency","id":"Manchester Emergency Fund"},
 		{"name":"Donate - Myanmar","id":"Myanmar Appeal"},
-		{"name":"Donate - South Asia Floods","id":"South Asia Floods Appeal"},
 		{"name":"Donate - South Sudan Crisis","id":"South Sudan Crisis Appeal"},
 		{"name":"Donate - Syria Crisis","id":"Syria Crisis Appeal"},
-		{"name":"Donate - Yemen Crisis","id":"Yemen Crisis Appeal"},
 		{"name":"Donate - UK Fund Appeal","id":"UK Fund Appeal"},
 		{"name":"Donate - UK Solidarity Fund","id":"UK Solidarity Fund"},
+		{"name":"Donate - Yemen Crisis","id":"Yemen Crisis Appeal"},
 		{"name":"Events - Bedfordshire Christmas Market","id":"Bedfordshire Christmas Market"},
 		{"name":"Events - Brighton Abseil","id":"Brighton Abseil"},
 		{"name":"Events - Call My Bluff","id":"Call My Bluff"},
