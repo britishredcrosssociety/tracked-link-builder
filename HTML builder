@@ -1610,6 +1610,7 @@ function toggleFields() {
 		{"name":"Donate - UK Fund Appeal","id":"UK Fund Appeal"},
 		{"name":"Donate - UK Solidarity Fund","id":"UK Solidarity Fund"},
 		{"name":"Donate - Yemen Crisis","id":"Yemen Crisis Appeal"},
+		{"name":"Events","id":"Events"},
 		{"name":"Events - Bedfordshire Christmas Market","id":"Bedfordshire Christmas Market"},
 		{"name":"Events - Brighton Abseil","id":"Brighton Abseil"},
 		{"name":"Events - Call My Bluff","id":"Call My Bluff"},
