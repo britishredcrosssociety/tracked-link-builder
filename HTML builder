@@ -16,6 +16,11 @@
     .alert {
 		color: red;
 	}
+	.labeldesc {
+		display: block;
+		font-style: italic;
+		font-size: 0.9em;
+	}
   </style>
 
 <title>Google Analytics URL Builder</title>
@@ -1095,7 +1100,7 @@ function toggleFields() {
         </p>
 
         <p>
-        <label for="linkdetails">What's the call to action of the link about?
+        <label for="linkdetails">What's the creative about?<span class="labeldesc">i.e. the creative of the content that is driving people towards the link</span>
         <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="internallinkdetails" type="text">
         </label>
         </p>   
@@ -1599,6 +1604,7 @@ function toggleFields() {
 		var campaignoptions = [
 		{"name":"","id":""},
 		{"name":"Donate - Complex Emergencies","id":"Complex Emergencies Appeal"},
+		{"name":"Donate - Cyclone Idai","id":"Cyclone Idai Appeal"},
 		{"name":"Donate - Disaster Fund","id":"Disaster Fund"},
 		{"name":"Donate - General Fund","id":"General Fund Appeal"},
 		{"name":"Donate - Indonesia Earthquake and Tsunami","id":"Indonesia Earthquake and Tsunami Appeal"},
