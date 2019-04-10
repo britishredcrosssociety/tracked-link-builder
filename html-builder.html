@@ -880,7 +880,8 @@ function toggleFields() {
 		<option value=""></option>
 		</select>
 
-        </label>
+		</label>
+		
         </div>
         <div id="socialadaudiencecontainer2" class="dropdown-multiple-label">
         <select style="display:none;" name="audience" id="socialadaudience2" multiple>
@@ -1200,6 +1201,7 @@ function toggleFields() {
         </div>
     </div>
 </div>
+<script src="campaign.js"></script>
 <script>
 	function updateOutput()
         {
@@ -1599,9 +1601,9 @@ function toggleFields() {
 			{"name":"Domestic Success","id":"Domestic Success"},
 			{"name":"Parents","id":"Parents"},
 			{"name":"Prestige Positions","id":"Prestige Positions"},
-			];
+		];
 
-		var campaignoptions = [
+	var campaignoptions = [
 		{"name":"","id":""},
 		{"name":"Donate - Complex Emergencies","id":"Complex Emergencies Appeal"},
 		{"name":"Donate - Cyclone Idai","id":"Cyclone Idai Appeal"},
@@ -1659,12 +1661,12 @@ function toggleFields() {
 		{"name":"Other","id":"Other"}
 	];
 	
-	$('#campaignselect').dropdown({
-      readOnly: true,
-      input: '<input type="text" maxLength="20" placeholder="Search">',
-      data: campaignoptions,
-      searchable: true,
-    });
+	// $('#campaignselect').dropdown({
+    //   readOnly: true,
+    //   input: '<input type="text" maxLength="20" placeholder="Search">',
+    //   data: campaignoptions,
+    //   searchable: true,
+	// });
 	
   	$('#socialadaudiencecontainer1').dropdown({
 		multipleMode: 'label',
