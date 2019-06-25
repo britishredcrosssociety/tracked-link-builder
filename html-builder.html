@@ -65,7 +65,6 @@ $(document).ready(function () {
     }); 
 }); //this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
 function toggleFields() {
-
     if ($("#medium").val() === "Paid Search")
         $("#mediumPPCSearch").show() &&
 		$("#mediumOrganicSearch").hide() &&
@@ -81,7 +80,6 @@ function toggleFields() {
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").hide() && 
 		$("#urlHidden").show();
-
 	else if ($("#medium").val() === "Organic Search")
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").show() &&
@@ -113,7 +111,6 @@ function toggleFields() {
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
-
 	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && ($("#socialadsource").val() === "Facebook" || $("#socialadsource").val() === "Instagram") )
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
@@ -445,7 +442,6 @@ function toggleFields() {
 		$("#mediumRocketseed").show() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
-
     else
         $("#mediumPPCSearch").hide() &&
 		$("#mediumOrganicSearch").hide() &&
@@ -557,6 +553,7 @@ function toggleFields() {
         <p>
         <label for="source">What ad network is the ad on?
         <select name="source" id="bannersource">
+		<option value="google">Google (formerly Doubleclick/DFP)</option>
 		<option value="FORO">FORO</option>
     	<option value="AdYouLike">AdYouLike</option>
 		</select>
@@ -622,6 +619,7 @@ function toggleFields() {
 		<input name="sourcecode" id="bannersourcecode" value="166700" type="hidden">
         </p>
 	</div>
+
     </div>
     
     <div id="mediumEmail">
@@ -1201,6 +1199,7 @@ function toggleFields() {
         </div>
     </div>
 </div>
+<!--searchable dropdown code, based on https://janking.github.io/dropdown/ -->
 <script src="campaign.js"></script>
 <script src="audience.js"></script>
 <script>
@@ -1382,7 +1381,6 @@ function toggleFields() {
 				sourceCode = $('#sourcecode').val();
 				audience = $('#audience').val();
 		}
-
 		/* for( var i = 0; i < sourceCodeList.length; i++) {
 		    if(sourceCodeList[i] > 0)
         		sourceCodeCount++;
@@ -1438,7 +1436,6 @@ function toggleFields() {
 			
 // For banner and social ads - To repeat the link for each audience filled in, replacing the audience for each one.
 // NOTE: If variables used here are not defined on page load (i.e. literally on load, or with the default medium selection) then it will mess things up.
-
 		if (audience1 && !audience2 && !audience3 && !audience4 && !audience5 ) {
 			var html = html.replace(/audience/g,encodeURIComponent(audience1));
 			if (ownSourceCode === "Yes") {
@@ -1491,7 +1488,6 @@ function toggleFields() {
 		} else {
 			var html = html;
 		}
-
 // For email - to replace the link for each link content filled in, with the link location and link content replaced each time.
 // NOTE: If variables used here are not defined on page load (i.e. literally on load, or with the default medium selection) then it will mess things up.
 		
@@ -1554,12 +1550,7 @@ function toggleFields() {
        		$('#url').change();
        	}
 	}
-
 	function initpage() {
-     //     $('.showUrlBox').autogrow(); // fit the URL field to the size of the URL - for some reason, this clashes with the URL generation
-     //   	$('.showUrlBox').click(function() {
-     //   		$(this).select();
-     //   	}); // if you click into the URL field, then select its contents - for some reason, this clashes with the URL generation
         	$('input').keyup(window.updateOutput);
         	$('input').click(window.updateOutput);
         	$('select').change(window.updateOutput);
@@ -1567,147 +1558,7 @@ function toggleFields() {
         	$('.output').mousedown(window.updateOutput);
 			updateOutput();
 	}
-
 	$(window.initpage);
-	
-	// searchable dropdown code, based on https://janking.github.io/dropdown/
-	
-	var targetingoptions = [
-			{"name":"","id":""},
-			{"name":"Gender = Men","id":"Men"},
-			{"name":"Gender = Women","id":"Women"},
-			{"name":"Age = 18-24","id":"18-24"},
-			{"name":"Age = 25-34","id":"25-34"},
-			{"name":"Age = 35-44","id":"35-44"},
-			{"name":"Age = 45-54","id":"45-54"},
-			{"name":"Age = 55-64","id":"55-64"},
-			{"name":"Age = 55+","id":"55 Plus"},
-			{"name":"Age = 65+","id":"65 Plus"},
-			{"name":"Interests = Humanitarians","id":"Humanitarians"},
-			{"name":"Interests = Progressive Professionals","id":"Progressive Professionals"},
-			{"name":"Interests = Refugee Interest","id":"Refugee Interest"},
-			{"name":"Interests = Running","id":"Running"},
-			{"name":"Interests = Cycling","id":"Cycling"},
-			{"name":"Interests = Fitness","id":"Fitness"},
-			{"name":"Interests = Swimming","id":"Swimming"},
-			{"name":"Interests = Walking and Hiking","id":"Walking and Hiking"},
-			{"name":"Interests = Baking","id":"Baking"},
-			{"name":"Interests = Trekking","id":"Trekking"},
-			{"name":"Interests = Gambling","id":"Gambling"},
-			{"name":"BRC Page Likers","id":"BRC Page Likers"},
-			{"name":"Charity Page Likers","id":"Charity Page Likers"},
-			{"name":"City Prosperity_London","id":"City Prosperity_London"},
-			{"name":"City Prosperity_North","id":"City Prosperity_North"},
-			{"name":"City Prosperity_Southwest","id":"City Prosperity_Southwest"},
-			{"name":"Domestic Success","id":"Domestic Success"},
-			{"name":"Parents","id":"Parents"},
-			{"name":"Prestige Positions","id":"Prestige Positions"},
-		];
-
-// replaced with campaign.js and google sheet set-up
-/*	var campaignoptions = [
-		{"name":"","id":""},
-		{"name":"Donate - Complex Emergencies","id":"Complex Emergencies Appeal"},
-		{"name":"Donate - Cyclone Idai","id":"Cyclone Idai Appeal"},
-		{"name":"Donate - Disaster Fund","id":"Disaster Fund"},
-		{"name":"Donate - General Fund","id":"General Fund Appeal"},
-		{"name":"Donate - Indonesia Earthquake and Tsunami","id":"Indonesia Earthquake and Tsunami Appeal"},
-		{"name":"Donate - Iraq Crisis","id":"Iraq Crisis Appeal"},
-		{"name":"Donate - Lake Chad Crisis","id":"Lake Chad Crisis Appeal"},
-		{"name":"Donate - Myanmar","id":"Myanmar Appeal"},
-		{"name":"Donate - South Sudan Crisis","id":"South Sudan Crisis Appeal"},
-		{"name":"Donate - Syria Crisis","id":"Syria Crisis Appeal"},
-		{"name":"Donate - UK Fund Appeal","id":"UK Fund Appeal"},
-		{"name":"Donate - UK Solidarity Fund","id":"UK Solidarity Fund"},
-		{"name":"Donate - Yemen Crisis","id":"Yemen Crisis Appeal"},
-		{"name":"Events","id":"Events"},
-		{"name":"Events - Bedfordshire Christmas Market","id":"Bedfordshire Christmas Market"},
-		{"name":"Events - Brighton Abseil","id":"Brighton Abseil"},
-		{"name":"Events - Call My Bluff","id":"Call My Bluff"},
-		{"name":"Events - Dance: Make Your Move","id":"Dance: Make Your Move"},
-		{"name":"Events - Giggle Aid Manchester","id":"Giggle Aid Manchester"},
-		{"name":"Events - Giggle Aid Sheffield","id":"Giggle Aid Sheffield"},
-		{"name":"Events - Great Manchester Run","id":"Great Manchester Run"},
-		{"name":"Events - Great North Run","id":"Great North Run"},
-		{"name":"Events - Guildhall Christmas Market","id":"Guildhall Christmas Market"},
-		{"name":"Events - Hadrians' Wall","id":"Hadrians' Wall"},
-		{"name":"Events - London Marathon","id":"London Marathon"},
-		{"name":"Events - Miles for Refugees","id":"Miles for Refugees"},
-		{"name":"Events - Open Challenge","id":"Open Challenge"},
-		{"name":"Events - Open Gardens","id":"Open Gardens"},
-		{"name":"Events - Orbit Abseil","id":"Orbit Abseil"},
-		{"name":"Events - Red Cross Tea Party","id":"Red Cross Tea Party"},
-		{"name":"Events - Red Cross Week","id":"Red Cross Week"},
-		{"name":"Events - RideLondon","id":"RideLondon"},
-		{"name":"Events - Royal Parks Half Marathon","id":"Royal Parks Half Marathon"},
-		{"name":"Events - Snowdon Trek","id":"Snowdon Trek"},
-		{"name":"Events - Yorkshire 3 Peaks","id":"Yorkshire 3 Peaks"},
-		{"name":"Campaign - Connected Communities","id":"Connected Communities"},
-		{"name":"Campaign - Open/Medialab (OML) acquisition","id":"OML"},
-		{"name":"Campaign - Power Of Kindness","id":"Power Of Kindness"},
-		{"name":"Partnership - Co-op","id":"Co-op Partnership"},
-		{"name":"Volunteering - Community Reserve","id":"Community Reserve Volunteers"},
-		{"name":"Little Heroes","id":"Little Heroes"},
-		{"name":"Aid Conflict","id":"Aid Conflict"},
-		{"name":"Aid Disease","id":"Aid Disease"},
-		{"name":"Aid Earthquake","id":"Aid Earthquake"},
-		{"name":"Aid Hurricane","id":"Aid Hurricane"},
-		{"name":"Aid Flooding","id":"Aid Flooding"},
-		{"name":"Aid Food Crisis","id":"Aid Food Crisis"},
-		{"name":"First Aid","id":"First Aid"},
-		{"name":"Fundraising","id":"Fundraising"},
-		{"name":"Health","id":"Health"},
-		{"name":"Refugee","id":"Refugee"},
-		{"name":"Resilience","id":"Resilience"},
-		{"name":"Volunteering","id":"Volunteering"},
-		{"name":"Other","id":"Other"}
-	];
-	*/
-
-	// $('#campaignselect').dropdown({
-    //   readOnly: true,
-    //   input: '<input type="text" maxLength="20" placeholder="Search">',
-    //   data: campaignoptions,
-    //   searchable: true,
-	// });
-	
-  	// $('#socialadaudiencecontainer1').dropdown({
-	// 	multipleMode: 'label',
-	// 	limitCount: 4,
-	// 	input: '<input type="text" maxLength="20" placeholder="Search">',
-	// 	data: targetingoptions,
-	// 	searchable: true,
-	// });
-  	// $('#socialadaudiencecontainer2').dropdown({
-	// 	multipleMode: 'label',
-	// 	limitCount: 4,
-	// 	input: '<input type="text" maxLength="20" placeholder="Search">',
-	// 	data: targetingoptions,
-	// 	searchable: true,
-	// });
-  	// $('#socialadaudiencecontainer3').dropdown({
-	// 	multipleMode: 'label',
-	// 	limitCount: 4,
-	// 	input: '<input type="text" maxLength="20" placeholder="Search">',
-	// 	data: targetingoptions,
-	// 	searchable: true,
-	// });
-  	// $('#socialadaudiencecontainer4').dropdown({
-	// 	multipleMode: 'label',
-	// 	limitCount: 4,
-	// 	input: '<input type="text" maxLength="20" placeholder="Search">',
-	// 	data: targetingoptions,
-	// 	searchable: true,
-	// });
-  	// $('#socialadaudiencecontainer5').dropdown({
-	// 	multipleMode: 'label',
-	// 	limitCount: 4,
-	// 	input: '<input type="text" maxLength="20" placeholder="Search">',
-	// 	data: targetingoptions,
-	// 	searchable: true,
-	// });
-	
-	// end trial searchable dropdown code
 
 </script>
 
