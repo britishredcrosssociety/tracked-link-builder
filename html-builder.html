@@ -26,7 +26,7 @@
 <title>Google Analytics URL Builder</title>
 <meta property="og:title" content="Google Analytics URL Builder">
 
-<script type='text/javascript'>
+<script type="text/javascript">
 $(window).load(function(){
 /**
  * From http://jsfiddle.net/5SArB/3138/
@@ -554,6 +554,9 @@ function toggleFields() {
         <label for="source">What ad network is the ad on?
         <select name="source" id="bannersource">
 		<option value="google">Google (formerly Doubleclick/DFP)</option>
+		<option value="Avocet">Avocet</option>
+    	<option value="Guardian">Guardian</option>
+    	<option value="Amazon">Amazon</option>
 		<option value="FORO">FORO</option>
     	<option value="AdYouLike">AdYouLike</option>
 		</select>
@@ -614,7 +617,6 @@ function toggleFields() {
         <input placeholder="e.g. 123459" name="sourcecode" id="bannersourcecode4" type="text">
         <input placeholder="e.g. 123450" name="sourcecode" id="bannersourcecode5" type="text">
         </label>
-        </p>
         <p>
 		<input name="sourcecode" id="bannersourcecode" value="166700" type="hidden">
         </p>
@@ -755,6 +757,7 @@ function toggleFields() {
             </select>
         </div>
       		<div style="float:right;width:50%;">
+				<p>
             	<label>&nbsp;
       			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent1" type="text">
       			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
@@ -762,7 +765,7 @@ function toggleFields() {
       			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent4" type="text">
       			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent5" type="text">
                 </label>
-       			</p>
+				</p>
 			</div>
         <p>
         The source code and audience is set to pull through dynamically into the links.
@@ -910,7 +913,6 @@ function toggleFields() {
         <input placeholder="e.g. 123459" name="sourcecode" id="socialadsourcecode4" type="text">
         <input placeholder="e.g. 123450" name="sourcecode" id="socialadsourcecode5" type="text">
         </label>
-        </p>
         <p>
 		<input name="sourcecode" id="socialadsourcecode" value="166707" type="hidden">
         </p>
