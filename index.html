@@ -468,10 +468,31 @@ function toggleFields() {
     <div class="row">
         <div class="large-12 columns">
             <article>
-                <h1><abbr title="Uniform Resource Locator">URL</abbr> Builder for <abbr title="Google Analytics">GA</abbr></h1>
-                <p>With the Google Analytics <abbr title="Uniform Resource Locator">URL</abbr> Builder, you can easily tag <abbr title="Uniform Resource Locators">URLs</abbr> with custom campaign variables. Campaign variables allow you to track which of your promotions are generating the most traffic/conversions. This tool is only for links going to a BRC site page.</p>
+                <h1>Tracked Link Builder for <abbr title="British Red Cross">BRC</abbr></h1>
+				<p>This tool creates links that are tagged with custom marketing variables, so that we can better record how people get to British Red Cross websites, and so better see what is generating the most traffic/conversions.</p>
+				<p><a href="#CreateLink">Jump to the actual link builder ⬇⬇</a></p>
+				<p>This link builder is designed with the following principles in mind:</p>
+				<ul>
+					<li>It fits a <strong>taxonomy</strong>: the different types of marketing we do have been bucketed together into categories; this tool then matches those categories to marketing fields in other tools (Google Analytics, Fundraising's web reporting database for donate.redcross.org.uk)</li>
+					<li>It is <strong>restrictive</strong>: there are a lot more dropdowns than free text boxes, to enforce consistency across the organisation and adherence to the taxonomy.</li>
+					<li>It is <strong>selective</strong>: each user path that this tool can create links for has been scoped out, prioritised, and fit into our tracking taxonomy.</li>
+				</ul>
+				<h2>What is the scope of the tool?</h2>
+				<p>This link builder is designed to cover the standard user paths people take to access our site. As it is <strong>restrictive</strong> and <strong>selective</strong>, there may be activity you want to track that isn't possible to create a link for with this tool.</p>
+				<p>If something falls outside the scope of this tool, then the options are:</p>
+				<ul>
+					<li>tracking leads can create ad-hoc tracked links that still matches our tracking taxonomy. As this is a manual process, it's not something we offer for general tracking requests as standard, but may consider for high-value activity (e.g. tracking activity for a celebrity or corporate partner).</li>
+					<li>tracking leads can update the link builder to accommodate the new path. This will involve requirements gathering, user story generation, etc. and so is not a 'quick fix'.</li>
+				</ul>
+				<h2>Use notes</h2>
+				<ul>
+					<li>This tool is only for links going to a BRC site page. If you are linking to another platform that we don't own (e.g. Youtube) then there is no point using this tool.</li>
+					<li>Use this tool with the full URL for a page (i.e. don't create tracked links that point to an alias)</li>
+					<li>"Individual-level tracking" is extra tracking we add, so that systems capturing personal data (e.g. the donate platform) can also record this marketing tracking information too.</li>
+					<li>Source codes are a tool that fundraising uses to describe activity on the database Ascent. Online source codes are "approach codes" that aren't linked to a given fund (unlike much of the offline fundraising set-up).</li>
+				</ul>
                 <hr>
-                <h2>1) Create <abbr title="Uniform Resource Locator">URL</abbr></h2>
+                <h2><a name="CreateLink" style="text-decoration: none">1) Create <abbr title="Uniform Resource Locator">URL</abbr></a></h2>
                 <p>Fill in the form to create your custom <abbr title="Uniform Resource Locator">URL</abbr>.</p>
 
 <!-- Form field start -->
