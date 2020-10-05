@@ -63,6 +63,9 @@ $(document).ready(function () {
     $("#socialpostbrc").change(function () {
         toggleFields();
     }); 
+    $("#emailsendname").change(function () {
+        toggleFields();
+    }); 
 }); //this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
 function toggleFields() {
     if ($("#medium").val() === "Paid Search")
@@ -498,7 +501,34 @@ function toggleFields() {
 		$("#mediumRocketseed").hide() &&
 		$(".showUrlBox").show() &&
 		$("#urlHidden").hide();
-}
+	
+	// #email > #emailsendname toggle fields on value change
+	if ($("#emailsendname").val() === "Fundraising_Donate")
+        $("#emailsendnamefundraising").show() &&
+		$("#emailsendnametraining").hide() &&
+		$("#emailsendnameeducation").hide();
+	else if ($("#emailsendname").val() === "Fundraising_Event")
+        $("#emailsendnamefundraising").show() &&
+		$("#emailsendnametraining").hide() &&
+		$("#emailsendnameeducation").hide();
+	else if ($("#emailsendname").val() === "Fundraising_Stewardship")
+        $("#emailsendnamefundraising").show() &&
+		$("#emailsendnametraining").hide() &&
+		$("#emailsendnameeducation").hide();
+	else if ($("#emailsendname").val() === "Red Cross Training")
+		$("#emailsendnamefundraising").hide() &&
+		$("#emailsendnametraining").show() &&
+		$("#emailsendnameeducation").hide();
+	else if ($("#emailsendname").val() === "Community Education")
+		$("#emailsendnamefundraising").hide() &&
+		$("#emailsendnametraining").hide() &&
+		$("#emailsendnameeducation").show();
+	else
+		$("#emailsendnamefundraising").hide() &&
+		$("#emailsendnametraining").hide() &&
+		$("#emailsendnameeducation").hide();
+
+	}
 });
 </script>
   
@@ -699,139 +729,276 @@ function toggleFields() {
 	        </label>
         </p>
         <p>
-        <label for="emailsendname">What type of email is being sent?
-        <select name="sendname" id="emailsendname">
-		<option value="Donate">Donate</option>
-		<option value="Event">Event</option>
-		<option value="Stewardship">Stewardship</option>
-		</select>
-        </label>
+	        <label for="emailsendname">What area of the organisation is sending this email?
+		        <select name="sendname" id="emailsendname">
+					<option value="Fundraising_Donate">Fundraising Donate</option>
+					<option value="Fundraising_Event">Fundraising Event</option>
+					<option value="Fundraising_Stewardship">Fundraising Stewardship</option>
+					<option value="Red Cross Training">Red Cross Training</option>
+					<option value="Community Education">Community Education</option>
+				</select>
+	        </label>
         </p>
-        <p>
-        <label for="emailsendnumber">If there have been multiple emails for this campaign, what number email is this? Just leave this blank if it's not relevant.
-        <input placeholder="2" name="sendnumber" id="emailsendnumber" type="number" min="1" max="30">
-        </label>
-        </p>
-        <p>
-        <label for="adcreative">What is the topic of this email?
-        <input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="emailadcreative" type="text">
-        </label>
-        </p>
-        <div style="width:50%; float:left;">
-        	<label for="linklocation">What are each of the links pointing to?
-			<select name="linklocation" id="emaillinklocation1">
-            <option value=""></option>
-            <option value="Header Button">Header Button</option>
-            <option value="Copy Button">Copy Button</option>
-            <option value="Mega Button">Mega Button</option>
-            <option value="Copy 1">Copy 1</option>
-            <option value="Copy 2">Copy 2</option>
-            <option value="Copy 3">Copy 3</option>
-            <option value="Shopping List 1">Shopping List 1</option>
-            <option value="Shopping List 2">Shopping List 2</option>
-            <option value="Shopping List 3">Shopping List 3</option>
-            <option value="Box 1">Box 1</option>
-            <option value="Box 2">Box 2</option>
-            <option value="Box 3">Box 3</option>
-            <option value="Box 4">Box 4</option>
-            <option value="Carousel 1">Carousel 1</option>
-            <option value="Carousel 2">Carousel 2</option>
-            <option value="Carousel 3">Carousel 3</option>
-            <option name="Footer" value="Footer">Footer</option>
-            </select>
-            </label>
-            <select name="linklocation" id="emaillinklocation2">
-            <option value=""></option>
-            <option value="Header Button">Header Button</option>
-            <option value="Copy Button">Copy Button</option>
-            <option value="Mega Button">Mega Button</option>
-            <option value="Copy 1">Copy 1</option>
-            <option value="Copy 2">Copy 2</option>
-            <option value="Copy 3">Copy 3</option>
-            <option value="Shopping List 1">Shopping List 1</option>
-            <option value="Shopping List 2">Shopping List 2</option>
-            <option value="Shopping List 3">Shopping List 3</option>
-            <option value="Box 1">Box 1</option>
-            <option value="Box 2">Box 2</option>
-            <option value="Box 3">Box 3</option>
-            <option value="Box 4">Box 4</option>
-            <option value="Carousel 1">Carousel 1</option>
-            <option value="Carousel 2">Carousel 2</option>
-            <option value="Carousel 3">Carousel 3</option>
-            <option name="Footer" value="Footer">Footer</option>
-            </select>
-            <select name="linklocation" id="emaillinklocation3">
-            <option value=""></option>
-            <option value="Header Button">Header Button</option>
-            <option value="Copy Button">Copy Button</option>
-            <option value="Mega Button">Mega Button</option>
-            <option value="Copy 1">Copy 1</option>
-            <option value="Copy 2">Copy 2</option>
-            <option value="Copy 3">Copy 3</option>
-            <option value="Shopping List 1">Shopping List 1</option>
-            <option value="Shopping List 2">Shopping List 2</option>
-            <option value="Shopping List 3">Shopping List 3</option>
-            <option value="Box 1">Box 1</option>
-            <option value="Box 2">Box 2</option>
-            <option value="Box 3">Box 3</option>
-            <option value="Box 4">Box 4</option>
-            <option value="Carousel 1">Carousel 1</option>
-            <option value="Carousel 2">Carousel 2</option>
-            <option value="Carousel 3">Carousel 3</option>
-            <option name="Footer" value="Footer">Footer</option>
-            </select>
-            <select name="linklocation" id="emaillinklocation4">
-            <option value=""></option>
-            <option value="Header Button">Header Button</option>
-            <option value="Copy Button">Copy Button</option>
-            <option value="Mega Button">Mega Button</option>
-            <option value="Copy 1">Copy 1</option>
-            <option value="Copy 2">Copy 2</option>
-            <option value="Copy 3">Copy 3</option>
-            <option value="Shopping List 1">Shopping List 1</option>
-            <option value="Shopping List 2">Shopping List 2</option>
-            <option value="Shopping List 3">Shopping List 3</option>
-            <option value="Box 1">Box 1</option>
-            <option value="Box 2">Box 2</option>
-            <option value="Box 3">Box 3</option>
-            <option value="Box 4">Box 4</option>
-            <option value="Carousel 1">Carousel 1</option>
-            <option value="Carousel 2">Carousel 2</option>
-            <option value="Carousel 3">Carousel 3</option>
-            <option name="Footer" value="Footer">Footer</option>
-            </select>
-            <select name="linklocation" id="emaillinklocation5">
-            <option value=""></option>
-            <option value="Header Button">Header Button</option>
-            <option value="Copy Button">Copy Button</option>
-            <option value="Mega Button">Mega Button</option>
-            <option value="Copy 1">Copy 1</option>
-            <option value="Copy 2">Copy 2</option>
-            <option value="Copy 3">Copy 3</option>
-            <option value="Shopping List 1">Shopping List 1</option>
-            <option value="Shopping List 2">Shopping List 2</option>
-            <option value="Shopping List 3">Shopping List 3</option>
-            <option value="Box 1">Box 1</option>
-            <option value="Box 2">Box 2</option>
-            <option value="Box 3">Box 3</option>
-            <option value="Box 4">Box 4</option>
-            <option value="Carousel 1">Carousel 1</option>
-            <option value="Carousel 2">Carousel 2</option>
-            <option value="Carousel 3">Carousel 3</option>
-            <option name="Footer" value="Footer">Footer</option>
-            </select>
-        </div>
-      		<div style="float:right;width:50%;">
+        <!-- If emailsendname = Fundraising_... Start -->
+        <div id="emailsendnamefundraising">
+	        <p>
+		        <label for="emailsendnumber">If there have been multiple emails for this campaign, what number email is this? Just leave this blank if it's not relevant.
+		        	<input placeholder="2" name="sendnumber" id="emailsendnumber" type="number" min="1" max="30">
+		        </label>
+	        </p>
+	        <p>
+	        	<label for="emaildatesent">What day is the email being sent?
+					<input type="date" id="emaildatesent" name="emaildatesent">
+				</label>
+			</p>
+	        <p>
+	        	<label for="adcreative">What is the topic of this email?
+	        		<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="emailadcreative" type="text">
+	        	</label>
+	        </p>
+	        <div style="width:50%; float:left;">
+	        	<label for="linklocation">What are each of the links pointing to?
+					<select name="linklocation" id="emaillinklocation1">
+			            <option value=""></option>
+			            <option value="Header Button">Header Button</option>
+			            <option value="Copy Button">Copy Button</option>
+			            <option value="Mega Button">Mega Button</option>
+			            <option value="Copy 1">Copy 1</option>
+			            <option value="Copy 2">Copy 2</option>
+			            <option value="Copy 3">Copy 3</option>
+			            <option value="Shopping List 1">Shopping List 1</option>
+			            <option value="Shopping List 2">Shopping List 2</option>
+			            <option value="Shopping List 3">Shopping List 3</option>
+			            <option value="Box 1">Box 1</option>
+			            <option value="Box 2">Box 2</option>
+			            <option value="Box 3">Box 3</option>
+			            <option value="Box 4">Box 4</option>
+			            <option value="Carousel 1">Carousel 1</option>
+			            <option value="Carousel 2">Carousel 2</option>
+			            <option value="Carousel 3">Carousel 3</option>
+			            <option name="Footer" value="Footer">Footer</option>
+		            </select>
+	            </label>
+	            <select name="linklocation" id="emaillinklocation2">
+		            <option value=""></option>
+		            <option value="Header Button">Header Button</option>
+		            <option value="Copy Button">Copy Button</option>
+		            <option value="Mega Button">Mega Button</option>
+		            <option value="Copy 1">Copy 1</option>
+		            <option value="Copy 2">Copy 2</option>
+		            <option value="Copy 3">Copy 3</option>
+		            <option value="Shopping List 1">Shopping List 1</option>
+		            <option value="Shopping List 2">Shopping List 2</option>
+		            <option value="Shopping List 3">Shopping List 3</option>
+		            <option value="Box 1">Box 1</option>
+		            <option value="Box 2">Box 2</option>
+		            <option value="Box 3">Box 3</option>
+		            <option value="Box 4">Box 4</option>
+		            <option value="Carousel 1">Carousel 1</option>
+		            <option value="Carousel 2">Carousel 2</option>
+		            <option value="Carousel 3">Carousel 3</option>
+		            <option name="Footer" value="Footer">Footer</option>
+	            </select>
+	            <select name="linklocation" id="emaillinklocation3">
+		            <option value=""></option>
+		            <option value="Header Button">Header Button</option>
+		            <option value="Copy Button">Copy Button</option>
+		            <option value="Mega Button">Mega Button</option>
+		            <option value="Copy 1">Copy 1</option>
+		            <option value="Copy 2">Copy 2</option>
+		            <option value="Copy 3">Copy 3</option>
+		            <option value="Shopping List 1">Shopping List 1</option>
+		            <option value="Shopping List 2">Shopping List 2</option>
+		            <option value="Shopping List 3">Shopping List 3</option>
+		            <option value="Box 1">Box 1</option>
+		            <option value="Box 2">Box 2</option>
+		            <option value="Box 3">Box 3</option>
+		            <option value="Box 4">Box 4</option>
+		            <option value="Carousel 1">Carousel 1</option>
+		            <option value="Carousel 2">Carousel 2</option>
+		            <option value="Carousel 3">Carousel 3</option>
+		            <option name="Footer" value="Footer">Footer</option>
+	            </select>
+	            <select name="linklocation" id="emaillinklocation4">
+		            <option value=""></option>
+		            <option value="Header Button">Header Button</option>
+		            <option value="Copy Button">Copy Button</option>
+		            <option value="Mega Button">Mega Button</option>
+		            <option value="Copy 1">Copy 1</option>
+		            <option value="Copy 2">Copy 2</option>
+		            <option value="Copy 3">Copy 3</option>
+		            <option value="Shopping List 1">Shopping List 1</option>
+		            <option value="Shopping List 2">Shopping List 2</option>
+		            <option value="Shopping List 3">Shopping List 3</option>
+		            <option value="Box 1">Box 1</option>
+		            <option value="Box 2">Box 2</option>
+		            <option value="Box 3">Box 3</option>
+		            <option value="Box 4">Box 4</option>
+		            <option value="Carousel 1">Carousel 1</option>
+		            <option value="Carousel 2">Carousel 2</option>
+		            <option value="Carousel 3">Carousel 3</option>
+		            <option name="Footer" value="Footer">Footer</option>
+	            </select>
+	            <select name="linklocation" id="emaillinklocation5">
+		            <option value=""></option>
+		            <option value="Header Button">Header Button</option>
+		            <option value="Copy Button">Copy Button</option>
+		            <option value="Mega Button">Mega Button</option>
+		            <option value="Copy 1">Copy 1</option>
+		            <option value="Copy 2">Copy 2</option>
+		            <option value="Copy 3">Copy 3</option>
+		            <option value="Shopping List 1">Shopping List 1</option>
+		            <option value="Shopping List 2">Shopping List 2</option>
+		            <option value="Shopping List 3">Shopping List 3</option>
+		            <option value="Box 1">Box 1</option>
+		            <option value="Box 2">Box 2</option>
+		            <option value="Box 3">Box 3</option>
+		            <option value="Box 4">Box 4</option>
+		            <option value="Carousel 1">Carousel 1</option>
+		            <option value="Carousel 2">Carousel 2</option>
+		            <option value="Carousel 3">Carousel 3</option>
+		            <option name="Footer" value="Footer">Footer</option>
+	            </select>
+	        </div>
+	  		<div style="float:right;width:50%;">
 				<p>
-            	<label>&nbsp;
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent1" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent3" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent4" type="text">
-      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent5" type="text">
-                </label>
+	        		<label>&nbsp;
+		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent1" type="text">
+		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
+		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent3" type="text">
+		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent4" type="text">
+		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent5" type="text">
+	            	</label>
 				</p>
 			</div>
+		</div>
+		<!-- If emailsendname = Fundraising_... End -->
+
+		<!-- If emailsendname = Red Cross Training START -->
+		<div id="emailsendnametraining">
+	        <p>
+	        	<label for="trainingaudience">Who are we targeting with these emails?
+					<input name="trainingaudience" id="trainingaudience" type="text">
+				</label>
+			</p>
+	        <p>
+	        	<label for="trainingcreative">What is the topic of this email?
+	        		<input name="trainingcreative" id="trainingcreative" type="text">
+	        	</label>
+	        </p>
+	        <div style="width:50%; float:left;">
+	        	<label for="linklocation">What are each of the links pointing to?
+					<select name="linklocation" id="emaillinklocation1">
+			            <option value=""></option>
+			            <option value="Image">Image</option>
+			            <option value="Link">Link</option>
+			            <option value="Button">Button</option>
+		            </select>
+	            </label>
+	            <select name="linklocation" id="emaillinklocation2">
+		            <option value=""></option>
+		            <option value="Image">Image</option>
+		            <option value="Link">Link</option>
+		            <option value="Button">Button</option>
+	            </select>
+	            <select name="linklocation" id="emaillinklocation3">
+		            <option value=""></option>
+		            <option value="Image">Image</option>
+		            <option value="Link">Link</option>
+		            <option value="Button">Button</option>
+	            </select>
+	            <select name="linklocation" id="emaillinklocation4">
+		            <option value=""></option>
+		            <option value="Image">Image</option>
+		            <option value="Link">Link</option>
+		            <option value="Button">Button</option>
+	            </select>
+	            <select name="linklocation" id="emaillinklocation5">
+		            <option value=""></option>
+		            <option value="Image">Image</option>
+		            <option value="Link">Link</option>
+		            <option value="Button">Button</option>
+	            </select>
+	        </div>
+	  		<div style="float:right;width:50%;">
+				<p>
+	        		<label>&nbsp;
+		      			<input placeholder="e.g. Advert" name="linkcontent" id="emaillinkcontent1" type="text">
+		      			<input placeholder="e.g. Advert" name="linkcontent" id="emaillinkcontent2" type="text">
+		      			<input placeholder="e.g. Advert" name="linkcontent" id="emaillinkcontent3" type="text">
+		      			<input placeholder="e.g. Advert" name="linkcontent" id="emaillinkcontent4" type="text">
+		      			<input placeholder="e.g. Advert" name="linkcontent" id="emaillinkcontent5" type="text">
+	            	</label>
+				</p>
+			</div>
+		</div>
+		<!-- If emailsendname = Red Cross Training END -->
+
+		<!-- If emailsendname = Community Education START -->
+		<div id="emailsendnameeducation">
+	        <p>
+	        	<label for="educationaudience">Who are we targeting with these emails?
+					<select name="educationaudience" id="educationaudience">
+			            <option value="Teachers">Teachers</option>
+			            <option value="Learners">Learners</option>
+			            <option value="Other">Other</option>
+		            </select>
+				</label>
+			</p>
+	        <p>
+	        	<label for="educationcreative">What is the topic of this email?
+	        		<input name="educationcreative" id="educationcreative" type="text">
+	        	</label>
+	        </p>
+	        <div style="width:50%; float:left;">
+	        	<label for="linklocation">What are each of the links pointing to?
+					<select name="linklocation" id="emaillinklocation1">
+			            <option value=""></option>
+			            <option value="Image">Image</option>
+			            <option value="Link">Link</option>
+			            <option value="Button">Button</option>
+		            </select>
+	            </label>
+	            <select name="linklocation" id="emaillinklocation2">
+		            <option value=""></option>
+		            <option value="Image">Image</option>
+		            <option value="Link">Link</option>
+		            <option value="Button">Button</option>
+	            </select>
+	            <select name="linklocation" id="emaillinklocation3">
+		            <option value=""></option>
+		            <option value="Image">Image</option>
+		            <option value="Link">Link</option>
+		            <option value="Button">Button</option>
+	            </select>
+	            <select name="linklocation" id="emaillinklocation4">
+		            <option value=""></option>
+		            <option value="Image">Image</option>
+		            <option value="Link">Link</option>
+		            <option value="Button">Button</option>
+	            </select>
+	            <select name="linklocation" id="emaillinklocation5">
+		            <option value=""></option>
+		            <option value="Image">Image</option>
+		            <option value="Link">Link</option>
+		            <option value="Button">Button</option>
+	            </select>
+	        </div>
+	  		<div style="float:right;width:50%;">
+				<p>
+	        		<label>&nbsp;
+		      			<input placeholder="e.g. Teachers" name="linkcontent" id="emaillinkcontent1" type="text">
+		      			<input placeholder="e.g. Teachers" name="linkcontent" id="emaillinkcontent2" type="text">
+		      			<input placeholder="e.g. Teachers" name="linkcontent" id="emaillinkcontent3" type="text">
+		      			<input placeholder="e.g. Teachers" name="linkcontent" id="emaillinkcontent4" type="text">
+		      			<input placeholder="e.g. Teachers" name="linkcontent" id="emaillinkcontent5" type="text">
+	            	</label>
+				</p>
+			</div>
+		</div>
+		<!-- If emailsendname = Community Education END -->
+
+
         <p>
         The source code and audience is set to pull through dynamically into the links.
         </p>
@@ -1374,10 +1541,13 @@ function toggleFields() {
 				adCreative = $('#emailsendname').val()
 				if ($('#emailsendnumber').val()) {
 					adCreative = adCreative + '_SendNumber' + $('#emailsendnumber').val()
-					}
+				}
+				if ($('#emaildatesent').val()) {
+					adCreative = adCreative + '_' + $('#emaildatesent').val()
+				}
 				if ($('#emailadcreative').val()) {
 					adCreative = adCreative + '_' + $('#emailadcreative').val()
-					}
+				}
 				linkLocation = "linklocation";
 				linkContent = "linkcontent";
 				adCreative = adCreative + '_' + linkLocation + '_' + linkContent;
