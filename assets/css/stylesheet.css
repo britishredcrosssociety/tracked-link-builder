@@ -895,7 +895,7 @@ a abbr {
   cursor: pointer; }
   a:hover abbr, a:focus abbr {
     color: #1585cf; }
-.container { background-image:url('/img/triangles-bg.svg');background-position:left bottom;background-repeat:no-repeat;background-size:100%;background-color:#fff;margin-bottom:-1px; }
+/*.container { background-image:url('/img/triangles-bg.svg');background-position:left bottom;background-repeat:no-repeat;background-size:100%;background-color:#fff;margin-bottom:-1px; }*/
 .container.home { padding-bottom:3em; }
 img.brand { width:100px;margin:2em 0; }
 .home { position:relative; }
