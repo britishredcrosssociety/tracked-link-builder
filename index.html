@@ -4,8 +4,13 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <script type="text/javascript" src="jquery-1.8.3.js"></script>
+  <script type="text/javascript" src="jquery-1.11.1.js"></script>
 <link rel="stylesheet" type="text/css" media="screen" href="stylesheet.css">
+
+<!-- Style and JS for Date picker -->
+<link rel="stylesheet" type="text/css" media="screen" href="date-time-picker.css">
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="./date-time-picker.min.js"></script>
 
 <!-- next three are for the searchable dropdown -->
 <!-- <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
@@ -523,30 +528,6 @@ $(window).load(function(){
 
 });
 
-// Date Picker
-$('#emaildatesent').dateTimePicker();
-$('#emaildatesent').dateTimePicker({
-
-  // used to limit the date range
-  limitMax: null, 
-  limitMin: null, 
-
-  // year name
-  yearName: '',
-
-  // month names
-  monthName: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-
-  // day names
-  dayName: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-
-  // "date" or "dateTime"
-  mode: 'date', 
-
-  // custom date format
-  format: null 
-  
-});
 </script>
   
 </head>
@@ -766,6 +747,9 @@ $('#emaildatesent').dateTimePicker({
 	        <p>
 	        	<label for="emaildatesent">What day is the email being sent?
 					<input type="date" id="emaildatesent" name="emaildatesent">
+					<script type="text/javascript">
+			            $('#emaildatesent').dateTimePicker();
+			        </script>
 				</label>
 			</p>
 	        <p>
@@ -1573,7 +1557,10 @@ $('#emaildatesent').dateTimePicker({
 						adCreative = adCreative + '_SendNumber' + $('#emailsendnumber').val()
 					}
 					if ($('#emaildatesent').val()) {
-						adCreative = adCreative + '_' + $('#emaildatesent').val()
+						var fullDate = $('#emaildatesent').val();
+						var cutYear = fullDate.substring(2).replace('-', '');
+						var finalDate = cutYear.replace('-', '');
+						adCreative = adCreative + '_' + finalDate;
 					}
 					if ($('#emailadcreative').val()) {
 						adCreative = adCreative + '_' + $('#emailadcreative').val()
