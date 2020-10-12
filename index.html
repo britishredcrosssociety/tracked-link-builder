@@ -1591,7 +1591,7 @@ $(window).load(function(){
 						adCreative = adCreative + '_' + $('#trainingcreative').val()
 					}
 					audience = $('#trainingaudience').val();
-					sourceCode = "";
+					sourceCode = "REMOVE";
 				}
 				// If email sending is Community Education
 				if ($("#emailsendname").val() === "Community Education") {
@@ -1609,7 +1609,7 @@ $(window).load(function(){
 						adCreative = adCreative + '_' + $('#educationcreative').val()
 					}
 					audience = $('#educationaudience').val();
-					sourceCode = "";
+					sourceCode = "REMOVE";
 				}
 
 				linkLocation = "linklocation";
@@ -1759,7 +1759,12 @@ $(window).load(function(){
 			var html = html + '&'
 			}
 		if (isIndividual === "Yes") {
-			var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative)+'&c_code='+sourceCode;
+			// If sourceCode is st to REMOVE don't display it otherwise add '&c_code='+sourceCode to the html var at the end.
+			if (sourceCode === "REMOVE") {
+				var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative);
+			} else {
+				var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative)+'&c_code='+sourceCode;	
+			}
 			if (audience && isIndividual === "Yes") {
 				var html = html + '&adg=' + audience;
 				}
@@ -1870,11 +1875,17 @@ $(window).load(function(){
 							}
 					); // remove the . from the query string but not from the actual URL
 		if (medium == "Email") {
-			var html = html.replace(/(\s|\n|^)(https:\/\/[^\s\n^]*)(\s|\n|$)/gi,
-	function($0,$1,$2,$3){
-		return( $1 + $2 + "&wu=true" + $3);
-							}
-					);
+			if ($("#emailsendname").val() === "Fundraising_Donate" || $("#emailsendname").val() === "Fundraising_Event" || $("#emailsendname").val() === "Fundraising_Stewardship") {
+				var html = html.replace(/(\s|\n|^)(https:\/\/[^\s\n^]*)(\s|\n|$)/gi, function($0,$1,$2,$3) {
+					return( $1 + $2 + "&wu=true" + $3);
+				});
+			}
+			// Remove &wu=true from Email for Red Cross Training & Community Education
+			if ($("#emailsendname").val() === "Red Cross Training" || $("#emailsendname").val() === "Community Education") {
+				var html = html.replace(/(\s|\n|^)(https:\/\/[^\s\n^]*)(\s|\n|$)/gi, function($0,$1,$2,$3) {
+					return( $1 + $2 + $3); 
+				});
+			}
 		};// add wu=true for email people
 		
 			/* var html = html.replace(sourceCode,sourceCodeList[0]);
