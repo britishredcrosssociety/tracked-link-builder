@@ -741,21 +741,21 @@ $(window).load(function(){
 				</select>
 	        </label>
         </p>
+        <p>
+	        <label for="emailsendnumber">If there have been multiple emails for this campaign, what number email is this? Just leave this blank if it's not relevant.
+	        	<input placeholder="2" name="sendnumber" id="emailsendnumber" type="number" min="1" max="30">
+	        </label>
+        </p>
+        <p>
+        	<label for="emaildatesent">What day is the email being sent?
+				<input type="date" id="emaildatesent" name="emaildatesent">
+				<script type="text/javascript">
+		            $('#emaildatesent').dateTimePicker();
+		        </script>
+			</label>
+		</p>
         <!-- If emailsendname = Fundraising_... Start -->
         <div id="emailsendnamefundraising">
-	        <p>
-		        <label for="emailsendnumber">If there have been multiple emails for this campaign, what number email is this? Just leave this blank if it's not relevant.
-		        	<input placeholder="2" name="sendnumber" id="emailsendnumber" type="number" min="1" max="30">
-		        </label>
-	        </p>
-	        <p>
-	        	<label for="emaildatesent">What day is the email being sent?
-					<input type="date" id="emaildatesent" name="emaildatesent">
-					<script type="text/javascript">
-			            $('#emaildatesent').dateTimePicker();
-			        </script>
-				</label>
-			</p>
 	        <p>
 	        	<label for="adcreative">What is the topic of this email?
 	        		<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="emailadcreative" type="text">
@@ -1544,6 +1544,16 @@ $(window).load(function(){
 			case "Email":
 				source = $('#emailsource').val();
 				adCreative = $('#emailsendname').val()
+
+				if ($('#emailsendnumber').val()) {
+					adCreative = adCreative + '_SendNumber' + $('#emailsendnumber').val()
+				}
+				if ($('#emaildatesent').val()) {
+					var fullDate = $('#emaildatesent').val();
+					var cutYear = fullDate.substring(2).replace('-', '');
+					var finalDate = cutYear.replace('-', '');
+					adCreative = adCreative + '_' + finalDate;
+				}
 				
 				// If email sending is Fundraising
 				if ($("#emailsendname").val() === "Fundraising_Donate" || $("#emailsendname").val() === "Fundraising_Event" || $("#emailsendname").val() === "Fundraising_Stewardship") {
@@ -1557,19 +1567,12 @@ $(window).load(function(){
 					linkContent3 = $('#emaillinkcontent3').val();
 					linkContent4 = $('#emaillinkcontent4').val();
 					linkContent5 = $('#emaillinkcontent5').val();
-					if ($('#emailsendnumber').val()) {
-						adCreative = adCreative + '_SendNumber' + $('#emailsendnumber').val()
-					}
-					if ($('#emaildatesent').val()) {
-						var fullDate = $('#emaildatesent').val();
-						var cutYear = fullDate.substring(2).replace('-', '');
-						var finalDate = cutYear.replace('-', '');
-						adCreative = adCreative + '_' + finalDate;
-					}
+
 					if ($('#emailadcreative').val()) {
 						adCreative = adCreative + '_' + $('#emailadcreative').val()
 					}
 					audience = "%%AUDIENCE%%";
+					sourceCode = "%%APPROACH_CODE%%";
 				}
 				// If email sending is Red Cross Training
 				if ($("#emailsendname").val() === "Red Cross Training") {
@@ -1588,7 +1591,9 @@ $(window).load(function(){
 						adCreative = adCreative + '_' + $('#trainingcreative').val()
 					}
 					audience = $('#trainingaudience').val();
+					sourceCode = "";
 				}
+				// If email sending is Community Education
 				if ($("#emailsendname").val() === "Community Education") {
 					linkLocation1 = $('#educationemaillinklocation1').val();
 					linkLocation2 = $('#educationemaillinklocation2').val();
@@ -1604,12 +1609,12 @@ $(window).load(function(){
 						adCreative = adCreative + '_' + $('#educationcreative').val()
 					}
 					audience = $('#educationaudience').val();
+					sourceCode = "";
 				}
 
 				linkLocation = "linklocation";
 				linkContent = "linkcontent";
 				adCreative = adCreative + '_' + linkLocation + '_' + linkContent;
-				sourceCode = "%%APPROACH_CODE%%";
 				break;
 			case "Social Ad":
 				source = $('#socialadsource').val();
