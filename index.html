@@ -1744,8 +1744,12 @@ $(window).load(function(){
 		var html = "https://" + domain + '?';
 		
 		if (medium !== "Referral" && medium !== "Internal") {
-       	var html = html+'utm_campaign='+encodeURIComponent(campaign)+'&utm_source='+encodeURIComponent(source)+'&utm_medium='+encodeURIComponent(medium)+ '&utm_content='+encodeURIComponent(adCreative)+'&utm_term='+sourceCode;
-			};
+			if (sourceCode === "REMOVE") {
+				// sourceCode = "REMOVE".replace('REMOVE','');
+				sourceCode = "REMOVE".replace('REMOVE','');
+			}
+       		var html = html+'utm_campaign='+encodeURIComponent(campaign)+'&utm_source='+encodeURIComponent(source)+'&utm_medium='+encodeURIComponent(medium)+ '&utm_content='+encodeURIComponent(adCreative)+'&utm_term='+sourceCode;
+		};
 		if (audience !== "%%AUDIENCE%%") {
 			audience = encodeURIComponent(audience);
 		};
@@ -1753,13 +1757,18 @@ $(window).load(function(){
 			sourceCode = encodeURIComponent(sourceCode);
 		};
        	if (audience && medium !== "Referral" && medium !== "Internal") {
-       		var html = html + '_'+ audience;
+       		// Remove _ for Email for Red Cross Training and Community Education
+       		if ($("#emailsendname").val() === "Red Cross Training" || $("#emailsendname").val() === "Community Education") {
+       			var html = html + audience;
+       		} else {
+       			var html = html + '_'+ audience;
        		}
+   		}
 		if (medium !== "Referral" && medium !== "Internal" && isIndividual === "Yes") {
 			var html = html + '&'
 			}
 		if (isIndividual === "Yes") {
-			// If sourceCode is st to REMOVE don't display it otherwise add '&c_code='+sourceCode to the html var at the end.
+			// If sourceCode is set to REMOVE don't display it otherwise add '&c_code='+sourceCode to the html var at the end.
 			if (sourceCode === "REMOVE") {
 				var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative);
 			} else {
