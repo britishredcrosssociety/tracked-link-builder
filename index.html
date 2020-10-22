@@ -127,6 +127,7 @@ function toggleFields() {
 		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialAdLinkedinAdType").hide() &&
 		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -149,6 +150,7 @@ function toggleFields() {
 		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialAdLinkedinAdType").hide() &&
 		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -171,6 +173,7 @@ function toggleFields() {
 		$("#mediumSocialAdTwitterAdType").show() &&
 		$("#mediumSocialAdLinkedinAdType").hide() &&
 		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -193,6 +196,7 @@ function toggleFields() {
 		$("#mediumSocialAdTwitterAdType").show() &&
 		$("#mediumSocialAdLinkedinAdType").hide() &&
 		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -215,6 +219,7 @@ function toggleFields() {
 		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialAdLinkedinAdType").show() &&
 		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -237,6 +242,7 @@ function toggleFields() {
 		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialAdLinkedinAdType").show() &&
 		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -259,6 +265,7 @@ function toggleFields() {
 		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialAdLinkedinAdType").hide() &&
 		$("#mediumSocialAdYoutubeAdType").show() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -281,6 +288,53 @@ function toggleFields() {
 		$("#mediumSocialAdTwitterAdType").hide() &&
 		$("#mediumSocialAdLinkedinAdType").hide() &&
 		$("#mediumSocialAdYoutubeAdType").show() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "TikTok" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").show() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
+		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").show() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "TikTok" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
+		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").show() &&
 		$("#mediumSocialPost").hide() &&
 		$("#mediumSocialShare").hide() &&
 		$("#mediumSocialButton").hide() &&
@@ -626,7 +680,7 @@ function toggleFields() {
         </label>
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being advertised?
+		<label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="bannerlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -638,6 +692,9 @@ function toggleFields() {
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -842,13 +899,14 @@ function toggleFields() {
 		<option value="Facebook">Facebook</option>
 		<option value="Instagram">Instagram</option>
 		<option value="LinkedIn">LinkedIn</option>
+		<option value="TikTok">TikTok</option>
 		<option value="Twitter">Twitter</option>
 		<option value="Youtube">Youtube</option>
 		</select>
         </label>
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being advertised?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="socialadlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -860,8 +918,9 @@ function toggleFields() {
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
-		<option value="Brand">Integrated campaign goal = brand</option>
-		<option value="Fundraising">Integrated campaign goal = fundraising</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -920,6 +979,19 @@ function toggleFields() {
 		<option value="Display">Display ads (banners on watch pages)</option>
 		<option value="Overlay">In-video overlay ads</option>
 		<option value="Masthead">Mastheads (hero area on Youtube homepage)</option>
+		</select>
+        </label>
+        </p>
+	</div>
+<div id="mediumSocialAdTikTokAdType">
+        <p>
+        <label for="adtype">What <a href="https://www.tiktok.com/business/en-GB/apps/tiktok" target="_blank">TikTok ad format</a> is it?
+        <select name="adtype" id="socialadadtype_tiktok">
+		<option value="In Feed">In Feed (in the "For You" feed)</option>
+		<option value="Brand Takeover">Takeover (on app open, short)</option>
+		<option value="TopView">TopView (on app open, long)</option>
+		<option value="Branded Effects">Effects (filters, stickers, special effects)</option>
+		<option value="Branded Hashtag Challenge">Hashtag Challenge (aggregate user-generated content)</option>
 		</select>
         </label>
         </p>
@@ -1014,7 +1086,7 @@ function toggleFields() {
 		<input name="sourcecode" id="socialpostsourcecode" value="170464" type="hidden">
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being shared?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="socialpostlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -1026,6 +1098,9 @@ function toggleFields() {
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1061,11 +1136,14 @@ function toggleFields() {
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being shared?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="socialsharelinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -1077,6 +1155,9 @@ function toggleFields() {
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1108,7 +1189,7 @@ function toggleFields() {
         </label>
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being shared?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="socialbuttonlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -1120,6 +1201,9 @@ function toggleFields() {
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1151,7 +1235,7 @@ function toggleFields() {
 		<input name="audience" id="internalaudience" value="BRC Site" type="hidden">
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being shared?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="internallinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -1163,6 +1247,9 @@ function toggleFields() {
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1180,8 +1267,9 @@ function toggleFields() {
 		<option value="Direct Mail">Direct mail</option>
 		<option value="Door Drop">Door drop</option>
         <option value="DRTV">DRTV</option>
-        <option value="Press">Press</option>
         <option value="Inserts">Inserts</option>
+        <option value="Partially Addressed Mail">Partially Addressed Mail</option>
+        <option value="Press">Press</option>
 		</select>
         </label>
         </p>
@@ -1197,7 +1285,7 @@ function toggleFields() {
         </label>
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being shared?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="offlinelinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -1209,8 +1297,9 @@ function toggleFields() {
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
-		<option value="Brand">Integrated campaign goal = brand</option>
-		<option value="Fundraising">Integrated campaign goal = fundraising</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1235,7 +1324,7 @@ function toggleFields() {
         </label>
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being shared?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="otherlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -1247,8 +1336,9 @@ function toggleFields() {
 		<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
-		<option value="Brand">Integrated campaign goal = brand</option>
-		<option value="Fundraising">Integrated campaign goal = fundraising</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1270,7 +1360,7 @@ function toggleFields() {
 		<input name="medium" id="rocketseedmedium" value="Banner" type="hidden">
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being shared?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="rocketseedlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -1282,6 +1372,9 @@ function toggleFields() {
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1406,6 +1499,9 @@ function toggleFields() {
 					}
 				if (source == "Youtube") {
 					adCreative = adCreative + '_' + $('#socialadadtype_youtube').val();
+					}
+				if (source == "TikTok") {
+					adCreative = adCreative + '_' + $('#socialadadtype_tiktok').val();
 					}
 				if ($('#socialadadcreative').val()) {
 					adCreative = adCreative + '_' + $('#socialadadcreative').val();}
