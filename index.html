@@ -1757,9 +1757,13 @@ $(window).load(function(){
 			sourceCode = encodeURIComponent(sourceCode);
 		};
        	if (audience && medium !== "Referral" && medium !== "Internal") {
-       		// Remove _ for Email for Red Cross Training and Community Education
-       		if ($("#emailsendname").val() === "Red Cross Training" || $("#emailsendname").val() === "Community Education") {
-       			var html = html + audience;
+       		if (medium == "Email") {
+	       		// Remove _ for Email for Red Cross Training and Community Education
+	       		if ($("#emailsendname").val() === "Red Cross Training" || $("#emailsendname").val() === "Community Education") {
+	       			var html = html + audience;
+	       		} else {
+	       			var html = html + '_'+ audience;
+	       		}
        		} else {
        			var html = html + '_'+ audience;
        		}
