@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta name="robots" content="noindex, nofollow">
-<meta name="googlebot" content="noindex, nofollow">
-  
-<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-
-<script type="text/javascript" src="assets/js/jquery-1.11.1.js"></script>  
-<link rel="stylesheet" type="text/css" media="screen" href="assets/css/stylesheet.css">
-
-<!-- Style and JS for Date picker -->
-<link rel="stylesheet" type="text/css" media="screen" href="assets/css/date-time-picker.css">
-<script src="assets/js/date-time-picker.min.js"></script>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <script type="text/javascript" src="jquery-1.8.3.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="stylesheet.css">
 
 <!-- next three are for the searchable dropdown -->
 <!-- <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
-<link rel="stylesheet" type="text/css" href="assets/css/jquery.dropdown.min.css">
-<script src="assets/js/jquery.dropdown.js"></script>
+<link rel="stylesheet" type="text/css" href="./jquery.dropdown.min.css">
+<script src="./jquery.dropdown.js"></script>
 
   <style type="text/css">
     .alert {
@@ -43,495 +34,526 @@ $(window).load(function(){
  * Author: design1online.com, LLC
  * Purpose: toggle the visibility of fields depending on the value of another field
  **/
-	$(document).ready(function () {
-		//call toggleFields first so we start out with the correct visibility depending on the selected form values
-	    toggleFields();
+$(document).ready(function () {
+	//call toggleFields first so we start out with the correct visibility depending on the selected form values
+    toggleFields();
+	
+	//the following calls the toggleFields function every time the given fields are used
+    $("#medium").change(function () {
+        toggleFields();
+    }); 
+    $("#sourceSocialAd").change(function () {
+        toggleFields();
+    }); 
+    $("#sourceSocialButton").change(function () {
+        toggleFields();
+    }); 
+    $("#socialadownsourcecode").change(function () {
+        toggleFields();
+    }); 
+    $("#socialadsource").change(function () {
+        toggleFields();
+    });
+    $("#sourceBanner").change(function () {
+        toggleFields();
+    }); 
+    $("#bannerownsourcecode").change(function () {
+        toggleFields();
+    }); 
+    $("#socialpostbrc").change(function () {
+        toggleFields();
+    }); 
+}); //this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
+function toggleFields() {
+    if ($("#medium").val() === "Paid Search")
+        $("#mediumPPCSearch").show() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").hide() && 
+		$("#urlHidden").show();
+	
+	else if ($("#medium").val() === "Organic Search")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").show() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").hide() &&
+		$("#urlHidden").show();
+				
+	else if ($("#medium").val() === "Referral")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").show() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+	
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && ($("#socialadsource").val() === "Facebook" || $("#socialadsource").val() === "Instagram") )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").show() &&
+		$("#mediumSocialAdFacebookAdType").show() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
+		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
 		
-		//the following calls the toggleFields function every time the given fields are used
-	    $("#medium").change(function () {
-	        toggleFields();
-	    }); 
-	    $("#sourceSocialAd").change(function () {
-	        toggleFields();
-	    }); 
-	    $("#sourceSocialButton").change(function () {
-	        toggleFields();
-	    }); 
-	    $("#socialadownsourcecode").change(function () {
-	        toggleFields();
-	    }); 
-	    $("#socialadsource").change(function () {
-	        toggleFields();
-	    });
-	    $("#sourceBanner").change(function () {
-	        toggleFields();
-	    }); 
-	    $("#bannerownsourcecode").change(function () {
-	        toggleFields();
-	    }); 
-	    $("#socialpostbrc").change(function () {
-	        toggleFields();
-	    }); 
-	    $("#emailsendname").change(function () {
-	        toggleFields();
-	    }); 
-	}); //this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
-	function toggleFields() {
-	    if ($("#medium").val() === "Paid Search")
-	        $("#mediumPPCSearch").show() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").hide() && 
-			$("#urlHidden").show();
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && ($("#socialadsource").val() === "Facebook" || $("#socialadsource").val() === "Instagram") )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").show() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
+		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
 		
-		else if ($("#medium").val() === "Organic Search")
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").show() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").hide() &&
-			$("#urlHidden").show();
-					
-		else if ($("#medium").val() === "Referral")
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").show() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Twitter" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").show() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").show() &&
+		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
 		
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && ($("#socialadsource").val() === "Facebook" || $("#socialadsource").val() === "Instagram") )
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").show() &&
-			$("#mediumSocialAdOwnSourceCodes").show() &&
-			$("#mediumSocialAdFacebookAdType").show() &&
-			$("#mediumSocialAdTwitterAdType").hide() &&
-			$("#mediumSocialAdLinkedinAdType").hide() &&
-			$("#mediumSocialAdYoutubeAdType").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && ($("#socialadsource").val() === "Facebook" || $("#socialadsource").val() === "Instagram") )
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").show() &&
-			$("#mediumSocialAdOwnSourceCodes").hide() &&
-			$("#mediumSocialAdFacebookAdType").show() &&
-			$("#mediumSocialAdTwitterAdType").hide() &&
-			$("#mediumSocialAdLinkedinAdType").hide() &&
-			$("#mediumSocialAdYoutubeAdType").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Twitter" )
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").show() &&
-			$("#mediumSocialAdOwnSourceCodes").show() &&
-			$("#mediumSocialAdFacebookAdType").hide() &&
-			$("#mediumSocialAdTwitterAdType").show() &&
-			$("#mediumSocialAdLinkedinAdType").hide() &&
-			$("#mediumSocialAdYoutubeAdType").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "Twitter" )
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").show() &&
-			$("#mediumSocialAdOwnSourceCodes").hide() &&
-			$("#mediumSocialAdFacebookAdType").hide() &&
-			$("#mediumSocialAdTwitterAdType").show() &&
-			$("#mediumSocialAdLinkedinAdType").hide() &&
-			$("#mediumSocialAdYoutubeAdType").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "LinkedIn" )
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").show() &&
-			$("#mediumSocialAdOwnSourceCodes").show() &&
-			$("#mediumSocialAdFacebookAdType").hide() &&
-			$("#mediumSocialAdTwitterAdType").hide() &&
-			$("#mediumSocialAdLinkedinAdType").show() &&
-			$("#mediumSocialAdYoutubeAdType").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "LinkedIn" )
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").show() &&
-			$("#mediumSocialAdOwnSourceCodes").hide() &&
-			$("#mediumSocialAdFacebookAdType").hide() &&
-			$("#mediumSocialAdTwitterAdType").hide() &&
-			$("#mediumSocialAdLinkedinAdType").show() &&
-			$("#mediumSocialAdYoutubeAdType").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Youtube" )
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").show() &&
-			$("#mediumSocialAdOwnSourceCodes").show() &&
-			$("#mediumSocialAdFacebookAdType").hide() &&
-			$("#mediumSocialAdTwitterAdType").hide() &&
-			$("#mediumSocialAdLinkedinAdType").hide() &&
-			$("#mediumSocialAdYoutubeAdType").show() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "Youtube" )
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").show() &&
-			$("#mediumSocialAdOwnSourceCodes").hide() &&
-			$("#mediumSocialAdFacebookAdType").hide() &&
-			$("#mediumSocialAdTwitterAdType").hide() &&
-			$("#mediumSocialAdLinkedinAdType").hide() &&
-			$("#mediumSocialAdYoutubeAdType").show() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "Yes" )
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumSocialAd").hide() &&
-			$("#mediumBanner").show() &&
-			$("#mediumBannerOwnSourceCodes").show() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "No" )
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumSocialAd").hide() &&
-			$("#mediumBanner").show() &&
-			$("#mediumBannerOwnSourceCodes").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Email")
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumSocialAd").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").show() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Social Post" && $("#socialpostbrc").val() === "BRC Followers" )
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").hide() &&
-			$("#mediumSocialPost").show() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$("#audienceSocialPost").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Social Post" && $("#socialpostbrc").val() === "Not BRC" )
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").hide() &&
-			$("#mediumSocialPost").show() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$("#audienceSocialPost").show() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Social Share")
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").show() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Social Button")
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").show() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Internal")
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").show() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Offline")
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").show() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Unknown")
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").show() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-			
-		else if ($("#medium").val() === "Rocketseed")
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").show() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
-	    else
-	        $("#mediumPPCSearch").hide() &&
-			$("#mediumOrganicSearch").hide() &&
-			$("#mediumBanner").hide() &&
-			$("#mediumEmail").hide() &&
-			$("#mediumSocialAd").hide() &&
-			$("#mediumSocialPost").hide() &&
-			$("#mediumSocialShare").hide() &&
-			$("#mediumSocialButton").hide() &&
-			$("#mediumReferral").hide() &&
-			$("#mediumInternal").hide() &&
-			$("#mediumOffline").hide() &&
-			$("#mediumOther").hide() &&
-			$("#mediumRocketseed").hide() &&
-			$(".showUrlBox").show() &&
-			$("#urlHidden").hide();
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "Twitter" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").show() &&
+		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
 		
-		// #email > #emailsendname toggle fields on value change
-		if ($("#emailsendname").val() === "Fundraising_Donate" || $("#emailsendname").val() === "Fundraising_Event" || $("#emailsendname").val() === "Fundraising_Stewardship")
-	        $("#emailsendnamefundraising").show() &&
-			$("#emailsendnametraining").hide() &&
-			$("#emailsendnameeducation").hide();
-		else if ($("#emailsendname").val() === "Red Cross Training")
-			$("#emailsendnamefundraising").hide() &&
-			$("#emailsendnametraining").show() &&
-			$("#emailsendnameeducation").hide();
-		else if ($("#emailsendname").val() === "Community Education")
-			$("#emailsendnamefundraising").hide() &&
-			$("#emailsendnametraining").hide() &&
-			$("#emailsendnameeducation").show();
-		else
-			$("#emailsendnamefundraising").hide() &&
-			$("#emailsendnametraining").hide() &&
-			$("#emailsendnameeducation").hide();
-	}
-
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "LinkedIn" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").show() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
+		$("#mediumSocialAdLinkedinAdType").show() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "LinkedIn" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
+		$("#mediumSocialAdLinkedinAdType").show() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Youtube" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").show() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
+		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").show() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "Youtube" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
+		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").show() &&
+		$("#mediumSocialAdTikTokAdType").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "TikTok" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").show() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
+		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").show() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "TikTok" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").show() &&
+		$("#mediumSocialAdOwnSourceCodes").hide() &&
+		$("#mediumSocialAdFacebookAdType").hide() &&
+		$("#mediumSocialAdTwitterAdType").hide() &&
+		$("#mediumSocialAdLinkedinAdType").hide() &&
+		$("#mediumSocialAdYoutubeAdType").hide() &&
+		$("#mediumSocialAdTikTokAdType").show() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "Yes" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumBanner").show() &&
+		$("#mediumBannerOwnSourceCodes").show() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "No" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumBanner").show() &&
+		$("#mediumBannerOwnSourceCodes").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Email")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").show() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Post" && $("#socialpostbrc").val() === "BRC Followers" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialPost").show() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$("#audienceSocialPost").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Post" && $("#socialpostbrc").val() === "Not BRC" )
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialPost").show() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$("#audienceSocialPost").show() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Share")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").show() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Social Button")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").show() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Internal")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").show() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Offline")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").show() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Unknown")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").show() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+		
+	else if ($("#medium").val() === "Rocketseed")
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").show() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+    else
+        $("#mediumPPCSearch").hide() &&
+		$("#mediumOrganicSearch").hide() &&
+		$("#mediumBanner").hide() &&
+		$("#mediumEmail").hide() &&
+		$("#mediumSocialAd").hide() &&
+		$("#mediumSocialPost").hide() &&
+		$("#mediumSocialShare").hide() &&
+		$("#mediumSocialButton").hide() &&
+		$("#mediumReferral").hide() &&
+		$("#mediumInternal").hide() &&
+		$("#mediumOffline").hide() &&
+		$("#mediumOther").hide() &&
+		$("#mediumRocketseed").hide() &&
+		$(".showUrlBox").show() &&
+		$("#urlHidden").hide();
+}
 });
-
 </script>
   
 </head>
@@ -658,7 +680,7 @@ $(window).load(function(){
         </label>
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being advertised?
+		<label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="bannerlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -670,6 +692,9 @@ $(window).load(function(){
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -721,289 +746,147 @@ $(window).load(function(){
     
     <div id="mediumEmail">
         <p>
-	        <label for="source">Which email system are we using for this send?
-		        <select name="source" id="emailsource">
-			    	<option value="DotDigital">Dot Digital</option>
-			    	<option value="Hubspot">Hubspot</option>
-			    	<option value="Mailchimp">Mailchimp</option>
-			    	<option value="Salesforce">Salesforce</option>
-				</select>
-	        </label>
+        <label for="source">Which email system are we using for this send?
+        <select name="source" id="emailsource">
+    	<option value="Salesforce">Salesforce</option>
+    	<option value="Mailchimp">Mailchimp</option>
+		</select>
+        </label>
         </p>
         <p>
-	        <label for="emailsendname">What area of the organisation is sending this email?
-		        <select name="sendname" id="emailsendname">
-					<option value="Fundraising_Donate">Fundraising Donate</option>
-					<option value="Fundraising_Event">Fundraising Event</option>
-					<option value="Fundraising_Stewardship">Fundraising Stewardship</option>
-					<option value="Red Cross Training">Red Cross Training</option>
-					<option value="Community Education">Community Education</option>
-				</select>
-	        </label>
+        <label for="emailsendname">What type of email is being sent?
+        <select name="sendname" id="emailsendname">
+		<option value="Donate">Donate</option>
+		<option value="Event">Event</option>
+		<option value="Stewardship">Stewardship</option>
+		</select>
+        </label>
         </p>
         <p>
-	        <label for="emailsendnumber">If there have been multiple emails for this campaign, what number email is this? Just leave this blank if it's not relevant.
-	        	<input placeholder="2" name="sendnumber" id="emailsendnumber" type="number" min="1" max="30">
-	        </label>
+        <label for="emailsendnumber">If there have been multiple emails for this campaign, what number email is this? Just leave this blank if it's not relevant.
+        <input placeholder="2" name="sendnumber" id="emailsendnumber" type="number" min="1" max="30">
+        </label>
         </p>
         <p>
-        	<label for="emaildatesent">What day is the email being sent?
-				<input type="date" id="emaildatesent" name="emaildatesent">
-				<script type="text/javascript">
-		            $('#emaildatesent').dateTimePicker();
-		        </script>
-			</label>
-		</p>
-        <!-- If emailsendname = Fundraising_... Start -->
-        <div id="emailsendnamefundraising">
-	        <p>
-	        	<label for="adcreative">What is the topic of this email?
-	        		<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="emailadcreative" type="text">
-	        	</label>
-	        </p>
-	        <div style="width:50%; float:left;">
-	        	<label for="linklocation">What are each of the links pointing to?
-					<select name="linklocation" id="emaillinklocation1">
-			            <option value=""></option>
-			            <option value="Header Button">Header Button</option>
-			            <option value="Copy Button">Copy Button</option>
-			            <option value="Mega Button">Mega Button</option>
-			            <option value="Copy 1">Copy 1</option>
-			            <option value="Copy 2">Copy 2</option>
-			            <option value="Copy 3">Copy 3</option>
-			            <option value="Shopping List 1">Shopping List 1</option>
-			            <option value="Shopping List 2">Shopping List 2</option>
-			            <option value="Shopping List 3">Shopping List 3</option>
-			            <option value="Box 1">Box 1</option>
-			            <option value="Box 2">Box 2</option>
-			            <option value="Box 3">Box 3</option>
-			            <option value="Box 4">Box 4</option>
-			            <option value="Carousel 1">Carousel 1</option>
-			            <option value="Carousel 2">Carousel 2</option>
-			            <option value="Carousel 3">Carousel 3</option>
-			            <option name="Footer" value="Footer">Footer</option>
-		            </select>
-	            </label>
-	            <select name="linklocation" id="emaillinklocation2">
-		            <option value=""></option>
-		            <option value="Header Button">Header Button</option>
-		            <option value="Copy Button">Copy Button</option>
-		            <option value="Mega Button">Mega Button</option>
-		            <option value="Copy 1">Copy 1</option>
-		            <option value="Copy 2">Copy 2</option>
-		            <option value="Copy 3">Copy 3</option>
-		            <option value="Shopping List 1">Shopping List 1</option>
-		            <option value="Shopping List 2">Shopping List 2</option>
-		            <option value="Shopping List 3">Shopping List 3</option>
-		            <option value="Box 1">Box 1</option>
-		            <option value="Box 2">Box 2</option>
-		            <option value="Box 3">Box 3</option>
-		            <option value="Box 4">Box 4</option>
-		            <option value="Carousel 1">Carousel 1</option>
-		            <option value="Carousel 2">Carousel 2</option>
-		            <option value="Carousel 3">Carousel 3</option>
-		            <option name="Footer" value="Footer">Footer</option>
-	            </select>
-	            <select name="linklocation" id="emaillinklocation3">
-		            <option value=""></option>
-		            <option value="Header Button">Header Button</option>
-		            <option value="Copy Button">Copy Button</option>
-		            <option value="Mega Button">Mega Button</option>
-		            <option value="Copy 1">Copy 1</option>
-		            <option value="Copy 2">Copy 2</option>
-		            <option value="Copy 3">Copy 3</option>
-		            <option value="Shopping List 1">Shopping List 1</option>
-		            <option value="Shopping List 2">Shopping List 2</option>
-		            <option value="Shopping List 3">Shopping List 3</option>
-		            <option value="Box 1">Box 1</option>
-		            <option value="Box 2">Box 2</option>
-		            <option value="Box 3">Box 3</option>
-		            <option value="Box 4">Box 4</option>
-		            <option value="Carousel 1">Carousel 1</option>
-		            <option value="Carousel 2">Carousel 2</option>
-		            <option value="Carousel 3">Carousel 3</option>
-		            <option name="Footer" value="Footer">Footer</option>
-	            </select>
-	            <select name="linklocation" id="emaillinklocation4">
-		            <option value=""></option>
-		            <option value="Header Button">Header Button</option>
-		            <option value="Copy Button">Copy Button</option>
-		            <option value="Mega Button">Mega Button</option>
-		            <option value="Copy 1">Copy 1</option>
-		            <option value="Copy 2">Copy 2</option>
-		            <option value="Copy 3">Copy 3</option>
-		            <option value="Shopping List 1">Shopping List 1</option>
-		            <option value="Shopping List 2">Shopping List 2</option>
-		            <option value="Shopping List 3">Shopping List 3</option>
-		            <option value="Box 1">Box 1</option>
-		            <option value="Box 2">Box 2</option>
-		            <option value="Box 3">Box 3</option>
-		            <option value="Box 4">Box 4</option>
-		            <option value="Carousel 1">Carousel 1</option>
-		            <option value="Carousel 2">Carousel 2</option>
-		            <option value="Carousel 3">Carousel 3</option>
-		            <option name="Footer" value="Footer">Footer</option>
-	            </select>
-	            <select name="linklocation" id="emaillinklocation5">
-		            <option value=""></option>
-		            <option value="Header Button">Header Button</option>
-		            <option value="Copy Button">Copy Button</option>
-		            <option value="Mega Button">Mega Button</option>
-		            <option value="Copy 1">Copy 1</option>
-		            <option value="Copy 2">Copy 2</option>
-		            <option value="Copy 3">Copy 3</option>
-		            <option value="Shopping List 1">Shopping List 1</option>
-		            <option value="Shopping List 2">Shopping List 2</option>
-		            <option value="Shopping List 3">Shopping List 3</option>
-		            <option value="Box 1">Box 1</option>
-		            <option value="Box 2">Box 2</option>
-		            <option value="Box 3">Box 3</option>
-		            <option value="Box 4">Box 4</option>
-		            <option value="Carousel 1">Carousel 1</option>
-		            <option value="Carousel 2">Carousel 2</option>
-		            <option value="Carousel 3">Carousel 3</option>
-		            <option name="Footer" value="Footer">Footer</option>
-	            </select>
-	        </div>
-	  		<div style="float:right;width:50%;">
+        <label for="adcreative">What is the topic of this email?
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="emailadcreative" type="text">
+        </label>
+        </p>
+        <div style="width:50%; float:left;">
+        	<label for="linklocation">What are each of the links pointing to?
+			<select name="linklocation" id="emaillinklocation1">
+            <option value=""></option>
+            <option value="Header Button">Header Button</option>
+            <option value="Copy Button">Copy Button</option>
+            <option value="Mega Button">Mega Button</option>
+            <option value="Copy 1">Copy 1</option>
+            <option value="Copy 2">Copy 2</option>
+            <option value="Copy 3">Copy 3</option>
+            <option value="Shopping List 1">Shopping List 1</option>
+            <option value="Shopping List 2">Shopping List 2</option>
+            <option value="Shopping List 3">Shopping List 3</option>
+            <option value="Box 1">Box 1</option>
+            <option value="Box 2">Box 2</option>
+            <option value="Box 3">Box 3</option>
+            <option value="Box 4">Box 4</option>
+            <option value="Carousel 1">Carousel 1</option>
+            <option value="Carousel 2">Carousel 2</option>
+            <option value="Carousel 3">Carousel 3</option>
+            <option name="Footer" value="Footer">Footer</option>
+            </select>
+            </label>
+            <select name="linklocation" id="emaillinklocation2">
+            <option value=""></option>
+            <option value="Header Button">Header Button</option>
+            <option value="Copy Button">Copy Button</option>
+            <option value="Mega Button">Mega Button</option>
+            <option value="Copy 1">Copy 1</option>
+            <option value="Copy 2">Copy 2</option>
+            <option value="Copy 3">Copy 3</option>
+            <option value="Shopping List 1">Shopping List 1</option>
+            <option value="Shopping List 2">Shopping List 2</option>
+            <option value="Shopping List 3">Shopping List 3</option>
+            <option value="Box 1">Box 1</option>
+            <option value="Box 2">Box 2</option>
+            <option value="Box 3">Box 3</option>
+            <option value="Box 4">Box 4</option>
+            <option value="Carousel 1">Carousel 1</option>
+            <option value="Carousel 2">Carousel 2</option>
+            <option value="Carousel 3">Carousel 3</option>
+            <option name="Footer" value="Footer">Footer</option>
+            </select>
+            <select name="linklocation" id="emaillinklocation3">
+            <option value=""></option>
+            <option value="Header Button">Header Button</option>
+            <option value="Copy Button">Copy Button</option>
+            <option value="Mega Button">Mega Button</option>
+            <option value="Copy 1">Copy 1</option>
+            <option value="Copy 2">Copy 2</option>
+            <option value="Copy 3">Copy 3</option>
+            <option value="Shopping List 1">Shopping List 1</option>
+            <option value="Shopping List 2">Shopping List 2</option>
+            <option value="Shopping List 3">Shopping List 3</option>
+            <option value="Box 1">Box 1</option>
+            <option value="Box 2">Box 2</option>
+            <option value="Box 3">Box 3</option>
+            <option value="Box 4">Box 4</option>
+            <option value="Carousel 1">Carousel 1</option>
+            <option value="Carousel 2">Carousel 2</option>
+            <option value="Carousel 3">Carousel 3</option>
+            <option name="Footer" value="Footer">Footer</option>
+            </select>
+            <select name="linklocation" id="emaillinklocation4">
+            <option value=""></option>
+            <option value="Header Button">Header Button</option>
+            <option value="Copy Button">Copy Button</option>
+            <option value="Mega Button">Mega Button</option>
+            <option value="Copy 1">Copy 1</option>
+            <option value="Copy 2">Copy 2</option>
+            <option value="Copy 3">Copy 3</option>
+            <option value="Shopping List 1">Shopping List 1</option>
+            <option value="Shopping List 2">Shopping List 2</option>
+            <option value="Shopping List 3">Shopping List 3</option>
+            <option value="Box 1">Box 1</option>
+            <option value="Box 2">Box 2</option>
+            <option value="Box 3">Box 3</option>
+            <option value="Box 4">Box 4</option>
+            <option value="Carousel 1">Carousel 1</option>
+            <option value="Carousel 2">Carousel 2</option>
+            <option value="Carousel 3">Carousel 3</option>
+            <option name="Footer" value="Footer">Footer</option>
+            </select>
+            <select name="linklocation" id="emaillinklocation5">
+            <option value=""></option>
+            <option value="Header Button">Header Button</option>
+            <option value="Copy Button">Copy Button</option>
+            <option value="Mega Button">Mega Button</option>
+            <option value="Copy 1">Copy 1</option>
+            <option value="Copy 2">Copy 2</option>
+            <option value="Copy 3">Copy 3</option>
+            <option value="Shopping List 1">Shopping List 1</option>
+            <option value="Shopping List 2">Shopping List 2</option>
+            <option value="Shopping List 3">Shopping List 3</option>
+            <option value="Box 1">Box 1</option>
+            <option value="Box 2">Box 2</option>
+            <option value="Box 3">Box 3</option>
+            <option value="Box 4">Box 4</option>
+            <option value="Carousel 1">Carousel 1</option>
+            <option value="Carousel 2">Carousel 2</option>
+            <option value="Carousel 3">Carousel 3</option>
+            <option name="Footer" value="Footer">Footer</option>
+            </select>
+        </div>
+      		<div style="float:right;width:50%;">
 				<p>
-	        		<label>&nbsp;
-		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent1" type="text">
-		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
-		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent3" type="text">
-		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent4" type="text">
-		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent5" type="text">
-	            	</label>
+            	<label>&nbsp;
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent1" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent3" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent4" type="text">
+      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent5" type="text">
+                </label>
 				</p>
 			</div>
-		</div>
-		<!-- If emailsendname = Fundraising_... End -->
-
-		<!-- If emailsendname = Red Cross Training START -->
-		<div id="emailsendnametraining">
-	        <p>
-	        	<label for="trainingaudience">Who are we targeting with these emails?
-					<input name="trainingaudience" id="trainingaudience" type="text">
-				</label>
-			</p>
-	        <p>
-	        	<label for="trainingcreative">What is the topic of this email?
-	        		<input name="trainingcreative" id="trainingcreative" type="text">
-	        	</label>
-	        </p>
-	        <div style="width:50%; float:left;">
-	        	<label for="linklocation">What are each of the links pointing to?
-					<select name="linklocation" id="trainingemaillinklocation1">
-			            <option value=""></option>
-			            <option value="Image">Image</option>
-			            <option value="Link">Link</option>
-			            <option value="Button">Button</option>
-		            </select>
-	            </label>
-	            <select name="linklocation" id="trainingemaillinklocation2">
-		            <option value=""></option>
-		            <option value="Image">Image</option>
-		            <option value="Link">Link</option>
-		            <option value="Button">Button</option>
-	            </select>
-	            <select name="linklocation" id="trainingemaillinklocation3">
-		            <option value=""></option>
-		            <option value="Image">Image</option>
-		            <option value="Link">Link</option>
-		            <option value="Button">Button</option>
-	            </select>
-	            <select name="linklocation" id="trainingemaillinklocation4">
-		            <option value=""></option>
-		            <option value="Image">Image</option>
-		            <option value="Link">Link</option>
-		            <option value="Button">Button</option>
-	            </select>
-	            <select name="linklocation" id="trainingemaillinklocation5">
-		            <option value=""></option>
-		            <option value="Image">Image</option>
-		            <option value="Link">Link</option>
-		            <option value="Button">Button</option>
-	            </select>
-	        </div>
-	  		<div style="float:right;width:50%;">
-				<p>
-	        		<label>&nbsp;
-		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent1" type="text">
-		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent2" type="text">
-		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent3" type="text">
-		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent4" type="text">
-		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent5" type="text">
-	            	</label>
-				</p>
-			</div>
-		</div>
-		<!-- If emailsendname = Red Cross Training END -->
-
-		<!-- If emailsendname = Community Education START -->
-		<div id="emailsendnameeducation">
-	        <p>
-	        	<label for="educationaudience">Who are we targeting with these emails?
-					<select name="educationaudience" id="educationaudience">
-			            <option value="Teachers">Teachers</option>
-			            <option value="Learners">Learners</option>
-			            <option value="Other">Other</option>
-		            </select>
-				</label>
-			</p>
-	        <p>
-	        	<label for="educationcreative">What is the topic of this email?
-	        		<input name="educationcreative" id="educationcreative" type="text">
-	        	</label>
-	        </p>
-	        <div style="width:50%; float:left;">
-	        	<label for="linklocation">What are each of the links pointing to?
-					<select name="linklocation" id="educationemaillinklocation1">
-			            <option value=""></option>
-			            <option value="Image">Image</option>
-			            <option value="Link">Link</option>
-			            <option value="Button">Button</option>
-		            </select>
-	            </label>
-	            <select name="linklocation" id="educationemaillinklocation2">
-		            <option value=""></option>
-		            <option value="Image">Image</option>
-		            <option value="Link">Link</option>
-		            <option value="Button">Button</option>
-	            </select>
-	            <select name="linklocation" id="educationemaillinklocation3">
-		            <option value=""></option>
-		            <option value="Image">Image</option>
-		            <option value="Link">Link</option>
-		            <option value="Button">Button</option>
-	            </select>
-	            <select name="linklocation" id="educationemaillinklocation4">
-		            <option value=""></option>
-		            <option value="Image">Image</option>
-		            <option value="Link">Link</option>
-		            <option value="Button">Button</option>
-	            </select>
-	            <select name="linklocation" id="educationemaillinklocation5">
-		            <option value=""></option>
-		            <option value="Image">Image</option>
-		            <option value="Link">Link</option>
-		            <option value="Button">Button</option>
-	            </select>
-	        </div>
-	  		<div style="float:right;width:50%;">
-				<p>
-	        		<label>&nbsp;
-		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent1" type="text">
-		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent2" type="text">
-		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent3" type="text">
-		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent4" type="text">
-		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent5" type="text">
-	            	</label>
-				</p>
-			</div>
-		</div>
-		<!-- If emailsendname = Community Education END -->
-
-
         <p>
         The source code and audience is set to pull through dynamically into the links.
         </p>
@@ -1016,13 +899,14 @@ $(window).load(function(){
 		<option value="Facebook">Facebook</option>
 		<option value="Instagram">Instagram</option>
 		<option value="LinkedIn">LinkedIn</option>
+		<option value="TikTok">TikTok</option>
 		<option value="Twitter">Twitter</option>
 		<option value="Youtube">Youtube</option>
 		</select>
         </label>
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being advertised?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="socialadlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -1034,8 +918,9 @@ $(window).load(function(){
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
-		<option value="Brand">Integrated campaign goal = brand</option>
-		<option value="Fundraising">Integrated campaign goal = fundraising</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1094,6 +979,19 @@ $(window).load(function(){
 		<option value="Display">Display ads (banners on watch pages)</option>
 		<option value="Overlay">In-video overlay ads</option>
 		<option value="Masthead">Mastheads (hero area on Youtube homepage)</option>
+		</select>
+        </label>
+        </p>
+	</div>
+<div id="mediumSocialAdTikTokAdType">
+        <p>
+        <label for="adtype">What <a href="https://www.tiktok.com/business/en-GB/apps/tiktok" target="_blank">TikTok ad format</a> is it?
+        <select name="adtype" id="socialadadtype_tiktok">
+		<option value="In Feed">In Feed (in the "For You" feed)</option>
+		<option value="Brand Takeover">Takeover (on app open, short)</option>
+		<option value="TopView">TopView (on app open, long)</option>
+		<option value="Branded Effects">Effects (filters, stickers, special effects)</option>
+		<option value="Branded Hashtag Challenge">Hashtag Challenge (aggregate user-generated content)</option>
 		</select>
         </label>
         </p>
@@ -1188,7 +1086,7 @@ $(window).load(function(){
 		<input name="sourcecode" id="socialpostsourcecode" value="170464" type="hidden">
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being shared?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="socialpostlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -1200,6 +1098,9 @@ $(window).load(function(){
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1235,11 +1136,14 @@ $(window).load(function(){
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being shared?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="socialsharelinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -1251,6 +1155,9 @@ $(window).load(function(){
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1282,7 +1189,7 @@ $(window).load(function(){
         </label>
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being shared?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="socialbuttonlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -1294,6 +1201,9 @@ $(window).load(function(){
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1325,7 +1235,7 @@ $(window).load(function(){
 		<input name="audience" id="internalaudience" value="BRC Site" type="hidden">
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being shared?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="internallinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -1337,6 +1247,9 @@ $(window).load(function(){
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1354,8 +1267,9 @@ $(window).load(function(){
 		<option value="Direct Mail">Direct mail</option>
 		<option value="Door Drop">Door drop</option>
         <option value="DRTV">DRTV</option>
-        <option value="Press">Press</option>
         <option value="Inserts">Inserts</option>
+        <option value="Partially Addressed Mail">Partially Addressed Mail</option>
+        <option value="Press">Press</option>
 		</select>
         </label>
         </p>
@@ -1371,7 +1285,7 @@ $(window).load(function(){
         </label>
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being shared?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="offlinelinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -1383,8 +1297,9 @@ $(window).load(function(){
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
-		<option value="Brand">Integrated campaign goal = brand</option>
-		<option value="Fundraising">Integrated campaign goal = fundraising</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1409,7 +1324,7 @@ $(window).load(function(){
         </label>
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being shared?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="otherlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -1421,8 +1336,9 @@ $(window).load(function(){
 		<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
-		<option value="Brand">Integrated campaign goal = brand</option>
-		<option value="Fundraising">Integrated campaign goal = fundraising</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1444,7 +1360,7 @@ $(window).load(function(){
 		<input name="medium" id="rocketseedmedium" value="Banner" type="hidden">
         </p>
         <p>
-        <label for="linkcategory">What link from our site is being shared?
+        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
         <select name="linkcategory" id="rocketseedlinkcategory">
 		<option value="Donate Landing">Donate - Landing</option>
 		<option value="Donate Other">Donate - Other</option>
@@ -1456,6 +1372,9 @@ $(window).load(function(){
 		<option value="Navigation">Non-section pages e.g. T&Cs, cookies, privacy</option>
 		<option value="Blog">Blog</option>
 		<option value="Webapps">Webapps</option>
+		<option value="Awareness">Integrated campaign goal = awareness</option>
+		<option value="Consideration">Integrated campaign goal = consideration</option>
+		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1482,8 +1401,8 @@ $(window).load(function(){
     </div>
 </div>
 <!--searchable dropdown code, based on https://janking.github.io/dropdown/ -->
-<script src="assets/js/campaign.js"></script>
-<script src="assets/js/audience.js"></script>
+<script src="campaign.js"></script>
+<script src="audience.js"></script>
 <script>
 	function updateOutput()
         {
@@ -1544,77 +1463,27 @@ $(window).load(function(){
 			case "Email":
 				source = $('#emailsource').val();
 				adCreative = $('#emailsendname').val()
-
 				if ($('#emailsendnumber').val()) {
 					adCreative = adCreative + '_SendNumber' + $('#emailsendnumber').val()
-				}
-				if ($('#emaildatesent').val()) {
-					var fullDate = $('#emaildatesent').val();
-					var cutYear = fullDate.substring(2).replace('-', '');
-					var finalDate = cutYear.replace('-', '');
-					adCreative = adCreative + '_' + finalDate;
-				}
-				
-				// If email sending is Fundraising
-				if ($("#emailsendname").val() === "Fundraising_Donate" || $("#emailsendname").val() === "Fundraising_Event" || $("#emailsendname").val() === "Fundraising_Stewardship") {
-					linkLocation1 = $('#emaillinklocation1').val();
-					linkLocation2 = $('#emaillinklocation2').val();
-					linkLocation3 = $('#emaillinklocation3').val();
-					linkLocation4 = $('#emaillinklocation4').val();
-					linkLocation5 = $('#emaillinklocation5').val();
-					linkContent1 = $('#emaillinkcontent1').val();
-					linkContent2 = $('#emaillinkcontent2').val();
-					linkContent3 = $('#emaillinkcontent3').val();
-					linkContent4 = $('#emaillinkcontent4').val();
-					linkContent5 = $('#emaillinkcontent5').val();
-
-					if ($('#emailadcreative').val()) {
-						adCreative = adCreative + '_' + $('#emailadcreative').val()
 					}
-					audience = "%%AUDIENCE%%";
-					sourceCode = "%%APPROACH_CODE%%";
-				}
-				// If email sending is Red Cross Training
-				if ($("#emailsendname").val() === "Red Cross Training") {
-					linkLocation1 = $('#trainingemaillinklocation1').val();
-					linkLocation2 = $('#trainingemaillinklocation2').val();
-					linkLocation3 = $('#trainingemaillinklocation3').val();
-					linkLocation4 = $('#trainingemaillinklocation4').val();
-					linkLocation5 = $('#trainingemaillinklocation5').val();
-					linkContent1 = $('#trainingemaillinkcontent1').val();
-					linkContent2 = $('#trainingemaillinkcontent2').val();
-					linkContent3 = $('#trainingemaillinkcontent3').val();
-					linkContent4 = $('#trainingemaillinkcontent4').val();
-					linkContent5 = $('#trainingemaillinkcontent5').val();
-
-					if ($('#trainingcreative').val()) {
-						adCreative = adCreative + '_' + $('#trainingcreative').val()
+				if ($('#emailadcreative').val()) {
+					adCreative = adCreative + '_' + $('#emailadcreative').val()
 					}
-					audience = $('#trainingaudience').val();
-					sourceCode = "REMOVE";
-				}
-				// If email sending is Community Education
-				if ($("#emailsendname").val() === "Community Education") {
-					linkLocation1 = $('#educationemaillinklocation1').val();
-					linkLocation2 = $('#educationemaillinklocation2').val();
-					linkLocation3 = $('#educationemaillinklocation3').val();
-					linkLocation4 = $('#educationemaillinklocation4').val();
-					linkLocation5 = $('#educationemaillinklocation5').val();
-					linkContent1 = $('#educationemaillinkcontent1').val();
-					linkContent2 = $('#educationemaillinkcontent2').val();
-					linkContent3 = $('#educationemaillinkcontent3').val();
-					linkContent4 = $('#educationemaillinkcontent4').val();
-					linkContent5 = $('#educationemaillinkcontent5').val();
-					if ($('#educationcreative').val()) {
-						adCreative = adCreative + '_' + $('#educationcreative').val()
-					}
-					audience = $('#educationaudience').val();
-					sourceCode = "REMOVE";
-				}
-
 				linkLocation = "linklocation";
 				linkContent = "linkcontent";
 				adCreative = adCreative + '_' + linkLocation + '_' + linkContent;
+				linkLocation1 = $('#emaillinklocation1').val();
+				linkLocation2 = $('#emaillinklocation2').val();
+				linkLocation3 = $('#emaillinklocation3').val();
+				linkLocation4 = $('#emaillinklocation4').val();
+				linkLocation5 = $('#emaillinklocation5').val();
+				linkContent1 = $('#emaillinkcontent1').val();
+				linkContent2 = $('#emaillinkcontent2').val();
+				linkContent3 = $('#emaillinkcontent3').val();
+				linkContent4 = $('#emaillinkcontent4').val();
+				linkContent5 = $('#emaillinkcontent5').val();
+				sourceCode = "%%APPROACH_CODE%%";
+				audience = "%%AUDIENCE%%";
 				break;
 			case "Social Ad":
 				source = $('#socialadsource').val();
@@ -1630,6 +1499,9 @@ $(window).load(function(){
 					}
 				if (source == "Youtube") {
 					adCreative = adCreative + '_' + $('#socialadadtype_youtube').val();
+					}
+				if (source == "TikTok") {
+					adCreative = adCreative + '_' + $('#socialadadtype_tiktok').val();
 					}
 				if ($('#socialadadcreative').val()) {
 					adCreative = adCreative + '_' + $('#socialadadcreative').val();}
@@ -1744,12 +1616,8 @@ $(window).load(function(){
 		var html = "https://" + domain + '?';
 		
 		if (medium !== "Referral" && medium !== "Internal") {
-			if (sourceCode === "REMOVE") {
-				// sourceCode = "REMOVE".replace('REMOVE','');
-				sourceCode = "REMOVE".replace('REMOVE','');
-			}
-       		var html = html+'utm_campaign='+encodeURIComponent(campaign)+'&utm_source='+encodeURIComponent(source)+'&utm_medium='+encodeURIComponent(medium)+ '&utm_content='+encodeURIComponent(adCreative)+'&utm_term='+sourceCode;
-		};
+       	var html = html+'utm_campaign='+encodeURIComponent(campaign)+'&utm_source='+encodeURIComponent(source)+'&utm_medium='+encodeURIComponent(medium)+ '&utm_content='+encodeURIComponent(adCreative)+'&utm_term='+sourceCode;
+			};
 		if (audience !== "%%AUDIENCE%%") {
 			audience = encodeURIComponent(audience);
 		};
@@ -1757,23 +1625,13 @@ $(window).load(function(){
 			sourceCode = encodeURIComponent(sourceCode);
 		};
        	if (audience && medium !== "Referral" && medium !== "Internal") {
-       		// Remove _ for Email for Red Cross Training and Community Education
-       		if ($("#emailsendname").val() === "Red Cross Training" || $("#emailsendname").val() === "Community Education") {
-       			var html = html + audience;
-       		} else {
-       			var html = html + '_'+ audience;
+       		var html = html + '_'+ audience;
        		}
-   		}
 		if (medium !== "Referral" && medium !== "Internal" && isIndividual === "Yes") {
 			var html = html + '&'
 			}
 		if (isIndividual === "Yes") {
-			// If sourceCode is set to REMOVE don't display it otherwise add '&c_code='+sourceCode to the html var at the end.
-			if (sourceCode === "REMOVE") {
-				var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative);
-			} else {
-				var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative)+'&c_code='+sourceCode;	
-			}
+			var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative)+'&c_code='+sourceCode;
 			if (audience && isIndividual === "Yes") {
 				var html = html + '&adg=' + audience;
 				}
@@ -1884,17 +1742,11 @@ $(window).load(function(){
 							}
 					); // remove the . from the query string but not from the actual URL
 		if (medium == "Email") {
-			if ($("#emailsendname").val() === "Fundraising_Donate" || $("#emailsendname").val() === "Fundraising_Event" || $("#emailsendname").val() === "Fundraising_Stewardship") {
-				var html = html.replace(/(\s|\n|^)(https:\/\/[^\s\n^]*)(\s|\n|$)/gi, function($0,$1,$2,$3) {
-					return( $1 + $2 + "&wu=true" + $3);
-				});
-			}
-			// Remove &wu=true from Email for Red Cross Training & Community Education
-			if ($("#emailsendname").val() === "Red Cross Training" || $("#emailsendname").val() === "Community Education") {
-				var html = html.replace(/(\s|\n|^)(https:\/\/[^\s\n^]*)(\s|\n|$)/gi, function($0,$1,$2,$3) {
-					return( $1 + $2 + $3); 
-				});
-			}
+			var html = html.replace(/(\s|\n|^)(https:\/\/[^\s\n^]*)(\s|\n|$)/gi,
+	function($0,$1,$2,$3){
+		return( $1 + $2 + "&wu=true" + $3);
+							}
+					);
 		};// add wu=true for email people
 		
 			/* var html = html.replace(sourceCode,sourceCodeList[0]);
