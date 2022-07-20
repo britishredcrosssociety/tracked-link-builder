@@ -138,7 +138,7 @@ $(window).load(function(){
 			$("#mediumSocialAdFacebookAdType").show() &&
 			$("#mediumSocialAdTwitterAdType").hide() &&
 			$("#mediumSocialAdLinkedinAdType").hide() &&
-			$("#mediumSocialAdYoutubeAdType").hide() &&
+			//$("#mediumSocialAdYoutubeAdType").hide() &&
 			$("#mediumSocialAdTikTokAdType").hide() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -161,7 +161,7 @@ $(window).load(function(){
 			$("#mediumSocialAdFacebookAdType").show() &&
 			$("#mediumSocialAdTwitterAdType").hide() &&
 			$("#mediumSocialAdLinkedinAdType").hide() &&
-			$("#mediumSocialAdYoutubeAdType").hide() &&
+			//$("#mediumSocialAdYoutubeAdType").hide() &&
 			$("#mediumSocialAdTikTokAdType").hide() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -184,7 +184,7 @@ $(window).load(function(){
 			$("#mediumSocialAdFacebookAdType").hide() &&
 			$("#mediumSocialAdTwitterAdType").show() &&
 			$("#mediumSocialAdLinkedinAdType").hide() &&
-			$("#mediumSocialAdYoutubeAdType").hide() &&
+			//$("#mediumSocialAdYoutubeAdType").hide() &&
 			$("#mediumSocialAdTikTokAdType").hide() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -207,7 +207,7 @@ $(window).load(function(){
 			$("#mediumSocialAdFacebookAdType").hide() &&
 			$("#mediumSocialAdTwitterAdType").show() &&
 			$("#mediumSocialAdLinkedinAdType").hide() &&
-			$("#mediumSocialAdYoutubeAdType").hide() &&
+			//$("#mediumSocialAdYoutubeAdType").hide() &&
 			$("#mediumSocialAdTikTokAdType").hide() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -230,7 +230,7 @@ $(window).load(function(){
 			$("#mediumSocialAdFacebookAdType").hide() &&
 			$("#mediumSocialAdTwitterAdType").hide() &&
 			$("#mediumSocialAdLinkedinAdType").show() &&
-			$("#mediumSocialAdYoutubeAdType").hide() &&
+			//$("#mediumSocialAdYoutubeAdType").hide() &&
 			$("#mediumSocialAdTikTokAdType").hide() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -253,7 +253,7 @@ $(window).load(function(){
 			$("#mediumSocialAdFacebookAdType").hide() &&
 			$("#mediumSocialAdTwitterAdType").hide() &&
 			$("#mediumSocialAdLinkedinAdType").show() &&
-			$("#mediumSocialAdYoutubeAdType").hide() &&
+			//$("#mediumSocialAdYoutubeAdType").hide() &&
 			$("#mediumSocialAdTikTokAdType").hide() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -266,7 +266,7 @@ $(window).load(function(){
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
 			
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Youtube" )
+		/* else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Youtube" )
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -311,7 +311,7 @@ $(window).load(function(){
 			$("#mediumRocketseed").hide() &&
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
-
+			*/
 		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "TikTok" )
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
@@ -322,7 +322,7 @@ $(window).load(function(){
 			$("#mediumSocialAdFacebookAdType").hide() &&
 			$("#mediumSocialAdTwitterAdType").hide() &&
 			$("#mediumSocialAdLinkedinAdType").hide() &&
-			$("#mediumSocialAdYoutubeAdType").hide() &&
+			//$("#mediumSocialAdYoutubeAdType").hide() &&
 			$("#mediumSocialAdTikTokAdType").show() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -345,7 +345,7 @@ $(window).load(function(){
 			$("#mediumSocialAdFacebookAdType").hide() &&
 			$("#mediumSocialAdTwitterAdType").hide() &&
 			$("#mediumSocialAdLinkedinAdType").hide() &&
-			$("#mediumSocialAdYoutubeAdType").hide() &&
+			//$("#mediumSocialAdYoutubeAdType").hide() &&
 			$("#mediumSocialAdTikTokAdType").show() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -665,7 +665,8 @@ $(window).load(function(){
         </p>
         
         <p>
-        <label for="isIndividual">Does this tracked link need individual-level tracking added? (e.g. for donate, events)
+        <label for="isIndividual">Does this tracked link need individual-level tracking added? (e.g. for donate, events)<br />
+			<em>If you are driving a conversion on www.redcross.org.uk or donate.redcross.org.uk, the answer is probably 'Yes'; otherwise, probably 'No'.</em>
         <select name="isIndividual" id="isIndividual">
 		<option value="Yes">Yes</option>
 		<option value="No">No</option>
@@ -703,11 +704,15 @@ $(window).load(function(){
         <label for="source">What ad network is the ad on?
         <select name="source" id="bannersource">
 		<option value="google">Google (formerly Doubleclick/DFP)</option>
-		<option value="Avocet">Avocet</option>
-    	<option value="Guardian">Guardian</option>
-    	<option value="Amazon">Amazon</option>
-		<option value="FORO">FORO</option>
+		<option value="Youtube">Youtube</option>
+		<option value="GumGum">GumGum</option>
+		<option value="MediaMath">MediaMath</option>
+		<option value="Teads">Teads</option>
     	<option value="AdYouLike">AdYouLike</option>
+    	<option value="Amazon">Amazon</option>
+		<option value="Avocet">Avocet</option>
+		<option value="FORO">FORO</option>
+    	<option value="Guardian">Guardian</option>
 		</select>
         </label>
         </p>
@@ -1077,7 +1082,7 @@ $(window).load(function(){
 		<option value="LinkedIn">LinkedIn</option>
 		<option value="TikTok">TikTok</option>
 		<option value="Twitter">Twitter</option>
-		<option value="Youtube">Youtube</option>
+		<!-- <option value="Youtube">Youtube</option> -->
 		</select>
         </label>
         </p>
@@ -1105,7 +1110,7 @@ $(window).load(function(){
         
         
         <!-- social media ad type switcher -->
-        <div id="mediumSocialAdFacebookAdType">
+	<div id="mediumSocialAdFacebookAdType">
         <p>
         <label for="adtype">What type of ad is it?
         <select name="adtype" id="socialadadtype_facebook">
@@ -1124,7 +1129,7 @@ $(window).load(function(){
         </label>
         </p>
 	</div>
-<div id="mediumSocialAdTwitterAdType">
+	<div id="mediumSocialAdTwitterAdType">
         <p>
         <label for="adtype">What type of ad is it?
         <select name="adtype" id="socialadadtype_twitter">
@@ -1133,7 +1138,7 @@ $(window).load(function(){
         </label>
         </p>
 	</div>
-<div id="mediumSocialAdLinkedinAdType">
+	<div id="mediumSocialAdLinkedinAdType">
         <p>
         <label for="adtype">What <a href="https://www.linkedin.com/help/lms/answer/719" target="_blank">LinkedIn ad format</a> is it?
         <select name="adtype" id="socialadadtype_linkedin">
@@ -1146,7 +1151,7 @@ $(window).load(function(){
         </label>
         </p>
 	</div>
-<div id="mediumSocialAdYoutubeAdType">
+	<!-- <div id="mediumSocialAdYoutubeAdType">
         <p>
         <label for="adtype">What Youtube ad format is it?
         <select name="adtype" id="socialadadtype_youtube">
@@ -1160,7 +1165,7 @@ $(window).load(function(){
 		</select>
         </label>
         </p>
-	</div>
+	</div> -->
 	<div id="mediumSocialAdTikTokAdType">
         <p>
         <label for="adtype">What <a href="https://www.tiktok.com/business/en-GB/apps/tiktok" target="_blank">TikTok ad format</a> is it?
@@ -1745,9 +1750,9 @@ $(window).load(function(){
 				if (source == "LinkedIn") {
 					adCreative = adCreative + '_' + $('#socialadadtype_linkedin').val();
 					}
-				if (source == "Youtube") {
-					adCreative = adCreative + '_' + $('#socialadadtype_youtube').val();
-					}
+				//if (source == "Youtube") {
+				//	adCreative = adCreative + '_' + $('#socialadadtype_youtube').val();
+				//	}
 				if (source == "TikTok") {
 					adCreative = adCreative + '_' + $('#socialadadtype_tiktok').val();
 					}
