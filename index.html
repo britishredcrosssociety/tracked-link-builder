@@ -69,6 +69,9 @@ $(window).load(function(){
 	    $("#bannerownsourcecode").change(function () {
 	        toggleFields();
 	    });
+			$("#videoownsourcecode").change(function () {
+	        toggleFields();
+	    });
 	    $("#socialpostbrc").change(function () {
 	        toggleFields();
 	    });
@@ -81,6 +84,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").show() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -98,6 +102,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").show() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -115,6 +120,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -132,6 +138,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").show() &&
@@ -155,6 +162,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").hide() &&
@@ -178,6 +186,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").show() &&
@@ -201,6 +210,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").hide() &&
@@ -224,6 +234,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").show() &&
@@ -247,6 +258,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").hide() &&
@@ -270,6 +282,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").show() &&
@@ -293,6 +306,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").hide() &&
@@ -316,6 +330,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").show() &&
@@ -339,6 +354,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").hide() &&
@@ -364,6 +380,8 @@ $(window).load(function(){
 			$("#mediumSocialAd").hide() &&
 			$("#mediumBanner").show() &&
 			$("#mediumBannerOwnSourceCodes").show() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumVideoOwnSourceCodes").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -382,6 +400,48 @@ $(window).load(function(){
 			$("#mediumSocialAd").hide() &&
 			$("#mediumBanner").show() &&
 			$("#mediumBannerOwnSourceCodes").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumVideoOwnSourceCodes").hide() &&
+			$("#mediumEmail").hide() &&
+			$("#mediumSocialPost").hide() &&
+			$("#mediumSocialShare").hide() &&
+			$("#mediumSocialButton").hide() &&
+			$("#mediumReferral").hide() &&
+			$("#mediumInternal").hide() &&
+			$("#mediumOffline").hide() &&
+			$("#mediumOther").hide() &&
+			$("#mediumRocketseed").hide() &&
+			$(".showUrlBox").show() &&
+			$("#urlHidden").hide();
+
+		else if ($("#medium").val() === "Paid Video" && $("#videoownsourcecode").val() === "Yes" )
+				$("#mediumPPCSearch").hide() &&
+			$("#mediumOrganicSearch").hide() &&
+			$("#mediumSocialAd").hide() &&
+			$("#mediumBanner").hide() &&
+			$("#mediumBannerOwnSourceCodes").hide() &&
+			$("#mediumVideo").show() &&
+			$("#mediumVideoOwnSourceCodes").show() &&
+			$("#mediumEmail").hide() &&
+			$("#mediumSocialPost").hide() &&
+			$("#mediumSocialShare").hide() &&
+			$("#mediumSocialButton").hide() &&
+			$("#mediumReferral").hide() &&
+			$("#mediumInternal").hide() &&
+			$("#mediumOffline").hide() &&
+			$("#mediumOther").hide() &&
+			$("#mediumRocketseed").hide() &&
+			$(".showUrlBox").show() &&
+			$("#urlHidden").hide();
+
+		else if ($("#medium").val() === "Paid Video" && $("#videoownsourcecode").val() === "No" )
+	        $("#mediumPPCSearch").hide() &&
+			$("#mediumOrganicSearch").hide() &&
+			$("#mediumSocialAd").hide() &&
+			$("#mediumBanner").hide() &&
+			$("#mediumBannerOwnSourceCodes").hide() &&
+			$("#mediumVideo").show() &&
+			$("#mediumVideoOwnSourceCodes").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -399,6 +459,7 @@ $(window).load(function(){
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").show() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -415,6 +476,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").show() &&
@@ -433,6 +495,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").show() &&
@@ -451,6 +514,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -468,6 +532,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -485,6 +550,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -502,6 +568,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -519,6 +586,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -536,6 +604,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -552,6 +621,7 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -643,6 +713,7 @@ $(window).load(function(){
         <option value="Rocketseed">Rocketseed banners</option>
         <option value="Referral">Referral from a news site etc.</option>
         <option value="Unknown">Something else, not covered by the list above</option>
+				<option value="Paid Video">Video ad by BRC</option>
         </select>
         </label></p>
 
@@ -714,11 +785,9 @@ $(window).load(function(){
           <option value="Playground XYZ">Playground XYZ</option>
           <option value="Snapchat">Snapchat</option>
           <option value="Spotify">Spotify</option>
-          <option value="Teads">Teads</option>
           <option value="Telegraph">Telegraph</option>
           <option value="Twitch">Twitch</option>
           <option value="Yahoo">Yahoo</option>
-          <option value="Youtube">Youtube</option>
           <option value="AdYouLike">AdYouLike</option>
           <option value="Amazon">Amazon</option>
           <option value="Avocet">Avocet</option>
@@ -793,6 +862,85 @@ $(window).load(function(){
 	</div>
 
     </div>
+
+<div id="mediumVideo">
+	<p>
+		<label for="sourcevideo">What ad network is the ad on?
+			<select name="sourcevideo" id="videosource">
+				<option value="Channel4">Channel 4</option>
+				<option value="ITV">ITV</option>
+				<option value="MediaMath">MediaMath</option>
+				<option value="Sky">Sky</option>
+				<option value="Sky AdSmart">Sky AdSmart</option>
+				<option value="Sky AdVance">Sky AdVance</option>
+				<option value="Teads">Teads</option>
+				<option value="Youtube">Youtube</option>
+			</select>
+		</label>
+	</p>
+	<p>
+		<label for="linkcategoryvideo">What link from our site, or overall organisational goal, is being advertised?
+			<select name="linkcategoryvideo" id="videolinkcategory">
+				<option value="Donate Landing">Donate - Landing</option>
+				<option value="Donate Other">Donate - Other</option>
+				<option value="Get Help">Get help</option>
+				<option value="Get Involved">Get involved</option>
+				<option value="First Aid">First aid</option>
+				<option value="About Us">About Us</option>
+				<option value="Shop">Shop</option>
+				<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
+				<option value="Blog">Blog</option>
+				<option value="Webapps">Webapps</option>
+				<option value="Red Cross Training">Red Cross Training</option>
+				<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
+				<option value="Awareness">Integrated campaign goal = awareness</option>
+				<option value="Consideration">Integrated campaign goal = consideration</option>
+				<option value="Action">Integrated campaign goal = action</option>
+			</select>
+		</label>
+	</p>
+	<p>
+		<label for="adtypevideo">What type of targeting is this part of the campaign using?
+			<select name="adtypevideo" id="videoadtype">
+				<option value="Interest">Interest targeting</option>
+				<option value="Remarketing">Remarketing</option>
+			</select>
+		</label>
+	</p>
+	<p>
+		<label for="adcreativevideo">What's the call to action of the link about?
+			<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreativevideo" id="videoadcreative" type="text">
+		</label>
+	</p>
+	<p>
+		<label for="ownsourcecodevideo">Does this ad push have its own source codes?
+			<select name="ownsourcecodevideo" id="videoownsourcecode">
+				<option value="No">No</option>
+				<option value="Yes">Yes</option>
+			</select>
+		</label>
+	</p>
+	<div style="width:50%; float:left;">
+		<label for="audiencevideo">Who are we targeting with these ads?</label>
+		<input placeholder="Targeting pool 1" name="audiencevideo" id="videoaudience1" type="text">
+		<input placeholder="Targeting pool 2" name="audiencevideo" id="videoaudience2" type="text">
+		<input placeholder="Targeting pool 3" name="audiencevideo" id="videoaudience3" type="text">
+		<input placeholder="Targeting pool 4" name="audiencevideo" id="videoaudience4" type="text">
+		<input placeholder="Targeting pool 5" name="audiencevideo" id="videoaudience5" type="text">
+	</div>
+	<div id="mediumVideoOwnSourceCodes" style="float:right;width:50%;">
+		<label for="sourcecodevideo">What are the different source codes for these ads?
+			<input placeholder="e.g. 123456" name="sourcecodevideo" id="videosourcecode1" type="text">
+			<input placeholder="e.g. 123457" name="sourcecodevideo" id="videosourcecode2" type="text">
+			<input placeholder="e.g. 123458" name="sourcecodevideo" id="videosourcecode3" type="text">
+			<input placeholder="e.g. 123459" name="sourcecodevideo" id="videosourcecode4" type="text">
+			<input placeholder="e.g. 123450" name="sourcecodevideo" id="videosourcecode5" type="text">
+		</label>
+		<p>
+			<input name="sourcecode" id="videosourcecode" value="175148" type="hidden">
+		</p>
+	</div>
+</div>
 
     <div id="mediumEmail">
         <p>
@@ -1673,6 +1821,25 @@ $(window).load(function(){
 				audience4 = $('#banneraudience4').val();
 				audience5 = $('#banneraudience5').val();
 				ownSourceCode = $('#bannerownsourcecode').val();
+				break;
+			case "Paid Video":
+				source = $('#videosource').val();
+				adCreative = $('#videolinkcategory').val();
+				if ($('#videoadcreative').val()) {
+					adCreative = adCreative + '_' + $('#videoadcreative').val();}
+				sourceCode = $('#videosourcecode').val();
+				sourceCode1 = $('#videosourcecode1').val();
+				sourceCode2 = $('#videosourcecode2').val();
+				sourceCode3 = $('#videosourcecode3').val();
+				sourceCode4 = $('#videosourcecode4').val();
+				sourceCode5 = $('#videosourcecode5').val();
+				audience = $('#videoadtype').val() + '_' +"audience"
+				audience1 = $('#videoaudience1').val();
+				audience2 = $('#videoaudience2').val();
+				audience3 = $('#videoaudience3').val();
+				audience4 = $('#videoaudience4').val();
+				audience5 = $('#videoaudience5').val();
+				ownSourceCode = $('#videoownsourcecode').val();
 				break;
 			case "Email":
 				source = $('#emailsource').val();
