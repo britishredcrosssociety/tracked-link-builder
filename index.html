@@ -63,13 +63,22 @@ $(window).load(function(){
 	    $("#socialadsource").change(function () {
 	        toggleFields();
 	    });
-	    $("#sourceBanner").change(function () {
+	    $("#bannersource").change(function () {
+	        toggleFields();
+	    });
+			$("#videosource").change(function () {
+	        toggleFields();
+	    });
+			$("#audiosource").change(function () {
 	        toggleFields();
 	    });
 	    $("#bannerownsourcecode").change(function () {
 	        toggleFields();
 	    });
 			$("#videoownsourcecode").change(function () {
+	        toggleFields();
+	    });
+			$("#audioownsourcecode").change(function () {
 	        toggleFields();
 	    });
 	    $("#socialpostbrc").change(function () {
@@ -85,6 +94,7 @@ $(window).load(function(){
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
 			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -103,6 +113,7 @@ $(window).load(function(){
 			$("#mediumOrganicSearch").show() &&
 			$("#mediumBanner").hide() &&
 			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -121,6 +132,7 @@ $(window).load(function(){
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
 			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -139,6 +151,7 @@ $(window).load(function(){
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
 			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").show() &&
@@ -163,6 +176,7 @@ $(window).load(function(){
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
 			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").hide() &&
@@ -187,6 +201,7 @@ $(window).load(function(){
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
 			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").show() &&
@@ -211,6 +226,7 @@ $(window).load(function(){
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
 			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").hide() &&
@@ -235,6 +251,7 @@ $(window).load(function(){
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
 			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").show() &&
@@ -259,6 +276,7 @@ $(window).load(function(){
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
 			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").hide() &&
@@ -283,6 +301,7 @@ $(window).load(function(){
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
 			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").show() &&
@@ -307,6 +326,7 @@ $(window).load(function(){
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
 			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").hide() &&
@@ -331,6 +351,7 @@ $(window).load(function(){
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
 			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").show() &&
@@ -355,6 +376,7 @@ $(window).load(function(){
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
 			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").hide() &&
@@ -375,13 +397,15 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "Yes" )
-	        $("#mediumPPCSearch").hide() &&
+			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumBanner").show() &&
 			$("#mediumBannerOwnSourceCodes").show() &&
 			$("#mediumVideo").hide() &&
 			$("#mediumVideoOwnSourceCodes").hide() &&
+			$("#mediumAudio").hide() &&
+			$("#mediumAudioOwnSourceCodes").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -395,13 +419,15 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "No" )
-	        $("#mediumPPCSearch").hide() &&
+			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumBanner").show() &&
 			$("#mediumBannerOwnSourceCodes").hide() &&
 			$("#mediumVideo").hide() &&
 			$("#mediumVideoOwnSourceCodes").hide() &&
+			$("#mediumAudio").hide() &&
+			$("#mediumAudioOwnSourceCodes").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -415,7 +441,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Video" && $("#videoownsourcecode").val() === "Yes" )
-				$("#mediumPPCSearch").hide() &&
+			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumBanner").hide() &&
@@ -435,13 +461,57 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Video" && $("#videoownsourcecode").val() === "No" )
-	        $("#mediumPPCSearch").hide() &&
+			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumBanner").hide() &&
 			$("#mediumBannerOwnSourceCodes").hide() &&
 			$("#mediumVideo").show() &&
 			$("#mediumVideoOwnSourceCodes").hide() &&
+			$("#mediumEmail").hide() &&
+			$("#mediumSocialPost").hide() &&
+			$("#mediumSocialShare").hide() &&
+			$("#mediumSocialButton").hide() &&
+			$("#mediumReferral").hide() &&
+			$("#mediumInternal").hide() &&
+			$("#mediumOffline").hide() &&
+			$("#mediumOther").hide() &&
+			$("#mediumRocketseed").hide() &&
+			$(".showUrlBox").show() &&
+			$("#urlHidden").hide();
+
+		else if ($("#medium").val() === "Audio" && $("#videoownsourcecode").val() === "Yes" )
+			$("#mediumPPCSearch").hide() &&
+			$("#mediumOrganicSearch").hide() &&
+			$("#mediumSocialAd").hide() &&
+			$("#mediumBanner").hide() &&
+			$("#mediumBannerOwnSourceCodes").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumVideoOwnSourceCodes").hide() &&
+			$("#mediumAudio").show() &&
+			$("#mediumAudioOwnSourceCodes").show() &&
+			$("#mediumEmail").hide() &&
+			$("#mediumSocialPost").hide() &&
+			$("#mediumSocialShare").hide() &&
+			$("#mediumSocialButton").hide() &&
+			$("#mediumReferral").hide() &&
+			$("#mediumInternal").hide() &&
+			$("#mediumOffline").hide() &&
+			$("#mediumOther").hide() &&
+			$("#mediumRocketseed").hide() &&
+			$(".showUrlBox").show() &&
+			$("#urlHidden").hide();
+
+		else if ($("#medium").val() === "Audio" && $("#audioownsourcecode").val() === "No" )
+			$("#mediumPPCSearch").hide() &&
+			$("#mediumOrganicSearch").hide() &&
+			$("#mediumSocialAd").hide() &&
+			$("#mediumBanner").hide() &&
+			$("#mediumBannerOwnSourceCodes").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumVideoOwnSourceCodes").hide() &&
+			$("#mediumAudio").show() &&
+			$("#mediumAudioOwnSourceCodes").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -701,6 +771,7 @@ $(window).load(function(){
 		<label for="medium">What are you making a tracked link for?
         <select name="medium" id="medium">
 		<option value="Banner">Banner</option>
+		<option value="Audio">Audio ad by BRC</option>
 		<option value="Social Ad">Social ad by BRC</option>
 		<option value="Social Post">Social post</option>
 		<option value="Social Share">Social share button on BRC site</option>
@@ -938,6 +1009,78 @@ $(window).load(function(){
 		</label>
 		<p>
 			<input name="sourcecode" id="videosourcecode" value="175148" type="hidden">
+		</p>
+	</div>
+</div>
+
+<div id="mediumAudio">
+	<p>
+		<label for="sourceaudio">What ad network is the ad on?
+			<select name="sourceaudio" id="audiosource">
+				<option value="Spotify">Spotify</option>
+			</select>
+		</label>
+	</p>
+	<p>
+		<label for="linkcategoryaudio">What link from our site, or overall organisational goal, is being advertised?
+			<select name="linkcategoryaudio" id="audiolinkcategory">
+				<option value="Donate Landing">Donate - Landing</option>
+				<option value="Donate Other">Donate - Other</option>
+				<option value="Get Help">Get help</option>
+				<option value="Get Involved">Get involved</option>
+				<option value="First Aid">First aid</option>
+				<option value="About Us">About Us</option>
+				<option value="Shop">Shop</option>
+				<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
+				<option value="Blog">Blog</option>
+				<option value="Webapps">Webapps</option>
+				<option value="Red Cross Training">Red Cross Training</option>
+				<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
+				<option value="Awareness">Integrated campaign goal = awareness</option>
+				<option value="Consideration">Integrated campaign goal = consideration</option>
+				<option value="Action">Integrated campaign goal = action</option>
+			</select>
+		</label>
+	</p>
+	<p>
+		<label for="adtypeaudio">What type of targeting is this part of the campaign using?
+			<select name="adtypeaudio" id="audioadtype">
+				<option value="Interest">Interest targeting</option>
+				<option value="Remarketing">Remarketing</option>
+			</select>
+		</label>
+	</p>
+	<p>
+		<label for="adcreativeaudio">What's the call to action of the link about?
+			<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreativeaudio" id="audioadcreative" type="text">
+		</label>
+	</p>
+	<p>
+		<label for="ownsourcecodeaudio">Does this ad push have its own source codes?
+			<select name="ownsourcecodeaudio" id="audioownsourcecode">
+				<option value="No">No</option>
+				<option value="Yes">Yes</option>
+			</select>
+		</label>
+	</p>
+	<div style="width:50%; float:left;">
+		<label for="audienceaudio">Who are we targeting with these ads?</label>
+		<input placeholder="Targeting pool 1" name="audienceaudio" id="audioaudience1" type="text">
+		<input placeholder="Targeting pool 2" name="audienceaudio" id="audioaudience2" type="text">
+		<input placeholder="Targeting pool 3" name="audienceaudio" id="audioaudience3" type="text">
+		<input placeholder="Targeting pool 4" name="audienceaudio" id="audioaudience4" type="text">
+		<input placeholder="Targeting pool 5" name="audienceaudio" id="audioaudience5" type="text">
+	</div>
+	<div id="mediumAudioOwnSourceCodes" style="float:right;width:50%;">
+		<label for="sourcecodeaudio">What are the different source codes for these ads?
+			<input placeholder="e.g. 123456" name="sourcecodeaudio" id="audiosourcecode1" type="text">
+			<input placeholder="e.g. 123457" name="sourcecodeaudio" id="audiosourcecode2" type="text">
+			<input placeholder="e.g. 123458" name="sourcecodeaudio" id="audiosourcecode3" type="text">
+			<input placeholder="e.g. 123459" name="sourcecodeaudio" id="audiosourcecode4" type="text">
+			<input placeholder="e.g. 123450" name="sourcecodeaudio" id="audiosourcecode5" type="text">
+		</label>
+		<p>
+			<input name="sourcecode" id="audiosourcecode" value="175148" type="hidden">
 		</p>
 	</div>
 </div>
@@ -1840,6 +1983,25 @@ $(window).load(function(){
 				audience4 = $('#videoaudience4').val();
 				audience5 = $('#videoaudience5').val();
 				ownSourceCode = $('#videoownsourcecode').val();
+				break;
+			case "Audio":
+				source = $('#audiosource').val();
+				adCreative = $('#audiolinkcategory').val();
+				if ($('#audioadcreative').val()) {
+					adCreative = adCreative + '_' + $('#audioadcreative').val();}
+				sourceCode = $('#audiosourcecode').val();
+				sourceCode1 = $('#audiosourcecode1').val();
+				sourceCode2 = $('#audiosourcecode2').val();
+				sourceCode3 = $('#audiosourcecode3').val();
+				sourceCode4 = $('#audiosourcecode4').val();
+				sourceCode5 = $('#audiosourcecode5').val();
+				audience = $('#audioadtype').val() + '_' +"audience"
+				audience1 = $('#audioaudience1').val();
+				audience2 = $('#audioaudience2').val();
+				audience3 = $('#audioaudience3').val();
+				audience4 = $('#audioaudience4').val();
+				audience5 = $('#audioaudience5').val();
+				ownSourceCode = $('#audioownsourcecode').val();
 				break;
 			case "Email":
 				source = $('#emailsource').val();
