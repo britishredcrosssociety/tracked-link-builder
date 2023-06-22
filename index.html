@@ -2215,12 +2215,33 @@ $(window).load(function(){
        	var isIndividual = $('#isIndividual').val();
 
 		// Set so that the URL has to start https://
-        var domain = domain.replace(/https?/g, "").replace(":", "").replace("//", "");
+		var domain = domain.replace(/https?/g, "").replace(":", "").replace("//", "");
 		// Remove any spaces
 		var domain = domain.replace(" ", "");
 		// Remove any tracking from the URL
-        var domain = domain.split("?")[0];
-		var html = "https://" + domain + '?';
+		var domain = domain.split("?")[0];
+
+		// Get the entered link again
+		let fullDomain = ($('#domain').val());
+		// Get the query string parameters without the domain
+		const queryString = fullDomain.split('?')[1];
+		// Create a new URLSearchParams object to manipulate the query string
+		let params = new URLSearchParams(queryString);
+		// Remove the non-valid query string parameters
+		params.delete("utm_campaign");
+		params.delete("utm_source");
+		params.delete("utm_medium");
+		params.delete("utm_content");
+		params.delete("utm_term");
+		params.delete("c_name");
+		params.delete("c_source");
+		params.delete("c_medium");
+		params.delete("c_creative");
+		params.delete("c_code");
+		params.delete("adg");
+
+		// Create the new URL with the query string parameters that are left
+		var html = "https://" + domain + "?" + params + "&";
 
 		if (medium !== "Referral" && medium !== "Internal") {
 			if (sourceCode === "REMOVE") {
