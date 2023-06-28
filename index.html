@@ -2223,6 +2223,11 @@ $(window).load(function(){
 
 		// Get the entered link again
 		let fullDomain = ($('#domain').val());
+		// Get the anchor without the domain
+		let query = (fullDomain.split('?')[0]);
+		let anchor = query.split('#')[1];
+		// Remove the anchor text from the URL
+		var domain = domain.split("#")[0];
 		// Get the query string parameters without the domain
 		const queryString = fullDomain.split('?')[1];
 		// Create a new URLSearchParams object to manipulate the query string
@@ -2279,8 +2284,12 @@ $(window).load(function(){
 				var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative)+'&c_code='+sourceCode;
 			}
 			if (audience && isIndividual === "Yes") {
-				var html = html + '&adg=' + audience;
+				if (anchor) {
+					var html = (html + '&adg=' + audience).split("#")[0] + "&#" + anchor;
+				} else {
+					var html = html + '&adg=' + audience;
 				}
+			}
 			// if (isDonate === "Yes") {
 			// var approachCodeTracking = sourceCode + encodeURIComponent('_'+campaign+source+medium);
 			// if (audience) {
@@ -2290,10 +2299,16 @@ $(window).load(function(){
 				// var html = html + '&approachcode='+ approachCodeTracking.replace(/%20/g, "").replace(/ /g, "");
             //	var html = html + '&approachcode='+ approachCodeTracking.replace(/(\s|%20)/g, "").replace(/[^0-9a-zA-Z_%]/g, "").replace(/([^%])%([^%])/g, "$1" + "$2");; // Remove everything that's not a number, letter or underscore or %, as special characters e.g. dashes break the old tracking. THEN remove any individual %s, but keep any duplicates e.g. for %%variables%%.
 			// }
+			} else {
+				if (anchor) {
+					var html = (html).split("#")[0] + "&#" + anchor;
+				} else {
+					var html = html;
+				}
 			}
 
 // For multi-link paths (banner, paid social, paid video, audio): To repeat the link for each audience filled in, replacing the audience for each one.
-// NOTE: If variables used here are not defined on page load (i.e. literally on load, or with the default medium selection) then it will mess things up.
+// NOTE: If variables used here are not defined on page load (i.e. literally on load, or with the default medium selection) then it will mess things up.		
 		if (audience1 && !audience2 && !audience3 && !audience4 && !audience5 ) {
 			var html = html.replace(/audience/g,encodeURIComponent(audience1));
 			if (ownSourceCode === "Yes") {
@@ -2378,20 +2393,27 @@ $(window).load(function(){
 		}
 		// Code to remove %20 from all approachcode trackings. Example taken from https://www.bennadel.com/blog/1742-using-regular-expressions-in-javascript-a-general-overview.htm
 		var html = html.replace(/(approachcode=)([\w&\?=\.:\/%\+-]*)(\s|\n|$)/gi,
-	function($0,$1,$2,$3){
-		return( $1 + $2.replace(/(%20|\s)/g, "").replace(/[&\?=\.:\/\+-]/g, "").replace(/(%26|%3F|%3D|%3A|%2F|%25|%2B)/g, "") + $3 ); // % not removed as otherwise it screws with the 'remove encoded chars' task later
-						}
-					);
+			function($0,$1,$2,$3){
+				return( $1 + $2.replace(/(%20|\s)/g, "").replace(/[&\?=\.:\/\+-]/g, "").replace(/(%26|%3F|%3D|%3A|%2F|%25|%2B)/g, "") + $3 ); // % not removed as otherwise it screws with the 'remove encoded chars' task later
+			}
+		);
 		var html = html.replace(/(\s|\n|^)([\w\?\.:\/\+-]*)\?([\w\?\.\+%=&!\*'\(\);@\$,\|#\^\[\]~\{\}"£`¬¦\\|-]*)(\s|\n|$)/gi,
-	function($0,$1,$2,$3,$4){
-		return( $1 + $2 + "?" + $3.replace(/\./g, "") + $4 );
-							}
-					); // remove the . from the query string but not from the actual URL
+			function($0,$1,$2,$3,$4){
+				return( $1 + $2 + "?" + $3.replace(/\./g, "") + $4 );
+			}
+		); // remove the . from the query string but not from the actual URL
+		
 		if (medium == "Email") {
-			if ($("#emailsendname").val() === "Fundraising_Donate" || $("#emailsendname").val() === "Fundraising_Event" || $("#emailsendname").val() === "Fundraising_Stewardship") {
-				var html = html.replace(/(\s|\n|^)(https:\/\/[^\s\n^]*)(\s|\n|$)/gi, function($0,$1,$2,$3) {
-					return( $1 + $2 + "&wu=true" + $3);
-				});
+			if ($("#emailsendname").val() === "Fundraising_Donate" || $("#emailsendname").val() === "Fundraising_Event" || $("#emailsendname").val() === "Fundraising_Stewardship") {				
+				var html = html.replace(/(\s|\n|^)(https:\/\/[^\s\n^]*)(\s|\n|$)/gi, 
+					function($0,$1,$2,$3) {
+						if (anchor) {
+							return( ($1 + $2).split("#")[0] + "&wu=true" + ("&#" + anchor) + $3 );
+						} else {
+							return( $1 + $2 + "&wu=true" + $3 );
+						}
+					}
+				);
 			}
 			// Remove &wu=true from Email for Red Cross Training & Community Education
 			if ($("#emailsendname").val() === "Red Cross Training" || $("#emailsendname").val() === "Community Education") {
@@ -2407,7 +2429,7 @@ $(window).load(function(){
 					} */
 
         if (domain && source && medium && campaign) {
-            $('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[!\*'\(\);@\$,\|#\^\[\]~\{\}"£`¬¦\\|]/g, "").replace(/(%21|%22|%C2|%A3|%24|%5E|%28|%29|%5B|%5D|%3B|%27|%23|%2C|%7B|%7D|%40|%7E|%3C|%3E|%60|%C2|%AC|%C2|%A6|%5C|%7C)/g, "")); // Can't remove ?,=,&,_ for tracking reasons, or .,:,/,% for URL reasons
+					$('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[!\*'\(\);@\$,\|\^\[\]~\{\}"£`¬¦\\|]/g, "").replace(/(%21|%22|%C2|%A3|%24|%5E|%28|%29|%5B|%5D|%3B|%27|%23|%2C|%7B|%7D|%40|%7E|%3C|%3E|%60|%C2|%AC|%C2|%A6|%5C|%7C)/g, "")); // Can't remove ?,=,&,_ for tracking reasons, or .,:,/,% for URL reasons
         	$('#url').change();
         	} else {
         	$('#url').html('');
