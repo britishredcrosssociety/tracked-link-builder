@@ -63,10 +63,22 @@ $(window).load(function(){
 	    $("#socialadsource").change(function () {
 	        toggleFields();
 	    });
-	    $("#sourceBanner").change(function () {
+	    $("#bannersource").change(function () {
+	        toggleFields();
+	    });
+			$("#videosource").change(function () {
+	        toggleFields();
+	    });
+			$("#audiosource").change(function () {
 	        toggleFields();
 	    });
 	    $("#bannerownsourcecode").change(function () {
+	        toggleFields();
+	    });
+			$("#videoownsourcecode").change(function () {
+	        toggleFields();
+	    });
+			$("#audioownsourcecode").change(function () {
 	        toggleFields();
 	    });
 	    $("#socialpostbrc").change(function () {
@@ -81,6 +93,8 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").show() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -98,6 +112,8 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").show() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -115,6 +131,8 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -128,10 +146,12 @@ $(window).load(function(){
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
 
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && ($("#socialadsource").val() === "Facebook" || $("#socialadsource").val() === "Instagram") )
+		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "Yes" && ($("#socialadsource").val() === "Facebook" || $("#socialadsource").val() === "Instagram") )
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").show() &&
@@ -151,10 +171,12 @@ $(window).load(function(){
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
 
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && ($("#socialadsource").val() === "Facebook" || $("#socialadsource").val() === "Instagram") )
+		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "No" && ($("#socialadsource").val() === "Facebook" || $("#socialadsource").val() === "Instagram") )
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").hide() &&
@@ -174,10 +196,12 @@ $(window).load(function(){
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
 
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Twitter" )
+		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Twitter" )
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").show() &&
@@ -197,10 +221,12 @@ $(window).load(function(){
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
 
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "Twitter" )
+		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "Twitter" )
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").hide() &&
@@ -220,10 +246,12 @@ $(window).load(function(){
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
 
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "LinkedIn" )
+		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "LinkedIn" )
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").show() &&
@@ -243,10 +271,12 @@ $(window).load(function(){
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
 
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "LinkedIn" )
+		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "LinkedIn" )
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").hide() &&
@@ -266,10 +296,12 @@ $(window).load(function(){
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
 
-		/* else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Youtube" )
+		/* else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Youtube" )
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").show() &&
@@ -289,10 +321,12 @@ $(window).load(function(){
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
 
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "Youtube" )
+		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "Youtube" )
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").hide() &&
@@ -312,10 +346,12 @@ $(window).load(function(){
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
 			*/
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "TikTok" )
+		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "TikTok" )
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").show() &&
@@ -335,10 +371,12 @@ $(window).load(function(){
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
 
-		else if ($("#medium").val() === "Social Ad" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "TikTok" )
+		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "TikTok" )
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").show() &&
 			$("#mediumSocialAdOwnSourceCodes").hide() &&
@@ -359,11 +397,15 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "Yes" )
-	        $("#mediumPPCSearch").hide() &&
+			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumBanner").show() &&
 			$("#mediumBannerOwnSourceCodes").show() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumVideoOwnSourceCodes").hide() &&
+			$("#mediumAudio").hide() &&
+			$("#mediumAudioOwnSourceCodes").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -377,11 +419,103 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "No" )
-	        $("#mediumPPCSearch").hide() &&
+			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumBanner").show() &&
 			$("#mediumBannerOwnSourceCodes").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumVideoOwnSourceCodes").hide() &&
+			$("#mediumAudio").hide() &&
+			$("#mediumAudioOwnSourceCodes").hide() &&
+			$("#mediumEmail").hide() &&
+			$("#mediumSocialPost").hide() &&
+			$("#mediumSocialShare").hide() &&
+			$("#mediumSocialButton").hide() &&
+			$("#mediumReferral").hide() &&
+			$("#mediumInternal").hide() &&
+			$("#mediumOffline").hide() &&
+			$("#mediumOther").hide() &&
+			$("#mediumRocketseed").hide() &&
+			$(".showUrlBox").show() &&
+			$("#urlHidden").hide();
+
+		else if ($("#medium").val() === "Paid Video" && $("#videoownsourcecode").val() === "Yes" )
+			$("#mediumPPCSearch").hide() &&
+			$("#mediumOrganicSearch").hide() &&
+			$("#mediumSocialAd").hide() &&
+			$("#mediumBanner").hide() &&
+			$("#mediumBannerOwnSourceCodes").hide() &&
+			$("#mediumVideo").show() &&
+			$("#mediumVideoOwnSourceCodes").show() &&
+			$("#mediumAudio").hide() &&
+			$("#mediumAudioOwnSourceCodes").hide() &&
+			$("#mediumEmail").hide() &&
+			$("#mediumSocialPost").hide() &&
+			$("#mediumSocialShare").hide() &&
+			$("#mediumSocialButton").hide() &&
+			$("#mediumReferral").hide() &&
+			$("#mediumInternal").hide() &&
+			$("#mediumOffline").hide() &&
+			$("#mediumOther").hide() &&
+			$("#mediumRocketseed").hide() &&
+			$(".showUrlBox").show() &&
+			$("#urlHidden").hide();
+
+		else if ($("#medium").val() === "Paid Video" && $("#videoownsourcecode").val() === "No" )
+			$("#mediumPPCSearch").hide() &&
+			$("#mediumOrganicSearch").hide() &&
+			$("#mediumSocialAd").hide() &&
+			$("#mediumBanner").hide() &&
+			$("#mediumBannerOwnSourceCodes").hide() &&
+			$("#mediumVideo").show() &&
+			$("#mediumVideoOwnSourceCodes").hide() &&
+			$("#mediumAudio").hide() &&
+			$("#mediumAudioOwnSourceCodes").hide() &&
+			$("#mediumEmail").hide() &&
+			$("#mediumSocialPost").hide() &&
+			$("#mediumSocialShare").hide() &&
+			$("#mediumSocialButton").hide() &&
+			$("#mediumReferral").hide() &&
+			$("#mediumInternal").hide() &&
+			$("#mediumOffline").hide() &&
+			$("#mediumOther").hide() &&
+			$("#mediumRocketseed").hide() &&
+			$(".showUrlBox").show() &&
+			$("#urlHidden").hide();
+
+		else if ($("#medium").val() === "Audio" && $("#audioownsourcecode").val() === "Yes" )
+			$("#mediumPPCSearch").hide() &&
+			$("#mediumOrganicSearch").hide() &&
+			$("#mediumSocialAd").hide() &&
+			$("#mediumBanner").hide() &&
+			$("#mediumBannerOwnSourceCodes").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumVideoOwnSourceCodes").hide() &&
+			$("#mediumAudio").show() &&
+			$("#mediumAudioOwnSourceCodes").show() &&
+			$("#mediumEmail").hide() &&
+			$("#mediumSocialPost").hide() &&
+			$("#mediumSocialShare").hide() &&
+			$("#mediumSocialButton").hide() &&
+			$("#mediumReferral").hide() &&
+			$("#mediumInternal").hide() &&
+			$("#mediumOffline").hide() &&
+			$("#mediumOther").hide() &&
+			$("#mediumRocketseed").hide() &&
+			$(".showUrlBox").show() &&
+			$("#urlHidden").hide();
+
+		else if ($("#medium").val() === "Audio" && $("#audioownsourcecode").val() === "No" )
+			$("#mediumPPCSearch").hide() &&
+			$("#mediumOrganicSearch").hide() &&
+			$("#mediumSocialAd").hide() &&
+			$("#mediumBanner").hide() &&
+			$("#mediumBannerOwnSourceCodes").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumVideoOwnSourceCodes").hide() &&
+			$("#mediumAudio").show() &&
+			$("#mediumAudioOwnSourceCodes").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -399,6 +533,8 @@ $(window).load(function(){
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").show() &&
 			$("#mediumSocialPost").hide() &&
 			$("#mediumSocialShare").hide() &&
@@ -411,10 +547,12 @@ $(window).load(function(){
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
 
-		else if ($("#medium").val() === "Social Post" && $("#socialpostbrc").val() === "BRC Followers" )
+		else if ($("#medium").val() === "Organic Social" && $("#socialpostbrc").val() === "BRC Followers" )
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").show() &&
@@ -429,10 +567,12 @@ $(window).load(function(){
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
 
-		else if ($("#medium").val() === "Social Post" && $("#socialpostbrc").val() === "Not BRC" )
+		else if ($("#medium").val() === "Organic Social" && $("#socialpostbrc").val() === "Not BRC" )
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").show() &&
@@ -451,6 +591,8 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -468,6 +610,8 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -485,6 +629,8 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -502,6 +648,8 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -519,6 +667,8 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -536,6 +686,8 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -552,6 +704,8 @@ $(window).load(function(){
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
+			$("#mediumVideo").hide() &&
+			$("#mediumAudio").hide() &&
 			$("#mediumEmail").hide() &&
 			$("#mediumSocialAd").hide() &&
 			$("#mediumSocialPost").hide() &&
@@ -630,9 +784,11 @@ $(window).load(function(){
 		<p>
 		<label for="medium">What are you making a tracked link for?
         <select name="medium" id="medium">
+		<option value="Paid Video">Video ad by BRC</option>
+		<option value="Audio">Audio ad by BRC</option>
 		<option value="Banner">Banner</option>
-		<option value="Social Ad">Social ad by BRC</option>
-		<option value="Social Post">Social post</option>
+		<option value="Paid Social">Social ad by BRC</option>
+		<option value="Organic Social">Organic social</option>
 		<option value="Social Share">Social share button on BRC site</option>
         <option value="Social Button">Social button (e.g. Youtube annotations, Facebook)</option>
 		<option value="Email">Email</option>
@@ -703,7 +859,12 @@ $(window).load(function(){
         <p>
         <label for="source">What ad network is the ad on?
         <select name="source" id="bannersource">
+          <option value="AdYouLike">AdYouLike</option>
+          <option value="Amazon">Amazon</option>
+          <option value="Avocet">Avocet</option>
           <option value="Blis">Blis</option>
+          <option value="FORO">FORO</option>
+          <option value="Guardian">Guardian</option>
           <option value="google">Google (formerly Doubleclick/DFP)</option>
           <option value="GumGum">GumGum</option>
           <option value="LoopMe">LoopMe</option>
@@ -713,17 +874,9 @@ $(window).load(function(){
           <option value="Pinterest">Pinterest</option>
           <option value="Playground XYZ">Playground XYZ</option>
           <option value="Snapchat">Snapchat</option>
-          <option value="Spotify">Spotify</option>
-          <option value="Teads">Teads</option>
           <option value="Telegraph">Telegraph</option>
           <option value="Twitch">Twitch</option>
           <option value="Yahoo">Yahoo</option>
-          <option value="Youtube">Youtube</option>
-          <option value="AdYouLike">AdYouLike</option>
-          <option value="Amazon">Amazon</option>
-          <option value="Avocet">Avocet</option>
-          <option value="FORO">FORO</option>
-          <option value="Guardian">Guardian</option>
         </select>
         </label>
         </p>
@@ -793,6 +946,157 @@ $(window).load(function(){
 	</div>
 
     </div>
+
+<div id="mediumVideo">
+	<p>
+		<label for="sourcevideo">What ad network is the ad on?
+			<select name="sourcevideo" id="videosource">
+				<option value="Channel4">Channel 4</option>
+				<option value="ITV">ITV</option>
+				<option value="MediaMath">MediaMath</option>
+				<option value="Sky">Sky</option>
+				<option value="Sky AdSmart">Sky AdSmart</option>
+				<option value="Sky AdVance">Sky AdVance</option>
+				<option value="Teads">Teads</option>
+				<option value="Youtube">Youtube</option>
+			</select>
+		</label>
+	</p>
+	<p>
+		<label for="linkcategoryvideo">What link from our site, or overall organisational goal, is being advertised?
+			<select name="linkcategoryvideo" id="videolinkcategory">
+				<option value="Donate Landing">Donate - Landing</option>
+				<option value="Donate Other">Donate - Other</option>
+				<option value="Get Help">Get help</option>
+				<option value="Get Involved">Get involved</option>
+				<option value="First Aid">First aid</option>
+				<option value="About Us">About Us</option>
+				<option value="Shop">Shop</option>
+				<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
+				<option value="Blog">Blog</option>
+				<option value="Webapps">Webapps</option>
+				<option value="Red Cross Training">Red Cross Training</option>
+				<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
+				<option value="Awareness">Integrated campaign goal = awareness</option>
+				<option value="Consideration">Integrated campaign goal = consideration</option>
+				<option value="Action">Integrated campaign goal = action</option>
+			</select>
+		</label>
+	</p>
+	<p>
+		<label for="adtypevideo">What type of targeting is this part of the campaign using?
+			<select name="adtypevideo" id="videoadtype">
+				<option value="Interest">Interest targeting</option>
+				<option value="Remarketing">Remarketing</option>
+			</select>
+		</label>
+	</p>
+	<p>
+		<label for="adcreativevideo">What's the call to action of the link about?
+			<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreativevideo" id="videoadcreative" type="text">
+		</label>
+	</p>
+	<p>
+		<label for="ownsourcecodevideo">Does this ad push have its own source codes?
+			<select name="ownsourcecodevideo" id="videoownsourcecode">
+				<option value="No">No</option>
+				<option value="Yes">Yes</option>
+			</select>
+		</label>
+	</p>
+	<div style="width:50%; float:left;">
+		<label for="audiencevideo">Who are we targeting with these ads?</label>
+		<input placeholder="Targeting pool 1" name="audiencevideo" id="videoaudience1" type="text">
+		<input placeholder="Targeting pool 2" name="audiencevideo" id="videoaudience2" type="text">
+		<input placeholder="Targeting pool 3" name="audiencevideo" id="videoaudience3" type="text">
+		<input placeholder="Targeting pool 4" name="audiencevideo" id="videoaudience4" type="text">
+		<input placeholder="Targeting pool 5" name="audiencevideo" id="videoaudience5" type="text">
+	</div>
+	<div id="mediumVideoOwnSourceCodes" style="float:right;width:50%;">
+		<label for="sourcecodevideo">What are the different source codes for these ads?
+			<input placeholder="e.g. 123456" name="sourcecodevideo" id="videosourcecode1" type="text">
+			<input placeholder="e.g. 123457" name="sourcecodevideo" id="videosourcecode2" type="text">
+			<input placeholder="e.g. 123458" name="sourcecodevideo" id="videosourcecode3" type="text">
+			<input placeholder="e.g. 123459" name="sourcecodevideo" id="videosourcecode4" type="text">
+			<input placeholder="e.g. 123450" name="sourcecodevideo" id="videosourcecode5" type="text">
+		</label>
+		<p>
+			<input name="sourcecode" id="videosourcecode" value="175148" type="hidden">
+		</p>
+	</div>
+</div>
+
+<div id="mediumAudio">
+	<p>
+		<label for="sourceaudio">What ad network is the ad on?
+			<select name="sourceaudio" id="audiosource">
+				<option value="Spotify">Spotify</option>
+			</select>
+		</label>
+	</p>
+	<p>
+		<label for="linkcategoryaudio">What link from our site, or overall organisational goal, is being advertised?
+			<select name="linkcategoryaudio" id="audiolinkcategory">
+				<option value="Donate Landing">Donate - Landing</option>
+				<option value="Donate Other">Donate - Other</option>
+				<option value="Get Help">Get help</option>
+				<option value="Get Involved">Get involved</option>
+				<option value="First Aid">First aid</option>
+				<option value="About Us">About Us</option>
+				<option value="Shop">Shop</option>
+				<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
+				<option value="Blog">Blog</option>
+				<option value="Webapps">Webapps</option>
+				<option value="Red Cross Training">Red Cross Training</option>
+				<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
+				<option value="Awareness">Integrated campaign goal = awareness</option>
+				<option value="Consideration">Integrated campaign goal = consideration</option>
+				<option value="Action">Integrated campaign goal = action</option>
+			</select>
+		</label>
+	</p>
+	<p>
+		<label for="adtypeaudio">What type of targeting is this part of the campaign using?
+			<select name="adtypeaudio" id="audioadtype">
+				<option value="Interest">Interest targeting</option>
+				<option value="Remarketing">Remarketing</option>
+			</select>
+		</label>
+	</p>
+	<p>
+		<label for="adcreativeaudio">What's the call to action of the link about?
+			<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreativeaudio" id="audioadcreative" type="text">
+		</label>
+	</p>
+	<p>
+		<label for="ownsourcecodeaudio">Does this ad push have its own source codes?
+			<select name="ownsourcecodeaudio" id="audioownsourcecode">
+				<option value="No">No</option>
+				<option value="Yes">Yes</option>
+			</select>
+		</label>
+	</p>
+	<div style="width:50%; float:left;">
+		<label for="audienceaudio">Who are we targeting with these ads?</label>
+		<input placeholder="Targeting pool 1" name="audienceaudio" id="audioaudience1" type="text">
+		<input placeholder="Targeting pool 2" name="audienceaudio" id="audioaudience2" type="text">
+		<input placeholder="Targeting pool 3" name="audienceaudio" id="audioaudience3" type="text">
+		<input placeholder="Targeting pool 4" name="audienceaudio" id="audioaudience4" type="text">
+		<input placeholder="Targeting pool 5" name="audienceaudio" id="audioaudience5" type="text">
+	</div>
+	<div id="mediumAudioOwnSourceCodes" style="float:right;width:50%;">
+		<label for="sourcecodeaudio">What are the different source codes for these ads?
+			<input placeholder="e.g. 123456" name="sourcecodeaudio" id="audiosourcecode1" type="text">
+			<input placeholder="e.g. 123457" name="sourcecodeaudio" id="audiosourcecode2" type="text">
+			<input placeholder="e.g. 123458" name="sourcecodeaudio" id="audiosourcecode3" type="text">
+			<input placeholder="e.g. 123459" name="sourcecodeaudio" id="audiosourcecode4" type="text">
+			<input placeholder="e.g. 123450" name="sourcecodeaudio" id="audiosourcecode5" type="text">
+		</label>
+		<p>
+			<input name="sourcecode" id="audiosourcecode" value="175148" type="hidden">
+		</p>
+	</div>
+</div>
 
     <div id="mediumEmail">
         <p>
@@ -1674,6 +1978,44 @@ $(window).load(function(){
 				audience5 = $('#banneraudience5').val();
 				ownSourceCode = $('#bannerownsourcecode').val();
 				break;
+			case "Paid Video":
+				source = $('#videosource').val();
+				adCreative = $('#videolinkcategory').val();
+				if ($('#videoadcreative').val()) {
+					adCreative = adCreative + '_' + $('#videoadcreative').val();}
+				sourceCode = $('#videosourcecode').val();
+				sourceCode1 = $('#videosourcecode1').val();
+				sourceCode2 = $('#videosourcecode2').val();
+				sourceCode3 = $('#videosourcecode3').val();
+				sourceCode4 = $('#videosourcecode4').val();
+				sourceCode5 = $('#videosourcecode5').val();
+				audience = $('#videoadtype').val() + '_' +"audience"
+				audience1 = $('#videoaudience1').val();
+				audience2 = $('#videoaudience2').val();
+				audience3 = $('#videoaudience3').val();
+				audience4 = $('#videoaudience4').val();
+				audience5 = $('#videoaudience5').val();
+				ownSourceCode = $('#videoownsourcecode').val();
+				break;
+			case "Audio":
+				source = $('#audiosource').val();
+				adCreative = $('#audiolinkcategory').val();
+				if ($('#audioadcreative').val()) {
+					adCreative = adCreative + '_' + $('#audioadcreative').val();}
+				sourceCode = $('#audiosourcecode').val();
+				sourceCode1 = $('#audiosourcecode1').val();
+				sourceCode2 = $('#audiosourcecode2').val();
+				sourceCode3 = $('#audiosourcecode3').val();
+				sourceCode4 = $('#audiosourcecode4').val();
+				sourceCode5 = $('#audiosourcecode5').val();
+				audience = $('#audioadtype').val() + '_' +"audience"
+				audience1 = $('#audioaudience1').val();
+				audience2 = $('#audioaudience2').val();
+				audience3 = $('#audioaudience3').val();
+				audience4 = $('#audioaudience4').val();
+				audience5 = $('#audioaudience5').val();
+				ownSourceCode = $('#audioownsourcecode').val();
+				break;
 			case "Email":
 				source = $('#emailsource').val();
 				adCreative = $('#emailsendname').val()
@@ -1749,7 +2091,7 @@ $(window).load(function(){
 				linkContent = "linkcontent";
 				adCreative = adCreative + '_' + linkLocation + '_' + linkContent;
 				break;
-			case "Social Ad":
+			case "Paid Social":
 				source = $('#socialadsource').val();
 				adCreative = $('#socialadlinkcategory').val();
 				if (source == "Facebook" || source == "Instagram") {
@@ -1791,7 +2133,7 @@ $(window).load(function(){
 				var [audience1, audience2, audience3, audience4, audience5] = audiencestring; // to define each audience var, and concatenate the different search results with _s
 				ownSourceCode = $('#socialadownsourcecode').val();
 				break;
-			case "Social Post":
+			case "Organic Social":
 				source = $('#socialpostsource').val();
 				adCreative = $('#socialpostlinkcategory').val();
 				if ($('#socialpostlinkdetails').val()) {
@@ -1872,12 +2214,38 @@ $(window).load(function(){
        	var isIndividual = $('#isIndividual').val();
 
 		// Set so that the URL has to start https://
-        var domain = domain.replace(/https?/g, "").replace(":", "").replace("//", "");
+		var domain = domain.replace(/https?/g, "").replace(":", "").replace("//", "");
 		// Remove any spaces
 		var domain = domain.replace(" ", "");
 		// Remove any tracking from the URL
-        var domain = domain.split("?")[0];
-		var html = "https://" + domain + '?';
+		var domain = domain.split("?")[0];
+
+		// Get the entered link again
+		let fullDomain = ($('#domain').val());
+		// Get the anchor without the domain
+		let query = (fullDomain.split('?')[0]);
+		let anchor = query.split('#')[1];
+		// Remove the anchor text from the URL
+		var domain = domain.split("#")[0];
+		// Get the query string parameters without the domain
+		const queryString = fullDomain.split('?')[1];
+		// Create a new URLSearchParams object to manipulate the query string
+		let params = new URLSearchParams(queryString);
+		// Remove the non-valid query string parameters
+		params.delete("utm_campaign");
+		params.delete("utm_source");
+		params.delete("utm_medium");
+		params.delete("utm_content");
+		params.delete("utm_term");
+		params.delete("c_name");
+		params.delete("c_source");
+		params.delete("c_medium");
+		params.delete("c_creative");
+		params.delete("c_code");
+		params.delete("adg");
+
+		// Create the new URL with the query string parameters that are left
+		var html = "https://" + domain + "?" + params + "&";
 
 		if (medium !== "Referral" && medium !== "Internal") {
 			if (sourceCode === "REMOVE") {
@@ -1915,8 +2283,12 @@ $(window).load(function(){
 				var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative)+'&c_code='+sourceCode;
 			}
 			if (audience && isIndividual === "Yes") {
-				var html = html + '&adg=' + audience;
+				if (anchor) {
+					var html = (html + '&adg=' + audience).split("#")[0] + "&#" + anchor;
+				} else {
+					var html = html + '&adg=' + audience;
 				}
+			}
 			// if (isDonate === "Yes") {
 			// var approachCodeTracking = sourceCode + encodeURIComponent('_'+campaign+source+medium);
 			// if (audience) {
@@ -1926,10 +2298,16 @@ $(window).load(function(){
 				// var html = html + '&approachcode='+ approachCodeTracking.replace(/%20/g, "").replace(/ /g, "");
             //	var html = html + '&approachcode='+ approachCodeTracking.replace(/(\s|%20)/g, "").replace(/[^0-9a-zA-Z_%]/g, "").replace(/([^%])%([^%])/g, "$1" + "$2");; // Remove everything that's not a number, letter or underscore or %, as special characters e.g. dashes break the old tracking. THEN remove any individual %s, but keep any duplicates e.g. for %%variables%%.
 			// }
+			} else {
+				if (anchor) {
+					var html = (html).split("#")[0] + "&#" + anchor;
+				} else {
+					var html = html;
+				}
 			}
 
-// For banner and social ads - To repeat the link for each audience filled in, replacing the audience for each one.
-// NOTE: If variables used here are not defined on page load (i.e. literally on load, or with the default medium selection) then it will mess things up.
+// For multi-link paths (banner, paid social, paid video, audio): To repeat the link for each audience filled in, replacing the audience for each one.
+// NOTE: If variables used here are not defined on page load (i.e. literally on load, or with the default medium selection) then it will mess things up.		
 		if (audience1 && !audience2 && !audience3 && !audience4 && !audience5 ) {
 			var html = html.replace(/audience/g,encodeURIComponent(audience1));
 			if (ownSourceCode === "Yes") {
@@ -2014,20 +2392,27 @@ $(window).load(function(){
 		}
 		// Code to remove %20 from all approachcode trackings. Example taken from https://www.bennadel.com/blog/1742-using-regular-expressions-in-javascript-a-general-overview.htm
 		var html = html.replace(/(approachcode=)([\w&\?=\.:\/%\+-]*)(\s|\n|$)/gi,
-	function($0,$1,$2,$3){
-		return( $1 + $2.replace(/(%20|\s)/g, "").replace(/[&\?=\.:\/\+-]/g, "").replace(/(%26|%3F|%3D|%3A|%2F|%25|%2B)/g, "") + $3 ); // % not removed as otherwise it screws with the 'remove encoded chars' task later
-						}
-					);
+			function($0,$1,$2,$3){
+				return( $1 + $2.replace(/(%20|\s)/g, "").replace(/[&\?=\.:\/\+-]/g, "").replace(/(%26|%3F|%3D|%3A|%2F|%25|%2B)/g, "") + $3 ); // % not removed as otherwise it screws with the 'remove encoded chars' task later
+			}
+		);
 		var html = html.replace(/(\s|\n|^)([\w\?\.:\/\+-]*)\?([\w\?\.\+%=&!\*'\(\);@\$,\|#\^\[\]~\{\}"£`¬¦\\|-]*)(\s|\n|$)/gi,
-	function($0,$1,$2,$3,$4){
-		return( $1 + $2 + "?" + $3.replace(/\./g, "") + $4 );
-							}
-					); // remove the . from the query string but not from the actual URL
+			function($0,$1,$2,$3,$4){
+				return( $1 + $2 + "?" + $3.replace(/\./g, "") + $4 );
+			}
+		); // remove the . from the query string but not from the actual URL
+		
 		if (medium == "Email") {
-			if ($("#emailsendname").val() === "Fundraising_Donate" || $("#emailsendname").val() === "Fundraising_Event" || $("#emailsendname").val() === "Fundraising_Stewardship") {
-				var html = html.replace(/(\s|\n|^)(https:\/\/[^\s\n^]*)(\s|\n|$)/gi, function($0,$1,$2,$3) {
-					return( $1 + $2 + "&wu=true" + $3);
-				});
+			if ($("#emailsendname").val() === "Fundraising_Donate" || $("#emailsendname").val() === "Fundraising_Event" || $("#emailsendname").val() === "Fundraising_Stewardship") {				
+				var html = html.replace(/(\s|\n|^)(https:\/\/[^\s\n^]*)(\s|\n|$)/gi, 
+					function($0,$1,$2,$3) {
+						if (anchor) {
+							return( ($1 + $2).split("#")[0] + "&wu=true" + ("&#" + anchor) + $3 );
+						} else {
+							return( $1 + $2 + "&wu=true" + $3 );
+						}
+					}
+				);
 			}
 			// Remove &wu=true from Email for Red Cross Training & Community Education
 			if ($("#emailsendname").val() === "Red Cross Training" || $("#emailsendname").val() === "Community Education") {
@@ -2043,7 +2428,7 @@ $(window).load(function(){
 					} */
 
         if (domain && source && medium && campaign) {
-            $('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[!\*'\(\);@\$,\|#\^\[\]~\{\}"£`¬¦\\|]/g, "").replace(/(%21|%22|%C2|%A3|%24|%5E|%28|%29|%5B|%5D|%3B|%27|%23|%2C|%7B|%7D|%40|%7E|%3C|%3E|%60|%C2|%AC|%C2|%A6|%5C|%7C)/g, "")); // Can't remove ?,=,&,_ for tracking reasons, or .,:,/,% for URL reasons
+					$('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[!\*'\(\);@\$,\|\^\[\]~\{\}"£`¬¦\\|]/g, "").replace(/(%21|%22|%C2|%A3|%24|%5E|%28|%29|%5B|%5D|%3B|%27|%23|%2C|%7B|%7D|%40|%7E|%3C|%3E|%60|%C2|%AC|%C2|%A6|%5C|%7C)/g, "")); // Can't remove ?,=,&,_ for tracking reasons, or .,:,/,% for URL reasons
         	$('#url').change();
         	} else {
         	$('#url').html('');
