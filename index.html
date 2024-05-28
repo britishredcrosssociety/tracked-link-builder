@@ -2260,55 +2260,56 @@ $(window).load(function(){
 		var domain = domain.replace(" ", "");
 		// Remove any tracking from the URL
 		var domain = domain.split("?")[0];
+		// Remove any fragment from the URL
+		var domain = domain.split("#")[0];
 
 		// Get the entered link again
 		let fullDomain = ($('#domain').val());
-		console.log('fullDomain: ' + fullDomain);
+		// console.log('fullDomain: ' + fullDomain);
 		// Get the anchor without the domain
-		// let query = (fullDomain.split('?')[0]);
-		// let anchor = query.split('#')[1];
-		// console.log('Anchor: ' + anchor);
-		// ^ is not working -- it's assuming links of a form https://donate.redcross.org.uk/appeal/general-fund-appeal#appeal-intro?spm=Regular+Giving, but should be expecting form https://donate.redcross.org.uk/appeal/general-fund-appeal?spm=Regular+Giving#appeal-intro
 		let anchor_match = /#(.+?)($|&|\?)/g;
 		let get_anchor = anchor_match.exec(fullDomain);
-		console.log('get_anchor: ' + get_anchor);
+		// console.log('get_anchor: ' + get_anchor);
 		// Get the query string parameters without the domain
 		const queryString = fullDomain.split('?')[1];
 		
-		// If there is an anchor, remove it from queryString (if it's there, which it will be if ordered correctly)
-		if (get_anchor) {
-			var anchor_rgx = get_anchor[1];
-			console.log('anchor_rgx: ' + anchor_rgx);
-			var queryStringNoAnchor = queryString.replace(anchor_match, "");
-			// Create a new URLSearchParams object to manipulate the query string
-			var params = new URLSearchParams(queryStringNoAnchor);
-			}
-		else {
-			// Create a new URLSearchParams object to manipulate the query string
-			var params = new URLSearchParams(queryString);
+		// If there is an anchor + query string, remove anchor from queryString (if it's there, which it will be if ordered correctly)
+		if (get_anchor && queryString) {
+		  var anchor_rgx = get_anchor[1];
+		  // console.log("Anchor + query");
+		  // console.log('anchor_rgx: ' + anchor_rgx);
+		  var queryStringNoAnchor = queryString.replace(anchor_match, "");
+		  var params = new URLSearchParams(queryStringNoAnchor);
+		} else if (get_anchor) { // if only anchor, extract the anchor
+		  // console.log("Anchor only");
+		  var anchor_rgx = get_anchor[1];
+		  // console.log('anchor_rgx: ' + anchor_rgx);
+		} else if (queryString) {
+		  // console.log("Query only");
+		  var params = new URLSearchParams(queryString);
 		}
-		// Remove the anchor text from the URL
-		var domain = domain.split("#")[0];
+		// If there are any query parameters, remove the potential clashes
+		if (params) {
+			params.delete("utm_campaign");
+			params.delete("utm_campaign");
+			params.delete("utm_source");
+			params.delete("utm_medium");
+			params.delete("utm_content");
+			params.delete("utm_term");
+			params.delete("c_name");
+			params.delete("c_source");
+			params.delete("c_medium");
+			params.delete("c_creative");
+			params.delete("c_code");
+			params.delete("adg");
+			params.delete("c_id");
+			params.delete("utm_id");
+			params.delete("utm_marketing_tactic");
+			var html = ["https://", domain, "?", params, "&"].join('');
+		} else {
+			var html = ["https://", domain, "?"].join('');
+		}
 		
-		// Create a new URLSearchParams object to manipulate the query string
-
-		// var queryStringNoAnchor = queryString.replace(anchor_match, "");
-		// Remove the non-valid query string parameters
-		params.delete("utm_campaign");
-		params.delete("utm_source");
-		params.delete("utm_medium");
-		params.delete("utm_content");
-		params.delete("utm_term");
-		params.delete("c_name");
-		params.delete("c_source");
-		params.delete("c_medium");
-		params.delete("c_creative");
-		params.delete("c_code");
-		params.delete("adg");
-
-		// Create the new URL with the query string parameters that are left
-		var html = "https://" + domain + "?" + params + "&";
-
 		if (medium !== "Referral" && medium !== "Internal") {
 			if (sourceCode === "REMOVE") {
 				// sourceCode = "REMOVE".replace('REMOVE','');
@@ -2354,7 +2355,7 @@ $(window).load(function(){
 			}
 			if (audience && isIndividual === "Yes") {
 				if (get_anchor) {
-					var html = (html + '&adg=' + audience).split("#")[0] + "#" + anchor_rgx;
+					var html = html + '&adg=' + audience + "#" + anchor_rgx;
 					console.log("individual + audience populated + anchor");
 				} else {
 					var html = html + '&adg=' + audience;
