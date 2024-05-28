@@ -2263,15 +2263,36 @@ $(window).load(function(){
 
 		// Get the entered link again
 		let fullDomain = ($('#domain').val());
+		console.log('fullDomain: ' + fullDomain);
 		// Get the anchor without the domain
-		let query = (fullDomain.split('?')[0]);
-		let anchor = query.split('#')[1];
-		// Remove the anchor text from the URL
-		var domain = domain.split("#")[0];
+		// let query = (fullDomain.split('?')[0]);
+		// let anchor = query.split('#')[1];
+		// console.log('Anchor: ' + anchor);
+		// ^ is not working -- it's assuming links of a form https://donate.redcross.org.uk/appeal/general-fund-appeal#appeal-intro?spm=Regular+Giving, but should be expecting form https://donate.redcross.org.uk/appeal/general-fund-appeal?spm=Regular+Giving#appeal-intro
+		let anchor_match = /#(.+?)($|&|\?)/g;
+		let get_anchor = anchor_match.exec(fullDomain);
+		console.log('get_anchor: ' + get_anchor);
 		// Get the query string parameters without the domain
 		const queryString = fullDomain.split('?')[1];
+		
+		// If there is an anchor, remove it from queryString (if it's there, which it will be if ordered correctly)
+		if (get_anchor) {
+			var anchor_rgx = get_anchor[1];
+			console.log('anchor_rgx: ' + anchor_rgx);
+			var queryStringNoAnchor = queryString.replace(anchor_match, "");
+			// Create a new URLSearchParams object to manipulate the query string
+			var params = new URLSearchParams(queryStringNoAnchor);
+			}
+		else {
+			// Create a new URLSearchParams object to manipulate the query string
+			var params = new URLSearchParams(queryString);
+		}
+		// Remove the anchor text from the URL
+		var domain = domain.split("#")[0];
+		
 		// Create a new URLSearchParams object to manipulate the query string
-		let params = new URLSearchParams(queryString);
+
+		// var queryStringNoAnchor = queryString.replace(anchor_match, "");
 		// Remove the non-valid query string parameters
 		params.delete("utm_campaign");
 		params.delete("utm_source");
@@ -2326,14 +2347,18 @@ $(window).load(function(){
 			// If sourceCode is set to REMOVE don't display it otherwise add '&c_code='+sourceCode to the html var at the end.
 			if (sourceCode === "REMOVE") {
 				var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative);
+				console.log("individual + remove source code");
 			} else {
 				var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative)+'&c_code='+sourceCode;
+				console.log("individual + keep source code");
 			}
 			if (audience && isIndividual === "Yes") {
-				if (anchor) {
-					var html = (html + '&adg=' + audience).split("#")[0] + "&#" + anchor;
+				if (get_anchor) {
+					var html = (html + '&adg=' + audience).split("#")[0] + "#" + anchor_rgx;
+					console.log("individual + audience populated + anchor");
 				} else {
 					var html = html + '&adg=' + audience;
+					console.log("individual + audience populated + no anchor");
 				}
 			}
 			// if (isDonate === "Yes") {
@@ -2346,10 +2371,12 @@ $(window).load(function(){
             //	var html = html + '&approachcode='+ approachCodeTracking.replace(/(\s|%20)/g, "").replace(/[^0-9a-zA-Z_%]/g, "").replace(/([^%])%([^%])/g, "$1" + "$2");; // Remove everything that's not a number, letter or underscore or %, as special characters e.g. dashes break the old tracking. THEN remove any individual %s, but keep any duplicates e.g. for %%variables%%.
 			// }
 			} else {
-				if (anchor) {
-					var html = (html).split("#")[0] + "&#" + anchor;
+				if (get_anchor) {
+					var html = (html).split("#")[0] + "#" + anchor_rgx;
+					console.log("not individual + anchor");
 				} else {
 					var html = html;
+					console.log("not individual + no anchor");
 				}
 			}
 
