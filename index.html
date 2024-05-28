@@ -90,6 +90,7 @@ $(window).load(function(){
 	}); //this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
 	function toggleFields() {
 	    if ($("#medium").val() === "Paid Search")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").show() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -109,6 +110,7 @@ $(window).load(function(){
 			$("#urlHidden").show();
 
 		else if ($("#medium").val() === "Organic Search")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").show() &&
 			$("#mediumBanner").hide() &&
@@ -128,6 +130,7 @@ $(window).load(function(){
 			$("#urlHidden").show();
 
 		else if ($("#medium").val() === "Referral")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -147,6 +150,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "Yes" && ($("#socialadsource").val() === "Facebook" || $("#socialadsource").val() === "Instagram") )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -172,6 +176,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "No" && ($("#socialadsource").val() === "Facebook" || $("#socialadsource").val() === "Instagram") )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -197,6 +202,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Twitter" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -222,6 +228,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "Twitter" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -247,6 +254,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "LinkedIn" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -272,6 +280,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "LinkedIn" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -297,6 +306,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		/* else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Youtube" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -322,6 +332,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "Youtube" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -347,6 +358,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 			*/
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "TikTok" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -372,6 +384,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "TikTok" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -397,6 +410,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "Yes" )
+			$("#taxonomy").show() &&
 			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
@@ -419,6 +433,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "No" )
+			$("#taxonomy").show() &&
 			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
@@ -441,6 +456,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Video" && $("#videoownsourcecode").val() === "Yes" )
+			$("#taxonomy").show() &&
 			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
@@ -463,6 +479,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Video" && $("#videoownsourcecode").val() === "No" )
+			$("#taxonomy").show() &&
 			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
@@ -485,6 +502,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Audio" && $("#audioownsourcecode").val() === "Yes" )
+			$("#taxonomy").show() &&
 			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
@@ -507,6 +525,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Audio" && $("#audioownsourcecode").val() === "No" )
+			$("#taxonomy").show() &&
 			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
@@ -529,6 +548,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Email")
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
@@ -548,6 +568,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Organic Social" && $("#socialpostbrc").val() === "BRC Followers" )
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -568,6 +589,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Organic Social" && $("#socialpostbrc").val() === "Not BRC" )
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -588,6 +610,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Social Share")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -607,6 +630,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Social Button")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -626,6 +650,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Internal")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -645,6 +670,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Offline")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -664,6 +690,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Unknown")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -683,6 +710,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Rocketseed")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -701,6 +729,7 @@ $(window).load(function(){
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
 	    else
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -855,6 +884,31 @@ $(window).load(function(){
         </p>
 	</div>
 
+	<div id="taxonomy">
+        <p>
+        <label for="marketingobj">What is the marketing objective for this ask?<br />
+			<em>All paid marketing needs these specified. Each marketing objective for a campaign should have its own source code.</em>
+        <select name="marketingobj" id="marketingobj">
+          <option selected value>--select option--</option>
+          <option value="Donation">Donation</option>
+          <option value="Donation RG">Donation (RG)</option>
+          <option value="Event">Event sign-up</option>
+          <option value="Consideration">Consideration</option>
+          <option value="Awareness">Awareness</option>
+          <option value="Lead generation">Lead generation</option>
+          <option value="Ecommerce">Ecommerce</option>
+          <option value="Volunteering">Volunteering</option>
+        </select>
+        </label>
+		</p>
+        <p>
+        <label for="taxonomycode">What is the "taxonomy source code" for this ask?<br />
+			<em>All paid marketing needs these. You should have one source code per campaign and marketing objective.</em>
+        <input placeholder="e.g. 123456" name="taxonomycode" id="taxonomycode" type="number">
+        </label>
+        </p>
+	</div>
+
     <div id="mediumBanner">
         <p>
         <label for="source">What ad network is the ad on?
@@ -901,9 +955,6 @@ $(window).load(function(){
 		<option value="Webapps">Webapps</option>
 		<option value="Red Cross Training">Red Cross Training</option>
 		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -983,9 +1034,6 @@ $(window).load(function(){
 				<option value="Webapps">Webapps</option>
 				<option value="Red Cross Training">Red Cross Training</option>
 				<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-				<option value="Awareness">Integrated campaign goal = awareness</option>
-				<option value="Consideration">Integrated campaign goal = consideration</option>
-				<option value="Action">Integrated campaign goal = action</option>
 			</select>
 		</label>
 	</p>
@@ -1061,9 +1109,6 @@ $(window).load(function(){
 				<option value="Webapps">Webapps</option>
 				<option value="Red Cross Training">Red Cross Training</option>
 				<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-				<option value="Awareness">Integrated campaign goal = awareness</option>
-				<option value="Consideration">Integrated campaign goal = consideration</option>
-				<option value="Action">Integrated campaign goal = action</option>
 			</select>
 		</label>
 	</p>
@@ -1428,9 +1473,6 @@ $(window).load(function(){
 		<option value="Webapps">Webapps</option>
 		<option value="Red Cross Training">Red Cross Training</option>
 		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1521,7 +1563,7 @@ $(window).load(function(){
 		</select>
         </label>
         </p>
-        <div style="width:50%; float:left;">
+        <div style="width:50%; float:left;" id="socialadaudience">
         <div id="socialadaudiencecontainer1" class="dropdown-multiple-label">
         <label for="audience">Who are we targeting with these ads?
         <select style="display:none;" name="audience" id="socialadaudience1" multiple>
@@ -1612,9 +1654,6 @@ $(window).load(function(){
 		<option value="Webapps">Webapps</option>
 		<option value="Red Cross Training">Red Cross Training</option>
 		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1652,9 +1691,6 @@ $(window).load(function(){
 		<option value="Webapps">Webapps</option>
 		<option value="Red Cross Training">Red Cross Training</option>
 		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1673,9 +1709,6 @@ $(window).load(function(){
 		<option value="Webapps">Webapps</option>
 		<option value="Red Cross Training">Red Cross Training</option>
 		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1722,9 +1755,6 @@ $(window).load(function(){
 		<option value="Webapps">Webapps</option>
 		<option value="Red Cross Training">Red Cross Training</option>
 		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1770,9 +1800,6 @@ $(window).load(function(){
 		<option value="Webapps">Webapps</option>
 		<option value="Red Cross Training">Red Cross Training</option>
 		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1826,9 +1853,6 @@ $(window).load(function(){
 		<option value="Webapps">Webapps</option>
 		<option value="Red Cross Training">Red Cross Training</option>
 		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1867,9 +1891,6 @@ $(window).load(function(){
 		<option value="Webapps">Webapps</option>
 		<option value="Red Cross Training">Red Cross Training</option>
 		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1905,9 +1926,6 @@ $(window).load(function(){
 		<option value="Webapps">Webapps</option>
 		<option value="Red Cross Training">Red Cross Training</option>
 		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
@@ -1933,10 +1951,12 @@ $(window).load(function(){
         </div>
     </div>
 </div>
+
 <!--searchable dropdown code, based on https://janking.github.io/dropdown/ -->
 <script src="assets/js/campaign.js"></script>
 <script src="assets/js/audience.js"></script>
 <script>
+
 	function updateOutput()
         {
 
@@ -1944,6 +1964,8 @@ $(window).load(function(){
         var medium = $('#medium').val();
 		var source;
 		var adCreative;
+		var marketingObj;
+		var taxonomyCode;
 		var sourceCode;
 		var sourceCode1 = 0;
 		var sourceCode2 = 0;
@@ -2214,6 +2236,10 @@ $(window).load(function(){
 				sourceCode = $('#sourcecode').val();
 				audience = $('#audience').val();
 		}
+		if ($('#marketingobj').val()) {
+			marketingObj = $('#marketingobj').val();}
+		if ($('#taxonomycode').val()) {
+			taxonomyCode = $('#taxonomycode').val();}
 		/* for( var i = 0; i < sourceCodeList.length; i++) {
 		    if(sourceCodeList[i] > 0)
         		sourceCodeCount++;
@@ -2287,6 +2313,12 @@ $(window).load(function(){
        			var html = html + '_'+ audience;
        		}
    		}
+		if (taxonomyCode) {
+			var html = html+'&utm_id='+encodeURIComponent(taxonomyCode)+'&c_id='+encodeURIComponent(taxonomyCode);
+			}
+		if (marketingObj) {
+			var html = html+'&utm_marketing_tactic='+encodeURIComponent(marketingObj);
+			}
 		if (medium !== "Referral" && medium !== "Internal" && isIndividual === "Yes") {
 			var html = html + '&'
 			}
