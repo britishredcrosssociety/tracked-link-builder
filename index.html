@@ -2481,8 +2481,8 @@ $(window).load(function(){
 			if ($("#emailsendname").val() === "Fundraising_Donate" || $("#emailsendname").val() === "Fundraising_Event" || $("#emailsendname").val() === "Fundraising_Stewardship") {				
 				var html = html.replace(/(\s|\n|^)(https:\/\/[^\s\n^]*)(\s|\n|$)/gi, 
 					function($0,$1,$2,$3) {
-						if (anchor) {
-							return( ($1 + $2).split("#")[0] + "&wu=true" + ("&#" + anchor) + $3 );
+						if (get_anchor) {
+							return( ($1 + $2).split("#")[0] + "&wu=true" + ("#" + anchor_rgx) + $3 );
 						} else {
 							return( $1 + $2 + "&wu=true" + $3 );
 						}

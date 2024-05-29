@@ -7,6 +7,7 @@ Created on Fri May 24 18:19:20 2024
 
 from urllib.parse import urlparse, parse_qs
 import json
+import re
 
 trial_url = 'https://donate.redcross.org.uk/appeal/general-fund-appeal?&utm_campaign=General%20Fund%20Appeal&utm_source=Spotify&utm_medium=Audio&utm_content=Donate%20Landing_CTA&utm_term=246802_Interest_Non-science%20nerds&utm_id=123456&c_id=123456&utm_marketing_tactic=Donation&c_name=General%20Fund%20Appeal&c_source=Spotify&c_medium=Audio&c_creative=Donate%20Landing_CTA&c_code=246802&adg=Interest_Non-science%20nerds&#appeal-intro'
 parsed_url = urlparse(trial_url)
@@ -30,10 +31,16 @@ def basic_checks(url):
         print("Space in the URL")
     for p in params:
         if p in url:
-            if f'&{p}=' not in url:
+            if re.search(f'.*[^\?&]{p}=.*', url):
                 check_state = False
                 print("Badly-formed parameter")
     return check_state
+
+assert basic_checks("https://www.redcross.org.uk?utm_campaign=123&utm_term=456")
+assert basic_checks("https://www.redcross.org.uk?utm_campaign=123&&utm_term=456") == False
+assert basic_checks("http://www.redcross.org.uk?utm_campaign=123&utm_term=456") == False
+assert basic_checks("https://www.redcross.org.uk?utm_campaign=123&utm_term=4 56") == False
+assert basic_checks("https://www.redcross.org.uk?utm_campaign=123utm_term=456") == False
 
 
 #%% Actually do checks
@@ -47,6 +54,7 @@ for k in output_to_check.keys():
         if not basic_checks(v):
             review_state = False
             print(f'In checking {k} links, {v} failed')
+
 if review_state:
     print("All passed!")
 
