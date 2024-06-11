@@ -92,7 +92,8 @@ for k in data_to_check.keys():
             if (utm_q in parsed_qs.keys()) and (c_q in parsed_qs.keys()):
                 if parsed_qs[utm_q] != parsed_qs[c_q]:
                     print(f'! In checking {k} links, there was an issue ' \
-                          f'where {utm_q} != {c_q}')
+
+                              f'where {utm_q} != {c_q}')
                     review_state = False
         # Check the audience parameters
         if ('utm_term' in parsed_qs.keys()) and ('adg' in parsed_qs.keys()):
