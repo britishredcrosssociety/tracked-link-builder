@@ -422,6 +422,35 @@ find_element_medium('other', 'linkdetails').send_keys('Support our work')
 url = final_url.get_attribute('value')
 outputs['unknown'] = [url]
 
+#%% Other weird checks
+
+driver.refresh()
+Select(driver.find_element(By.CSS_SELECTOR, "#medium")).select_by_value('Audio')
+time.sleep(1)
+
+domain = driver.find_element(By.CSS_SELECTOR, "#domain")
+final_url = driver.find_element(By.CSS_SELECTOR, "textarea#url")
+marketing_obj = driver.find_element(By.CSS_SELECTOR, "#marketingobj")
+taxonomy_code = driver.find_element(By.CSS_SELECTOR, "#taxonomycode")
+
+weird_dropdown('Disaster Fund', which='campaign')
+domain.send_keys('donate.redcross.org.uk/appeal/disaster-fund#:~:text=You%20can%20help%20people%20affected%20by%20disaster%20today&text=In%20any%20emergency%20%E2%80%93%20in%20the')
+
+Select(marketing_obj).select_by_value('Donation')
+taxonomy_code.send_keys('123456')
+Select(find_element_medium('audio', 'source')).select_by_value('Spotify')
+Select(find_element_medium('audio', 'adtype')).select_by_value('Interest')
+find_element_medium('audio', 'adcreative').send_keys('CTA')
+find_element_medium('audio', 'audience1').send_keys('Science nerds')
+
+url = final_url.get_attribute('value')
+outputs['other'] = [url]
+
+find_element_medium('audio', 'adcreative').clear()
+find_element_medium('audio', 'adcreative').send_keys('0---------1---------2---------3---------4---------5---------6---------7---------8---------9---------x')
+url = final_url.get_attribute('value')
+outputs['other'] += [url]
+
 #%% Save dict
 
 with open("checks\\generated_urls.json", "w") as outfile: 
