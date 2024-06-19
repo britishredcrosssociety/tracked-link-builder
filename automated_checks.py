@@ -427,7 +427,7 @@ outputs['unknown'] = [url]
 with open("checks\\generated_urls.json", "w") as outfile: 
     json.dump(outputs, outfile)
 
-#%% 
+#%% Checks
 
 driver.quit()
 

@@ -863,7 +863,7 @@ $(window).load(function(){
         <p class="alert">Your link won't include any UTM tracking, because Google Analytics covers this stuff well by default &ndash; so only continue if you want individual-level tracking appended.</p>
         <p>
         <label for="source">Campaign Source
-        <input placeholder="e.g. Amazon, Facebook, BBC, Guardian" name="source" id="referralsource" type="text">
+        <input placeholder="e.g. Amazon, Facebook, BBC, Guardian" name="source" id="referralsource" type="text" maxlength="100">
         </label>
         </p>
         <p>
@@ -905,7 +905,7 @@ $(window).load(function(){
         <p>
         <label for="taxonomycode">What is the "taxonomy source code" for this ask?<br />
 			<em>All paid marketing needs these set. You should have one source code per campaign and marketing objective. See the <a href="https://brcsbrms.sharepoint.com/:w:/t/Fundraising/bi/ER5bYb7ex7lNjMj3U_fDQK8BcIlnebPyv_0X5kbfDy5HrA?e=KC1EId" target="_blank">process guide</a> for how to generate these codes.</em>
-        <input placeholder="e.g. 123456" name="taxonomycode" id="taxonomycode" type="number">
+        <input placeholder="e.g. 123456" name="taxonomycode" id="taxonomycode" type="number" maxlength="100">
         </label>
         </p>
 	</div>
@@ -952,7 +952,7 @@ $(window).load(function(){
         </p>
         <p>
         <label for="adcreative">What's the call to action of the link about?
-        <input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="banneradcreative" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="banneradcreative" type="text" maxlength="100">
         </label>
         </p>
         <p>
@@ -965,20 +965,20 @@ $(window).load(function(){
         </p>
         <div style="width:50%; float:left;">
         <label for="audience">Who are we targeting with these ads?
-        <input placeholder="Targeting pool 1" name="sourcecode" id="banneraudience1" type="text">
+        <input placeholder="Targeting pool 1" name="sourcecode" id="banneraudience1" type="text" maxlength="100">
         </label>
-        <input placeholder="Targeting pool 2" name="sourcecode" id="banneraudience2" type="text">
-        <input placeholder="Targeting pool 3" name="sourcecode" id="banneraudience3" type="text">
-        <input placeholder="Targeting pool 4" name="sourcecode" id="banneraudience4" type="text">
-        <input placeholder="Targeting pool 5" name="sourcecode" id="banneraudience5" type="text">
+        <input placeholder="Targeting pool 2" name="sourcecode" id="banneraudience2" type="text" maxlength="100">
+        <input placeholder="Targeting pool 3" name="sourcecode" id="banneraudience3" type="text" maxlength="100">
+        <input placeholder="Targeting pool 4" name="sourcecode" id="banneraudience4" type="text" maxlength="100">
+        <input placeholder="Targeting pool 5" name="sourcecode" id="banneraudience5" type="text" maxlength="100">
         </div>
         <div id="mediumBannerOwnSourceCodes" style="float:right;width:50%;">
         <label for="sourcecode">What are the different source codes for these ads?
-        <input placeholder="e.g. 123456" name="sourcecode" id="bannersourcecode1" type="text">
-        <input placeholder="e.g. 123457" name="sourcecode" id="bannersourcecode2" type="text">
-        <input placeholder="e.g. 123458" name="sourcecode" id="bannersourcecode3" type="text">
-        <input placeholder="e.g. 123459" name="sourcecode" id="bannersourcecode4" type="text">
-        <input placeholder="e.g. 123450" name="sourcecode" id="bannersourcecode5" type="text">
+        <input placeholder="e.g. 123456" name="sourcecode" id="bannersourcecode1" type="text" maxlength="100">
+        <input placeholder="e.g. 123457" name="sourcecode" id="bannersourcecode2" type="text" maxlength="100">
+        <input placeholder="e.g. 123458" name="sourcecode" id="bannersourcecode3" type="text" maxlength="100">
+        <input placeholder="e.g. 123459" name="sourcecode" id="bannersourcecode4" type="text" maxlength="100">
+        <input placeholder="e.g. 123450" name="sourcecode" id="bannersourcecode5" type="text" maxlength="100">
         </label>
         <p>
 		<input name="sourcecode" id="bannersourcecode" value="175148" type="hidden">
@@ -1012,7 +1012,7 @@ $(window).load(function(){
 	</p>
 	<p>
 		<label for="adcreativevideo">What's the call to action of the link about?
-			<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreativevideo" id="videoadcreative" type="text">
+			<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreativevideo" id="videoadcreative" type="text" maxlength="100">
 		</label>
 	</p>
 	<p>
@@ -1025,19 +1025,19 @@ $(window).load(function(){
 	</p>
 	<div style="width:50%; float:left;">
 		<label for="audiencevideo">Who are we targeting with these ads?</label>
-		<input placeholder="Targeting pool 1" name="audiencevideo" id="videoaudience1" type="text">
-		<input placeholder="Targeting pool 2" name="audiencevideo" id="videoaudience2" type="text">
-		<input placeholder="Targeting pool 3" name="audiencevideo" id="videoaudience3" type="text">
-		<input placeholder="Targeting pool 4" name="audiencevideo" id="videoaudience4" type="text">
-		<input placeholder="Targeting pool 5" name="audiencevideo" id="videoaudience5" type="text">
+		<input placeholder="Targeting pool 1" name="audiencevideo" id="videoaudience1" type="text" maxlength="100">
+		<input placeholder="Targeting pool 2" name="audiencevideo" id="videoaudience2" type="text" maxlength="100">
+		<input placeholder="Targeting pool 3" name="audiencevideo" id="videoaudience3" type="text" maxlength="100">
+		<input placeholder="Targeting pool 4" name="audiencevideo" id="videoaudience4" type="text" maxlength="100">
+		<input placeholder="Targeting pool 5" name="audiencevideo" id="videoaudience5" type="text" maxlength="100">
 	</div>
 	<div id="mediumVideoOwnSourceCodes" style="float:right;width:50%;">
 		<label for="sourcecodevideo">What are the different source codes for these ads?
-			<input placeholder="e.g. 123456" name="sourcecodevideo" id="videosourcecode1" type="text">
-			<input placeholder="e.g. 123457" name="sourcecodevideo" id="videosourcecode2" type="text">
-			<input placeholder="e.g. 123458" name="sourcecodevideo" id="videosourcecode3" type="text">
-			<input placeholder="e.g. 123459" name="sourcecodevideo" id="videosourcecode4" type="text">
-			<input placeholder="e.g. 123450" name="sourcecodevideo" id="videosourcecode5" type="text">
+			<input placeholder="e.g. 123456" name="sourcecodevideo" id="videosourcecode1" type="text" maxlength="100">
+			<input placeholder="e.g. 123457" name="sourcecodevideo" id="videosourcecode2" type="text" maxlength="100">
+			<input placeholder="e.g. 123458" name="sourcecodevideo" id="videosourcecode3" type="text" maxlength="100">
+			<input placeholder="e.g. 123459" name="sourcecodevideo" id="videosourcecode4" type="text" maxlength="100">
+			<input placeholder="e.g. 123450" name="sourcecodevideo" id="videosourcecode5" type="text" maxlength="100">
 		</label>
 		<p>
 			<input name="sourcecode" id="videosourcecode" value="175148" type="hidden">
@@ -1069,7 +1069,7 @@ $(window).load(function(){
 	</p>
 	<p>
 		<label for="adcreativeaudio">What's the call to action of the link about?
-			<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreativeaudio" id="audioadcreative" type="text">
+			<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreativeaudio" id="audioadcreative" type="text" maxlength="100">
 		</label>
 	</p>
 	<p>
@@ -1082,19 +1082,19 @@ $(window).load(function(){
 	</p>
 	<div style="width:50%; float:left;">
 		<label for="audienceaudio">Who are we targeting with these ads?</label>
-		<input placeholder="Targeting pool 1" name="audienceaudio" id="audioaudience1" type="text">
-		<input placeholder="Targeting pool 2" name="audienceaudio" id="audioaudience2" type="text">
-		<input placeholder="Targeting pool 3" name="audienceaudio" id="audioaudience3" type="text">
-		<input placeholder="Targeting pool 4" name="audienceaudio" id="audioaudience4" type="text">
-		<input placeholder="Targeting pool 5" name="audienceaudio" id="audioaudience5" type="text">
+		<input placeholder="Targeting pool 1" name="audienceaudio" id="audioaudience1" type="text" maxlength="100">
+		<input placeholder="Targeting pool 2" name="audienceaudio" id="audioaudience2" type="text" maxlength="100">
+		<input placeholder="Targeting pool 3" name="audienceaudio" id="audioaudience3" type="text" maxlength="100">
+		<input placeholder="Targeting pool 4" name="audienceaudio" id="audioaudience4" type="text" maxlength="100">
+		<input placeholder="Targeting pool 5" name="audienceaudio" id="audioaudience5" type="text" maxlength="100">
 	</div>
 	<div id="mediumAudioOwnSourceCodes" style="float:right;width:50%;">
 		<label for="sourcecodeaudio">What are the different source codes for these ads?
-			<input placeholder="e.g. 123456" name="sourcecodeaudio" id="audiosourcecode1" type="text">
-			<input placeholder="e.g. 123457" name="sourcecodeaudio" id="audiosourcecode2" type="text">
-			<input placeholder="e.g. 123458" name="sourcecodeaudio" id="audiosourcecode3" type="text">
-			<input placeholder="e.g. 123459" name="sourcecodeaudio" id="audiosourcecode4" type="text">
-			<input placeholder="e.g. 123450" name="sourcecodeaudio" id="audiosourcecode5" type="text">
+			<input placeholder="e.g. 123456" name="sourcecodeaudio" id="audiosourcecode1" type="text" maxlength="100">
+			<input placeholder="e.g. 123457" name="sourcecodeaudio" id="audiosourcecode2" type="text" maxlength="100">
+			<input placeholder="e.g. 123458" name="sourcecodeaudio" id="audiosourcecode3" type="text" maxlength="100">
+			<input placeholder="e.g. 123459" name="sourcecodeaudio" id="audiosourcecode4" type="text" maxlength="100">
+			<input placeholder="e.g. 123450" name="sourcecodeaudio" id="audiosourcecode5" type="text" maxlength="100">
 		</label>
 		<p>
 			<input name="sourcecode" id="audiosourcecode" value="175148" type="hidden">
@@ -1141,7 +1141,7 @@ $(window).load(function(){
         <div id="emailsendnamefundraising">
 	        <p>
 	        	<label for="adcreative">What is the topic of this email?
-	        		<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="emailadcreative" type="text">
+	        		<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="emailadcreative" type="text" maxlength="100">
 	        	</label>
 	        </p>
 	        <div style="width:50%; float:left;">
@@ -1251,11 +1251,11 @@ $(window).load(function(){
 	  		<div style="float:right;width:50%;">
 				<p>
 	        		<label>&nbsp;
-		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent1" type="text">
-		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
-		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent3" type="text">
-		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent4" type="text">
-		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent5" type="text">
+		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent1" type="text" maxlength="100">
+		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text" maxlength="100">
+		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent3" type="text" maxlength="100">
+		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent4" type="text" maxlength="100">
+		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent5" type="text" maxlength="100">
 	            	</label>
 				</p>
 			</div>
@@ -1266,12 +1266,12 @@ $(window).load(function(){
 		<div id="emailsendnametraining">
 	        <p>
 	        	<label for="trainingaudience">Who are we targeting with these emails?
-					<input name="trainingaudience" id="trainingaudience" type="text">
+					<input name="trainingaudience" id="trainingaudience" type="text" maxlength="100">
 				</label>
 			</p>
 	        <p>
 	        	<label for="trainingcreative">What is the topic of this email?
-	        		<input name="trainingcreative" id="trainingcreative" type="text">
+	        		<input name="trainingcreative" id="trainingcreative" type="text" maxlength="100">
 	        	</label>
 	        </p>
 	        <div style="width:50%; float:left;">
@@ -1311,11 +1311,11 @@ $(window).load(function(){
 	  		<div style="float:right;width:50%;">
 				<p>
 	        		<label>&nbsp;
-		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent1" type="text">
-		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent2" type="text">
-		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent3" type="text">
-		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent4" type="text">
-		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent5" type="text">
+		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent1" type="text" maxlength="100">
+		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent2" type="text" maxlength="100">
+		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent3" type="text" maxlength="100">
+		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent4" type="text" maxlength="100">
+		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent5" type="text" maxlength="100">
 	            	</label>
 				</p>
 			</div>
@@ -1375,11 +1375,11 @@ $(window).load(function(){
 	  		<div style="float:right;width:50%;">
 				<p>
 	        		<label>&nbsp;
-		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent1" type="text">
-		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent2" type="text">
-		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent3" type="text">
-		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent4" type="text">
-		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent5" type="text">
+		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent1" type="text" maxlength="100">
+		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent2" type="text" maxlength="100">
+		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent3" type="text" maxlength="100">
+		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent4" type="text" maxlength="100">
+		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent5" type="text" maxlength="100">
 	            	</label>
 				</p>
 			</div>
@@ -1483,7 +1483,7 @@ $(window).load(function(){
 
         <p>
         <label for="adcreative">What's the creative about? What's the call to action of the ad?
-        <input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="socialadadcreative" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="socialadadcreative" type="text" maxlength="100">
         </label>
         </p>
         <p>
@@ -1527,11 +1527,11 @@ $(window).load(function(){
         </div>
         <div id="mediumSocialAdOwnSourceCodes" style="float:right;width:50%;">
         <label for="sourcecode">What are the different source codes for these ads?
-        <input placeholder="e.g. 123456" name="sourcecode" id="socialadsourcecode1" type="text">
-        <input placeholder="e.g. 123457" name="sourcecode" id="socialadsourcecode2" type="text">
-        <input placeholder="e.g. 123458" name="sourcecode" id="socialadsourcecode3" type="text">
-        <input placeholder="e.g. 123459" name="sourcecode" id="socialadsourcecode4" type="text">
-        <input placeholder="e.g. 123450" name="sourcecode" id="socialadsourcecode5" type="text">
+        <input placeholder="e.g. 123456" name="sourcecode" id="socialadsourcecode1" type="text" maxlength="100">
+        <input placeholder="e.g. 123457" name="sourcecode" id="socialadsourcecode2" type="text" maxlength="100">
+        <input placeholder="e.g. 123458" name="sourcecode" id="socialadsourcecode3" type="text" maxlength="100">
+        <input placeholder="e.g. 123459" name="sourcecode" id="socialadsourcecode4" type="text" maxlength="100">
+        <input placeholder="e.g. 123450" name="sourcecode" id="socialadsourcecode5" type="text" maxlength="100">
         </label>
         <p>
 		<input name="sourcecode" id="socialadsourcecode" value="175155" type="hidden">
@@ -1564,7 +1564,7 @@ $(window).load(function(){
         </p>
         <p id="audienceSocialPost">
         <label for="audience">Whose social media account is the post appearing on?
-        <input placeholder="e.g. BBC, Land Rover" name="audience" id="socialpostaudience" type="text">
+        <input placeholder="e.g. BBC, Land Rover" name="audience" id="socialpostaudience" type="text" maxlength="100">
         </label>
         </p>
         <p>
@@ -1575,7 +1575,7 @@ $(window).load(function(){
 
         <p>
         <label for="linkdetails">What's the call to action of the link about?
-        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="socialpostlinkdetails" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="socialpostlinkdetails" type="text" maxlength="100">
         </label>
         </p>
 	</div>
@@ -1612,7 +1612,7 @@ $(window).load(function(){
 
         <p>
         <label for="linkdetails">What's the call to action of the link about?
-        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="socialsharelinkdetails" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="socialsharelinkdetails" type="text" maxlength="100">
         </label>
         </p>
 	</div>
@@ -1667,7 +1667,7 @@ $(window).load(function(){
 
         <p>
         <label for="linkdetails">What's the creative about?<span class="labeldesc">i.e. the creative of the content that is driving people towards the link</span>
-        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="internallinkdetails" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="internallinkdetails" type="text" maxlength="100">
         </label>
         </p>
     </div>
@@ -1702,7 +1702,7 @@ $(window).load(function(){
 
         <p>
         <label for="linkdetails">What's the call to action of the link about?
-        <input placeholder="Short and sweet e.g. Aleppo attack, Appeal launch, Donate" name="linkdetails" id="offlinelinkdetails" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack, Appeal launch, Donate" name="linkdetails" id="offlinelinkdetails" type="text" maxlength="100">
         </label>
         </p>
     </div>
@@ -1716,12 +1716,12 @@ $(window).load(function(){
         </p>
         <p>
         <label for="audience">Who will see this link?
-        <input placeholder="e.g. the name of a corporate partner, an event, etc." name="audience" id="otheraudience" type="text">
+        <input placeholder="e.g. the name of a corporate partner, an event, etc." name="audience" id="otheraudience" type="text" maxlength="100">
         </label>
         </p>
         <p>
         <label for="linkdetails">What's the topic of the content the link is being added to?
-        <input placeholder="Short and sweet e.g. Aleppo attack, Donate email, Appeal launch" name="linkdetails" id="otherlinkdetails" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack, Donate email, Appeal launch" name="linkdetails" id="otherlinkdetails" type="text" maxlength="100">
         </label>
         </p>
     </div>
@@ -1739,7 +1739,7 @@ $(window).load(function(){
 
         <p>
         <label for="linkdetails">What's the call to action of the link about?
-        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="rocketseedlinkdetails" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="rocketseedlinkdetails" type="text" maxlength="100">
         </label>
         </p>
 	</div>
@@ -2285,7 +2285,7 @@ $(window).load(function(){
 					} */
 
         if (domain && source && medium && campaign) {
-					$('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[!\*'\(\);@\$,\|\^\[\]~\{\}"£`¬¦\\|]/g, "").replace(/(%21|%22|%C2|%A3|%24|%5E|%28|%29|%5B|%5D|%3B|%27|%23|%2C|%7B|%7D|%40|%7E|%3C|%3E|%60|%C2|%AC|%C2|%A6|%5C|%7C)/g, "")); // Can't remove ?,=,&,_ for tracking reasons, or .,:,/,% for URL reasons
+					$('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[!\*'\(\);@\$,\|\^\[\]\{\}"£`¬¦\\|]/g, "").replace(/(%21|%22|%C2|%A3|%24|%5E|%28|%29|%5B|%5D|%3B|%27|%23|%2C|%7B|%7D|%40|%7E|%3C|%3E|%60|%C2|%AC|%C2|%A6|%5C|%7C)/g, "")); // Can't remove ?,=,&,_ for tracking reasons, or .,:,/,% for URL reasons
         	$('#url').change();
         	} else {
         	$('#url').html('');
