@@ -463,6 +463,6 @@ driver.quit()
 # Print for the check sheet
 for k in ['video', 'audio', 'banner', 'socialad', 'socialpost', 'socialshare',
           'socialbutton', 'email', 'internal', 'offline', 'rocketseed',
-          'referral', 'unknown']:
+          'referral', 'unknown', 'other']:
     for v in outputs[k]:
         print(v)
