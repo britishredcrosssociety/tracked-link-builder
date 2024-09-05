@@ -90,6 +90,7 @@ $(window).load(function(){
 	}); //this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
 	function toggleFields() {
 	    if ($("#medium").val() === "Paid Search")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").show() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -109,6 +110,7 @@ $(window).load(function(){
 			$("#urlHidden").show();
 
 		else if ($("#medium").val() === "Organic Search")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").show() &&
 			$("#mediumBanner").hide() &&
@@ -128,6 +130,7 @@ $(window).load(function(){
 			$("#urlHidden").show();
 
 		else if ($("#medium").val() === "Referral")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -147,6 +150,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "Yes" && ($("#socialadsource").val() === "Facebook" || $("#socialadsource").val() === "Instagram") )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -172,6 +176,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "No" && ($("#socialadsource").val() === "Facebook" || $("#socialadsource").val() === "Instagram") )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -197,6 +202,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Twitter" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -222,6 +228,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "Twitter" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -247,6 +254,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "LinkedIn" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -272,6 +280,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "LinkedIn" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -297,6 +306,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		/* else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "Youtube" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -322,6 +332,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "Youtube" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -347,6 +358,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 			*/
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "Yes" && $("#socialadsource").val() === "TikTok" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -372,6 +384,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Social" && $("#socialadownsourcecode").val() === "No" && $("#socialadsource").val() === "TikTok" )
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -397,6 +410,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "Yes" )
+			$("#taxonomy").show() &&
 			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
@@ -419,6 +433,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Banner" && $("#bannerownsourcecode").val() === "No" )
+			$("#taxonomy").show() &&
 			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
@@ -441,6 +456,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Video" && $("#videoownsourcecode").val() === "Yes" )
+			$("#taxonomy").show() &&
 			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
@@ -463,6 +479,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Paid Video" && $("#videoownsourcecode").val() === "No" )
+			$("#taxonomy").show() &&
 			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
@@ -485,6 +502,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Audio" && $("#audioownsourcecode").val() === "Yes" )
+			$("#taxonomy").show() &&
 			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
@@ -507,6 +525,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Audio" && $("#audioownsourcecode").val() === "No" )
+			$("#taxonomy").show() &&
 			$("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
@@ -529,6 +548,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Email")
+			$("#taxonomy").show() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumSocialAd").hide() &&
@@ -548,6 +568,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Organic Social" && $("#socialpostbrc").val() === "BRC Followers" )
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -568,6 +589,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Organic Social" && $("#socialpostbrc").val() === "Not BRC" )
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -588,6 +610,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Social Share")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -607,6 +630,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Social Button")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -626,6 +650,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Internal")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -645,6 +670,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Offline")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -664,6 +690,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Unknown")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -683,6 +710,7 @@ $(window).load(function(){
 			$("#urlHidden").hide();
 
 		else if ($("#medium").val() === "Rocketseed")
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -701,6 +729,7 @@ $(window).load(function(){
 			$(".showUrlBox").show() &&
 			$("#urlHidden").hide();
 	    else
+			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").hide() &&
 			$("#mediumOrganicSearch").hide() &&
 			$("#mediumBanner").hide() &&
@@ -834,7 +863,7 @@ $(window).load(function(){
         <p class="alert">Your link won't include any UTM tracking, because Google Analytics covers this stuff well by default &ndash; so only continue if you want individual-level tracking appended.</p>
         <p>
         <label for="source">Campaign Source
-        <input placeholder="e.g. Amazon, Facebook, BBC, Guardian" name="source" id="referralsource" type="text">
+        <input placeholder="e.g. Amazon, Facebook, BBC, Guardian" name="source" id="referralsource" type="text" maxlength="100">
         </label>
         </p>
         <p>
@@ -851,6 +880,33 @@ $(window).load(function(){
 		<option value="Article">Article about us or our work</option>
 		<option value="Text">Text link in an unrelated area</option>
 		</select>
+        </label>
+        </p>
+	</div>
+
+	<div id="taxonomy">
+        <p>
+        <label for="marketingobj">What is the marketing objective for this ask?<br />
+			<em>All paid marketing needs these set. The marketing objectives are clarified in this <a href="https://brcsbrms.sharepoint.com/:w:/t/Fundraising/bi/ESnSnEbtcPhDhX2mL24zOx4BR1tLyWUmNkSbCy7xwQGQiA?e=xkQzyB" target="_blank">explainer doc</a>.</em>
+        <select name="marketingobj" id="marketingobj">
+          <option selected value>--select option--</option>
+          <option value="Donation">Donation (general, covers SG and/or RG)</option>
+          <option value="Donation RG">Donation (RG)</option>
+          <option value="Event">Event sign-up</option>
+          <option value="Consideration">Consideration</option>
+          <option value="Awareness">Awareness</option>
+          <option value="Lead generation">Lead generation (e.g. handraisers, free wills)</option>
+          <option value="Ecommerce purchase">Ecommerce purchase</option>
+          <option value="Retail">Retail</option>
+          <option value="Volunteering">Volunteering</option>
+          <option value="Services">Services</option>
+        </select>
+        </label>
+		</p>
+        <p>
+        <label for="taxonomycode">What is the "taxonomy source code" for this ask?<br />
+			<em>All paid marketing needs these set. You should have one source code per campaign and marketing objective. See the <a href="https://brcsbrms.sharepoint.com/:w:/t/Fundraising/bi/ER5bYb7ex7lNjMj3U_fDQK8BcIlnebPyv_0X5kbfDy5HrA?e=KC1EId" target="_blank">process guide</a> for how to generate these codes.</em>
+        <input placeholder="e.g. 123456" name="taxonomycode" id="taxonomycode" type="number" maxlength="100">
         </label>
         </p>
 	</div>
@@ -888,27 +944,6 @@ $(window).load(function(){
         </label>
         </p>
         <p>
-        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
-        <select name="linkcategory" id="bannerlinkcategory">
-		<option value="Donate Landing">Donate - Landing</option>
-		<option value="Donate Other">Donate - Other</option>
-		<option value="Get Help">Get help</option>
-		<option value="Get Involved">Get involved</option>
-		<option value="First Aid">First aid</option>
-		<option value="About Us">About Us</option>
-		<option value="Shop">Shop</option>
-		<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
-		<option value="Blog">Blog</option>
-		<option value="Webapps">Webapps</option>
-		<option value="Red Cross Training">Red Cross Training</option>
-		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
-		</select>
-        </label>
-        </p>
-        <p>
         <label for="adtype">What type of targeting is the banner campaign using?
         <select name="adtype" id="banneradtype">
 		<option value="Website">Website placement (e.g. on a specific site / set of sites)</option>
@@ -919,7 +954,7 @@ $(window).load(function(){
         </p>
         <p>
         <label for="adcreative">What's the call to action of the link about?
-        <input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="banneradcreative" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="banneradcreative" type="text" maxlength="100">
         </label>
         </p>
         <p>
@@ -932,20 +967,20 @@ $(window).load(function(){
         </p>
         <div style="width:50%; float:left;">
         <label for="audience">Who are we targeting with these ads?
-        <input placeholder="Targeting pool 1" name="sourcecode" id="banneraudience1" type="text">
+        <input placeholder="Targeting pool 1" name="sourcecode" id="banneraudience1" type="text" maxlength="100">
         </label>
-        <input placeholder="Targeting pool 2" name="sourcecode" id="banneraudience2" type="text">
-        <input placeholder="Targeting pool 3" name="sourcecode" id="banneraudience3" type="text">
-        <input placeholder="Targeting pool 4" name="sourcecode" id="banneraudience4" type="text">
-        <input placeholder="Targeting pool 5" name="sourcecode" id="banneraudience5" type="text">
+        <input placeholder="Targeting pool 2" name="sourcecode" id="banneraudience2" type="text" maxlength="100">
+        <input placeholder="Targeting pool 3" name="sourcecode" id="banneraudience3" type="text" maxlength="100">
+        <input placeholder="Targeting pool 4" name="sourcecode" id="banneraudience4" type="text" maxlength="100">
+        <input placeholder="Targeting pool 5" name="sourcecode" id="banneraudience5" type="text" maxlength="100">
         </div>
         <div id="mediumBannerOwnSourceCodes" style="float:right;width:50%;">
         <label for="sourcecode">What are the different source codes for these ads?
-        <input placeholder="e.g. 123456" name="sourcecode" id="bannersourcecode1" type="text">
-        <input placeholder="e.g. 123457" name="sourcecode" id="bannersourcecode2" type="text">
-        <input placeholder="e.g. 123458" name="sourcecode" id="bannersourcecode3" type="text">
-        <input placeholder="e.g. 123459" name="sourcecode" id="bannersourcecode4" type="text">
-        <input placeholder="e.g. 123450" name="sourcecode" id="bannersourcecode5" type="text">
+        <input placeholder="e.g. 123456" name="sourcecode" id="bannersourcecode1" type="text" maxlength="100">
+        <input placeholder="e.g. 123457" name="sourcecode" id="bannersourcecode2" type="text" maxlength="100">
+        <input placeholder="e.g. 123458" name="sourcecode" id="bannersourcecode3" type="text" maxlength="100">
+        <input placeholder="e.g. 123459" name="sourcecode" id="bannersourcecode4" type="text" maxlength="100">
+        <input placeholder="e.g. 123450" name="sourcecode" id="bannersourcecode5" type="text" maxlength="100">
         </label>
         <p>
 		<input name="sourcecode" id="bannersourcecode" value="175148" type="hidden">
@@ -970,27 +1005,6 @@ $(window).load(function(){
 		</label>
 	</p>
 	<p>
-		<label for="linkcategoryvideo">What link from our site, or overall organisational goal, is being advertised?
-			<select name="linkcategoryvideo" id="videolinkcategory">
-				<option value="Donate Landing">Donate - Landing</option>
-				<option value="Donate Other">Donate - Other</option>
-				<option value="Get Help">Get help</option>
-				<option value="Get Involved">Get involved</option>
-				<option value="First Aid">First aid</option>
-				<option value="About Us">About Us</option>
-				<option value="Shop">Shop</option>
-				<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
-				<option value="Blog">Blog</option>
-				<option value="Webapps">Webapps</option>
-				<option value="Red Cross Training">Red Cross Training</option>
-				<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-				<option value="Awareness">Integrated campaign goal = awareness</option>
-				<option value="Consideration">Integrated campaign goal = consideration</option>
-				<option value="Action">Integrated campaign goal = action</option>
-			</select>
-		</label>
-	</p>
-	<p>
 		<label for="adtypevideo">What type of targeting is this part of the campaign using?
 			<select name="adtypevideo" id="videoadtype">
 				<option value="Interest">Interest targeting</option>
@@ -1000,7 +1014,7 @@ $(window).load(function(){
 	</p>
 	<p>
 		<label for="adcreativevideo">What's the call to action of the link about?
-			<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreativevideo" id="videoadcreative" type="text">
+			<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreativevideo" id="videoadcreative" type="text" maxlength="100">
 		</label>
 	</p>
 	<p>
@@ -1013,19 +1027,19 @@ $(window).load(function(){
 	</p>
 	<div style="width:50%; float:left;">
 		<label for="audiencevideo">Who are we targeting with these ads?</label>
-		<input placeholder="Targeting pool 1" name="audiencevideo" id="videoaudience1" type="text">
-		<input placeholder="Targeting pool 2" name="audiencevideo" id="videoaudience2" type="text">
-		<input placeholder="Targeting pool 3" name="audiencevideo" id="videoaudience3" type="text">
-		<input placeholder="Targeting pool 4" name="audiencevideo" id="videoaudience4" type="text">
-		<input placeholder="Targeting pool 5" name="audiencevideo" id="videoaudience5" type="text">
+		<input placeholder="Targeting pool 1" name="audiencevideo" id="videoaudience1" type="text" maxlength="100">
+		<input placeholder="Targeting pool 2" name="audiencevideo" id="videoaudience2" type="text" maxlength="100">
+		<input placeholder="Targeting pool 3" name="audiencevideo" id="videoaudience3" type="text" maxlength="100">
+		<input placeholder="Targeting pool 4" name="audiencevideo" id="videoaudience4" type="text" maxlength="100">
+		<input placeholder="Targeting pool 5" name="audiencevideo" id="videoaudience5" type="text" maxlength="100">
 	</div>
 	<div id="mediumVideoOwnSourceCodes" style="float:right;width:50%;">
 		<label for="sourcecodevideo">What are the different source codes for these ads?
-			<input placeholder="e.g. 123456" name="sourcecodevideo" id="videosourcecode1" type="text">
-			<input placeholder="e.g. 123457" name="sourcecodevideo" id="videosourcecode2" type="text">
-			<input placeholder="e.g. 123458" name="sourcecodevideo" id="videosourcecode3" type="text">
-			<input placeholder="e.g. 123459" name="sourcecodevideo" id="videosourcecode4" type="text">
-			<input placeholder="e.g. 123450" name="sourcecodevideo" id="videosourcecode5" type="text">
+			<input placeholder="e.g. 123456" name="sourcecodevideo" id="videosourcecode1" type="text" maxlength="100">
+			<input placeholder="e.g. 123457" name="sourcecodevideo" id="videosourcecode2" type="text" maxlength="100">
+			<input placeholder="e.g. 123458" name="sourcecodevideo" id="videosourcecode3" type="text" maxlength="100">
+			<input placeholder="e.g. 123459" name="sourcecodevideo" id="videosourcecode4" type="text" maxlength="100">
+			<input placeholder="e.g. 123450" name="sourcecodevideo" id="videosourcecode5" type="text" maxlength="100">
 		</label>
 		<p>
 			<input name="sourcecode" id="videosourcecode" value="175148" type="hidden">
@@ -1048,27 +1062,6 @@ $(window).load(function(){
 		</label>
 	</p>
 	<p>
-		<label for="linkcategoryaudio">What link from our site, or overall organisational goal, is being advertised?
-			<select name="linkcategoryaudio" id="audiolinkcategory">
-				<option value="Donate Landing">Donate - Landing</option>
-				<option value="Donate Other">Donate - Other</option>
-				<option value="Get Help">Get help</option>
-				<option value="Get Involved">Get involved</option>
-				<option value="First Aid">First aid</option>
-				<option value="About Us">About Us</option>
-				<option value="Shop">Shop</option>
-				<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
-				<option value="Blog">Blog</option>
-				<option value="Webapps">Webapps</option>
-				<option value="Red Cross Training">Red Cross Training</option>
-				<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-				<option value="Awareness">Integrated campaign goal = awareness</option>
-				<option value="Consideration">Integrated campaign goal = consideration</option>
-				<option value="Action">Integrated campaign goal = action</option>
-			</select>
-		</label>
-	</p>
-	<p>
 		<label for="adtypeaudio">What type of targeting is this part of the campaign using?
 			<select name="adtypeaudio" id="audioadtype">
 				<option value="Interest">Interest targeting</option>
@@ -1078,7 +1071,7 @@ $(window).load(function(){
 	</p>
 	<p>
 		<label for="adcreativeaudio">What's the call to action of the link about?
-			<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreativeaudio" id="audioadcreative" type="text">
+			<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreativeaudio" id="audioadcreative" type="text" maxlength="100">
 		</label>
 	</p>
 	<p>
@@ -1091,19 +1084,19 @@ $(window).load(function(){
 	</p>
 	<div style="width:50%; float:left;">
 		<label for="audienceaudio">Who are we targeting with these ads?</label>
-		<input placeholder="Targeting pool 1" name="audienceaudio" id="audioaudience1" type="text">
-		<input placeholder="Targeting pool 2" name="audienceaudio" id="audioaudience2" type="text">
-		<input placeholder="Targeting pool 3" name="audienceaudio" id="audioaudience3" type="text">
-		<input placeholder="Targeting pool 4" name="audienceaudio" id="audioaudience4" type="text">
-		<input placeholder="Targeting pool 5" name="audienceaudio" id="audioaudience5" type="text">
+		<input placeholder="Targeting pool 1" name="audienceaudio" id="audioaudience1" type="text" maxlength="100">
+		<input placeholder="Targeting pool 2" name="audienceaudio" id="audioaudience2" type="text" maxlength="100">
+		<input placeholder="Targeting pool 3" name="audienceaudio" id="audioaudience3" type="text" maxlength="100">
+		<input placeholder="Targeting pool 4" name="audienceaudio" id="audioaudience4" type="text" maxlength="100">
+		<input placeholder="Targeting pool 5" name="audienceaudio" id="audioaudience5" type="text" maxlength="100">
 	</div>
 	<div id="mediumAudioOwnSourceCodes" style="float:right;width:50%;">
 		<label for="sourcecodeaudio">What are the different source codes for these ads?
-			<input placeholder="e.g. 123456" name="sourcecodeaudio" id="audiosourcecode1" type="text">
-			<input placeholder="e.g. 123457" name="sourcecodeaudio" id="audiosourcecode2" type="text">
-			<input placeholder="e.g. 123458" name="sourcecodeaudio" id="audiosourcecode3" type="text">
-			<input placeholder="e.g. 123459" name="sourcecodeaudio" id="audiosourcecode4" type="text">
-			<input placeholder="e.g. 123450" name="sourcecodeaudio" id="audiosourcecode5" type="text">
+			<input placeholder="e.g. 123456" name="sourcecodeaudio" id="audiosourcecode1" type="text" maxlength="100">
+			<input placeholder="e.g. 123457" name="sourcecodeaudio" id="audiosourcecode2" type="text" maxlength="100">
+			<input placeholder="e.g. 123458" name="sourcecodeaudio" id="audiosourcecode3" type="text" maxlength="100">
+			<input placeholder="e.g. 123459" name="sourcecodeaudio" id="audiosourcecode4" type="text" maxlength="100">
+			<input placeholder="e.g. 123450" name="sourcecodeaudio" id="audiosourcecode5" type="text" maxlength="100">
 		</label>
 		<p>
 			<input name="sourcecode" id="audiosourcecode" value="175148" type="hidden">
@@ -1150,7 +1143,7 @@ $(window).load(function(){
         <div id="emailsendnamefundraising">
 	        <p>
 	        	<label for="adcreative">What is the topic of this email?
-	        		<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="emailadcreative" type="text">
+	        		<input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="emailadcreative" type="text" maxlength="100">
 	        	</label>
 	        </p>
 	        <div style="width:50%; float:left;">
@@ -1260,11 +1253,11 @@ $(window).load(function(){
 	  		<div style="float:right;width:50%;">
 				<p>
 	        		<label>&nbsp;
-		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent1" type="text">
-		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text">
-		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent3" type="text">
-		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent4" type="text">
-		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent5" type="text">
+		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent1" type="text" maxlength="100">
+		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text" maxlength="100">
+		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent3" type="text" maxlength="100">
+		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent4" type="text" maxlength="100">
+		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent5" type="text" maxlength="100">
 	            	</label>
 				</p>
 			</div>
@@ -1275,12 +1268,12 @@ $(window).load(function(){
 		<div id="emailsendnametraining">
 	        <p>
 	        	<label for="trainingaudience">Who are we targeting with these emails?
-					<input name="trainingaudience" id="trainingaudience" type="text">
+					<input name="trainingaudience" id="trainingaudience" type="text" maxlength="100">
 				</label>
 			</p>
 	        <p>
 	        	<label for="trainingcreative">What is the topic of this email?
-	        		<input name="trainingcreative" id="trainingcreative" type="text">
+	        		<input name="trainingcreative" id="trainingcreative" type="text" maxlength="100">
 	        	</label>
 	        </p>
 	        <div style="width:50%; float:left;">
@@ -1320,11 +1313,11 @@ $(window).load(function(){
 	  		<div style="float:right;width:50%;">
 				<p>
 	        		<label>&nbsp;
-		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent1" type="text">
-		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent2" type="text">
-		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent3" type="text">
-		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent4" type="text">
-		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent5" type="text">
+		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent1" type="text" maxlength="100">
+		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent2" type="text" maxlength="100">
+		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent3" type="text" maxlength="100">
+		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent4" type="text" maxlength="100">
+		      			<input placeholder="e.g. Advert" name="linkcontent" id="trainingemaillinkcontent5" type="text" maxlength="100">
 	            	</label>
 				</p>
 			</div>
@@ -1384,11 +1377,11 @@ $(window).load(function(){
 	  		<div style="float:right;width:50%;">
 				<p>
 	        		<label>&nbsp;
-		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent1" type="text">
-		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent2" type="text">
-		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent3" type="text">
-		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent4" type="text">
-		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent5" type="text">
+		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent1" type="text" maxlength="100">
+		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent2" type="text" maxlength="100">
+		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent3" type="text" maxlength="100">
+		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent4" type="text" maxlength="100">
+		      			<input placeholder="e.g. Teachers" name="linkcontent" id="educationemaillinkcontent5" type="text" maxlength="100">
 	            	</label>
 				</p>
 			</div>
@@ -1415,25 +1408,6 @@ $(window).load(function(){
         </label>
         </p>
         <p>
-        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
-        <select name="linkcategory" id="socialadlinkcategory">
-		<option value="Donate Landing">Donate - Landing</option>
-		<option value="Donate Other">Donate - Other</option>
-		<option value="Get Help">Get help</option>
-		<option value="Get Involved">Get involved</option>
-		<option value="First Aid">First aid</option>
-		<option value="About Us">About Us</option>
-		<option value="Shop">Shop</option>
-		<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
-		<option value="Blog">Blog</option>
-		<option value="Webapps">Webapps</option>
-		<option value="Red Cross Training">Red Cross Training</option>
-		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
-		</select>
-        </label>
         </p>
 
 
@@ -1511,7 +1485,7 @@ $(window).load(function(){
 
         <p>
         <label for="adcreative">What's the creative about? What's the call to action of the ad?
-        <input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="socialadadcreative" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="adcreative" id="socialadadcreative" type="text" maxlength="100">
         </label>
         </p>
         <p>
@@ -1522,7 +1496,7 @@ $(window).load(function(){
 		</select>
         </label>
         </p>
-        <div style="width:50%; float:left;">
+        <div style="width:50%; float:left;" id="socialadaudience">
         <div id="socialadaudiencecontainer1" class="dropdown-multiple-label">
         <label for="audience">Who are we targeting with these ads?
         <select style="display:none;" name="audience" id="socialadaudience1" multiple>
@@ -1555,11 +1529,11 @@ $(window).load(function(){
         </div>
         <div id="mediumSocialAdOwnSourceCodes" style="float:right;width:50%;">
         <label for="sourcecode">What are the different source codes for these ads?
-        <input placeholder="e.g. 123456" name="sourcecode" id="socialadsourcecode1" type="text">
-        <input placeholder="e.g. 123457" name="sourcecode" id="socialadsourcecode2" type="text">
-        <input placeholder="e.g. 123458" name="sourcecode" id="socialadsourcecode3" type="text">
-        <input placeholder="e.g. 123459" name="sourcecode" id="socialadsourcecode4" type="text">
-        <input placeholder="e.g. 123450" name="sourcecode" id="socialadsourcecode5" type="text">
+        <input placeholder="e.g. 123456" name="sourcecode" id="socialadsourcecode1" type="text" maxlength="100">
+        <input placeholder="e.g. 123457" name="sourcecode" id="socialadsourcecode2" type="text" maxlength="100">
+        <input placeholder="e.g. 123458" name="sourcecode" id="socialadsourcecode3" type="text" maxlength="100">
+        <input placeholder="e.g. 123459" name="sourcecode" id="socialadsourcecode4" type="text" maxlength="100">
+        <input placeholder="e.g. 123450" name="sourcecode" id="socialadsourcecode5" type="text" maxlength="100">
         </label>
         <p>
 		<input name="sourcecode" id="socialadsourcecode" value="175155" type="hidden">
@@ -1592,37 +1566,18 @@ $(window).load(function(){
         </p>
         <p id="audienceSocialPost">
         <label for="audience">Whose social media account is the post appearing on?
-        <input placeholder="e.g. BBC, Land Rover" name="audience" id="socialpostaudience" type="text">
+        <input placeholder="e.g. BBC, Land Rover" name="audience" id="socialpostaudience" type="text" maxlength="100">
         </label>
         </p>
         <p>
 		<input name="sourcecode" id="socialpostsourcecode" value="175155" type="hidden">
         </p>
         <p>
-        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
-        <select name="linkcategory" id="socialpostlinkcategory">
-		<option value="Donate Landing">Donate - Landing</option>
-		<option value="Donate Other">Donate - Other</option>
-		<option value="Get Help">Get help</option>
-		<option value="Get Involved">Get involved</option>
-		<option value="First Aid">First aid</option>
-		<option value="About Us">About Us</option>
-		<option value="Shop">Shop</option>
-		<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
-		<option value="Blog">Blog</option>
-		<option value="Webapps">Webapps</option>
-		<option value="Red Cross Training">Red Cross Training</option>
-		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
-		</select>
-        </label>
         </p>
 
         <p>
         <label for="linkdetails">What's the call to action of the link about?
-        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="socialpostlinkdetails" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="socialpostlinkdetails" type="text" maxlength="100">
         </label>
         </p>
 	</div>
@@ -1653,37 +1608,13 @@ $(window).load(function(){
 		<option value="Webapps">Webapps</option>
 		<option value="Red Cross Training">Red Cross Training</option>
 		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
-		</select>
-        </label>
-        </p>
-        <p>
-        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
-        <select name="linkcategory" id="socialsharelinkcategory">
-		<option value="Donate Landing">Donate - Landing</option>
-		<option value="Donate Other">Donate - Other</option>
-		<option value="Get Help">Get help</option>
-		<option value="Get Involved">Get involved</option>
-		<option value="First Aid">First aid</option>
-		<option value="About Us">About Us</option>
-		<option value="Shop">Shop</option>
-		<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
-		<option value="Blog">Blog</option>
-		<option value="Webapps">Webapps</option>
-		<option value="Red Cross Training">Red Cross Training</option>
-		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
 		</select>
         </label>
         </p>
 
         <p>
         <label for="linkdetails">What's the call to action of the link about?
-        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="socialsharelinkdetails" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="socialsharelinkdetails" type="text" maxlength="100">
         </label>
         </p>
 	</div>
@@ -1706,27 +1637,6 @@ $(window).load(function(){
         <select name="audience" id="socialbuttonaudience">
         <option value="BRC Page">BRC Page</option>
         </select>
-        </label>
-        </p>
-        <p>
-        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
-        <select name="linkcategory" id="socialbuttonlinkcategory">
-		<option value="Donate Landing">Donate - Landing</option>
-		<option value="Donate Other">Donate - Other</option>
-		<option value="Get Help">Get help</option>
-		<option value="Get Involved">Get involved</option>
-		<option value="First Aid">First aid</option>
-		<option value="About Us">About Us</option>
-		<option value="Shop">Shop</option>
-		<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
-		<option value="Blog">Blog</option>
-		<option value="Webapps">Webapps</option>
-		<option value="Red Cross Training">Red Cross Training</option>
-		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
-		</select>
         </label>
         </p>
 
@@ -1756,31 +1666,10 @@ $(window).load(function(){
 		<input name="sourcecode" id="internalsourcecode" value="175149" type="hidden">
 		<input name="audience" id="internalaudience" value="BRC Site" type="hidden">
         </p>
-        <p>
-        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
-        <select name="linkcategory" id="internallinkcategory">
-		<option value="Donate Landing">Donate - Landing</option>
-		<option value="Donate Other">Donate - Other</option>
-		<option value="Get Help">Get help</option>
-		<option value="Get Involved">Get involved</option>
-		<option value="First Aid">First aid</option>
-		<option value="About Us">About Us</option>
-		<option value="Shop">Shop</option>
-		<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
-		<option value="Blog">Blog</option>
-		<option value="Webapps">Webapps</option>
-		<option value="Red Cross Training">Red Cross Training</option>
-		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
-		</select>
-        </label>
-        </p>
 
         <p>
         <label for="linkdetails">What's the creative about?<span class="labeldesc">i.e. the creative of the content that is driving people towards the link</span>
-        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="internallinkdetails" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="internallinkdetails" type="text" maxlength="100">
         </label>
         </p>
     </div>
@@ -1812,31 +1701,10 @@ $(window).load(function(){
 		</select>
         </label>
         </p>
-        <p>
-        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
-        <select name="linkcategory" id="offlinelinkcategory">
-		<option value="Donate Landing">Donate - Landing</option>
-		<option value="Donate Other">Donate - Other</option>
-		<option value="Get Help">Get help</option>
-		<option value="Get Involved">Get involved</option>
-		<option value="First Aid">First aid</option>
-		<option value="About Us">About Us</option>
-		<option value="Shop">Shop</option>
-		<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
-		<option value="Blog">Blog</option>
-		<option value="Webapps">Webapps</option>
-		<option value="Red Cross Training">Red Cross Training</option>
-		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
-		</select>
-        </label>
-        </p>
 
         <p>
         <label for="linkdetails">What's the call to action of the link about?
-        <input placeholder="Short and sweet e.g. Aleppo attack, Appeal launch, Donate" name="linkdetails" id="offlinelinkdetails" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack, Appeal launch, Donate" name="linkdetails" id="offlinelinkdetails" type="text" maxlength="100">
         </label>
         </p>
     </div>
@@ -1850,33 +1718,12 @@ $(window).load(function(){
         </p>
         <p>
         <label for="audience">Who will see this link?
-        <input placeholder="e.g. the name of a corporate partner, an event, etc." name="audience" id="otheraudience" type="text">
-        </label>
-        </p>
-        <p>
-        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
-        <select name="linkcategory" id="otherlinkcategory">
-		<option value="Donate Landing">Donate - Landing</option>
-		<option value="Donate Other">Donate - Other</option>
-		<option value="Get Help">Get help</option>
-		<option value="Get Involved">Get involved</option>
-		<option value="First Aid">First aid</option>
-		<option value="About Us">About Us</option>
-		<option value="Shop">Shop</option>
-		<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
-		<option value="Blog">Blog</option>
-		<option value="Webapps">Webapps</option>
-		<option value="Red Cross Training">Red Cross Training</option>
-		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
-		</select>
+        <input placeholder="e.g. the name of a corporate partner, an event, etc." name="audience" id="otheraudience" type="text" maxlength="100">
         </label>
         </p>
         <p>
         <label for="linkdetails">What's the topic of the content the link is being added to?
-        <input placeholder="Short and sweet e.g. Aleppo attack, Donate email, Appeal launch" name="linkdetails" id="otherlinkdetails" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack, Donate email, Appeal launch" name="linkdetails" id="otherlinkdetails" type="text" maxlength="100">
         </label>
         </p>
     </div>
@@ -1891,31 +1738,10 @@ $(window).load(function(){
 		<input name="audience" id="rocketseedaudience" value="Emailed by BRC" type="hidden">
 		<input name="medium" id="rocketseedmedium" value="Banner" type="hidden">
         </p>
-        <p>
-        <label for="linkcategory">What link from our site, or overall organisational goal, is being advertised?
-        <select name="linkcategory" id="rocketseedlinkcategory">
-		<option value="Donate Landing">Donate - Landing</option>
-		<option value="Donate Other">Donate - Other</option>
-		<option value="Get Help">Get help</option>
-		<option value="Get Involved">Get involved</option>
-		<option value="First Aid">First aid</option>
-		<option value="About Us">About Us</option>
-		<option value="Shop">Shop</option>
-		<option value="Navigation">Non-section pages e.g. T&amp;Cs, cookies, privacy</option>
-		<option value="Blog">Blog</option>
-		<option value="Webapps">Webapps</option>
-		<option value="Red Cross Training">Red Cross Training</option>
-		<option value="Other sites">Other BRC sites (e.g. Assemble)</option>
-		<option value="Awareness">Integrated campaign goal = awareness</option>
-		<option value="Consideration">Integrated campaign goal = consideration</option>
-		<option value="Action">Integrated campaign goal = action</option>
-		</select>
-        </label>
-        </p>
 
         <p>
         <label for="linkdetails">What's the call to action of the link about?
-        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="rocketseedlinkdetails" type="text">
+        <input placeholder="Short and sweet e.g. Aleppo attack" name="linkdetails" id="rocketseedlinkdetails" type="text" maxlength="100">
         </label>
         </p>
 	</div>
@@ -1934,10 +1760,12 @@ $(window).load(function(){
         </div>
     </div>
 </div>
+
 <!--searchable dropdown code, based on https://janking.github.io/dropdown/ -->
 <script src="assets/js/campaign.js"></script>
 <script src="assets/js/audience.js"></script>
 <script>
+
 	function updateOutput()
         {
 
@@ -1945,6 +1773,8 @@ $(window).load(function(){
         var medium = $('#medium').val();
 		var source;
 		var adCreative;
+		var marketingObj;
+		var taxonomyCode;
 		var sourceCode;
 		var sourceCode1 = 0;
 		var sourceCode2 = 0;
@@ -1977,9 +1807,7 @@ $(window).load(function(){
 				break;
 			case "Banner":
 				source = $('#bannersource').val();
-				adCreative = $('#bannerlinkcategory').val();
-				if ($('#banneradcreative').val()) {
-					adCreative = adCreative + '_' + $('#banneradcreative').val();}
+				adCreative = $('#banneradcreative').val();
 				sourceCode = $('#bannersourcecode').val();
 				sourceCode1 = $('#bannersourcecode1').val();
 				sourceCode2 = $('#bannersourcecode2').val();
@@ -1996,9 +1824,7 @@ $(window).load(function(){
 				break;
 			case "Paid Video":
 				source = $('#videosource').val();
-				adCreative = $('#videolinkcategory').val();
-				if ($('#videoadcreative').val()) {
-					adCreative = adCreative + '_' + $('#videoadcreative').val();}
+				adCreative = $('#videoadcreative').val();
 				sourceCode = $('#videosourcecode').val();
 				sourceCode1 = $('#videosourcecode1').val();
 				sourceCode2 = $('#videosourcecode2').val();
@@ -2015,9 +1841,7 @@ $(window).load(function(){
 				break;
 			case "Audio":
 				source = $('#audiosource').val();
-				adCreative = $('#audiolinkcategory').val();
-				if ($('#audioadcreative').val()) {
-					adCreative = adCreative + '_' + $('#audioadcreative').val();}
+				adCreative = $('#audioadcreative').val();
 				sourceCode = $('#audiosourcecode').val();
 				sourceCode1 = $('#audiosourcecode1').val();
 				sourceCode2 = $('#audiosourcecode2').val();
@@ -2035,7 +1859,6 @@ $(window).load(function(){
 			case "Email":
 				source = $('#emailsource').val();
 				adCreative = $('#emailsendname').val()
-
 				if ($('#emailsendnumber').val()) {
 					adCreative = adCreative + '_SendNumber' + $('#emailsendnumber').val()
 				}
@@ -2109,21 +1932,17 @@ $(window).load(function(){
 				break;
 			case "Paid Social":
 				source = $('#socialadsource').val();
-				adCreative = $('#socialadlinkcategory').val();
 				if (source == "Facebook" || source == "Instagram") {
-					adCreative = adCreative + '_' + $('#socialadadtype_facebook').val()
+					adCreative = $('#socialadadtype_facebook').val();
 					}
 				if (source == "Twitter") {
-					adCreative = adCreative + '_' + $('#socialadadtype_twitter').val();
+					adCreative = $('#socialadadtype_twitter').val();
 					}
 				if (source == "LinkedIn") {
-					adCreative = adCreative + '_' + $('#socialadadtype_linkedin').val();
+					adCreative = $('#socialadadtype_linkedin').val();
 					}
-				//if (source == "Youtube") {
-				//	adCreative = adCreative + '_' + $('#socialadadtype_youtube').val();
-				//	}
 				if (source == "TikTok") {
-					adCreative = adCreative + '_' + $('#socialadadtype_tiktok').val();
+					adCreative = $('#socialadadtype_tiktok').val();
 					}
 				if ($('#socialadadcreative').val()) {
 					adCreative = adCreative + '_' + $('#socialadadcreative').val();}
@@ -2151,9 +1970,7 @@ $(window).load(function(){
 				break;
 			case "Organic Social":
 				source = $('#socialpostsource').val();
-				adCreative = $('#socialpostlinkcategory').val();
-				if ($('#socialpostlinkdetails').val()) {
-					adCreative = adCreative + '_' + $('#socialpostlinkdetails').val();}
+				adCreative = $('#socialpostlinkdetails').val();
 				sourceCode = $('#socialpostsourcecode').val();
 				audience = $('#socialpostaudience').val();
 				if ($('#socialpostaudience').val()) {
@@ -2162,49 +1979,37 @@ $(window).load(function(){
 				break;
 			case "Social Share":
 				source = $('#socialsharesource').val();
-				adCreative = $('#socialsharelinkcategory').val();
-				if ($('#socialsharelinkdetails').val()) {
-					adCreative = adCreative + '_' + $('#socialsharelinkdetails').val();}
+				adCreative = $('#socialsharelinkdetails').val();
 				sourceCode = $('#socialsharesourcecode').val();
 				audience = $('#socialshareaudience').val();
 				break;
 			case "Social Button":
 				source = $('#socialbuttonsource').val();
-				adCreative = $('#socialbuttonlinkcategory').val();
-				if ($('#socialbuttonlinkdetails').val()) {
-					adCreative = adCreative + '_' + $('#socialbuttonlinkdetails').val();}
+				adCreative = $('#socialbuttonlinkdetails').val();
 				sourceCode = $('#socialbuttonsourcecode').val();
 				audience = $('#socialbuttonaudience').val();
 				break;
 			case "Internal":
 				source = $('#internalsource').val();
-				adCreative = $('#internallinkcategory').val();
-				if ($('#internallinkdetails').val()) {
-					adCreative = adCreative + '_' + $('#internallinkdetails').val();}
+				adCreative = $('#internallinkdetails').val();
 				sourceCode = $('#internalsourcecode').val();
 				audience = $('#internalaudience').val();
 				break;
 			case "Offline":
 				source = $('#offlinesource').val();
-				adCreative = $('#offlinelinkcategory').val();
-				if ($('#offlinelinkdetails').val()) {
-					adCreative = adCreative + '_' + $('#offlinelinkdetails').val();}
+				adCreative = $('#offlinelinkdetails').val();
 				sourceCode = $('#offlinesourcecode').val();
 				audience = $('#offlineaudience').val();
 				break;
 			case "Unknown":
 				source = $('#othersource').val();
-				adCreative = $('#otherlinkcategory').val();
-				if ($('#otherlinkdetails').val()) {
-					adCreative = adCreative + '_' + $('#otherlinkdetails').val();}
+				adCreative = $('#otherlinkdetails').val();
 				sourceCode = $('#othersourcecode').val();
 				audience = $('#otheraudience').val();
 				break;
 			case "Rocketseed":
 				source = $('#rocketseedsource').val();
-				adCreative = $('#rocketseedlinkcategory').val();
-				if ($('#rocketseedlinkdetails').val()) {
-					adCreative = adCreative + '_' + $('#rocketseedlinkdetails').val();}
+				adCreative = $('#rocketseedlinkdetails').val();
 				sourceCode = $('#rocketseedsourcecode').val();
 				audience = $('#rocketseedaudience').val();
 				medium = $('#rocketseedmedium').val();
@@ -2215,6 +2020,10 @@ $(window).load(function(){
 				sourceCode = $('#sourcecode').val();
 				audience = $('#audience').val();
 		}
+		if ($('#marketingobj').val()) {
+			marketingObj = $('#marketingobj').val();}
+		if ($('#taxonomycode').val()) {
+			taxonomyCode = $('#taxonomycode').val();}
 		/* for( var i = 0; i < sourceCodeList.length; i++) {
 		    if(sourceCodeList[i] > 0)
         		sourceCodeCount++;
@@ -2235,34 +2044,56 @@ $(window).load(function(){
 		var domain = domain.replace(" ", "");
 		// Remove any tracking from the URL
 		var domain = domain.split("?")[0];
+		// Remove any fragment from the URL
+		var domain = domain.split("#")[0];
 
 		// Get the entered link again
 		let fullDomain = ($('#domain').val());
+		// console.log('fullDomain: ' + fullDomain);
 		// Get the anchor without the domain
-		let query = (fullDomain.split('?')[0]);
-		let anchor = query.split('#')[1];
-		// Remove the anchor text from the URL
-		var domain = domain.split("#")[0];
+		let anchor_match = /#(.+?)($|&|\?)/g;
+		let get_anchor = anchor_match.exec(fullDomain);
+		// console.log('get_anchor: ' + get_anchor);
 		// Get the query string parameters without the domain
 		const queryString = fullDomain.split('?')[1];
-		// Create a new URLSearchParams object to manipulate the query string
-		let params = new URLSearchParams(queryString);
-		// Remove the non-valid query string parameters
-		params.delete("utm_campaign");
-		params.delete("utm_source");
-		params.delete("utm_medium");
-		params.delete("utm_content");
-		params.delete("utm_term");
-		params.delete("c_name");
-		params.delete("c_source");
-		params.delete("c_medium");
-		params.delete("c_creative");
-		params.delete("c_code");
-		params.delete("adg");
-
-		// Create the new URL with the query string parameters that are left
-		var html = "https://" + domain + "?" + params + "&";
-
+		
+		// If there is an anchor + query string, remove anchor from queryString (if it's there, which it will be if ordered correctly)
+		if (get_anchor && queryString) {
+		  var anchor_rgx = get_anchor[1];
+		  // console.log("Anchor + query");
+		  // console.log('anchor_rgx: ' + anchor_rgx);
+		  var queryStringNoAnchor = queryString.replace(anchor_match, "");
+		  var params = new URLSearchParams(queryStringNoAnchor);
+		} else if (get_anchor) { // if only anchor, extract the anchor
+		  // console.log("Anchor only");
+		  var anchor_rgx = get_anchor[1];
+		  // console.log('anchor_rgx: ' + anchor_rgx);
+		} else if (queryString) {
+		  // console.log("Query only");
+		  var params = new URLSearchParams(queryString);
+		}
+		// If there are any query parameters, remove the potential clashes
+		if (params) {
+			params.delete("utm_campaign");
+			params.delete("utm_campaign");
+			params.delete("utm_source");
+			params.delete("utm_medium");
+			params.delete("utm_content");
+			params.delete("utm_term");
+			params.delete("c_name");
+			params.delete("c_source");
+			params.delete("c_medium");
+			params.delete("c_creative");
+			params.delete("c_code");
+			params.delete("adg");
+			params.delete("c_id");
+			params.delete("utm_id");
+			params.delete("utm_marketing_tactic");
+			var html = ["https://", domain, "?", params, "&"].join('');
+		} else {
+			var html = ["https://", domain, "?"].join('');
+		}
+		
 		if (medium !== "Referral" && medium !== "Internal") {
 			if (sourceCode === "REMOVE") {
 				// sourceCode = "REMOVE".replace('REMOVE','');
@@ -2288,6 +2119,12 @@ $(window).load(function(){
        			var html = html + '_'+ audience;
        		}
    		}
+		if (taxonomyCode) {
+			var html = html+'&utm_id='+encodeURIComponent(taxonomyCode)+'&c_id='+encodeURIComponent(taxonomyCode);
+			}
+		if (marketingObj) {
+			var html = html+'&utm_marketing_tactic='+encodeURIComponent(marketingObj);
+			}
 		if (medium !== "Referral" && medium !== "Internal" && isIndividual === "Yes") {
 			var html = html + '&'
 			}
@@ -2295,14 +2132,18 @@ $(window).load(function(){
 			// If sourceCode is set to REMOVE don't display it otherwise add '&c_code='+sourceCode to the html var at the end.
 			if (sourceCode === "REMOVE") {
 				var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative);
+				console.log("individual + remove source code");
 			} else {
 				var html = html+'c_name='+encodeURIComponent(campaign)+'&c_source='+encodeURIComponent(source)+'&c_medium='+encodeURIComponent(medium)+'&c_creative='+encodeURIComponent(adCreative)+'&c_code='+sourceCode;
+				console.log("individual + keep source code");
 			}
 			if (audience && isIndividual === "Yes") {
-				if (anchor) {
-					var html = (html + '&adg=' + audience).split("#")[0] + "&#" + anchor;
+				if (get_anchor) {
+					var html = html + '&adg=' + audience + "#" + anchor_rgx;
+					console.log("individual + audience populated + anchor");
 				} else {
 					var html = html + '&adg=' + audience;
+					console.log("individual + audience populated + no anchor");
 				}
 			}
 			// if (isDonate === "Yes") {
@@ -2315,10 +2156,12 @@ $(window).load(function(){
             //	var html = html + '&approachcode='+ approachCodeTracking.replace(/(\s|%20)/g, "").replace(/[^0-9a-zA-Z_%]/g, "").replace(/([^%])%([^%])/g, "$1" + "$2");; // Remove everything that's not a number, letter or underscore or %, as special characters e.g. dashes break the old tracking. THEN remove any individual %s, but keep any duplicates e.g. for %%variables%%.
 			// }
 			} else {
-				if (anchor) {
-					var html = (html).split("#")[0] + "&#" + anchor;
+				if (get_anchor) {
+					var html = (html).split("#")[0] + "#" + anchor_rgx;
+					console.log("not individual + anchor");
 				} else {
 					var html = html;
+					console.log("not individual + no anchor");
 				}
 			}
 
@@ -2422,8 +2265,8 @@ $(window).load(function(){
 			if ($("#emailsendname").val() === "Fundraising_Donate" || $("#emailsendname").val() === "Fundraising_Event" || $("#emailsendname").val() === "Fundraising_Stewardship") {				
 				var html = html.replace(/(\s|\n|^)(https:\/\/[^\s\n^]*)(\s|\n|$)/gi, 
 					function($0,$1,$2,$3) {
-						if (anchor) {
-							return( ($1 + $2).split("#")[0] + "&wu=true" + ("&#" + anchor) + $3 );
+						if (get_anchor) {
+							return( ($1 + $2).split("#")[0] + "&wu=true" + ("#" + anchor_rgx) + $3 );
 						} else {
 							return( $1 + $2 + "&wu=true" + $3 );
 						}
@@ -2444,7 +2287,7 @@ $(window).load(function(){
 					} */
 
         if (domain && source && medium && campaign) {
-					$('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[!\*'\(\);@\$,\|\^\[\]~\{\}"£`¬¦\\|]/g, "").replace(/(%21|%22|%C2|%A3|%24|%5E|%28|%29|%5B|%5D|%3B|%27|%23|%2C|%7B|%7D|%40|%7E|%3C|%3E|%60|%C2|%AC|%C2|%A6|%5C|%7C)/g, "")); // Can't remove ?,=,&,_ for tracking reasons, or .,:,/,% for URL reasons
+					$('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[!\*'\(\);@\$,\|\^\[\]\{\}"£`¬¦\\|]/g, "").replace(/(%21|%22|%C2|%A3|%24|%5E|%28|%29|%5B|%5D|%3B|%27|%23|%2C|%7B|%7D|%40|%7E|%3C|%3E|%60|%C2|%AC|%C2|%A6|%5C|%7C)/g, "")); // Can't remove ?,=,&,_ for tracking reasons, or .,:,/,% for URL reasons
         	$('#url').change();
         	} else {
         	$('#url').html('');
