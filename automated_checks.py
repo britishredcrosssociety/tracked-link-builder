@@ -9,13 +9,11 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-from webdriver_manager.chrome import ChromeDriverManager
 import json
 
-# Use webdriver_manager to avoid version errors when Chrome updates
-cService = webdriver.ChromeService(executable_path=ChromeDriverManager().install())
+# driver = webdriver.Chrome('/path/to/chromedriver')  # Optional argument, if not specified will search path.
+cService = webdriver.ChromeService(executable_path=r"C:\\Users\\SWannell\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe")
 driver = webdriver.Chrome(service = cService)
-
 driver.get(r'C:\\Users\\SWannell\\OneDrive%20-%20British%20Red%20Cross%20Society\\Documents\\Coding\\tracked-link-builder\\index.html');
 
 outputs = {}
@@ -309,7 +307,7 @@ outputs['email'] += [url]
 domain.clear()
 domain.send_keys('https://www.redcrossfirstaidtraining.co.uk/courses/first-aid-legal-requirements/')
 weird_dropdown('Red Cross Training_First aid', which='campaign')
-Select(marketing_obj).select_by_value('Ecommerce purchase')
+Select(marketing_obj).select_by_value('Ecommerce')
 taxonomy_code.clear()
 taxonomy_code.send_keys('234567')
 Select(find_element_medium('email', 'source')).select_by_value('Salesforce')

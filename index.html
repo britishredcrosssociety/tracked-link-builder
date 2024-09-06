@@ -1798,7 +1798,6 @@ $(window).load(function(){
 		var linkLocation4 = "hold";
 		var linkLocation5 = "hold";
 		var linkLocations = [linkLocation1, linkLocation2, linkLocation3, linkLocation4, linkLocation5];
-		var subid;
 		switch (medium) {
 			case "Referral":
 				source = $('#referralsource').val();
@@ -1888,7 +1887,6 @@ $(window).load(function(){
 					}
 					audience = "%%AUDIENCE%%";
 					sourceCode = "%%APPROACH_CODE%%";
-					subid = "%%subscriberid%%";
 				}
 				// If email sending is Red Cross Training
 				if ($("#emailsendname").val() === "Red Cross Training") {
@@ -2121,12 +2119,6 @@ $(window).load(function(){
        			var html = html + '_'+ audience;
        		}
    		}
-		// Add in subscriber ID, but only for FR Salesforce emails
-       	if (medium == "Email") {
-       		if (source == "Salesforce" && $("#emailsendname").val() !== "Red Cross Training" && $("#emailsendname").val() !== "Community Education") {
-	       		var html = html +  '&subid=' + subid;
-				}
-			}
 		if (taxonomyCode) {
 			var html = html+'&utm_id='+encodeURIComponent(taxonomyCode)+'&c_id='+encodeURIComponent(taxonomyCode);
 			}
