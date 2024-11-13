@@ -30,6 +30,23 @@
 		font-style: italic;
 		font-size: 0.9em;
 	}
+	.styled-table {
+		border-collapse: collapse;
+		margin: 25px 0;
+		font-size: 0.9em;
+		font-family: sans-serif;
+		min-width: 400px;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	}
+	.styled-table thead tr {
+		background-color: #7d1c23;
+		color: #ffffff;
+		text-align: left;
+	}
+	.styled-table th,
+	.styled-table td {
+		padding: 12px 15px;
+	}
   </style>
 
 <title>Google Analytics URL Builder</title>
@@ -1754,7 +1771,55 @@ $(window).load(function(){
             		<p class="showUrlBox"><label for="url">Code to use <textarea style="background: rgb(241, 241, 241) none repeat scroll 0% 0%; height: 256px;" placeholder="Code will appear here after filling out the above form" id="url" disabled></textarea></label></p>
                 <p id="urlHidden" class="alert">Due to your selections above, there is no tracked link to copy.</p>
             	</div>
-            <br><br><br><br>
+            <br>
+			<h2>Where to find the information in Google Analytics</h2>
+			<p>The information in tracked links appears in GA (and also, if you select that it's "individual-level tracking", in other downstream systems like the web donations data platform). Some of the most commonly useful fields in GA4 set by tracked links are listed below:
+			<table class="styled-table">
+				<thead>
+					<tr>
+						<th>Tracked link parameter</th>
+						<th>GA4 field</th>
+						<th>Example value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>utm_campaign</td>
+						<td>Session manual campaign name</td>
+						<td id="table_name">TBC</td>
+					</tr>
+					<tr>
+						<td>utm_source</td>
+						<td>Session manual source</td>
+						<td id="table_source">TBC</td>
+					</tr>
+					<tr>
+						<td>utm_medium</td>
+						<td>Session manual medium</td>
+						<td id="table_medium">TBC</td>
+					</tr>
+					<tr>
+						<td>utm_content</td>
+						<td>Session manual ad content</td>
+						<td id="table_content">TBC</td>
+					</tr>
+					<tr>
+						<td>utm_term</td>
+						<td>Session manual term</td>
+						<td id="table_term">TBC</td>
+					</tr>
+					<tr>
+						<td>utm_id</td>
+						<td>Session manual campaign ID</td>
+						<td id="table_id">TBC</td>
+					</tr>
+					<tr>
+						<td>utm_marketing_tactic</td>
+						<td>Session manual marketing tactic</td>
+						<td id="table_tactic">TBC</td>
+					</tr>
+				</tbody>
+			</table>
 
             </article>
         </div>
@@ -2301,7 +2366,36 @@ $(window).load(function(){
         	$('#url').html('');
        		$('#url').change();
        	}
+		
+		document.getElementById("table_name").innerText = get_elements('url', 'utm_campaign');
+		document.getElementById("table_source").innerText = get_elements('url', 'utm_source');
+		document.getElementById("table_medium").innerText = get_elements('url', 'utm_medium');
+		document.getElementById("table_content").innerText = get_elements('url', 'utm_content');
+		document.getElementById("table_term").innerText = get_elements('url', 'utm_term');
+		document.getElementById("table_id").innerText = get_elements('url', 'utm_id');
+		document.getElementById("table_tactic").innerText = get_elements('url', 'utm_marketing_tactic');
 	}
+	
+	function get_elements(html_id, param) {
+		el_value = document.getElementById(html_id).value;
+		var full_url;
+		var full_url_params;
+		var p;
+		if (el_value == '') {
+			return 'TBC';
+		}
+		else {
+			if (el_value.includes('\n')) {
+				el_value = el_value.split('\n')[0]			
+			}
+			// console.log(el_value);
+			full_url = new URL(el_value);
+			full_url_params = new URLSearchParams(full_url.search);
+			p = full_url_params.get(param);
+			return p;
+		}
+	}
+
 	function initpage() {
         	$('input').keyup(window.updateOutput);
         	$('input').click(window.updateOutput);
@@ -2309,6 +2403,7 @@ $(window).load(function(){
         	$('.dropdown-multiple-label,.dropdown-selected,.dropdown-option,.dropdown-search,.dropdown-display,.dropdown-display-label').click(window.updateOutput);
         	$('.output').mousedown(window.updateOutput);
 			updateOutput();
+			// console.log('Init is run');
 	}
 	$(window.initpage);
 

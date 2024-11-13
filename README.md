@@ -1,4 +1,5 @@
 # Marketing tracked link builder
+
 This tool creates links with query strings appended for:
 
 - Google Analytics
@@ -21,3 +22,20 @@ Some links fall outside the capacity of this tool, which is just designed for th
 3. Make sure that the case rules link up the new element ID with an existing tracked link element
     - Initialise the variable if necessary
 4. [QA the report](https://docs.google.com/spreadsheets/d/1pzD-kL0I-uG1RDmMqatHPOaYJfPGoVP5YEzHmm4lAZ0/edit#gid=1682837906)
+
+## Automated testing
+
+The `automated_checks.py` script automates the different test scenarios, and programmatically generates a list of links for the [link builder QA](https://docs.google.com/spreadsheets/d/1pzD-kL0I-uG1RDmMqatHPOaYJfPGoVP5YEzHmm4lAZ0/edit?gid=1682837906#gid=1682837906) sheet.
+
+#### ChromeDriver
+
+The script will fail if the version of ChromeDriver doesn't match the computer's version of Chrome. As on BRC laptops, the org manages the Chrome updates, this can happen regularly.
+
+Trying to automate fixing this (using e.g. `ChromeDriverManager().install()`) just caused different problems (i.e. a `WebDriverException` error from the auto-DLed exe being in a folder where I don't have run permissions).
+
+=> if the version clash error occurs:
+
+1. ensure that Chrome is up to date (may require a close and open)
+2. Go to https://googlechromelabs.github.io/chrome-for-testing/
+3. Download the latest "chromedriver win64" version, and unzip it.
+4. Point the `cService` variable to the (now correct version of) ChromeDriver.

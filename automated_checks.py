@@ -9,11 +9,11 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.chrome import ChromeDriverManager
 import json
 
-# Use webdriver_manager to avoid version errors when Chrome updates
-cService = webdriver.ChromeService(executable_path=ChromeDriverManager().install())
+# Keep this manual -- see readme for why
+cService = webdriver.ChromeService(executable_path='C:\\Users\\SWannell\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe')
 driver = webdriver.Chrome(service = cService)
 
 driver.get(r'C:\\Users\\SWannell\\OneDrive%20-%20British%20Red%20Cross%20Society\\Documents\\Coding\\tracked-link-builder\\index.html');
