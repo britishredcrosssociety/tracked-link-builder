@@ -13,7 +13,7 @@ from selenium.webdriver.support.ui import Select
 import json
 
 # Keep this manual -- see readme for why
-cService = webdriver.ChromeService(executable_path='C:\\Users\\SWannell\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe')
+cService = webdriver.ChromeService(executable_path='C:\\Users\\SWannell\\Downloads\\chromedriver-win64-145.0\\chromedriver-win64\\chromedriver.exe')
 driver = webdriver.Chrome(service = cService)
 
 driver.get(r'C:\\Users\\SWannell\\OneDrive%20-%20British%20Red%20Cross%20Society\\Documents\\Coding\\tracked-link-builder\\index.html');
@@ -187,6 +187,18 @@ Select(find_element_medium('socialad', 'source')).select_by_value('LinkedIn')
 find_element_medium('socialad', 'adtype_linkedin').send_keys('Sponsored Content_Image')
 find_element_medium('socialad', 'ownsourcecode').send_keys('No')
 time.sleep(1)
+urls = final_url.get_attribute('value')
+url_list = [i for i in urls.split('\n') if i!='']
+outputs['socialad'] += url_list
+
+Select(find_element_medium('socialad', 'source')).select_by_value('Pinterest')
+find_element_medium('socialad', 'adtype_pinterest').send_keys('Showcase')
+urls = final_url.get_attribute('value')
+url_list = [i for i in urls.split('\n') if i!='']
+outputs['socialad'] += url_list
+
+Select(find_element_medium('socialad', 'source')).select_by_value('Reddit')
+find_element_medium('socialad', 'adtype_reddit').send_keys('AMA')
 urls = final_url.get_attribute('value')
 url_list = [i for i in urls.split('\n') if i!='']
 outputs['socialad'] += url_list

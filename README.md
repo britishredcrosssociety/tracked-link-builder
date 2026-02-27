@@ -38,4 +38,5 @@ Trying to automate fixing this (using e.g. `ChromeDriverManager().install()`) ju
 1. ensure that Chrome is up to date (may require a close and open)
 2. Go to https://googlechromelabs.github.io/chrome-for-testing/
 3. Download the latest "chromedriver win64" version, and unzip it.
+	- N.B. if the version doesn't match the most recent version, you can change the URL of the driver to include your Chrome version, and that can work too!
 4. Point the `cService` variable to the (now correct version of) ChromeDriver.
