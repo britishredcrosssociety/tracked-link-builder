@@ -13,7 +13,7 @@ from selenium.webdriver.support.ui import Select
 import json
 
 # Keep this manual -- see readme for why
-cService = webdriver.ChromeService(executable_path='C:\\Users\\SWannell\\Downloads\\chromedriver-win64-145.0\\chromedriver-win64\\chromedriver.exe')
+cService = webdriver.ChromeService(executable_path='C:\\Users\\SWannell\\Downloads\\chromedriver-win64-148.0\\chromedriver-win64\\chromedriver.exe')
 driver = webdriver.Chrome(service = cService)
 
 driver.get(r'C:\\Users\\SWannell\\OneDrive%20-%20British%20Red%20Cross%20Society\\Documents\\Coding\\tracked-link-builder\\index.html');
@@ -245,8 +245,8 @@ time.sleep(1)
 domain = driver.find_element(By.CSS_SELECTOR, "#domain")
 final_url = driver.find_element(By.CSS_SELECTOR, "textarea#url")
 
-weird_dropdown('Iraq Crisis Appeal', which='campaign')
-domain.send_keys('donate.redcross.org.uk/appeal/iraq-crisis-appeal')
+weird_dropdown('Gaza Crisis Appeal', which='campaign')
+domain.send_keys('donate.redcross.org.uk/appeal/gaza-crisis-appeal')
 find_element_medium('socialshare', 'source').send_keys('Twitter')
 time.sleep(1)
 find_element_medium('socialshare', 'audience').send_keys('About Us')
@@ -263,8 +263,8 @@ time.sleep(1)
 domain = driver.find_element(By.CSS_SELECTOR, "#domain")
 final_url = driver.find_element(By.CSS_SELECTOR, "textarea#url")
 
-weird_dropdown('Lake Chad Crisis Appeal', which='campaign')
-domain.send_keys('donate.redcross.org.uk/appeal/lake-chad-crisis-appeal')
+weird_dropdown('Ukraine Crisis Appeal', which='campaign')
+domain.send_keys('donate.redcross.org.uk/appeal/ukraine-crisis-appeal')
 find_element_medium('socialbutton', 'source').send_keys('Facebook')
 time.sleep(1)
 url = final_url.get_attribute('value')
@@ -366,8 +366,8 @@ time.sleep(1)
 domain = driver.find_element(By.CSS_SELECTOR, "#domain")
 final_url = driver.find_element(By.CSS_SELECTOR, "textarea#url")
 
-weird_dropdown('Myanmar Appeal', which='campaign')
-domain.send_keys('donate.redcross.org.uk/appeal/myanmar-appeal')
+weird_dropdown('Afghanistan Crisis Appeal', which='campaign')
+domain.send_keys('donate.redcross.org.uk/appeal/afghanistan-crisis-appeal')
 Select(find_element_medium('offline', 'source')).select_by_value('Door Drop')
 time.sleep(1)
 Select(find_element_medium('offline', 'audience')).select_by_value('Cold Supporters')
@@ -388,8 +388,8 @@ time.sleep(1)
 domain = driver.find_element(By.CSS_SELECTOR, "#domain")
 final_url = driver.find_element(By.CSS_SELECTOR, "textarea#url")
 
-weird_dropdown('UK Solidarity Fund', which='campaign')
-domain.send_keys('donate.redcross.org.uk/appeal/uk-solidarity-fund')
+weird_dropdown('General Fund Appeal', which='campaign')
+domain.send_keys('donate.redcross.org.uk/appeal/general-fund-appeal')
 find_element_medium('rocketseed', 'linkdetails').send_keys('Sweet')
 url = final_url.get_attribute('value')
 outputs['rocketseed'] = [url]

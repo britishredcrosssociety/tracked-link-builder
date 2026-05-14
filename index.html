@@ -1050,7 +1050,7 @@ $(window).load(function(){
 		</p>
         <p>
         <label for="taxonomycode">What is the "taxonomy source code" for this ask?<br />
-			<em>All paid marketing needs these set. You should have one source code per campaign and marketing objective. See the <a href="https://brcsbrms.sharepoint.com/:w:/t/Fundraising/bi/ER5bYb7ex7lNjMj3U_fDQK8BcIlnebPyv_0X5kbfDy5HrA?e=KC1EId" target="_blank">process guide</a> for how to generate these codes.</em>
+			<em>All paid marketing activity by Marketing & Fundraising needs this. You should have one source code per campaign and marketing objective. See the <a href="https://brcsbrms.sharepoint.com/:w:/t/Fundraising/bi/ER5bYb7ex7lNjMj3U_fDQK8BcIlnebPyv_0X5kbfDy5HrA?e=KC1EId" target="_blank">process guide</a> for how to generate these codes.</em>
         <input placeholder="e.g. 123456" name="taxonomycode" id="taxonomycode" type="number" maxlength="100">
         </label>
         </p>
@@ -1074,6 +1074,7 @@ $(window).load(function(){
           <option value="iNews">iNews</option>
           <option value="LoopMe">LoopMe</option>
           <option value="MediaMath">MediaMath</option>
+          <option value="Met Office">Met Office</option>
           <option value="MiQ">MiQ</option>
           <option value="MMP">MMP</option>
           <option value="Pinterest">Pinterest</option>
@@ -1293,7 +1294,7 @@ $(window).load(function(){
 	        	</label>
 	        </p>
 	        <div style="width:50%; float:left;">
-	        	<label for="linklocation">What are each of the links pointing to?
+	        	<label for="linklocation">Where in the email are the links to be tracked?
 					<select name="linklocation" id="emaillinklocation1">
 			            <option value=""></option>
 			            <option value="Header Button">Header Button</option>
@@ -1398,8 +1399,9 @@ $(window).load(function(){
 	        </div>
 	  		<div style="float:right;width:50%;">
 				<p>
-	        		<label>&nbsp;
+	        		<label for="linkcontent">What are each of the links pointing to?		
 		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent1" type="text" maxlength="100">
+					</label>
 		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent2" type="text" maxlength="100">
 		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent3" type="text" maxlength="100">
 		      			<input placeholder="e.g. Donate" name="linkcontent" id="emaillinkcontent4" type="text" maxlength="100">
