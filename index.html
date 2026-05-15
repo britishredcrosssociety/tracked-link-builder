@@ -2289,28 +2289,30 @@ $(window).load(function(){
 		// Get the entered link again
 		let fullDomain = ($('#domain').val());
 		// console.log('fullDomain: ' + fullDomain);
-		// Get the anchor without the domain
-		let anchor_match = /#(.+?)($|&|\?)/g;
-		let get_anchor = anchor_match.exec(fullDomain);
-		// console.log('get_anchor: ' + get_anchor);
-		// Get the query string parameters without the domain
-		const queryString = fullDomain.split('?')[1];
 		
-		// If there is an anchor + query string, remove anchor from queryString (if it's there, which it will be if ordered correctly)
-		if (get_anchor && queryString) {
-		  var anchor_rgx = get_anchor[1];
-		  // console.log("Anchor + query");
-		  // console.log('anchor_rgx: ' + anchor_rgx);
-		  var queryStringNoAnchor = queryString.replace(anchor_match, "");
-		  var params = new URLSearchParams(queryStringNoAnchor);
-		} else if (get_anchor) { // if only anchor, extract the anchor
-		  // console.log("Anchor only");
-		  var anchor_rgx = get_anchor[1];
-		  // console.log('anchor_rgx: ' + anchor_rgx);
-		} else if (queryString) {
-		  // console.log("Query only");
-		  var params = new URLSearchParams(queryString);
-		}
+		/* =====================================================*/
+        // All Around - 2026-05-11 - FIX
+		// A URL fragment (#) extends to the END of the string — any & after a # is part of the fragment, not a query separator.
+		// The old code used regex to split on & inside the fragment, corrupting the query string and losing fragment content.
+		// This fix uses indexOf('#') to split the URL at the correct boundary before parsing.
+        /* =====================================================*/
+        // Fragment runs from # to end of URL; & inside a fragment is NOT a query separator
+        let hashIndex = fullDomain.indexOf('#');
+        let get_anchor = hashIndex !== -1;
+        let anchor_rgx = get_anchor ? fullDomain.substring(hashIndex + 1) : null;
+
+        // Query string is only the part between ? and # (not including the fragment)
+        let queryStart = fullDomain.indexOf('?');
+        let queryStringEnd = get_anchor ? hashIndex : fullDomain.length;
+        const queryString = queryStart !== -1 ? fullDomain.substring(queryStart + 1, queryStringEnd) : null;
+
+        if (queryString) {
+          var params = new URLSearchParams(queryString);
+        }
+		/* =====================================================*/
+        // END - All Around - 2026-05-11 - FIX
+		/* =====================================================*/
+
 		// If there are any query parameters, remove the potential clashes
 		if (params) {
 			params.delete("utm_campaign");
