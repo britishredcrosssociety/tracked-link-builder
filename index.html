@@ -2289,28 +2289,61 @@ $(window).load(function(){
 		// Get the entered link again
 		let fullDomain = ($('#domain').val());
 		// console.log('fullDomain: ' + fullDomain);
-		// Get the anchor without the domain
-		let anchor_match = /#(.+?)($|&|\?)/g;
-		let get_anchor = anchor_match.exec(fullDomain);
-		// console.log('get_anchor: ' + get_anchor);
-		// Get the query string parameters without the domain
-		const queryString = fullDomain.split('?')[1];
 		
-		// If there is an anchor + query string, remove anchor from queryString (if it's there, which it will be if ordered correctly)
-		if (get_anchor && queryString) {
-		  var anchor_rgx = get_anchor[1];
-		  // console.log("Anchor + query");
-		  // console.log('anchor_rgx: ' + anchor_rgx);
-		  var queryStringNoAnchor = queryString.replace(anchor_match, "");
-		  var params = new URLSearchParams(queryStringNoAnchor);
-		} else if (get_anchor) { // if only anchor, extract the anchor
-		  // console.log("Anchor only");
-		  var anchor_rgx = get_anchor[1];
-		  // console.log('anchor_rgx: ' + anchor_rgx);
-		} else if (queryString) {
-		  // console.log("Query only");
-		  var params = new URLSearchParams(queryString);
+		/* =====================================================*/
+		// All Around - 2026-06-05 - FIX
+		// A URL fragment (#) extends to the END of the string, so query cleanup must happen before and after the split.
+		// The old code only parsed the query string and preserved the fragment verbatim, which let _gl and cookieconsent survive in anchors.
+		// This fix keeps the previous indexOf('#') boundary handling, removes those keys from the query string, and strips them from query-like fragment content.
+        /* =====================================================*/
+        // Fragment runs from # to end of URL; & inside a fragment is NOT a query separator
+        let hashIndex = fullDomain.indexOf('#');
+        let get_anchor = hashIndex !== -1;
+        let anchor_rgx = get_anchor ? fullDomain.substring(hashIndex + 1) : null;
+		let cleanedAnchor = anchor_rgx;
+
+		if (get_anchor) {
+			let anchorBase = anchor_rgx;
+			let anchorParamString = null;
+			let anchorParamSeparator = '';
+			let anchorQueryIndex = anchor_rgx.indexOf('?');
+			let anchorTrackingMatch = anchor_rgx.match(/&(\_gl|cookieconsent)=/);
+
+			if (anchorQueryIndex !== -1) {
+				anchorBase = anchor_rgx.substring(0, anchorQueryIndex);
+				anchorParamString = anchor_rgx.substring(anchorQueryIndex + 1);
+				anchorParamSeparator = '?';
+			} else if (/^(?:_gl|cookieconsent)=/.test(anchor_rgx)) {
+				anchorBase = '';
+				anchorParamString = anchor_rgx;
+			} else if (anchorTrackingMatch) {
+				anchorBase = anchor_rgx.substring(0, anchorTrackingMatch.index);
+				anchorParamString = anchor_rgx.substring(anchorTrackingMatch.index + 1);
+				anchorParamSeparator = '&';
+			}
+
+			if (anchorParamString) {
+				let anchorParams = new URLSearchParams(anchorParamString);
+				anchorParams.delete("_gl");
+				anchorParams.delete("cookieconsent");
+				let rebuiltAnchorParams = anchorParams.toString();
+				if (rebuiltAnchorParams) {
+					cleanedAnchor = anchorBase ? anchorBase + anchorParamSeparator + rebuiltAnchorParams : rebuiltAnchorParams;
+				} else {
+					cleanedAnchor = anchorBase || null;
+				}
+			}
 		}
+
+        // Query string is only the part between ? and # (not including the fragment)
+        let queryStart = fullDomain.indexOf('?');
+        let queryStringEnd = get_anchor ? hashIndex : fullDomain.length;
+        const queryString = queryStart !== -1 ? fullDomain.substring(queryStart + 1, queryStringEnd) : null;
+
+        if (queryString) {
+          var params = new URLSearchParams(queryString);
+        }
+
 		// If there are any query parameters, remove the potential clashes
 		if (params) {
 			params.delete("utm_campaign");
@@ -2328,10 +2361,17 @@ $(window).load(function(){
 			params.delete("c_id");
 			params.delete("utm_id");
 			params.delete("utm_marketing_tactic");
+			// And also delete the tracking parameters from the fragment, in case they are there (e.g. from links copied from GA4 reports)
+			params.delete("_gl");
+			params.delete("cookieconsent");
 			var html = ["https://", domain, "?", params, "&"].join('');
 		} else {
 			var html = ["https://", domain, "?"].join('');
 		}
+
+		/* =====================================================*/
+        // END - All Around - 2026-05-11 - FIX
+		/* =====================================================*/
 		
 		if (medium !== "Referral" && medium !== "Internal") {
 			if (sourceCode === "REMOVE") {
@@ -2373,6 +2413,10 @@ $(window).load(function(){
 		if (medium !== "Referral" && medium !== "Internal" && isIndividual === "Yes") {
 			var html = html + '&'
 			}
+		/* =====================================================*/
+		// All Around - 2026-06-05 - FIX
+		// Reuse the sanitised fragment everywhere we append an anchor so stripped tracking params do not re-enter the final URL.
+		/* =====================================================*/
 		if (isIndividual === "Yes") {
 			// If sourceCode is set to REMOVE don't display it otherwise add '&c_code='+sourceCode to the html var at the end.
 			if (sourceCode === "REMOVE") {
@@ -2384,7 +2428,8 @@ $(window).load(function(){
 			}
 			if (audience && isIndividual === "Yes") {
 				if (get_anchor) {
-					var html = html + '&adg=' + audience + "#" + anchor_rgx;
+					// If audience is populated, and there is an anchor, add audience with &adg= and then the anchor with # at the end of the URL. If there is an anchor but audience is not populated, just add the anchor at the end of the URL without &adg=.
+					var html = cleanedAnchor ? html + '&adg=' + audience + "#" + cleanedAnchor : html + '&adg=' + audience;
 					console.log("individual + audience populated + anchor");
 				} else {
 					var html = html + '&adg=' + audience;
@@ -2402,7 +2447,8 @@ $(window).load(function(){
 			// }
 			} else {
 				if (get_anchor) {
-					var html = (html).split("#")[0] + "#" + anchor_rgx;
+					// If there is an anchor, add the anchor with # at the end of the URL.
+					var html = cleanedAnchor ? (html).split("#")[0] + "#" + cleanedAnchor : (html).split("#")[0];
 					console.log("not individual + anchor");
 				} else {
 					var html = html;
@@ -2511,7 +2557,8 @@ $(window).load(function(){
 				var html = html.replace(/(\s|\n|^)(https:\/\/[^\s\n^]*)(\s|\n|$)/gi, 
 					function($0,$1,$2,$3) {
 						if (get_anchor) {
-							return( ($1 + $2).split("#")[0] + "&wu=true" + ("#" + anchor_rgx) + $3 );
+							// If there is an anchor, add &wu=true before the anchor. If there is no anchor, just add &wu=true at the end of the URL.
+							return( cleanedAnchor ? ($1 + $2).split("#")[0] + "&wu=true" + ("#" + cleanedAnchor) + $3 : ($1 + $2).split("#")[0] + "&wu=true" + $3 );
 						} else {
 							return( $1 + $2 + "&wu=true" + $3 );
 						}
