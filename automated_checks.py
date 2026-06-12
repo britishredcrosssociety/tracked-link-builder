@@ -448,7 +448,7 @@ marketing_obj = driver.find_element(By.CSS_SELECTOR, "#marketingobj")
 taxonomy_code = driver.find_element(By.CSS_SELECTOR, "#taxonomycode")
 
 weird_dropdown('Disaster Fund', which='campaign')
-domain.send_keys('donate.redcross.org.uk/appeal/disaster-fund#:~:text=You%20can%20help%20people%20affected%20by%20disaster%20today&text=In%20any%20emergency%20%E2%80%93%20in%20the')
+domain.send_keys('donate.redcross.org.uk/appeal/disaster-fund#:~:text=Where%20could%20your%20donation%20to%20the%20Disaster%20Fund%20go%3F')
 
 Select(marketing_obj).select_by_value('Donation')
 taxonomy_code.send_keys('123456')
@@ -462,6 +462,31 @@ outputs['other'] = [url]
 
 find_element_medium('audio', 'adcreative').clear()
 find_element_medium('audio', 'adcreative').send_keys('0---------1---------2---------3---------4---------5---------6---------7---------8---------9---------x')
+url = final_url.get_attribute('value')
+outputs['other'] += [url]
+
+#%% Assemble multi-fragment
+
+driver.refresh()
+Select(driver.find_element(By.CSS_SELECTOR, "#medium")).select_by_value('Paid Social')
+time.sleep(1)
+
+taxonomy_code = driver.find_element(By.CSS_SELECTOR, "#taxonomycode")
+domain = driver.find_element(By.CSS_SELECTOR, "#domain")
+final_url = driver.find_element(By.CSS_SELECTOR, "textarea#url")
+marketing_obj = driver.find_element(By.CSS_SELECTOR, "#marketingobj")
+
+vals_fb_assemble = {1: ['Altruists']}
+
+weird_dropdown('Volunteering', which='campaign')
+domain.send_keys('volunteer.redcross.org.uk/opportunities?_gl=153dez_gcl_awR0NMLjE3NzE4NDU3ODIuQ2p3S0NBaUFrdkRNQmhCTUVpd0FuVUE5QmY0SWFIY2ljeGY0QmgwZzk4MWZNZmpaOHhqbHk0d0IxQmdWRlJJX2E0a3N2dFFZVFFHNnBob0NUUXNRQXZEX0J3RQ_gcl_auMTY3NjAwMDIwNy4xNzcxMjU3OTIz_gaNTU5NTE3MzYyLjE3NzEyNTc5MjM_ga_KQQ35Y6WPZczE3NzQzNTM3NjUkbzEwJGcwJHQxNzc0MzUzNzY1JGo2MCRsMCRoMA&cookieconsent=set#display=grid&s=date_advertised&o=desc&limit=14&include=image&public_search=true')
+Select(marketing_obj).select_by_value('Volunteering')
+taxonomy_code.send_keys('123456')
+Select(find_element_medium('socialad', 'source')).select_by_value('Facebook')
+time.sleep(1)
+find_element_medium('socialad', 'adtype_facebook').send_keys('Carousel')
+find_element_medium('socialad', 'adcreative').send_keys('Sign up')
+weird_dropdown(vals_fb_assemble, which='socialad')
 url = final_url.get_attribute('value')
 outputs['other'] += [url]
 
