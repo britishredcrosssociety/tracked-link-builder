@@ -53,6 +53,21 @@
 <meta property="og:title" content="Google Analytics URL Builder">
 
 <script type="text/javascript">
+/* =====================================================*/
+// All Around - 2026-09-14 - FEATURE (issue-62)
+// The cpc mediums (Google Ads / Microsoft Ads) produce a "Final URL suffix" instead of a full tracked link.
+// This map is deliberately a top-level var (global) so both toggleFields() below and updateOutput() in the
+// second script block can use it: the key is the #medium option value, the value is what goes into c_medium=.
+// A truthy lookup (CPC_MEDIUMS[medium]) is also the "is this a cpc medium?" test used throughout.
+/* =====================================================*/
+var CPC_MEDIUMS = {
+	"Paid Search": "cpc",
+	"Performance Max": "performance-max",
+	"Demand Gen": "demand-gen"
+};
+/* =====================================================*/
+// END - All Around - 2026-09-14 - FEATURE (issue-62)
+/* =====================================================*/
 $(window).load(function(){
 /**
  * From http://jsfiddle.net/5SArB/3138/
@@ -106,7 +121,19 @@ $(window).load(function(){
 	    });
 	}); //this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
 	function toggleFields() {
-	    if ($("#medium").val() === "Paid Search")
+		/* =====================================================*/
+		// All Around - 2026-09-14 - FEATURE (issue-62)
+		// Pre-reset for the cpc-only elements, so none of the other branches below need to be edited:
+		// every branch runs after this and leaves things in this state; only the cpc branch overrides it.
+		/* =====================================================*/
+		$("#mediumPaidSearch").hide();
+		$(".showSuffixBox").hide();
+		$("#domain").closest("p").show();
+		$("#isIndividual").closest("p").show();
+
+		// cpc mediums (Paid Search, Performance Max, Demand Gen): show the suffix inputs + suffix output, hide everything
+		// that only matters for a full tracked link (domain, individual-level question, taxonomy, normal URL box).
+	    if (CPC_MEDIUMS[$("#medium").val()])
 			$("#taxonomy").hide() &&
 	        $("#mediumPPCSearch").show() &&
 			$("#mediumOrganicSearch").hide() &&
@@ -123,8 +150,18 @@ $(window).load(function(){
 			$("#mediumOffline").hide() &&
 			$("#mediumOther").hide() &&
 			$("#mediumRocketseed").hide() &&
+			$("#domain").closest("p").hide() &&
+			$("#isIndividual").closest("p").hide() &&
+			$("#mediumPaidSearch").show() &&
+			// Keyword strategy + match type are Paid Search only; targeting type is Performance Max / Demand Gen only
+			$("#mediumPaidSearchKeyword").toggle($("#medium").val() === "Paid Search") &&
+			$("#mediumPaidSearchTargeting").toggle($("#medium").val() !== "Paid Search") &&
 			$(".showUrlBox").hide() &&
-			$("#urlHidden").show();
+			$("#urlHidden").hide() &&
+			$(".showSuffixBox").show();
+		/* =====================================================*/
+		// END - All Around - 2026-09-14 - FEATURE (issue-62)
+		/* =====================================================*/
 
 		else if ($("#medium").val() === "Organic Search")
 			$("#taxonomy").hide() &&
@@ -966,7 +1003,11 @@ $(window).load(function(){
 		<option value="Social Share">Social share button on BRC site</option>
         <option value="Social Button">Social button (e.g. Youtube annotations, Facebook)</option>
 		<option value="Email">Email</option>
-        <option value="Paid Search">Paid search</option>
+        <!-- All Around - 2026-09-14 - FEATURE (issue-62): cpc mediums produce a "Final URL suffix" instead of a full link. Performance Max + Demand Gen added; "Paid Search" value kept as toggleFields() relies on it. -->
+        <option value="Paid Search">Paid search (Google Ads / Microsoft Ads)</option>
+        <option value="Performance Max">Performance Max (Google Ads / Microsoft Ads)</option>
+        <option value="Demand Gen">Demand Gen (Google Ads)</option>
+        <!-- END - All Around - 2026-09-14 - FEATURE (issue-62) -->
         <option value="Organic Search">Organic search</option>
         <option value="Internal">From a BRC website to another BRC website (e.g. from the blog to the main website, from the homepage herobox to the donate platform)</option>
         <option value="Offline">From an offline source (e.g. a press ad) to a short URL</option>
@@ -976,7 +1017,9 @@ $(window).load(function(){
         </select>
         </label></p>
 
-	<p id="mediumPPCSearch" class="alert">This tool isn't for paid search &ndash; we auto-tag campaigns in Google and Bing, so this tool isn't needed.</p>
+	<!-- All Around - 2026-09-14 - FEATURE (issue-62): the paid search "refusal" alert is repurposed as guidance. The id is kept because every toggleFields() branch hides it. -->
+	<p id="mediumPPCSearch"><strong>Google Ads and Microsoft (Bing) Ads auto-tag the utm_ parameters</strong>, so you don't need a full tracked link. Instead, this tool produces a <strong>Final URL suffix</strong> containing our own c_ tracking parameters &ndash; paste it into the campaign's "Final URL suffix" setting in the ad platform.</p>
+	<!-- END - All Around - 2026-09-14 - FEATURE (issue-62) -->
 
 	<p id="mediumOrganicSearch" class="alert">We don't have control over tracking of organic search, so you don't need this tool. Give us a shout if you have any questions.</p>
 
@@ -1055,6 +1098,63 @@ $(window).load(function(){
         </label>
         </p>
 	</div>
+
+	<!-- =====================================================-->
+	<!-- All Around - 2026-09-14 - FEATURE (issue-62)          -->
+	<!-- Inputs for the cpc mediums (Paid Search, Performance Max, Demand Gen). These feed the "Final URL suffix" output (#urlsuffix) rather than the normal tracked link. -->
+	<!-- Option values are already lowercase because the suffix must be all-lowercase (c_name keeps the appeal's own casing). -->
+	<!-- Visibility is handled in toggleFields(): #mediumPaidSearchKeyword is Paid Search only; #mediumPaidSearchTargeting is Performance Max / Demand Gen only. -->
+	<!-- =====================================================-->
+	<div id="mediumPaidSearch">
+		<p>
+			<label for="sourcepaidsearch">Which platform is the campaign on?
+				<select name="sourcepaidsearch" id="paidsearchsource">
+					<option value="google">Google Ads</option>
+					<option value="bing">Bing (Microsoft Ads)</option>
+				</select>
+			</label>
+		</p>
+		<div id="mediumPaidSearchKeyword">
+			<p>
+				<label for="keywordstrategypaidsearch">What is the keyword strategy?
+					<select name="keywordstrategypaidsearch" id="paidsearchkeywordstrategy">
+						<option value="generic">Generic</option>
+						<option value="brand">Brand</option>
+						<option value="mixed">Mixed</option>
+					</select>
+				</label>
+			</p>
+			<p>
+				<label for="matchtypepaidsearch">What is the match type?
+					<select name="matchtypepaidsearch" id="paidsearchmatchtype">
+						<option value="exact">Exact</option>
+						<option value="phrase">Phrase</option>
+						<option value="broad">Broad</option>
+						<option value="mixed">Mixed</option>
+					</select>
+				</label>
+			</p>
+		</div>
+		<div id="mediumPaidSearchTargeting">
+			<p>
+				<label for="targetingtypepaidsearch">What type of targeting is this campaign using?
+					<select name="targetingtypepaidsearch" id="paidsearchtargetingtype">
+						<option value="acquisition">Acquisition</option>
+						<option value="retention">Retention</option>
+					</select>
+				</label>
+			</p>
+		</div>
+		<p>
+			<label for="sourcecodepaidsearch">Does this campaign have its own source code? (optional)<br />
+				<em>Leave blank if not. If filled in, it is added to the suffix as c_code.</em>
+				<input placeholder="e.g. 123456" name="sourcecodepaidsearch" id="paidsearchsourcecode" type="text" maxlength="6">
+			</label>
+		</p>
+	</div>
+	<!-- =====================================================-->
+	<!-- END - All Around - 2026-09-14 - FEATURE (issue-62)    -->
+	<!-- =====================================================-->
 
     <div id="mediumBanner">
         <p>
@@ -1937,6 +2037,10 @@ $(window).load(function(){
             	<div class="output" id="html">
             		<p class="showUrlBox"><label for="url">Code to use <textarea style="background: rgb(241, 241, 241) none repeat scroll 0% 0%; height: 256px;" placeholder="Code will appear here after filling out the above form" id="url" disabled></textarea></label></p>
                 <p id="urlHidden" class="alert">Due to your selections above, there is no tracked link to copy.</p>
+                <!-- All Around - 2026-09-14 - FEATURE (issue-62): separate output for the cpc "Final URL suffix". Kept apart from #url so the ValueTrack placeholder ({campaignid}) is not stripped by the #url sanitiser, and so get_elements() / the automated checks (which only read #url) are unaffected. Toggled via .showSuffixBox in toggleFields(). -->
+                <p class="showSuffixBox"><label for="urlsuffix">Final URL suffix to use <textarea style="background: rgb(241, 241, 241) none repeat scroll 0% 0%; height: 96px;" placeholder="The Final URL suffix will appear here after filling out the above form" id="urlsuffix" disabled></textarea></label></p>
+                <p class="showSuffixBox" id="suffixHelp">Paste this into the <strong>Final URL suffix</strong> setting of the campaign in Google Ads / Microsoft Ads (not into the landing page URL). The <code>{campaignid}</code> / <code>{CampaignId}</code> part is filled in automatically by the ad platform &ndash; leave it as it is.</p>
+                <!-- END - All Around - 2026-09-14 - FEATURE (issue-62) -->
             	</div>
             <br>
 			<h2>Where to find the information in Google Analytics</h2>
@@ -2003,6 +2107,22 @@ $(window).load(function(){
 
 		var domain = $('#domain').val();
         var medium = $('#medium').val();
+		/* =====================================================*/
+		// All Around - 2026-09-14 - FEATURE (issue-62)
+		// cpc mediums build a "Final URL suffix" instead of a tracked link, on their own path.
+		// Early return on purpose: the rest of this function would (a) fall into the switch's default case,
+		// (b) strip the { } of the {campaignid} ValueTrack placeholder in the #url sanitiser, and
+		// (c) make get_elements() call new URL() on something that is not a URL.
+		/* =====================================================*/
+		if (CPC_MEDIUMS[medium]) {
+			updateSuffixOutput(medium);
+			return;
+		}
+		// Not a cpc medium: make sure no stale suffix is left behind from a previous selection
+		$('#urlsuffix').val('');
+		/* =====================================================*/
+		// END - All Around - 2026-09-14 - FEATURE (issue-62)
+		/* =====================================================*/
 		var source;
 		var adCreative;
 		var marketingObj;
@@ -2596,6 +2716,69 @@ $(window).load(function(){
 		document.getElementById("table_tactic").innerText = get_elements('url', 'utm_marketing_tactic');
 	}
 	
+	/* =====================================================*/
+	// All Around - 2026-09-14 - FEATURE (issue-62)
+	// Builds the "Final URL suffix" for the cpc mediums (Paid Search, Performance Max, Demand Gen) and writes it to #urlsuffix.
+	// Output shape (parameter order follows the prototypes in the spec):
+	//   c_medium=<cpc|performance-max|demand-gen>&c_source=<google|bing>&c_name=<appeal>&c_id=<{campaignid}|{CampaignId}>
+	//   + Paid Search:                 &adg=<keyword strategy>&c_creative=<match type>
+	//   + Performance Max / Demand Gen: &adg=<targeting type>
+	//   + optional:                    &c_code=<source code>
+	// All values are lowercase except c_name, which keeps the appeal name's own casing (e.g. General%20Fund%20Appeal).
+	// c_id is a ValueTrack placeholder filled in by the ad platform; Google uses {campaignid}, Bing uses {CampaignId}.
+	// Also clears #url and resets the GA4 table, because there is no tracked link for these mediums.
+	/* =====================================================*/
+	function updateSuffixOutput(medium) {
+		var campaign = $('#campaign').val();
+		var source = $('#paidsearchsource').val();
+		var keywordStrategy = $('#paidsearchkeywordstrategy').val();
+		var matchType = $('#paidsearchmatchtype').val();
+		var targetingType = $('#paidsearchtargetingtype').val();
+		var sourceCode = $('#paidsearchsourcecode').val();
+		var suffix = '';
+		var tableIds = ["table_name", "table_source", "table_medium", "table_content", "table_term", "table_id", "table_tactic"];
+		var i;
+
+		if (campaign && source) {
+			// Same character clean-up that the normal tracked link applies to #url (see updateOutput), applied to the
+			// encoded appeal name only so the { } of the c_id placeholder are left alone. Dots are removed as well, as
+			// updateOutput strips them from the query string of every link.
+			var cleanCampaign = encodeURIComponent(campaign)
+				.replace(/[!\*'\(\);@\$,\|\^\[\]\{\}"£`¬¦\\|]/g, "")
+				.replace(/(%21|%22|%C2|%A3|%24|%5E|%28|%29|%5B|%5D|%3B|%27|%23|%2C|%7B|%7D|%40|%7E|%3C|%3E|%60|%C2|%AC|%C2|%A6|%5C|%7C)/g, "")
+				.replace(/\./g, "");
+			var campaignId = (source === "bing") ? "{CampaignId}" : "{campaignid}";
+
+			suffix = 'c_medium=' + CPC_MEDIUMS[medium] + '&c_source=' + source + '&c_name=' + cleanCampaign + '&c_id=' + campaignId;
+			if (medium === "Paid Search") {
+				suffix = suffix + '&adg=' + keywordStrategy + '&c_creative=' + matchType;
+			} else {
+				suffix = suffix + '&adg=' + targetingType;
+			}
+			// Source code is optional; only letters and digits are kept (the field is limited to 6 characters in the HTML)
+			if (sourceCode) {
+				sourceCode = sourceCode.replace(/[^A-Za-z0-9]/g, "");
+				if (sourceCode) {
+					suffix = suffix + '&c_code=' + sourceCode;
+				}
+			}
+		}
+
+		$('#urlsuffix').val(suffix);
+		$('#urlsuffix').change();
+		// No tracked link for cpc mediums: clear the normal output and reset the GA4 table.
+		// NB: must use .html() like updateOutput does, not .val(): setting .value directly marks the textarea as
+		// "dirty" and the .html() writes made later (when the user switches back to another medium) would no longer show.
+		$('#url').html('');
+		$('#url').change();
+		for (i = 0; i < tableIds.length; i++) {
+			document.getElementById(tableIds[i]).innerText = 'TBC';
+		}
+	}
+	/* =====================================================*/
+	// END - All Around - 2026-09-14 - FEATURE (issue-62)
+	/* =====================================================*/
+
 	function get_elements(html_id, param) {
 		el_value = document.getElementById(html_id).value;
 		var full_url;
@@ -2621,6 +2804,21 @@ $(window).load(function(){
         	$('input').click(window.updateOutput);
         	$('select').change(window.updateOutput);
         	$('.dropdown-multiple-label,.dropdown-selected,.dropdown-option,.dropdown-search,.dropdown-display,.dropdown-display-label').click(window.updateOutput);
+			/* =====================================================*/
+			// All Around - 2026-09-14 - FEATURE (issue-62)
+			// The campaign (appeal) and audience dropdown options are created asynchronously by campaign.js / audience.js
+			// (Google Sheets fetch), so the direct .dropdown-option binding above attaches to nothing and the output only
+			// refreshed on the *next* interaction. This delegated handler lives on the static containers, which do exist
+			// at init time. The plugin's own handler (which writes the choice into the hidden <select>) is bound on the
+			// same containers later and stops propagation, so ours runs first: defer one tick so updateOutput() sees the
+			// new selection. Covers choosing, un-choosing (.del) and clear-all.
+			/* =====================================================*/
+			$('.dropdown-single, .dropdown-multiple-label').on('click', 'li[tabindex], .del, .dropdown-clear-all', function () {
+				setTimeout(window.updateOutput, 0);
+			});
+			/* =====================================================*/
+			// END - All Around - 2026-09-14 - FEATURE (issue-62)
+			/* =====================================================*/
         	$('.output').mousedown(window.updateOutput);
 			updateOutput();
 			// console.log('Init is run');
