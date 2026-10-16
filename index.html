@@ -2151,6 +2151,7 @@ $(window).load(function(){
 		var linkLocation5 = "hold";
 		var linkLocations = [linkLocation1, linkLocation2, linkLocation3, linkLocation4, linkLocation5];
 		var subid;
+		var adid;
 		switch (medium) {
 			case "Referral":
 				source = $('#referralsource').val();
@@ -2288,6 +2289,7 @@ $(window).load(function(){
 				source = $('#socialadsource').val();
 				if (source == "Facebook" || source == "Instagram") {
 					adCreative = $('#socialadadtype_facebook').val();
+					adid = 'ADID_PLACEHOLDER'; // as it contains {}. special characters, easier to just replace at end than mess with whole special character logic
 					}
 				if (source == "Twitter") {
 					adCreative = $('#socialadadtype_twitter').val();
@@ -2550,10 +2552,18 @@ $(window).load(function(){
 			if (audience && isIndividual === "Yes") {
 				if (get_anchor) {
 					// If audience is populated, and there is an anchor, add audience with &adg= and then the anchor with # at the end of the URL. If there is an anchor but audience is not populated, just add the anchor at the end of the URL without &adg=.
-					var html = cleanedAnchor ? html + '&adg=' + audience + "#" + cleanedAnchor : html + '&adg=' + audience;
+					if (adid) {
+						var html = cleanedAnchor ? html + '&adg=' + audience + '&c_ad_id=' + adid + "#" + cleanedAnchor : html + '&adg=' + audience + '&c_ad_id=' + adid;
+					} else {
+						var html = cleanedAnchor ? html + '&adg=' + audience + "#" + cleanedAnchor : html + '&adg=' + audience;
+						}
 					console.log("individual + audience populated + anchor");
 				} else {
-					var html = html + '&adg=' + audience;
+					if (adid) {
+						var html = html + '&adg=' + audience + '&c_ad_id=' + adid;
+					} else {
+						var html = html + '&adg=' + audience;
+					}
 					console.log("individual + audience populated + no anchor");
 				}
 			}
@@ -2700,7 +2710,7 @@ $(window).load(function(){
 					} */
 
         if (domain && source && medium && campaign) {
-					$('#url').html(html.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[!\*'\(\);@\$,\|\^\[\]\{\}"£`¬¦\\|]/g, "").replace(/(%21|%22|%C2|%A3|%24|%5E|%28|%29|%5B|%5D|%3B|%27|%23|%2C|%7B|%7D|%40|%7E|%3C|%3E|%60|%C2|%AC|%C2|%A6|%5C|%7C)/g, "")); // Can't remove ?,=,&,_ for tracking reasons, or .,:,/,% for URL reasons
+					$('#url').html(html.replace(/&/gm, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/[!\*'\(\)\{\};@\$,\|\^\[\]"£`¬¦\\|]/g, "").replace(/(%21|%22|%C2|%A3|%24|%5E|%28|%29|%5B|%5D|%3B|%27|%23|%2C|%7B|%7D|%40|%7E|%3C|%3E|%60|%C2|%AC|%C2|%A6|%5C|%7C)/g, "").replaceAll("ADID_PLACEHOLDER", "{{ad.id}}")); // Can't remove ?,=,&,_ for tracking reasons, or .,:,/,% for URL reasons
         	$('#url').change();
         	} else {
         	$('#url').html('');

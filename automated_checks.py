@@ -13,7 +13,7 @@ from selenium.webdriver.support.ui import Select
 import json
 
 # Keep this manual -- see readme for why
-cService = webdriver.ChromeService(executable_path='C:\\Users\\SWannell\\Downloads\\chromedriver-win64-154.0\\chromedriver-win64\\chromedriver.exe')
+cService = webdriver.ChromeService(executable_path='C:\\Users\\SWannell\\Downloads\\chromedriver-win64-155.0\\chromedriver-win64\\chromedriver.exe')
 driver = webdriver.Chrome(service = cService)
 
 driver.get(r'C:\\Users\\SWannell\\OneDrive%20-%20British%20Red%20Cross%20Society\\Documents\\Coding\\tracked-link-builder\\index.html');
@@ -538,6 +538,7 @@ with open("checks\\generated_urls.json", "w") as outfile:
 
 driver.quit()
 
+print("======URL CHECKS======")
 # Print for the check sheet
 print("======URL CHECKS======")
 for k in ['video', 'audio', 'banner', 'socialad', 'socialpost', 'socialshare',
