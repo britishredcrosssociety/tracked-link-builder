@@ -54,19 +54,20 @@
 
 <script type="text/javascript">
 /* =====================================================*/
-// All Around - 2026-09-14 - FEATURE (issue-62)
+// All Around - 2026-10-23 - FIX (issue-62 suffix formatting)
 // The cpc mediums (Google Ads / Microsoft Ads) produce a "Final URL suffix" instead of a full tracked link.
 // This map is deliberately a top-level var (global) so both toggleFields() below and updateOutput() in the
-// second script block can use it: the key is the #medium option value, the value is what goes into c_medium=.
+// second script block can use it: the key is the #medium option value, the value is encoded into c_medium=.
+// Suffix values use Title Case and encode spaces as %20; Paid Search uses the all-caps exception CPC.
 // A truthy lookup (CPC_MEDIUMS[medium]) is also the "is this a cpc medium?" test used throughout.
 /* =====================================================*/
 var CPC_MEDIUMS = {
-	"Paid Search": "cpc",
-	"Performance Max": "performance max",
-	"Demand Gen": "demand gen"
+	"Paid Search": "CPC",
+	"Performance Max": "Performance Max",
+	"Demand Gen": "Demand Gen"
 };
 /* =====================================================*/
-// END - All Around - 2026-09-14 - FEATURE (issue-62)
+// END - All Around - 2026-10-23 - FIX (issue-62 suffix formatting)
 /* =====================================================*/
 $(window).load(function(){
 /**
@@ -1100,17 +1101,17 @@ $(window).load(function(){
 	</div>
 
 	<!-- =====================================================-->
-	<!-- All Around - 2026-09-14 - FEATURE (issue-62)          -->
+	<!-- All Around - 2026-10-23 - FIX (issue-62 suffix formatting) -->
 	<!-- Inputs for the cpc mediums (Paid Search, Performance Max, Demand Gen). These feed the "Final URL suffix" output (#urlsuffix) rather than the normal tracked link. -->
-	<!-- Option values are already lowercase because the suffix must be all-lowercase (c_name keeps the appeal's own casing). -->
+	<!-- Option values use Title Case for suffix output; Paid Search's c_medium is CPC, and spaces are encoded as %20. -->
 	<!-- Visibility is handled in toggleFields(): #mediumPaidSearchKeyword is Paid Search only; #mediumPaidSearchTargeting is Performance Max / Demand Gen only. -->
 	<!-- =====================================================-->
 	<div id="mediumPaidSearch">
 		<p>
 			<label for="sourcepaidsearch">Which platform is the campaign on?
 				<select name="sourcepaidsearch" id="paidsearchsource">
-					<option value="google">Google Ads</option>
-					<option value="bing">Bing (Microsoft Ads)</option>
+					<option value="Google">Google Ads</option>
+					<option value="Bing">Bing (Microsoft Ads)</option>
 				</select>
 			</label>
 		</p>
@@ -1118,19 +1119,19 @@ $(window).load(function(){
 			<p>
 				<label for="keywordstrategypaidsearch">What is the keyword strategy?
 					<select name="keywordstrategypaidsearch" id="paidsearchkeywordstrategy">
-						<option value="generic">Generic</option>
-						<option value="brand">Brand</option>
-						<option value="mixed">Mixed</option>
+						<option value="Generic">Generic</option>
+						<option value="Brand">Brand</option>
+						<option value="Mixed">Mixed</option>
 					</select>
 				</label>
 			</p>
 			<p>
 				<label for="matchtypepaidsearch">What is the match type?
 					<select name="matchtypepaidsearch" id="paidsearchmatchtype">
-						<option value="exact">Exact</option>
-						<option value="phrase">Phrase</option>
-						<option value="broad">Broad</option>
-						<option value="mixed">Mixed</option>
+						<option value="Exact">Exact</option>
+						<option value="Phrase">Phrase</option>
+						<option value="Broad">Broad</option>
+						<option value="Mixed">Mixed</option>
 					</select>
 				</label>
 			</p>
@@ -1139,8 +1140,8 @@ $(window).load(function(){
 			<p>
 				<label for="targetingtypepaidsearch">What type of targeting is this campaign using?
 					<select name="targetingtypepaidsearch" id="paidsearchtargetingtype">
-						<option value="acquisition">Acquisition</option>
-						<option value="retention">Retention</option>
+						<option value="Acquisition">Acquisition</option>
+						<option value="Retention">Retention</option>
 					</select>
 				</label>
 			</p>
@@ -1153,7 +1154,7 @@ $(window).load(function(){
 		</p>
 	</div>
 	<!-- =====================================================-->
-	<!-- END - All Around - 2026-09-14 - FEATURE (issue-62)    -->
+	<!-- END - All Around - 2026-10-23 - FIX (issue-62 suffix formatting) -->
 	<!-- =====================================================-->
 
     <div id="mediumBanner">
@@ -2727,14 +2728,14 @@ $(window).load(function(){
 	}
 	
 	/* =====================================================*/
-	// All Around - 2026-09-14 - FEATURE (issue-62)
+	// All Around - 2026-10-23 - FIX (issue-62 suffix formatting)
 	// Builds the "Final URL suffix" for the cpc mediums (Paid Search, Performance Max, Demand Gen) and writes it to #urlsuffix.
 	// Output shape (parameter order follows the prototypes in the spec):
-	//   c_medium=<cpc|performance-max|demand-gen>&c_source=<google|bing>&c_name=<appeal>&c_id=<{campaignid}|{CampaignId}>
-	//   + Paid Search:                 &adg=<keyword strategy>&c_creative=<match type>
+	//   c_medium=<CPC|Performance%20Max|Demand%20Gen>&c_source=<Google|Bing>&c_name=<appeal>&c_id=<{campaignid}|{CampaignId}>
+	//   + Paid Search:                  &adg=<keyword strategy>&c_creative=<match type>
 	//   + Performance Max / Demand Gen: &adg=<targeting type>
 	//   + optional:                    &c_code=<source code>
-	// All values are lowercase except c_name, which keeps the appeal name's own casing (e.g. General%20Fund%20Appeal).
+	// Values use Title Case except c_medium=CPC; suffix values encode spaces as %20. c_name keeps the appeal's own casing.
 	// c_id is a ValueTrack placeholder filled in by the ad platform; Google uses {campaignid}, Bing uses {CampaignId}.
 	// Also clears #url and resets the GA4 table, because there is no tracked link for these mediums.
 	/* =====================================================*/
@@ -2757,14 +2758,21 @@ $(window).load(function(){
 				.replace(/[!\*'\(\);@\$,\|\^\[\]\{\}"£`¬¦\\|]/g, "")
 				.replace(/(%21|%22|%C2|%A3|%24|%5E|%28|%29|%5B|%5D|%3B|%27|%23|%2C|%7B|%7D|%40|%7E|%3C|%3E|%60|%C2|%AC|%C2|%A6|%5C|%7C)/g, "")
 				.replace(/\./g, "");
-			var campaignId = (source === "bing") ? "{CampaignId}" : "{campaignid}";
+			var campaignId = (source === "Bing") ? "{CampaignId}" : "{campaignid}";
 
-			suffix = 'c_medium=' + CPC_MEDIUMS[medium] + '&c_source=' + source + '&c_name=' + cleanCampaign + '&c_id=' + campaignId;
+			/* =====================================================*/
+			// All Around - 2026-10-23 - FIX (issue-62 suffix formatting)
+			// Encode each suffix value independently so spaces become %20 without encoding separators or ValueTrack placeholders.
+			/* =====================================================*/
+			suffix = 'c_medium=' + encodeURIComponent(CPC_MEDIUMS[medium]) + '&c_source=' + encodeURIComponent(source) + '&c_name=' + cleanCampaign + '&c_id=' + campaignId;
 			if (medium === "Paid Search") {
-				suffix = suffix + '&adg=' + keywordStrategy + '&c_creative=' + matchType;
+				suffix = suffix + '&adg=' + encodeURIComponent(keywordStrategy) + '&c_creative=' + encodeURIComponent(matchType);
 			} else {
-				suffix = suffix + '&adg=' + targetingType;
+				suffix = suffix + '&adg=' + encodeURIComponent(targetingType);
 			}
+			/* =====================================================*/
+			// END - All Around - 2026-10-23 - FIX (issue-62 suffix formatting)
+			/* =====================================================*/
 			// Source code is optional; only letters and digits are kept (the field is limited to 6 characters in the HTML)
 			if (sourceCode) {
 				sourceCode = sourceCode.replace(/[^A-Za-z0-9]/g, "");
@@ -2786,7 +2794,7 @@ $(window).load(function(){
 		}
 	}
 	/* =====================================================*/
-	// END - All Around - 2026-09-14 - FEATURE (issue-62)
+	// END - All Around - 2026-10-23 - FIX (issue-62 suffix formatting)
 	/* =====================================================*/
 
 	function get_elements(html_id, param) {

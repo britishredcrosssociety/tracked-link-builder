@@ -10,7 +10,7 @@ BRC requires additional tracking parameters to be present in the URL – the `c_
 This implementation now allows the link builder to produce a **Final URL suffix** – a bare string of `c_*` parameters such as
 
 ```text
-c_medium=cpc&c_source=google&c_name=General%20Fund%20Appeal&c_id={campaignid}&adg=brand&c_creative=phrase
+c_medium=CPC&c_source=Google&c_name=General%20Fund%20Appeal&c_id={campaignid}&adg=Brand&c_creative=Phrase
 ```
 
 that the user pastes, unchanged, into the campaign's _Final URL suffix_ setting in Google Ads or Microsoft Ads. The ad platform appends it to every landing page URL of that campaign and fills in the `{campaignid}` / `{CampaignId}` placeholder itself, so every click carries a consistent, taxonomy-compliant set of BRC parameters alongside the auto-tagged `utm_*` ones. All values are produced from dropdowns (the existing appeal list plus a handful of new ones), which is what gives the consistency the reporting needs.
@@ -36,7 +36,7 @@ The red "this tool isn't for paid search" warning is replaced by a short explana
 individual-level tracking added?, the marketing objective and the taxonomy source code.
 
 *   Kept: **What area of BRC work does the link relate to?** (the appeal dropdown) – this becomes `c_name`.
-*   New inputs: The medium itself becomes `c_medium` = `cpc`, `performance-max` or `demand-gen`.
+*   New inputs: The medium itself becomes `c_medium` = `CPC`, `Performance%20Max` or `Demand%20Gen`.
 
 **3\. Section "2) Copy and Paste"**
 
@@ -53,9 +53,9 @@ Google Ads and Microsoft (Bing) Ads auto-tag the `utm_*` parameters, so a full t
 Output shape (parameter order follows the prototype tabs in the spec):
 
 ```text
-c_medium=<cpc|performance-max|demand-gen>&c_source=<google|bing>&c_name=<appeal>&c_id=<{campaignid}|{CampaignId}>
-  + Paid Search:                  &adg=<generic|brand|mixed>&c_creative=<exact|phrase|broad|mixed>
-  + Performance Max / Demand Gen: &adg=<acquisition|retention>
+c_medium=<CPC|Performance%20Max|Demand%20Gen>&c_source=<Google|Bing>&c_name=<appeal>&c_id=<{campaignid}|{CampaignId}>
+  + Paid Search:                  &adg=<Generic|Brand|Mixed>&c_creative=<Exact|Phrase|Broad|Mixed>
+  + Performance Max / Demand Gen: &adg=<Acquisition|Retention>
   + optional:                     &c_code=<source code, max 6 alphanumeric chars>
 ```
 
@@ -63,19 +63,19 @@ Examples:
 
 | Inputs | Suffix |
 | ---| --- |
-| Paid Search · Bing · generic · mixed · Gaza Crisis Appeal | `c_medium=cpc&c_source=bing&c_name=Gaza%20Crisis%20Appeal&c_id={CampaignId}&adg=generic&c_creative=mixed` |
-| Paid Search · Google · brand · phrase · General Fund Appeal | `c_medium=cpc&c_source=google&c_name=General%20Fund%20Appeal&c_id={campaignid}&adg=brand&c_creative=phrase` |
-| Performance Max · Bing · acquisition · Gaza Crisis Appeal | `c_medium=performance-max&c_source=bing&c_name=Gaza%20Crisis%20Appeal&c_id={CampaignId}&adg=acquisition` |
-| Demand Gen · Google · acquisition · General Fund Appeal | `c_medium=demand-gen&c_source=google&c_name=General%20Fund%20Appeal&c_id={campaignid}&adg=acquisition` |
+| Paid Search · Bing · Generic · Mixed · Gaza Crisis Appeal | `c_medium=CPC&c_source=Bing&c_name=Gaza%20Crisis%20Appeal&c_id={CampaignId}&adg=Generic&c_creative=Mixed` |
+| Paid Search · Google · Brand · Phrase · General Fund Appeal | `c_medium=CPC&c_source=Google&c_name=General%20Fund%20Appeal&c_id={campaignid}&adg=Brand&c_creative=Phrase` |
+| Performance Max · Bing · Acquisition · Gaza Crisis Appeal | `c_medium=Performance%20Max&c_source=Bing&c_name=Gaza%20Crisis%20Appeal&c_id={CampaignId}&adg=Acquisition` |
+| Demand Gen · Google · Acquisition · General Fund Appeal | `c_medium=Demand%20Gen&c_source=Google&c_name=General%20Fund%20Appeal&c_id={campaignid}&adg=Acquisition` |
 
 ## Decisions
 
-*   **All values lowercase** (`cpc`, `performance-max`, `demand-gen`, `google`, `bing`, and the adg / c\_creative option values). `c_name` keeps the appeal name's own casing, e.g. `General%20Fund%20Appeal`. (The spec's prototype tabs used mixed case; the "Expected output" line used lowercase – lowercase was chosen.)
+*   **Suffix values use Title Case**, with `CPC` as the all-caps Paid Search `c_medium` value. Platform and dropdown values are Title Case, and any spaces are encoded as `%20`; `c_name` keeps the appeal name's own casing, e.g. `General%20Fund%20Appeal`.
 *   **`c_id`** **is a placeholder**, never typed by the user: `{campaignid}` for Google, `{CampaignId}` for Bing. The taxonomy code / marketing objective block (`#taxonomy`) is therefore hidden for these mediums.
 *   **The suffix is always generated** – it is not gated on the marketing objective being a "donation" one.
-*   **Targeting type** for Performance Max / Demand Gen offers `acquisition` (default) and `retention`.
+*   **Targeting type** for Performance Max / Demand Gen offers `Acquisition` (default) and `Retention`.
 *   **Optional source code** (→ `c_code=`) is offered for all three mediums; only appended when filled in.
-*   `Demand-Gen-` (trailing hyphen in the prototype) was treated as a typo → `demand-gen`.
+*   Performance Max and Demand Gen `c_medium` values use their spaced display names (`Performance%20Max` and `Demand%20Gen`) rather than hyphenated lowercase strings.
 *   The **domain** and **"individual-level tracking?"** questions are hidden for these mediums: the suffix never contains the domain, and `c_*` parameters _are_ the individual-level tracking, so both would only confuse.
 ## Where the code changed (all in `index.html`, every block wrapped in inline comments)
 
