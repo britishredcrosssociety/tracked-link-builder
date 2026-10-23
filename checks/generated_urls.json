@@ -69,6 +69,11 @@
     "other": [
         "https://donate.redcross.org.uk/appeal/disaster-fund?utm_campaign=Disaster%20Fund&utm_source=Spotify&utm_medium=Audio&utm_content=CTA&utm_term=175148_Interest_Science%20nerds&utm_id=123456&c_id=123456&utm_marketing_tactic=Donation&c_name=Disaster%20Fund&c_source=Spotify&c_medium=Audio&c_creative=CTA&c_code=175148&adg=Interest_Science%20nerds#:~:text=Where%20could%20your%20donation%20to%20the%20Disaster%20Fund%20go%3F",
         "https://donate.redcross.org.uk/appeal/disaster-fund?utm_campaign=Disaster%20Fund&utm_source=Spotify&utm_medium=Audio&utm_content=0---------1---------2---------3---------4---------5---------6---------7---------8---------9---------&utm_term=175148_Interest_Science%20nerds&utm_id=123456&c_id=123456&utm_marketing_tactic=Donation&c_name=Disaster%20Fund&c_source=Spotify&c_medium=Audio&c_creative=0---------1---------2---------3---------4---------5---------6---------7---------8---------9---------&c_code=175148&adg=Interest_Science%20nerds#:~:text=Where%20could%20your%20donation%20to%20the%20Disaster%20Fund%20go%3F",
-        "https://volunteer.redcross.org.uk/opportunities?&utm_campaign=Volunteering&utm_source=Facebook&utm_medium=Paid%20Social&utm_content=Carousel_Sign%20up&utm_term=175155_Altruists&utm_id=123456&c_id=123456&utm_marketing_tactic=Volunteering&c_name=Volunteering&c_source=Facebook&c_medium=Paid%20Social&c_creative=Carousel_Sign%20up&c_code=175155&adg=Altruists&c_ad_id={{ad.id}}#display=grid&s=date_advertised&o=desc&limit=14&include=image&public_search=true"
+        "https://volunteer.redcross.org.uk/opportunities?&utm_campaign=Volunteering&utm_source=Facebook&utm_medium=Paid%20Social&utm_content=Carousel_Sign%20up&utm_term=175155_Altruists&utm_id=123456&c_id=123456&utm_marketing_tactic=Volunteering&c_name=Volunteering&c_source=Facebook&c_medium=Paid%20Social&c_creative=Carousel_Sign%20up&c_code=175155&adg=Altruists&c_ad_id={{ad.id}}#display=grid&s=date_advertised&o=desc&limit=14&include=image&public_search=true"    ],
+    "paid search": [
+        "c_medium=cpc&c_source=google&c_name=General%20Fund%20Appeal&c_id={campaignid}&adg=brand&c_creative=exact",
+        "c_medium=cpc&c_source=bing&c_name=General%20Fund%20Appeal&c_id={CampaignId}&adg=generic&c_creative=phrase&c_code=123456",
+        "c_medium=performance max&c_source=google&c_name=Disaster%20Fund&c_id={campaignid}&adg=retention&c_code=123456",
+        "c_medium=demand gen&c_source=bing&c_name=Disaster%20Fund&c_id={CampaignId}&adg=acquisition"
     ]
 }

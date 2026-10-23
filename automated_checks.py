@@ -490,6 +490,45 @@ weird_dropdown(vals_fb_assemble, which='socialad')
 url = final_url.get_attribute('value')
 outputs['other'] += [url]
 
+#%% Paid search
+
+driver.refresh()
+Select(driver.find_element(By.CSS_SELECTOR, "#medium")).select_by_value('Paid Search')
+time.sleep(1)
+
+url_suffix = driver.find_element(By.CSS_SELECTOR, "textarea#urlsuffix")
+
+weird_dropdown('General Fund Appeal', which='campaign')
+Select(find_element_medium('paidsearch', 'source')).select_by_value('google')
+Select(find_element_medium('paidsearch', 'keywordstrategy')).select_by_value('brand')
+Select(find_element_medium('paidsearch', 'matchtype')).select_by_value('exact')
+url = url_suffix.get_attribute('value')
+outputs['paid search'] = [url]
+
+Select(find_element_medium('paidsearch', 'source')).select_by_value('bing')
+Select(find_element_medium('paidsearch', 'keywordstrategy')).select_by_value('generic')
+Select(find_element_medium('paidsearch', 'matchtype')).select_by_value('phrase')
+find_element_medium('paidsearch', 'sourcecode').send_keys('123456')
+url = url_suffix.get_attribute('value')
+outputs['paid search'] += [url]
+
+Select(driver.find_element(By.CSS_SELECTOR, "#medium")).select_by_value('Performance Max')
+time.sleep(1)
+weird_dropdown('Disaster Fund', which='campaign')
+Select(find_element_medium('paidsearch', 'source')).select_by_value('google')
+Select(find_element_medium('paidsearch', 'targetingtype')).select_by_value('retention')
+url = url_suffix.get_attribute('value')
+outputs['paid search'] += [url]
+
+Select(driver.find_element(By.CSS_SELECTOR, "#medium")).select_by_value('Demand Gen')
+time.sleep(1)
+Select(find_element_medium('paidsearch', 'source')).select_by_value('bing')
+find_element_medium('paidsearch', 'sourcecode').clear()
+find_element_medium('paidsearch', 'sourcecode').send_keys('')
+Select(find_element_medium('paidsearch', 'targetingtype')).select_by_value('acquisition')
+url = url_suffix.get_attribute('value')
+outputs['paid search'] += [url]
+
 #%% Save dict
 
 with open("checks\\generated_urls.json", "w") as outfile: 
@@ -501,8 +540,14 @@ driver.quit()
 
 print("======URL CHECKS======")
 # Print for the check sheet
+print("======URL CHECKS======")
 for k in ['video', 'audio', 'banner', 'socialad', 'socialpost', 'socialshare',
           'socialbutton', 'email', 'internal', 'offline', 'rocketseed',
           'referral', 'unknown', 'other']:
+    for v in outputs[k]:
+        print(v)
+
+print("======URL SUFFIX CHECKS======")
+for k in ['paid search']:
     for v in outputs[k]:
         print(v)
