@@ -1,1 +1,5 @@
-tracked-link-builder_1 and 2.zip
+.DS_Store
+.env
+.allaround
+.vscode
+node_modules
